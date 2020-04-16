@@ -10,23 +10,8 @@ import { Portal } from 'react-portal';
 import { useState } from 'react';
 
 
-
-export const useModal = () => {
-  const [isShowing, setShowing] = useState(false);
-  function toggle() {
-    setShowing(!isShowing);
-  }
-  return {
-    isShowing,
-    toggle
-  }
-}
-
-
-
 const Modal = ({ title, message, visible, onClose }) => {
-
-
+  
   return (
     visible &&
     <Portal>
@@ -57,14 +42,11 @@ const Modal = ({ title, message, visible, onClose }) => {
 }
 
 
-
 Modal.defaultProps = {
   title: "modal",
-  message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci optio cupiditate error accusamus repellat unde praesentium est voluptatum soluta perspiciatis expedita, ipsum consequuntur, architecto aliquam aspernatur porro sed similique molestiae.",
+  message: "",
   visible: false,
   onClose: () => null
 }
-
-
 
 export default Modal;

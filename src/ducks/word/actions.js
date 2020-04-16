@@ -21,7 +21,7 @@ export const getListAllWords = () => async (dispatch) => {
         }));
     }
     catch {
-        dispatch(errorToGetData());
+        dispatch(errorToGetData({error:true}));
     }
 }
 

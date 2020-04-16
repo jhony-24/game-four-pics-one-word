@@ -1,6 +1,6 @@
 import React from "react"
 import CheckLogged from "src/hoc/CheckLogged"
-import ViewGuessWord from "src/views/ViewGuessWord"
+import ViewGuessWord from "src/views/ViewDiscoverWord"
 import { navigate } from "gatsby";
 import Fade from "src/components/dom/Fade";
 import SEO from "src/components/atoms/SEO"

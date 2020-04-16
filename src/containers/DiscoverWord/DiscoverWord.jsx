@@ -21,8 +21,8 @@ class DiscoverWord extends Component {
 
 
   continueGame = () => {
+    navigate("/list");   
     this.props.dispatch(discoverActions.removeMessyLetters());
-    navigate("/list");
   }
 
 
