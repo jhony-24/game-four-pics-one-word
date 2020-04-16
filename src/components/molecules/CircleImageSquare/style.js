@@ -13,7 +13,7 @@ const style = StyleSheet.create({
         height : "45px"
     },
     bgImg : {
-        backgroundSize : "cover",
+        backgroundSize : "cover, 20px ",
         backgroundPosition : "center",
         backgroundRepeat : "no-repeat",
         backgroundColor : "rgba(100,100,100,.1)"

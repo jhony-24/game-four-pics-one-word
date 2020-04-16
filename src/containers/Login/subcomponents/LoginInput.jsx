@@ -3,10 +3,7 @@ import { FaUserAlt, FaKey } from "react-icons/fa"
 import TextField from "src/components/atoms/TextField"
 import style from '../style';
 
-
-
 const Username = ({ to }) => {
-    console.log("renderer")
     return (
         <TextField
             ref={to}
@@ -17,8 +14,6 @@ const Username = ({ to }) => {
     )
 }
 
-
-
 const Pass = ({ to }) => (
     <TextField
         ref={to}
@@ -27,8 +22,6 @@ const Pass = ({ to }) => (
         icon={<FaKey />}
         styles={{ ...style.input._definition }} />
 )
-
-
 
 export default {
     Username,

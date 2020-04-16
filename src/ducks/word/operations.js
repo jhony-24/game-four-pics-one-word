@@ -2,7 +2,7 @@ import { navigate } from "gatsby";
 
 
 export const operationsGetListAllWords = (state, { payload }) => {
-    const { listWords } = payload;
+    const { listWords, loading } = payload;
 
     let listWordsOrder = [];
     for (var idWord in listWords) {
@@ -20,6 +20,7 @@ export const operationsGetListAllWords = (state, { payload }) => {
     return {
         ...state,
         listWords: listWordsOrder,
+        loading
     }
 }
 

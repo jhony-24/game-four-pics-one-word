@@ -4,12 +4,12 @@ import Paragraph from "src/components/molecules/Paragraph"
 import { FaEllipsisV } from "react-icons/fa"
 import Flex from "src/components/dom/Flex"
 import IconNatural from "src/components/atoms/IconNatural"
-import { IoMdStar } from "react-icons/io"
+import { IoMdStar, IoIosApps } from "react-icons/io"
 import { navigate } from 'gatsby';
 import ImageSquarePreview from "./ImageSquarePreview";
 
 
-const ItemFlatList = ({ current, images, letters }) => {
+const ItemFlatList = ({ current, images, letters, points }) => {
     const handlerNavigate = () => navigate("/word", { state: current });
     return (
         <RowItem
@@ -26,9 +26,8 @@ const ItemFlatList = ({ current, images, letters }) => {
                         title={letters + "..."}
                         detail={current.detail || new Date().toLocaleString()} />
                     <IconNatural
-                        icon={<IoMdStar />}
-                        coloricon="darkorange"
-                        text={""} />
+                        icon={points !== 0 ? <IoMdStar color="darkorange" /> : <IoIosApps color="gray" />}
+                        text={points !== 0 && points} />
                 </Flex>
             }
             rightBody={

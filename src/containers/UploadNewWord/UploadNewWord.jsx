@@ -7,14 +7,6 @@ import { wordActions } from "src/ducks/word";
 import ButtonUploadImages from './subcomponents/ButtonUploadImages';
 import OptionsUploadWord from './subcomponents/OptionsUploadWord';
 
-const imagesArray = [
-  "https://cdn.pixabay.com/photo/2019/09/23/01/47/space-4497348__340.jpg",
-  "https://cdn.pixabay.com/photo/2017/07/27/02/23/space-2543838__340.jpg",
-  "https://cdn.pixabay.com/photo/2016/07/02/12/21/eclipse-1492818__340.jpg",
-  "https://cdn.pixabay.com/photo/2011/12/14/12/21/orion-nebula-11107__340.jpg",
-]
-
-
 
 class UploadNewWord extends Component {
 
@@ -45,16 +37,12 @@ class UploadNewWord extends Component {
 
 
   handlerUploadWord = () => {
-    const { letters, images, stateUploaded } = this.state;
-    this.props.dispatch(wordActions.uploadImages(images)).then(() => {
-      const dataUploadNewWord = {
-        letters,
-        images: []
-      }
-      this.props.dispatch(wordActions.uploadNewWord(dataUploadNewWord));
+    const { letters, images } = this.state;
+    const { dispatch } = this.props;
+    dispatch(wordActions.uploadImages(images)).then(() => {
+
     });
   }
-
 
 
   render() {
@@ -67,7 +55,7 @@ class UploadNewWord extends Component {
             <ButtonUploadImages onChange={this.handlerSelectImages} />
             :
             <Fragment>
-              <CircleImageSquare images={imagesArray} styles={style.gridPreviewImages._definition} />
+              <CircleImageSquare images={[]} styles={style.gridPreviewImages._definition} />
               <OptionsUploadWord onUpload={this.handlerUploadWord} onCancel={this.handlerCancelUploadWord} />
             </Fragment>
         }
@@ -76,7 +64,6 @@ class UploadNewWord extends Component {
   }
 
 }
-
 
 
 export default connect()(UploadNewWord);

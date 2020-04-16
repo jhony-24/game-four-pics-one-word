@@ -5,4 +5,6 @@ thinking game Four images one word. Discover the word based on the images that w
 
 ![logo_game](images/logo_game.png "logo game")
 
-estado:  ***en desarrollo...***
+---
+
+status:  ***Developing...***

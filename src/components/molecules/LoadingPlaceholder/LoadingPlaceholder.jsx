@@ -6,25 +6,25 @@ import Skeleton from "react-loading-skeleton"
 
 
 
-const LoadingPlaceholder = ({sizecircle,heightbar,repeat}) => {
+const LoadingPlaceholder = ({ sizecircle, heightbar, repeat }) => {
 
   let array = Array(repeat).fill(0);
   let width = 250;
 
-  return(
-    <Flex styles={{...style.f._definition}}> 
-          {
-                array.map((e,i)=>(
-                  <Flex styles={{...style.fr._definition}} key={i}>
-                    <span className={css(style.r)}>
-                      <Skeleton width={sizecircle} height={sizecircle} circle={true} />
-                    </span>
-                    <span className={css(style.r)}>
-                      <Skeleton width={width} height={heightbar} />
-                    </span>
-                  </Flex>
-                ))
-          }
+  return (
+    <Flex styles={{ ...style.f._definition }}>
+      {
+        array.map((e, i) => (
+          <Flex styles={{ ...style.fr._definition }} key={i}>
+            <span className={css(style.r)}>
+              <Skeleton width={sizecircle} height={sizecircle} circle={true} />
+            </span>
+            <span className={css(style.r)}>
+              <Skeleton width={width} height={heightbar} />
+            </span>
+          </Flex>
+        ))
+      }
     </Flex>
   )
 }
@@ -32,9 +32,9 @@ const LoadingPlaceholder = ({sizecircle,heightbar,repeat}) => {
 
 
 LoadingPlaceholder.defaultProps = {
-  repeat : 5,
-  sizecircle : 40,
-  heightbar : 40
+  repeat: 5,
+  sizecircle: 40,
+  heightbar: 40
 }
 
 

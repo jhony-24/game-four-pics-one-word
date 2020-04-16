@@ -8,19 +8,11 @@ import Paragraph from "src/components/molecules/Paragraph"
 import { FaStar } from 'react-icons/fa';
 import { TEXT_PRIMARY } from "src/tools/constants"
 import { wordSelectors } from "src/ducks/word";
-import { connect } from "react-redux"; 
-
-const images = Array(3).fill([
-  "https://images.pexels.com/photos/3214958/pexels-photo-3214958.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  "https://images.pexels.com/photos/1769369/pexels-photo-1769369.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-])
-
-
+import { connect } from "react-redux";
 
 class Ranking extends Component {
 
   render() {
-
     const { title, topRanked } = this.props;
 
     return (
@@ -31,15 +23,15 @@ class Ranking extends Component {
           styles={{ ...style.title._definition }} />
         <Flex styles={{ ...style.container._definition }}>
           {
-            images.map((current, i) => {
+            topRanked.map((current, i) => {
 
               let center = (i === 1) ? style.rankHigh._definition : {};
 
               return (
                 <Flex styles={{ ...style.flexCtnImg._definition }} key={i}>
-                  <CircleImageSquare images={current} styles={{ ...style.circleImage._definition, ...center }} />
+                  <CircleImageSquare images={current.images} styles={{ ...style.circleImage._definition, ...center }} />
                   <FaStar />
-                  <span className={css(style.textRank)}>324</span>
+                  <span className={css(style.textRank)}>{current.points}</span>
                 </Flex>
               )
 

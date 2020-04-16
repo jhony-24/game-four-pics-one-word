@@ -4,18 +4,7 @@ import Ranking from "./subcontainers/Ranking"
 import ItemFlatList from './subcomponents/ItemFlatList';
 import { connect } from "react-redux";
 import { wordActions } from "src/ducks/word";
-
-
-const images = [
-  "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg",
-  "https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706__340.jpg",
-  "https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg",
-  "https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358__340.jpg",
-]
-const data = Array(20).fill({
-  images: images,
-  letters: "jhony",
-})
+import LoadingPlaceholder from 'src/components/molecules/LoadingPlaceholder';
 
 
 class AllWords extends Component {
@@ -25,19 +14,25 @@ class AllWords extends Component {
   }
 
   render() {
-    const { listWords } = this.props;
-    return (
-      <Fragment>
-        <Ranking />
-        <FlatList data={data} renderItem={(current, key) => (
-          <ItemFlatList
-            key={key}
-            current={current}
-            images={current.images}
-            letters={current.letters} />
-        )} />
-      </Fragment>
-    )
+    const { listWords, loading } = this.props;
+    if (loading) {
+      return <LoadingPlaceholder />
+    }
+    else {
+      return (
+        <Fragment>
+          <Ranking />
+          <FlatList data={listWords} renderItem={(current, key) => (
+            <ItemFlatList
+              key={key}
+              current={current}
+              images={current.images}
+              letters={current.letters}
+              points={current.points} />
+          )} />
+        </Fragment>
+      )
+    }
   }
 
 }
@@ -46,5 +41,6 @@ class AllWords extends Component {
 
 const mapStateToProps = ({ word }) => ({
   listWords: word.listWords,
+  loading: word.loading
 });
 export default connect(mapStateToProps)(AllWords);
