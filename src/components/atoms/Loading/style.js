@@ -1,6 +1,4 @@
 import { StyleSheet } from "aphrodite/no-important"
-import { PRIMARY_COLOR  } from "../../../tools/constants";
-
 
 const rotateKeyFrames = {
     '0%' : {
@@ -13,8 +11,6 @@ const style = StyleSheet.create({
         flexDirection:"column",
     },
     loading : {
-        width : "30px",
-        height : "30px",
         borderRadius : "100%",
         border : "2px solid transparent",
         animationName : [ rotateKeyFrames ],
@@ -27,7 +23,5 @@ const style = StyleSheet.create({
         fontSize : ".72em"
     }
 })
-
-
 
 export default style;

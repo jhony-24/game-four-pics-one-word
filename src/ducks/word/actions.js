@@ -1,13 +1,15 @@
 import { createAction } from "redux-actions";
 import services from "src/resources/services"
+import Auth from "src/models/auth";
+
 
 // ACTIONS
 const base = "ducks/word";
 export const actionGetListAllWords = createAction(`${base}/GET_LIST_ALL_WORDS`);
 export const actionLoadingListAllWords = createAction(`${base}/LOADING_LIST_ALL_WORDS`);
 export const errorToGetData = createAction(`${base}/ERROR_TO_GET_DATA`);
-export const actionUploadWordImages = createAction(`${base}/UPLOAD_IMAGES`);
 export const actionUploadNewWord = createAction(`${base}/UPLOAD_NEW_WORD`);
+export const actionLoadingUploadNewWord = createAction(`${base}/LOADING_UPLOAD_NEW_WORD`);
 
 
 // ACTIONS CREATORS
@@ -26,29 +28,28 @@ export const getListAllWords = () => async (dispatch) => {
 }
 
 
-export const uploadImages = (images) => async (dispatch) => {
-    try {
-        const request = await services.uploadImages({images});
-        dispatch(actionUploadWordImages(request.data));
-    }
-    catch (error) {
-        console.log(error)
-    }
-}
-
-
 export const uploadNewWord = (dataUpload) => async dispatch => {
     const { letters, images } = dataUpload;
-    const data = {
-        iduser: '',
-        letters,
-        images,
-    }
+    const { uploadImages, uploadNewWord } = services;
+    const user = JSON.parse(Auth.get());
+
+    dispatch(actionLoadingUploadNewWord({ loadingUpload: true }));
     try {
-        await services.uploadNewWord(data);
-        dispatch(actionUploadNewWord({ uploaded: true }));
+        const request = await uploadImages({ images }).then(({ data: images }) => {
+            let wordUploadd = uploadNewWord({
+                iduser: user.iduser,
+                letters,
+                images,
+                points: 0
+            })
+            return wordUploadd;
+        });
+        dispatch(actionUploadNewWord({
+            loadingUpload: false,
+            uploaded: request.status
+        }));
     }
     catch {
-
+        dispatch(actionLoadingUploadNewWord({ loadingUpload: false }));
     }
 }

@@ -5,7 +5,6 @@ import { navigate } from "gatsby";
 import Fade from "src/components/dom/Fade";
 import SEO from "src/components/atoms/SEO"
 
-
 const Word = () => {
     const state = window.history.state;
     if (state !== null) {
@@ -21,7 +20,4 @@ const Word = () => {
     }
 }
 
-
-
-// export default CheckLogged(Word);
-export default Word;
+export default CheckLogged(Word);

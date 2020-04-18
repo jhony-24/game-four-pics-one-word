@@ -25,21 +25,14 @@ export const operationsGetListAllWords = (state, { payload }) => {
 }
 
 
-export const operationUploadWordImages = (state) => {
-    return {
-        ...state,
-        uploaded: true
-    }
-}
-
-
 export const operationUploadNewWord = (state, { payload }) => {
-    const { uploaded } = payload;
+    const { uploaded, loadingUpload } = payload;
     if (uploaded) {
         navigate("/list");
     }
     return {
         ...state,
-        uploaded
+        uploaded,
+        loadingUpload
     }
 }

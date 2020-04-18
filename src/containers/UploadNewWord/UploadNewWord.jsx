@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, createRef } from 'react';
 import style from './style';
 import TextField from "src/components/atoms/TextField"
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
@@ -6,14 +6,17 @@ import { connect } from "react-redux";
 import { wordActions } from "src/ducks/word";
 import ButtonUploadImages from './subcomponents/ButtonUploadImages';
 import OptionsUploadWord from './subcomponents/OptionsUploadWord';
+import Loading from 'src/components/atoms/Loading/Loading';
 
 
 class UploadNewWord extends Component {
-
-  state = {
-    letters: '',
-    images: null,
-    stateUploaded: false
+  constructor() {
+    super();
+    this.word = createRef();
+    this.state = {
+      images: null,
+      stateUploaded: false
+    }
   }
 
 
@@ -22,14 +25,8 @@ class UploadNewWord extends Component {
   }
 
 
-  handlerTextWordChange = event => {
-    this.setState({ letters: event.target.value });
-  }
-
-
   handlerCancelUploadWord = () => {
     this.setState({
-      letters: '',
       images: null,
       stateUploaded: false
     });
@@ -37,24 +34,32 @@ class UploadNewWord extends Component {
 
 
   handlerUploadWord = () => {
-    const { letters, images } = this.state;
+    const { images } = this.state;
+    const letters = this.word.current.value;
     const { dispatch } = this.props;
-    dispatch(wordActions.uploadImages(images));
+    dispatch(wordActions.uploadNewWord({ letters, images }));
   }
 
 
   render() {
     const { stateUploaded } = this.state;
+    const { loadingUpload } = this.props;
     return (
       <Fragment>
-        <TextField placeholder="escribe una palabra..." styles={style.input._definition} onChange={this.handlerTextWordChange} />
         {
-          !stateUploaded ?
-            <ButtonUploadImages onChange={this.handlerSelectImages} />
-            :
+          loadingUpload ?
+            <Loading size={60} text="subiendo..." /> :
             <Fragment>
-              <CircleImageSquare images={[]} styles={style.gridPreviewImages._definition} />
-              <OptionsUploadWord onUpload={this.handlerUploadWord} onCancel={this.handlerCancelUploadWord} />
+              <TextField placeholder="escribe una palabra..." styles={style.input._definition} ref={this.word} />
+              {
+                !stateUploaded ?
+                  <ButtonUploadImages onChange={this.handlerSelectImages} />
+                  :
+                  <Fragment>
+                    <CircleImageSquare images={[]} styles={style.gridPreviewImages._definition} />
+                    <OptionsUploadWord onUpload={this.handlerUploadWord} onCancel={this.handlerCancelUploadWord} />
+                  </Fragment>
+              }
             </Fragment>
         }
       </Fragment>
@@ -64,4 +69,7 @@ class UploadNewWord extends Component {
 }
 
 
-export default connect()(UploadNewWord);
+const mapStateToProps = ({ word }) => ({
+  loadingUpload: word.loadingUpload,
+})
+export default connect(mapStateToProps)(UploadNewWord);

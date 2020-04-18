@@ -20,5 +20,4 @@ const List = () => {
     )
 }
 
-// export default CheckLogged(List);
-export default List;
+export default CheckLogged(List);

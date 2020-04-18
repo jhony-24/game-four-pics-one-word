@@ -6,9 +6,7 @@ import Loading from "src/components/atoms/Loading"
 import Fade from "src/components/dom/Fade"
 import SEO from "src/components/atoms/SEO"
 
-
 const ViewUploadWord = lazy(() => import("src/views/ViewUploadWord"))
-
 
 const Upload = () => {
     return (
@@ -32,7 +30,4 @@ const Upload = () => {
     )
 }
 
-
-
-// export default CheckLogged(Upload);
-export default Upload;
+export default CheckLogged(Upload);

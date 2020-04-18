@@ -6,12 +6,10 @@ import Flex from "src/components/dom/Flex"
 import { TEXT_SECONDARY } from 'src/tools/constants';
 
 
-
-
-const Loading = ({color,colortext,text}) => {
+const Loading = ({color,colortext,text,size}) => {
 
   const flex = {...style.flex._definition};
-  const loadingStyle = css(style.loading,styleDynamic({borderLeftColor:color}));
+  const loadingStyle = css(style.loading,styleDynamic({borderLeftColor:color,width:size,height:size}));
   const textStyle = css(style.textLoading,styleDynamic({color:colortext}));
 
   return(
@@ -25,14 +23,10 @@ const Loading = ({color,colortext,text}) => {
 }
 
 
-
-
 Loading.defaultProps  = {
   color : TEXT_SECONDARY,
-  colortext : "gray"
+  colortext : "gray",
+  size : "30px"
 }
-
-
-
 
 export default memo(Loading);

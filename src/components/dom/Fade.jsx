@@ -1,10 +1,8 @@
 import React from "react"
 import { motion as Fade } from "framer-motion"
 
-
 const initial = { x: "100%", opacity: 0 }
 const animate = { x: 0, opacity: 1 }
-
 
 export default ({ type, children }) => {
     if (type == "in") {

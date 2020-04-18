@@ -38,9 +38,8 @@ const getListAllWords = () => {
 }
 
 
-const uploadNewWord = ({ idUser, images, letters }) => {
-    const parameters = { idUser, images, letters };
-    return word.post("/word");
+const uploadNewWord = (parameters) => {
+    return word.post("/create?type=word",parameters);
 }
 
 
