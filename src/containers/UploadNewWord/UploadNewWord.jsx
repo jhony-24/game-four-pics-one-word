@@ -39,9 +39,7 @@ class UploadNewWord extends Component {
   handlerUploadWord = () => {
     const { letters, images } = this.state;
     const { dispatch } = this.props;
-    dispatch(wordActions.uploadImages(images)).then(() => {
-
-    });
+    dispatch(wordActions.uploadImages(images));
   }
 
 

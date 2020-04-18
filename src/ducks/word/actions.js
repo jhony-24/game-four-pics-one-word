@@ -28,8 +28,8 @@ export const getListAllWords = () => async (dispatch) => {
 
 export const uploadImages = (images) => async (dispatch) => {
     try {
-        await services.uploadImages({ images });
-        dispatch(actionUploadWordImages());
+        const request = await services.uploadImages({images});
+        dispatch(actionUploadWordImages(request.data));
     }
     catch (error) {
         console.log(error)
@@ -40,7 +40,7 @@ export const uploadImages = (images) => async (dispatch) => {
 export const uploadNewWord = (dataUpload) => async dispatch => {
     const { letters, images } = dataUpload;
     const data = {
-        idWord: '',
+        iduser: '',
         letters,
         images,
     }

@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import { wordActions } from "src/ducks/word";
 import LoadingPlaceholder from 'src/components/molecules/LoadingPlaceholder';
 
-
 class AllWords extends Component {
 
   componentDidMount() {
@@ -16,7 +15,7 @@ class AllWords extends Component {
   render() {
     const { listWords, loading } = this.props;
     if (loading) {
-      return <LoadingPlaceholder />
+      return <LoadingPlaceholder repeat={7} />
     }
     else {
       return (
@@ -36,8 +35,6 @@ class AllWords extends Component {
   }
 
 }
-
-
 
 const mapStateToProps = ({ word }) => ({
   listWords: word.listWords,
