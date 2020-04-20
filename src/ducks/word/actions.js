@@ -2,8 +2,7 @@ import { createAction } from "redux-actions";
 import services from "src/resources/services"
 import Auth from "src/models/auth";
 
-
-// ACTIONS
+// actions
 const base = "ducks/word";
 export const actionGetListAllWords = createAction(`${base}/GET_LIST_ALL_WORDS`);
 export const actionLoadingListAllWords = createAction(`${base}/LOADING_LIST_ALL_WORDS`);
@@ -12,7 +11,7 @@ export const actionUploadNewWord = createAction(`${base}/UPLOAD_NEW_WORD`);
 export const actionLoadingUploadNewWord = createAction(`${base}/LOADING_UPLOAD_NEW_WORD`);
 
 
-// ACTIONS CREATORS
+// actions creators
 export const getListAllWords = () => async (dispatch) => {
     dispatch(actionLoadingListAllWords({ loading: true }));
     try {

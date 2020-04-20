@@ -4,11 +4,10 @@ import { connect } from 'react-redux';
 import FlatMessage from "src/components/molecules/FlatMessage";
 import MessUpLetters from './subcontainers/MessUpLetters.sub';
 import TestLetters from './subcontainers/TestLetters.sub';
-import { discoverActions } from "../../ducks/discover";
 import GameSuccess from "./subcomponents/GameSuccess";
 import style from './style';
 import { navigate } from 'gatsby';
-import { wordSelectors } from 'src/ducks/word';
+import { discoverActions, discoverSelectors } from "src/ducks/discover";
 
 
 class DiscoverWord extends Component {
@@ -17,20 +16,20 @@ class DiscoverWord extends Component {
     this.props.dispatch(discoverActions.createLettersToDiscover(this.props.state));
   }
 
-  componentDidUpdate() {
-    if (this.props.stateDiscover) {
-      this.props.dispatch(discoverActions.incrementPoints(this.props.idWord));
-    }
-  }
 
   continueGame = () => {
     navigate("/list");
     this.props.dispatch(discoverActions.removeMessyLetters());
   }
 
+  incrementPoints = () => {
+    this.props.dispatch(discoverActions.incrementPoints(this.props.idWord));
+  }
+
   render() {
     const { lettersEmpty, messyLetters, stateDiscover } = this.props;
     if (stateDiscover) {
+      this.incrementPoints();
       return <GameSuccess onClick={this.continueGame} word={lettersEmpty.join('')} />
     }
     else {
@@ -47,11 +46,11 @@ class DiscoverWord extends Component {
 }
 
 
-const mapStateToProps = ({ discover, word }) => ({
+const mapStateToProps = ({ discover }) => ({
   lettersEmpty: discover.testLetters,
   messyLetters: discover.messyLetters,
   stateDiscover: discover.stateDiscover,
-  idWord: wordSelectors.getIdWord(word)
+  idWord: discoverSelectors.getIdWord(discover)
 })
 
 

@@ -23,6 +23,8 @@ const handlers = {
     [actions.removeMessyLetters]: () =>
         operations.operationRemoveMessyLetters(initialState),
 
+    [actions.actionIncrementPoints]: (state) => state
+
 }
 
 export default handleActions(handlers, initialState);

@@ -8,8 +8,3 @@ export const getWordsTopRanked = (state, totalInRanking = 3) => {
     let topRanked = orderByMorePoints.splice(0, totalInRanking);
     return topRanked;
 }
-
-export const getIdWord = (word) => {
-    let idWord = word.wordData.idword;
-    return idWord;
-}
