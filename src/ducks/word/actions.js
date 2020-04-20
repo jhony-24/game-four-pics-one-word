@@ -7,7 +7,7 @@ import Auth from "src/models/auth";
 const base = "ducks/word";
 export const actionGetListAllWords = createAction(`${base}/GET_LIST_ALL_WORDS`);
 export const actionLoadingListAllWords = createAction(`${base}/LOADING_LIST_ALL_WORDS`);
-export const errorToGetData = createAction(`${base}/ERROR_TO_GET_DATA`);
+export const actionErrorToGetData = createAction(`${base}/ERROR_TO_GET_DATA`);
 export const actionUploadNewWord = createAction(`${base}/UPLOAD_NEW_WORD`);
 export const actionLoadingUploadNewWord = createAction(`${base}/LOADING_UPLOAD_NEW_WORD`);
 
@@ -23,7 +23,7 @@ export const getListAllWords = () => async (dispatch) => {
         }));
     }
     catch {
-        dispatch(errorToGetData({ error: true, loading: false }));
+        dispatch(actionErrorToGetData({ error: true, loading: false }));
     }
 }
 
@@ -44,12 +44,10 @@ export const uploadNewWord = (dataUpload) => async dispatch => {
             })
             return wordUploadd;
         });
-        dispatch(actionUploadNewWord({
-            loadingUpload: false,
-            uploaded: request.status
-        }));
+        dispatch(actionUploadNewWord({ loadingUpload: false, uploaded: request.status }));
     }
     catch {
         dispatch(actionLoadingUploadNewWord({ loadingUpload: false }));
     }
 }
+

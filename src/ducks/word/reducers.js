@@ -24,6 +24,7 @@ const handlers = {
             loadingUpload: payload.loadingUpload
         }
     },
+    
     [actions.actionUploadNewWord]: (state, action) =>
         operations.operationUploadNewWord(state, action),
 }

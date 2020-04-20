@@ -39,13 +39,17 @@ const getListAllWords = () => {
 
 
 const uploadNewWord = (parameters) => {
-    return word.post("/create?type=word",parameters);
+    return word.post("/create?type=word", parameters);
 }
 
+const incrementWordPoints = ({ id }) => {
+    return word.post("/word/increment", { id });
+}
 
 export default {
     signIn,
     getListAllWords,
     uploadImages,
-    uploadNewWord
+    uploadNewWord,
+    incrementWordPoints
 }

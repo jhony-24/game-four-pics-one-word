@@ -8,23 +8,25 @@ import { discoverActions } from "../../ducks/discover";
 import GameSuccess from "./subcomponents/GameSuccess";
 import style from './style';
 import { navigate } from 'gatsby';
-
-
+import { wordSelectors } from 'src/ducks/word';
 
 
 class DiscoverWord extends Component {
-
 
   componentDidMount() {
     this.props.dispatch(discoverActions.createLettersToDiscover(this.props.state));
   }
 
-
-  continueGame = () => {
-    navigate("/list");   
-    this.props.dispatch(discoverActions.removeMessyLetters());
+  componentDidUpdate() {
+    if (this.props.stateDiscover) {
+      this.props.dispatch(discoverActions.incrementPoints(this.props.idWord));
+    }
   }
 
+  continueGame = () => {
+    navigate("/list");
+    this.props.dispatch(discoverActions.removeMessyLetters());
+  }
 
   render() {
     const { lettersEmpty, messyLetters, stateDiscover } = this.props;
@@ -45,11 +47,11 @@ class DiscoverWord extends Component {
 }
 
 
-
-const mapStateToProps = ({ discover }) => ({
+const mapStateToProps = ({ discover, word }) => ({
   lettersEmpty: discover.testLetters,
   messyLetters: discover.messyLetters,
   stateDiscover: discover.stateDiscover,
+  idWord: wordSelectors.getIdWord(word)
 })
 
 

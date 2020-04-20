@@ -8,7 +8,7 @@ const Username = ({ to }) => {
         <TextField
             ref={to}
             placeholder="nombre de usuario..."
-            icon={<FaUserAlt />}
+            icon={<FaUserAlt color="rgb(100,100,100)" />}
             styles={{ ...style.input._definition }}
         />
     )
@@ -19,7 +19,7 @@ const Pass = ({ to }) => (
         ref={to}
         placeholder="contraseña..."
         type="password"
-        icon={<FaKey />}
+        icon={<FaKey color="rgb(100,100,100)" />}
         styles={{ ...style.input._definition }} />
 )
 
