@@ -5,7 +5,9 @@ const SEO = ({ children, ...props }) => {
   return (
     <Fragment>
       <Helmet {...props} />
-      {children}
+      <div className="root">
+        {children}
+      </div>
     </Fragment>
   )
 }

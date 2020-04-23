@@ -31,3 +31,24 @@ img {
     object-fit: cover;
     -webkit-user-drag: none;
 }
+
+@media screen and (min-width:400px) {
+    body,html {
+        height: 100%;
+        width: 100%;
+        body {
+            background: rgba(0,0,0,.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .root {
+        width: 350px;
+        background: white;
+        margin: .5em auto;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,.7);
+    }
+}
