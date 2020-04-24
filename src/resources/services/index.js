@@ -1,19 +1,12 @@
 import axios from "axios"
 
-
-const word = axios.create({
-    baseURL: "http://localhost:3000/api"
-});
-
-
-const uploadImage = axios.create({
-    baseURL: "http://localhost:7000/api"
-});
+const word = axios.create({ baseURL: "http://localhost:3000/api/v1" });
+const uploadImage = axios.create({  baseURL: "http://localhost:7000/api" });
 
 
 const signIn = ({ username = "", pass = "" }) => {
     const parameters = { username, pass };
-    return word.post("/user/check", parameters);
+    return word.post("/user/exists", parameters);
 }
 
 
@@ -39,7 +32,7 @@ const getListAllWords = () => {
 
 
 const uploadNewWord = (parameters) => {
-    return word.post("/create?type=word", parameters);
+    return word.post("/word", parameters);
 }
 
 const incrementWordPoints = ({ id }) => {
