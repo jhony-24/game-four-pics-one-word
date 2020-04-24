@@ -18,10 +18,16 @@ const ButtonViewInMobile = () => {
     window.open(location, title, target, features);
   }
 
+  const styles = {
+    top : 0,
+    background : "none",
+    boxShadow : 0
+  }
+
   if (!isMobile()) {
     return (
       <Portal>
-        <FloatingButton onClick={() => openWindow()} ><IoIosOpen size={20} /></FloatingButton>
+        <FloatingButton styles={styles} onClick={() => openWindow()} ><IoIosOpen size={20} /></FloatingButton>
       </Portal>
     )
   }
