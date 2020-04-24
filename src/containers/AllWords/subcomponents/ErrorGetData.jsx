@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, css } from "aphrodite/lib";
 import Text from "src/components/atoms/Text/Text";
 import { AiOutlineSync } from "react-icons/ai";
+import { TEXT_SECONDARY } from "src/tools/constants";
 
 
 const styles = StyleSheet.create({
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
     },
     title: {
         marginBottom: "20px",
-        color: "rgb(60,60,60)"
+        color: "rgb(60,60,60)",
     }
 })
 
@@ -29,11 +30,11 @@ const styles = StyleSheet.create({
 const ErrorGetData = () => {
     return (
         <div className={css(styles.container)}>
-            <h2 className={css(styles.title)} >Ups! A ocurrido un error</h2>
-            <Text color="gray">los datos no se obtuvieron correctamente</Text>
+            <h2 className={css(styles.title)} >Ups! An error has occurred</h2>
+            <Text color="gray">the data was not obtained correctly</Text>
             <br />
             <a href={window.location}>
-                <AiOutlineSync size={25} /> 
+                <AiOutlineSync size={30} color={TEXT_SECONDARY} /> 
                 <Text>reload</Text>
             </a>
         </div>
