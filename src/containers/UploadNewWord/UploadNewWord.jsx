@@ -40,6 +40,14 @@ class UploadNewWord extends Component {
     dispatch(wordActions.uploadNewWord({ letters, images }));
   }
 
+  getPreviewImages = () => {
+    let allImages = [...this.state.images];
+    let allUrls = allImages.map(currentFileImage => {
+      return URL.createObjectURL(currentFileImage);
+    });
+    return allUrls;
+  }
+
 
   render() {
     const { stateUploaded } = this.state;
@@ -56,7 +64,7 @@ class UploadNewWord extends Component {
                   <ButtonUploadImages onChange={this.handlerSelectImages} />
                   :
                   <Fragment>
-                    <CircleImageSquare images={[]} styles={style.gridPreviewImages._definition} />
+                    <CircleImageSquare images={this.getPreviewImages()} styles={style.gridPreviewImages._definition} />
                     <OptionsUploadWord onUpload={this.handlerUploadWord} onCancel={this.handlerCancelUploadWord} />
                   </Fragment>
               }
