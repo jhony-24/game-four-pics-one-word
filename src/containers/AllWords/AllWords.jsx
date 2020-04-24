@@ -5,6 +5,7 @@ import ItemFlatList from './subcomponents/ItemFlatList';
 import { connect } from "react-redux";
 import { wordActions } from "src/ducks/word";
 import LoadingPlaceholder from 'src/components/molecules/LoadingPlaceholder';
+import ErrorGetData from './subcomponents/ErrorGetData';
 
 class AllWords extends Component {
 
@@ -13,31 +14,33 @@ class AllWords extends Component {
   }
 
   render() {
-    const { listWords, loading } = this.props;
+    const { listWords, loading, error } = this.props;
     if (loading) {
       return <LoadingPlaceholder repeat={7} />
     }
-    else {
-      return (
-        <Fragment>
-          <Ranking />
-          <FlatList data={listWords} renderItem={(current, key) => (
-            <ItemFlatList
-              key={key}
-              current={current}
-              images={current.images}
-              letters={current.letters}
-              points={current.points} />
-          )} />
-        </Fragment>
-      )
+    if (error) {
+      return <ErrorGetData/>
     }
+    return (
+      <Fragment>
+        <Ranking />
+        <FlatList data={listWords} renderItem={(current, key) => (
+          <ItemFlatList
+            key={key}
+            current={current}
+            images={current.images}
+            letters={current.letters}
+            points={current.points} />
+        )} />
+      </Fragment>
+    )
   }
 
 }
 
 const mapStateToProps = ({ word }) => ({
   listWords: word.listWords,
-  loading: word.loading
+  loading: word.loading,
+  error: word.error
 });
 export default connect(mapStateToProps)(AllWords);

@@ -13,12 +13,13 @@ export const actionLoadingUploadNewWord = createAction(`${base}/LOADING_UPLOAD_N
 
 // actions creators
 export const getListAllWords = () => async (dispatch) => {
-    dispatch(actionLoadingListAllWords({ loading: true }));
+    dispatch(actionLoadingListAllWords({ loading: true, error: false }));
     try {
         const request = await services.getListAllWords();
         dispatch(actionGetListAllWords({
             listWords: request.data,
-            loading: false
+            loading: false,
+            error: false
         }));
     }
     catch {

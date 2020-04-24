@@ -20,4 +20,4 @@ const List = () => {
     )
 }
 
-export default CheckLogged(List);
+export default List;
