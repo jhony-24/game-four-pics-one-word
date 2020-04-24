@@ -6,11 +6,21 @@ import { connect } from "react-redux";
 import { wordActions } from "src/ducks/word";
 import LoadingPlaceholder from 'src/components/molecules/LoadingPlaceholder';
 import ErrorGetData from './subcomponents/ErrorGetData';
+import Letter from 'src/models/letter';
 
 class AllWords extends Component {
 
+  constructor(){
+    super();
+    this.letter = new Letter();
+  }
+
   componentDidMount() {
     this.props.dispatch(wordActions.getListAllWords());
+  }
+
+  generateRandomLetters = (text) => {
+    return this.letter.createNewTextArray(text).join('');
   }
 
   render() {
@@ -29,7 +39,7 @@ class AllWords extends Component {
             key={key}
             current={current}
             images={current.images}
-            letters={current.letters}
+            letters={this.generateRandomLetters(current.letters)}
             points={current.points} />
         )} />
       </Fragment>
