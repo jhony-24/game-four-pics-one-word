@@ -4,10 +4,9 @@ import { css } from 'aphrodite/no-important';
 import imageUpload from "../../../images/image_upload.svg";
 import Flex from "src/components/dom/Flex";
 import RowItem from "src/components/molecules/RowItem"
-import { IoIosArrowBack } from "react-icons/io"
-import IconNatural from "src/components/atoms/IconNatural"
 import Paragrah from "src/components/molecules/Paragraph"
 import UploadNewWord from "src/containers/UploadNewWord";
+import ButtonBack from 'src/components/molecules/ButtonBack';
 
 
 const ViewUploadWord = () => {
@@ -17,9 +16,7 @@ const ViewUploadWord = () => {
       <RowItem
         styles={style.header._definition}
         leftBody={
-          <span onClick={() => window.history.back()}>
-            <IconNatural icon={<IoIosArrowBack size={20} />} />
-          </span>
+          <ButtonBack/>
         } />
 
       <Flex styles={style.flex._definition}>

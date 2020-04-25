@@ -4,10 +4,9 @@ import { css } from 'aphrodite/no-important';
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import IconNatural from "src/components/atoms/IconNatural"
 import style from './style';
-import { IoIosArrowBack, IoMdStar } from "react-icons/io"
-import { TEXT_PRIMARY } from "src/tools/constants"
+import { IoMdStar } from "react-icons/io"
 import LazyLoad from 'src/hoc/LazyLoad';
-import { AiOutlineSync } from 'react-icons/ai';
+import ButtonBack from 'src/components/molecules/ButtonBack';
 
 
 const DiscoverWord = lazy(() => import("src/containers/DiscoverWord"))
@@ -19,7 +18,6 @@ const ViewGuessWord = (props) => {
   const { state } = props;
   const header = { ...style.header._definition };
   const textHeader = css(style.textHeader);
-  const colorIcon = TEXT_PRIMARY;
 
   const { points } = state;
 
@@ -28,9 +26,7 @@ const ViewGuessWord = (props) => {
       <RowItem
         styles={header}
         leftBody={
-          <span onClick={() => window.history.back()}>
-            <IconNatural icon={<IoIosArrowBack color={colorIcon} size={20} />} />
-          </span>
+          <ButtonBack color="white" />
         }
         centerBody={
           <p className={textHeader}>Jugando</p>
