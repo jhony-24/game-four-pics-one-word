@@ -5,10 +5,11 @@ import Flex from "src/components/dom/Flex"
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import Card from "src/components/molecules/Card"
 import Paragraph from "src/components/molecules/Paragraph"
-import { FaStar } from 'react-icons/fa';
+import { FaStar, FaCog } from 'react-icons/fa';
 import { TEXT_PRIMARY } from "src/tools/constants"
 import { wordSelectors } from "src/ducks/word";
 import { connect } from "react-redux";
+import { navigate } from 'gatsby';
 
 class Ranking extends Component {
 
@@ -18,7 +19,12 @@ class Ranking extends Component {
     return (
       <Card styles={{ ...style.card._definition }}>
         <Paragraph
-          title={title}
+          title={
+            <Flex>
+              {title}
+              <FaCog onClick={()=>navigate("/settings")} />
+            </Flex>
+          }
           colortitle={TEXT_PRIMARY}
           styles={{ ...style.title._definition }} />
         <Flex styles={{ ...style.container._definition }}>
