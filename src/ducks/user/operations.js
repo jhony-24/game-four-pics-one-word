@@ -33,3 +33,7 @@ export const operationSignIn = (state, { payload }) => {
             }
     }
 }
+
+export const operationsCreateUser = (state,{payload}) => {
+    return state;
+}
