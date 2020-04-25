@@ -42,7 +42,7 @@ class Login extends Component {
   }
 
   signUp = (data) => {
-
+    this.props.dispatch(userActions.createUser(data));
   }
 
 
