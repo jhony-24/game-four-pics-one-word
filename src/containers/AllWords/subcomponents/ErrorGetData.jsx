@@ -3,6 +3,7 @@ import { StyleSheet, css } from "aphrodite/lib";
 import Text from "src/components/atoms/Text/Text";
 import { AiOutlineSync } from "react-icons/ai";
 import { TEXT_SECONDARY } from "src/tools/constants";
+import Fade from "src/components/dom/Fade";
 
 
 const styles = StyleSheet.create({
@@ -30,13 +31,15 @@ const styles = StyleSheet.create({
 const ErrorGetData = () => {
     return (
         <div className={css(styles.container)}>
-            <h2 className={css(styles.title)} >Ups! An error has occurred</h2>
-            <Text color="gray">the data was not obtained correctly</Text>
-            <br />
-            <a href={window.location}>
-                <AiOutlineSync size={30} color={TEXT_SECONDARY} /> 
-                <Text>reload</Text>
-            </a>
+            <Fade type="in">
+                <h2 className={css(styles.title)} >Ups! An error has occurred</h2>
+                <Text color="gray">the data was not obtained correctly</Text>
+                <br />
+                <a href={window.location}>
+                    <AiOutlineSync size={30} color={TEXT_SECONDARY} />
+                    <Text>reload</Text>
+                </a>
+            </Fade>
         </div>
     )
 }
