@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const word = axios.create({ baseURL: "http://localhost:3000/api/v1" });
-const uploadImage = axios.create({  baseURL: "http://localhost:7000/api" });
+const uploadImage = axios.create({ baseURL: "http://localhost:7000/api" });
 
 
 const signIn = ({ username = "", pass = "" }) => {
@@ -9,6 +9,10 @@ const signIn = ({ username = "", pass = "" }) => {
     return word.post("/user/exists", parameters);
 }
 
+const createUser = ({ username, pass }) => {
+    const parameters = { username, pass };
+    return word.post("/user", parameters);
+}
 
 const uploadImages = ({ images }) => {
     const formData = new FormData();
@@ -44,5 +48,6 @@ export default {
     getListAllWords,
     uploadImages,
     uploadNewWord,
-    incrementWordPoints
+    incrementWordPoints,
+    createUser
 }
