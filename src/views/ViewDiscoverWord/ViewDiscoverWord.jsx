@@ -4,9 +4,10 @@ import { css } from 'aphrodite/no-important';
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import IconNatural from "src/components/atoms/IconNatural"
 import style from './style';
-import { IoIosArrowBack, IoMdNotifications } from "react-icons/io"
+import { IoIosArrowBack, IoMdStar } from "react-icons/io"
 import { TEXT_PRIMARY } from "src/tools/constants"
 import LazyLoad from 'src/hoc/LazyLoad';
+import { AiOutlineSync } from 'react-icons/ai';
 
 
 const DiscoverWord = lazy(() => import("src/containers/DiscoverWord"))
@@ -20,6 +21,8 @@ const ViewGuessWord = (props) => {
   const textHeader = css(style.textHeader);
   const colorIcon = TEXT_PRIMARY;
 
+  const { points } = state;
+
   return (
     <div className="guess-word">
       <RowItem
@@ -30,12 +33,14 @@ const ViewGuessWord = (props) => {
           </span>
         }
         centerBody={
-          <marquee className={textHeader}>descubrir palabra...</marquee>
+          <p className={textHeader}>Jugando</p>
         }
         rightBody={
-          <span>
-            <IconNatural icon={<IoMdNotifications color={colorIcon} size={20} />} />
-          </span>
+          <IconNatural
+            icon={<IoMdStar size={20} />}
+            text={points}
+            colortext="white"
+            coloricon="yellow" />
         } />
 
       <CircleImageSquare images={state.images} styles={{ ...style.squareImage._definition }} />

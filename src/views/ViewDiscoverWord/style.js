@@ -8,7 +8,8 @@ const style = StyleSheet.create({
         ':hover' : false
     },
     textHeader : {
-        color : TEXT_PRIMARY
+        color : TEXT_PRIMARY,
+        textAlign : "center"
     },
     squareImage : {
         borderRadius : 10,
