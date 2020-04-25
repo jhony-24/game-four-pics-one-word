@@ -32,7 +32,6 @@ export const uploadNewWord = (dataUpload) => async dispatch => {
     const { letters, images } = dataUpload;
     const { uploadImages, uploadNewWord } = services;
     const user = JSON.parse(Auth.get());
-
     dispatch(actionLoadingUploadNewWord({ loadingUpload: true }));
     try {
         const request = await uploadImages({ images }).then(({ data: images }) => {
@@ -40,7 +39,8 @@ export const uploadNewWord = (dataUpload) => async dispatch => {
                 iduser: user.iduser,
                 letters,
                 images,
-                points: 0
+                points: 0,
+                dateCreated : (new Date()).toLocaleString(),
             })
             return wordUploadd;
         });
