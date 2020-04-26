@@ -1,12 +1,12 @@
-import "./upload";
-import "./word";
+import * as upload from "./upload";
+import * as word from "./word";
 
 
 export default {
-    uploadImages,
-    signIn,
-    getListAllWords,
-    uploadNewWord,
-    incrementWordPoints,
-    createUser
+    uploadImages : upload.uploadImages,
+    signIn : word.signIn,
+    getListAllWords : word.getListAllWords,
+    uploadNewWord : word.uploadNewWord,
+    incrementWordPoints : word.incrementWordPoints,
+    createUser : word.createUser
 }

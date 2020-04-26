@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const uploadImage = axios.create({
     baseURL: "http://localhost:7000/api"
 });

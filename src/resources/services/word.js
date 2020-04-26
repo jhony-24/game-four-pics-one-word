@@ -1,10 +1,10 @@
 import axios from "axios"
 
-const word = axios.create({
-    baseURL: "http://localhost:3000/api/v1",
-    headers: {
-        "Authorization": ""
-    }
+const word = axios.create({ 
+    baseURL: "http://localhost:3000/api/v1" ,
+    headers : {
+        "Authorization" : process.env.GATSBY_TOKEN_API_WORD
+    } 
 });
 
 
