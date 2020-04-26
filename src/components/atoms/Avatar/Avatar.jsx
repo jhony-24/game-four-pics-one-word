@@ -3,20 +3,27 @@ import { css } from 'aphrodite/no-important';
 import style from './style';
 import { styleDynamic } from "src/tools/functions"
 
-const Avatar = ({ src , size }) => {
+const Avatar = ({ color , src , size , icon }) => {
 
-  const ctnAvatar = css(style.avatar);
-  const avatar = css(style.avatar,styleDynamic({width:size,height:size}));
+  const avatar = css(style.avatar,styleDynamic({
+    width:size,
+    height:size,
+    background : color
+  }));
 
   return (
-    <div className={ctnAvatar} >
-      <img src={src} className={avatar} />
+    <div className={avatar} >
+      { src && <img src={src} alt={src} className={avatar} /> }
+      { icon && icon }
     </div>
   );
 }
 
 Avatar.defaultProps = {
-  size : "45px"
+  size : "45px",
+  color : "rgb(230,230,230)",
+  icon : null,
+  src : null
 }
 
 export default Avatar;
