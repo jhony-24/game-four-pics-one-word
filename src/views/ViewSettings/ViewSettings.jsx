@@ -10,6 +10,7 @@ import Paragraph from 'src/components/molecules/Paragraph';
 import { TEXT_PRIMARY } from 'src/tools/constants';
 import { IoIosMoon, IoIosMusicalNote, IoIosText } from 'react-icons/io';
 import TextField from 'src/components/atoms/TextField';
+import ToggleSwitch from 'src/components/atoms/ToggleSwitch/ToggleSwitch';
 
 const ViewSettings = () => {
 
@@ -57,8 +58,7 @@ const ViewSettings = () => {
         leftBody={<Avatar color="rgb(30,130,230)" icon={<IoIosText color="white" />} />}
         centerBody={
           <Paragraph
-            title="Cambiar mi nombre"
-          />
+            title="Cambiar mi nombre" />
         }
       />
 
