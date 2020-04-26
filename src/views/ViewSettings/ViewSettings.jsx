@@ -36,21 +36,23 @@ const ViewSettings = () => {
         leftBody={<Avatar src="https://image.shutterstock.com/image-photo/casually-handsome-confident-young-man-260nw-439433326.jpg" />}
         centerBody={
           <Paragraph
-            title="Cambiar mi nombre"
-            detail="10 publicaciones" colordetail="gray" />
+            title="Jhony vega cuya"
+            detail={`10 publicaciones`} />
         }
       />
 
       <RowItem
         styles={{ padding: "20px 15px" }}
         leftBody={<Avatar color="rgb(60,60,60)" icon={<IoIosMoon color="white" />} />}
-        centerBody={<Paragraph title="dark mode" />}
+        centerBody={<Paragraph title="dark mode" detail="cambiar la apariencia" colordetail="gray"  />}
+        rightBody={<ToggleSwitch/>}
       />
 
       <RowItem
         styles={{ padding: "20px 15px" }}
         leftBody={<Avatar color="orange" icon={<IoIosMusicalNote color="white" />} />}
-        centerBody={<Paragraph title="active sounds" />}
+        centerBody={<Paragraph title="active sounds"  detail="administra los sonidos generales" colordetail="gray" />}
+        rightBody={<ToggleSwitch/>}
       />
 
       <RowItem
@@ -58,7 +60,8 @@ const ViewSettings = () => {
         leftBody={<Avatar color="rgb(30,130,230)" icon={<IoIosText color="white" />} />}
         centerBody={
           <Paragraph
-            title="Cambiar mi nombre" />
+            title="Cambiar mi nombre"
+            detail="tener nuevo nombre de usuario" colordetail="gray"  />
         }
       />
 
