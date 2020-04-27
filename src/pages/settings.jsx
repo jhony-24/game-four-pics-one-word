@@ -8,7 +8,9 @@ const Settings = () => {
     return (
         <SEO title="my settings" >
             <div className="settings">
-                <ViewSettings/>
+                <Fade type="in">
+                    <ViewSettings />
+                </Fade>
             </div>
         </SEO>
     )

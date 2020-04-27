@@ -7,6 +7,7 @@ import Paragraph from 'src/components/molecules/Paragraph';
 import RowItem from "src/components/molecules/RowItem"
 import { css } from 'aphrodite/no-important';
 import style from './style';
+import Container from 'src/components/dom/Container';
 
 
 class SettingsApp extends Component {
@@ -17,11 +18,11 @@ class SettingsApp extends Component {
           styles={style.item._definition}
           leftBody={<Avatar src="https://image.shutterstock.com/image-photo/casually-handsome-confident-young-man-260nw-439433326.jpg" />}
           centerBody={
-            <div className={css(style.ctnParagraph)}>
+            <Container styles={style.ctnParagraph}>
               <Paragraph
                 title="Jhony vega cuya"
                 detail={`10 publicaciones`} />
-            </div>
+            </Container>
           }
         />
 
@@ -29,9 +30,9 @@ class SettingsApp extends Component {
           styles={style.item._definition}
           leftBody={<Avatar color="rgb(60,60,60)" icon={<IoIosMoon color="white" />} />}
           centerBody={
-            <div className={css(style.ctnParagraph)}>
+            <Container styles={style.ctnParagraph}>
               <Paragraph title="dark mode" detail="cambiar la apariencia" colordetail="gray" />
-            </div>
+            </Container>
           }
           rightBody={<ToggleSwitch />}
         />
@@ -40,9 +41,9 @@ class SettingsApp extends Component {
           styles={style.item._definition}
           leftBody={<Avatar color="orange" icon={<IoIosMusicalNote color="white" />} />}
           centerBody={
-            <div className={css(style.ctnParagraph)}>
+            <Container styles={style.ctnParagraph}>
               <Paragraph title="active sounds" detail="administra los sonidos generales" colordetail="gray" />
-            </div>
+            </Container>
           }
           rightBody={<ToggleSwitch />}
         />
@@ -50,11 +51,11 @@ class SettingsApp extends Component {
           styles={style.item._definition}
           leftBody={<Avatar color="rgb(30,130,230)" icon={<IoIosText color="white" />} />}
           centerBody={
-            <div className={css(style.ctnParagraph)}>
+            <Container styles={style.ctnParagraph}>
               <Paragraph
                 title="Cambiar mi nombre"
                 detail="tener nuevo nombre de usuario" colordetail="gray" />
-            </div>
+            </Container>
           }
         />
       </Fragment>
