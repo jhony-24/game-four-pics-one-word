@@ -5,12 +5,8 @@ import ButtonBack from 'src/components/molecules/ButtonBack';
 import style from './style';
 import { FaCog } from 'react-icons/fa';
 import IconNatural from 'src/components/atoms/IconNatural';
-import Avatar from 'src/components/atoms/Avatar/Avatar';
-import Paragraph from 'src/components/molecules/Paragraph';
 import { TEXT_PRIMARY } from 'src/tools/constants';
-import { IoIosMoon, IoIosMusicalNote, IoIosText } from 'react-icons/io';
-import TextField from 'src/components/atoms/TextField';
-import ToggleSwitch from 'src/components/atoms/ToggleSwitch/ToggleSwitch';
+import SettingsApp from 'src/containers/SettingsApp';
 
 const ViewSettings = () => {
 
@@ -30,42 +26,7 @@ const ViewSettings = () => {
             coloricon={colorLight}
           />}
       />
-
-      <RowItem
-        styles={{ padding: "20px 15px" }}
-        leftBody={<Avatar src="https://image.shutterstock.com/image-photo/casually-handsome-confident-young-man-260nw-439433326.jpg" />}
-        centerBody={
-          <Paragraph
-            title="Jhony vega cuya"
-            detail={`10 publicaciones`} />
-        }
-      />
-
-      <RowItem
-        styles={{ padding: "20px 15px" }}
-        leftBody={<Avatar color="rgb(60,60,60)" icon={<IoIosMoon color="white" />} />}
-        centerBody={<Paragraph title="dark mode" detail="cambiar la apariencia" colordetail="gray"  />}
-        rightBody={<ToggleSwitch/>}
-      />
-
-      <RowItem
-        styles={{ padding: "20px 15px" }}
-        leftBody={<Avatar color="orange" icon={<IoIosMusicalNote color="white" />} />}
-        centerBody={<Paragraph title="active sounds"  detail="administra los sonidos generales" colordetail="gray" />}
-        rightBody={<ToggleSwitch/>}
-      />
-
-      <RowItem
-        styles={{ padding: "20px 15px" }}
-        leftBody={<Avatar color="rgb(30,130,230)" icon={<IoIosText color="white" />} />}
-        centerBody={
-          <Paragraph
-            title="Cambiar mi nombre"
-            detail="tener nuevo nombre de usuario" colordetail="gray"  />
-        }
-      />
-
-
+      <SettingsApp />
     </div>
   );
 
