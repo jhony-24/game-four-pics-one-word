@@ -1,0 +1,37 @@
+import React from 'react'
+import Avatar from 'src/components/atoms/Avatar/Avatar';
+import Paragraph from 'src/components/molecules/Paragraph';
+import RowItem from "src/components/molecules/RowItem"
+import Container from 'src/components/dom/Container';
+import style from '../style';
+
+const RowSetting = ({ rightBody, title, detail, icon, bgIcon , src }) => {
+    return (
+        <RowItem
+            styles={style.item._definition}
+            leftBody={
+                <Avatar
+                    color={bgIcon}
+                    icon={icon} 
+                    src={src} />
+            }
+            centerBody={
+                <Container styles={style.ctnParagraph}>
+                    <Paragraph
+                        title={title}
+                        detail={detail}
+                        colordetail="gray" />
+                </Container>
+            }
+            rightBody={rightBody}
+        />
+    )
+}
+
+RowSetting.defaultProps = {
+    bgIcon: "transparent",
+    icon : null,
+    src : null
+}
+
+export default RowSetting;

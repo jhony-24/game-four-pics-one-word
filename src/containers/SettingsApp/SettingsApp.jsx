@@ -5,59 +5,43 @@ import ToggleSwitch from 'src/components/atoms/ToggleSwitch/ToggleSwitch';
 import Avatar from 'src/components/atoms/Avatar/Avatar';
 import Paragraph from 'src/components/molecules/Paragraph';
 import RowItem from "src/components/molecules/RowItem"
-import { css } from 'aphrodite/no-important';
 import style from './style';
 import Container from 'src/components/dom/Container';
+import RowSetting from './suubcomponents/RowSetting';
+import Text from 'src/components/atoms/Text/Text';
 
 
 class SettingsApp extends Component {
   render() {
     return (
       <Fragment>
-        <RowItem
-          styles={style.item._definition}
-          leftBody={<Avatar src="https://image.shutterstock.com/image-photo/casually-handsome-confident-young-man-260nw-439433326.jpg" />}
-          centerBody={
-            <Container styles={style.ctnParagraph}>
-              <Paragraph
-                title="Jhony vega cuya"
-                detail={`10 publicaciones`} />
-            </Container>
-          }
+        <RowSetting
+          title="jhony vega cuya"
+          detail={<Text color="black">10 publicaciones</Text>}
+          src="https://cdn.pixabay.com/photo/2020/04/21/10/26/animal-5072537__340.jpg"
         />
-
-        <RowItem
-          styles={style.item._definition}
-          leftBody={<Avatar color="rgb(60,60,60)" icon={<IoIosMoon color="white" />} />}
-          centerBody={
-            <Container styles={style.ctnParagraph}>
-              <Paragraph title="dark mode" detail="cambiar la apariencia" colordetail="gray" />
-            </Container>
-          }
+        <RowSetting
+          title="dark mode"
+          detail="cambiar la apariencia"
+          bgIcon="rgb(60,60,60)"
+          icon={<IoIosMoon color="white" />}
+          rightBody={<ToggleSwitch />}
+        />
+        <RowSetting
+          title="active sounds"
+          detail="administra los sonidos generales"
+          bgIcon="orange"
+          icon={<IoIosMusicalNote color="white" />}
+          rightBody={<ToggleSwitch />}
+        />
+        <RowSetting
+          title="change my name"
+          detail="tener nuevo nombre de usuario"
+          bgIcon="rgb(30,130,230)"
+          icon={<IoIosText color="white" />}
           rightBody={<ToggleSwitch />}
         />
 
-        <RowItem
-          styles={style.item._definition}
-          leftBody={<Avatar color="orange" icon={<IoIosMusicalNote color="white" />} />}
-          centerBody={
-            <Container styles={style.ctnParagraph}>
-              <Paragraph title="active sounds" detail="administra los sonidos generales" colordetail="gray" />
-            </Container>
-          }
-          rightBody={<ToggleSwitch />}
-        />
-        <RowItem
-          styles={style.item._definition}
-          leftBody={<Avatar color="rgb(30,130,230)" icon={<IoIosText color="white" />} />}
-          centerBody={
-            <Container styles={style.ctnParagraph}>
-              <Paragraph
-                title="Cambiar mi nombre"
-                detail="tener nuevo nombre de usuario" colordetail="gray" />
-            </Container>
-          }
-        />
       </Fragment>
     )
   }
