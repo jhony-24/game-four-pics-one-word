@@ -3,7 +3,7 @@ import { css } from 'aphrodite/no-important';
 import style from "./style";
 import Flex from "src/components/dom/Flex"
 import Skeleton from "react-loading-skeleton"
-
+import PropTypes from "prop-types"
 
 
 const LoadingPlaceholder = ({ sizecircle, heightbar, repeat }) => {
@@ -30,13 +30,16 @@ const LoadingPlaceholder = ({ sizecircle, heightbar, repeat }) => {
 }
 
 
-
 LoadingPlaceholder.defaultProps = {
   repeat: 5,
   sizecircle: 40,
   heightbar: 40
 }
 
-
+LoadingPlaceholder.propTypes = {
+  sizecircle: PropTypes.number,
+  heightbar: PropTypes.number,
+  repeat: PropTypes.number
+}
 
 export default memo(LoadingPlaceholder);

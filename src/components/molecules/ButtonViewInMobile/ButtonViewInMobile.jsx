@@ -3,13 +3,14 @@ import FloatingButton from 'src/components/atoms/FloatingButton';
 import { IoIosOpen } from 'react-icons/io';
 import { Portal } from 'react-portal';
 import useResize from 'src/use/useResize';
+import PropTypes from "prop-types"
+
 
 const ButtonViewInMobile = () => {
 
   const [width] = useResize();
-
   const isMobile = () => width <= 400;
-  
+
   const openWindow = () => {
     let location = window.location;
     let title = document.title;
@@ -19,9 +20,9 @@ const ButtonViewInMobile = () => {
   }
 
   const styles = {
-    top : 0,
-    background : "none",
-    boxShadow : 0
+    top: 0,
+    background: "none",
+    boxShadow: 0
   }
 
   if (!isMobile()) {

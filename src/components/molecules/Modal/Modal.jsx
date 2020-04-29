@@ -8,10 +8,11 @@ import Paragraph from "src/components/molecules/Paragraph"
 import Fade from "src/components/dom/Fade"
 import { Portal } from 'react-portal';
 import { useState } from 'react';
+import PropTypes from "prop-types"
 
 
 const Modal = ({ title, message, visible, onClose }) => {
-  
+
   return (
     visible &&
     <Portal>
@@ -47,6 +48,13 @@ Modal.defaultProps = {
   message: "",
   visible: false,
   onClose: () => null
+}
+
+Modal.propTypes = {
+  title: PropTypes.oneOf([PropTypes.string, PropTypes.element]),
+  message: PropTypes.oneOf([PropTypes.string, PropTypes.element, PropTypes.node]),
+  visible: PropTypes.bool,
+  onClose: PropTypes.func
 }
 
 export default Modal;
