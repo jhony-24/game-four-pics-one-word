@@ -24,7 +24,7 @@ const TextField = forwardRef(({ styles, icon, type, value, placeholder, onChange
         id={name}
         placeholder={placeholder}
         className={inputStyle}
-        value={value}
+        defaultValue={value}
         onKeyUp={onChange}
         spellCheck={false} />
     </Flex>
@@ -34,6 +34,7 @@ const TextField = forwardRef(({ styles, icon, type, value, placeholder, onChange
 
 
 TextField.defaultProps = {
+  value: '',
   type: "text",
   onChange: () => null
 }
