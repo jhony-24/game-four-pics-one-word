@@ -3,6 +3,7 @@ import { css } from 'aphrodite/no-important';
 import style from './style';
 import { styleDynamic } from "src/tools/functions";
 import useToggle from 'src/use/useToggle';
+import PropTypes from "prop-types"
 
 const ToggleSwitch = ({ checked, onChange }) => {
 
@@ -27,6 +28,11 @@ const ToggleSwitch = ({ checked, onChange }) => {
 ToggleSwitch.defaultProps = {
   checked: false,
   onChange: () => null
+}
+
+ToggleSwitch.propTypes = {
+  checked: PropTypes.bool,
+  onChange: PropTypes.func
 }
 
 export default ToggleSwitch;

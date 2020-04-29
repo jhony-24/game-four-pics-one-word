@@ -1,13 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { IoIosMoon, IoIosMusicalNote, IoIosText } from 'react-icons/io';
-import TextField from 'src/components/atoms/TextField';
 import ToggleSwitch from 'src/components/atoms/ToggleSwitch/ToggleSwitch';
-import Avatar from 'src/components/atoms/Avatar/Avatar';
-import Paragraph from 'src/components/molecules/Paragraph';
-import RowItem from "src/components/molecules/RowItem"
-import style from './style';
-import Container from 'src/components/dom/Container';
-import RowSetting from './suubcomponents/RowSetting';
+import RowSetting from './subcomponents/RowSetting';
 import Text from 'src/components/atoms/Text/Text';
 
 
