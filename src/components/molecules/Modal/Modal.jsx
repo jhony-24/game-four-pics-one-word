@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { css } from 'aphrodite/no-important';
 import style from './style';
 import Flex from "src/components/dom/Flex"
@@ -7,9 +7,7 @@ import { IoIosClose } from "react-icons/io"
 import Paragraph from "src/components/molecules/Paragraph"
 import Fade from "src/components/dom/Fade"
 import { Portal } from 'react-portal';
-import { useState } from 'react';
 import PropTypes from "prop-types"
-
 
 const Modal = ({ title, message, visible, onClose }) => {
 
@@ -28,7 +26,9 @@ const Modal = ({ title, message, visible, onClose }) => {
               <div className={css(style.modal)} >
                 <Flex>
                   <span className="i-h"><strong>{title}</strong></span>
-                  <span className="i-h"><IoIosClose size={25} onClick={onClose} /></span>
+                  <span className="i-h" onClick={onClose} onKeyDown={onClose} role="button" tabIndex="0" >
+                    <IoIosClose size={25} />
+                  </span>
                 </Flex>
                 <Flex>
                   <Paragraph detail={message} colordetail="rgb(80,80,80)" />

@@ -1,6 +1,5 @@
 import { StyleSheet } from "aphrodite/no-important"
 
-
 const style = StyleSheet.create({
     flex: {
         width: "100%",
@@ -36,7 +35,5 @@ const style = StyleSheet.create({
         boxShadow : "unset"
     }
 })
-
-
 
 export default style;

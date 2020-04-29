@@ -1,6 +1,4 @@
 import { StyleSheet } from "aphrodite/no-important"
-import { PRIMARY_COLOR  } from "src/tools/constants";
-
 
 const style = StyleSheet.create({
     f : {
@@ -19,7 +17,6 @@ const style = StyleSheet.create({
         textTransform : "uppercase"
     }
 })
-
 
 
 export default style;

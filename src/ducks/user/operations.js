@@ -31,9 +31,11 @@ export const operationSignIn = (state, { payload }) => {
                 ...state,
                 loading: false
             }
+        default:
+            return state;
     }
 }
 
-export const operationsCreateUser = (state,{payload}) => {
+export const operationsCreateUser = (state, { payload }) => {
     return state;
 }

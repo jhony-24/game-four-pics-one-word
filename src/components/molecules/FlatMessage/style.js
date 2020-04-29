@@ -1,6 +1,4 @@
 import { StyleSheet } from "aphrodite/no-important"
-import { PRIMARY_COLOR  } from "src/tools/constants";
-
 
 const style = StyleSheet.create({
     message : {
@@ -15,7 +13,6 @@ const style = StyleSheet.create({
         lineHeight : 0
     }
 })
-
 
 
 export default style;

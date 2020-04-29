@@ -16,7 +16,7 @@ const Letter = ({ text, background, visibilityText, color, onPressLetter }) => {
   }));
 
   return (
-    <div onClick={onPressLetter}>
+    <div onClick={onPressLetter} onKeyDown={onPressLetter} role="button" tabIndex="0">
       <Flex styles={flex}>
         <span className={letterStyle}>{text}</span>
       </Flex>
@@ -34,8 +34,8 @@ Letter.defaultProps = {
 }
 
 Letter.propTypes = {
-  text: PropTypes.string,
-  background: PropTypes.string,
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  background: PropTypes.oneOfType([PropTypes.string,PropTypes.bool]),
   visibilityText: PropTypes.bool,
   color: PropTypes.string,
   onPressLetter: PropTypes.func

@@ -30,6 +30,6 @@ export const signIn = ({ username, pass }) => async dispatch => {
 }
 
 export const createUser = ({ username, pass }) => async dispatch => {
-    const request = await services.createUser({ username, pass });
+    await services.createUser({ username, pass });
     dispatch(actionCreateUser());
 }

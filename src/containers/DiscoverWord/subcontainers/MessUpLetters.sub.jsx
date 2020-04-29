@@ -8,15 +8,12 @@ import { discoverActions } from "src/ducks/discover";
 import { connect } from "react-redux";
 
 
-
 class MessUpLetters extends Component {
-
     
     effectStart = () => ({
         y: 0,
         opacity: 1
     })
-
 
     effectInitial = () => {
         let max = 1000;
@@ -27,19 +24,15 @@ class MessUpLetters extends Component {
         }
     }
 
-    
     transition = () => ({
         duration: Math.random() * 2
     })
-
 
     handlerPressLetter = (paramsLetter) => {
         this.props.dispatch(discoverActions.assignLetterToOrder(paramsLetter));
     }
 
-
-    letterEmpty = (letter) => letter !== 0;
-
+    letterEmpty = (letter = 0) => letter !== 0;
 
     render() {
         const { letters } = this.props;
@@ -67,17 +60,12 @@ class MessUpLetters extends Component {
 }
 
 
-
 MessUpLetters.defaultProps = {
     letters: []
 }
 
-
-
 MessUpLetters.propTypes = {
     letters: PropTypes.array
 }
-
-
 
 export default connect()(MessUpLetters);

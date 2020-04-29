@@ -1,5 +1,5 @@
 import React from 'react';
-import { css , StyleSheet } from "aphrodite/no-important"
+import { css } from "aphrodite/no-important"
 
 const Container = ({styles,children}) => {
   return(

@@ -1,6 +1,5 @@
 import { StyleSheet } from "aphrodite/no-important"
 
-
 const style = StyleSheet.create({
     flex : {
         flexDirection : "column",
@@ -19,7 +18,6 @@ const style = StyleSheet.create({
         lineHeight : "18px"
     }
 })
-
 
 
 export default style;

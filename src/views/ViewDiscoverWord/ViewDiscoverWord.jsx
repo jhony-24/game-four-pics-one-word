@@ -34,7 +34,7 @@ const ViewGuessWord = (props) => {
         rightBody={
           <IconNatural
             icon={<IoMdStar size={20} />}
-            text={points}
+            text={points.toString()}
             colortext="white"
             coloricon="yellow" />
         } />

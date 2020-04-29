@@ -1,7 +1,6 @@
 import { StyleSheet } from "aphrodite/no-important"
 import { TEXT_PRIMARY } from "src/tools/constants"
 
-
 const style = StyleSheet.create({
     backdrop : {
         zIndex : 1000,
@@ -20,7 +19,6 @@ const style = StyleSheet.create({
         boxShadow : "0 10px 20px rgba(0,0,0,.1)"
     }
 })
-
 
 
 export default style;

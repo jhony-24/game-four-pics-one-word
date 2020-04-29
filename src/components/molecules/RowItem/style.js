@@ -1,6 +1,5 @@
 import { StyleSheet } from "aphrodite/no-important"
 
-
 const style = StyleSheet.create({
     flex : {
         transition : '.3s' ,
@@ -19,7 +18,5 @@ const style = StyleSheet.create({
         flex : "none"
     }
 })
-
-
 
 export default style;

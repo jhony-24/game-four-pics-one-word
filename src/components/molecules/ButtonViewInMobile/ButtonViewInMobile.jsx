@@ -3,8 +3,6 @@ import FloatingButton from 'src/components/atoms/FloatingButton';
 import { IoIosOpen } from 'react-icons/io';
 import { Portal } from 'react-portal';
 import useResize from 'src/use/useResize';
-import PropTypes from "prop-types"
-
 
 const ButtonViewInMobile = () => {
 

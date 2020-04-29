@@ -11,9 +11,9 @@ const FloatingButton = ({ onClick, children, styles }) => {
   const label = css(style.label);
 
   return (
-    <div className={floating} onClick={onClick}>
+    <button className={floating} onClick={onClick}>
       <label className={label} >{children}</label>
-    </div>
+    </button>
   )
 
 }

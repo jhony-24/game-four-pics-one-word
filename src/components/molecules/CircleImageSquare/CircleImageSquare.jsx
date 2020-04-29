@@ -12,7 +12,7 @@ const CircleImageSquare = ({ styles, images, onClick }) => {
 
   return (
     <div className={ctn}>
-      <div className={ctnImage} onClick={onClick}>
+      <div className={ctnImage} onClick={onClick} role="button" tabIndex="0" onKeyDown={onClick}>
         {
           images.map((currentImage, index) => {
             let image = { backgroundImage: `url("${currentImage}")` };

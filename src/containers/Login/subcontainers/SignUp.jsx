@@ -4,10 +4,6 @@ import style from '../style';
 import LoginInput from '../subcomponents/LoginInput';
 import Flex from "src/components/dom/Flex"
 import Text from "src/components/atoms/Text"
-import { css } from 'aphrodite/no-important';
-
-
-
 
 class SignUp extends Component {
 

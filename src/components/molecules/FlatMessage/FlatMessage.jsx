@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 
 const FlatMessage = ({ text, textColor, iconColor, verticalMargin, horizontalMargin }) => {
 
-  let [visible, setVisible] = useState(1);
+  let [visible, setVisible] = useState(true);
   let animateExit = { opacity: 0 };
 
   let textStyle = { color: textColor };
@@ -20,6 +20,10 @@ const FlatMessage = ({ text, textColor, iconColor, verticalMargin, horizontalMar
   const tM = css(style.tM, styleDynamic(textStyle))
   const bM = css(style.bM);
 
+  const removeFlatMessage = () => {
+    setVisible(false);
+  }
+
   return (
     <AnimatePresence>
       {
@@ -27,7 +31,9 @@ const FlatMessage = ({ text, textColor, iconColor, verticalMargin, horizontalMar
           <Hide.div exit={animateExit}>
             <Flex styles={flexStyle}>
               <span className={tM}>{text}</span>
-              <span className={bM} onClick={() => setVisible(0)}><IoIosCloseCircle color={iconColor} size={20} /></span>
+              <span className={bM} role="button" tabIndex="0" onClick={removeFlatMessage} onKeyDown={removeFlatMessage}>
+                <IoIosCloseCircle color={iconColor} size={20} />
+              </span>
             </Flex>
           </Hide.div>
         )

@@ -5,7 +5,7 @@ const initial = { x: "100%", opacity: 0 }
 const animate = { x: 0, opacity: 1 }
 
 export default ({ type, children }) => {
-    if (type == "in") {
+    if (type === "in") {
         return (
             <Fade.div initial={{opacity:0}} animate={{opacity:1}} >
                 {children}

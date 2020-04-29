@@ -6,10 +6,6 @@ const initialState = {
     listWords: [], //all words 
     error: false, // error to generate data,
     loading: true,
-    wordData: null, // data of word
-    stateDiscover: false, // indicate if discover the word 
-    testLetters: [], // letter to try
-    messyLetters: [], // mess up letter
     loadingUpload: false,
 }
 

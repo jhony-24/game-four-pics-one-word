@@ -5,19 +5,13 @@ import { PRIMARY_COLOR, SILVER_COLOR, TEXT_PRIMARY } from "src/tools/constants";
 import { connect } from "react-redux";
 import { discoverActions } from "src/ducks/discover";
 
-
-
-
 class TestLetters extends Component {
-
     
     handlerPressLetter = (paramsLetter) => {
         this.props.dispatch(discoverActions.giveBackLetter(paramsLetter));
     }
 
-
     letterEmpty = (letter) => letter !== 0;
-
 
     render() {
         const { letters } = this.props;
@@ -39,9 +33,5 @@ class TestLetters extends Component {
     }
 
 }
-
-
-
-
 
 export default connect()(TestLetters);

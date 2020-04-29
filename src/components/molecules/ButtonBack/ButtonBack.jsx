@@ -5,9 +5,9 @@ import PropTypes from "prop-types"
 
 const ButtonBack = ({ color }) => {
   return (
-    <span onClick={() => window.history.back()}>
+    <button onClick={() => window.history.back()} className="btn-back" >
       <IconNatural icon={<IoIosArrowBack size={20} />} coloricon={color} />
-    </span>
+    </button>
   );
 }
 

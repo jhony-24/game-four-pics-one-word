@@ -9,7 +9,7 @@ const GameSuccess = ({word,onClick}) => (
         <h2>Estupendo lo lograste</h2>
         <h3>La palabra es <q>{word}</q></h3>
         <br />
-        <small onClick={onClick}>continuar y ganar más</small>
+        <button onClick={onClick}>continuar y ganar más</button>
     </StarsBurst>
 )
 

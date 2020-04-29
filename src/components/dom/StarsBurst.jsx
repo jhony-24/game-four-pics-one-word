@@ -5,7 +5,6 @@ import { css , StyleSheet } from "aphrodite/no-important"
 import { styleDynamic } from "src/tools/functions"
 
 
-
 const style = StyleSheet.create({
    cStars : {
      textAlign : "center",
@@ -24,9 +23,7 @@ const style = StyleSheet.create({
 })
 
 
-
 const StarsBurst = ({children,radius = 80,colortext ,colorstar }) => {
-
 
   const propsStyles = styleDynamic({color:colortext});
   const [ visible , setVisible ] = useState(true);
@@ -36,7 +33,6 @@ const StarsBurst = ({children,radius = 80,colortext ,colorstar }) => {
     opacity : 0,
     scale : 2
   }) ;
-
 
   return(
     <div className={css(style.cStars,propsStyles)} >
@@ -61,13 +57,9 @@ const StarsBurst = ({children,radius = 80,colortext ,colorstar }) => {
 }
 
 
-
-
 StarsBurst.defaultProps = {
   colortext : "rgb(60,60,60)",
   colorstar : "darkorange"
 }
-
-
 
 export default StarsBurst;
