@@ -27,13 +27,13 @@ class SignIn extends Component {
                 <Text styles={{ ...style.smallText._definition, ...style.right._definition }}>e olvidado mi contraseña ?</Text>
                 <Button onClick={this.signIn}>INICIAR SESIÓN</Button>
                 <Text styles={{ ...style.smallText, ...style.center._definition, ...style.marginTop._definition }} color="gray">
-                    no tengo una cuenta
+                    no tengo una cuenta 
                     <strong
                         role="button"
                         tabIndex="0"
                         style={{ color: "rgb(30,130,230)" }}
                         onClick={this.props.onChangeView}
-                        onKeyDown={this.props.onChangeView} >registrarme</strong>
+                        onKeyDown={this.props.onChangeView} > registrarme</strong>
                 </Text>
             </Fragment>
         )

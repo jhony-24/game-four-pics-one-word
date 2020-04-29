@@ -22,7 +22,7 @@ class SignUp extends Component {
     render() {
         return (
             <Fragment>
-                <Text color="gray" styles={style.center._definition} >Ingresar un nombre y una contraseña personal</Text>
+                {/* <Text color="gray" styles={style.center._definition} >Ingresar un nombre y una contraseña personal</Text> */}
                 <LoginInput.Username to={this.username} />
                 <LoginInput.Pass to={this.pass} />
                 <Flex>
