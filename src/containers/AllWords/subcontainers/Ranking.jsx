@@ -22,7 +22,7 @@ class Ranking extends Component {
           title={
             <Flex>
               {title}
-              <FaCog onClick={()=>navigate("/settings")} />
+              <FaCog onClick={() => navigate("/settings")} />
             </Flex>
           }
           colortitle={TEXT_PRIMARY}

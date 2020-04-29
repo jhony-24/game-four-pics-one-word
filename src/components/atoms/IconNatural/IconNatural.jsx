@@ -23,10 +23,16 @@ const IconNatural = ({ styles, icon, text, coloricon, colortext }) => {
 
 }
 
+
+IconNatural.defaultProps = {
+  icon : '',
+  text : '', 
+}
+
 IconNatural.propTypes = {
   styles: PropTypes.object,
   icon: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  text: PropTypes.string,
+  text: PropTypes.oneOfType([PropTypes.string,PropTypes.bool]),
   coloricon: PropTypes.string,
   colortext: PropTypes.string
 }

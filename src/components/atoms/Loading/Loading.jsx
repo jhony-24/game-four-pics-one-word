@@ -30,7 +30,7 @@ Loading.defaultProps = {
   size: "30px"
 }
 
-Loading.PropTypes = {
+Loading.propTypes = {
   color: PropTypes.string,
   colortext: PropTypes.string,
   text: PropTypes.string,

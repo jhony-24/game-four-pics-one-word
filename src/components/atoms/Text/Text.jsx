@@ -20,7 +20,7 @@ const Text = ({ children, styles, color }) => {
 }
 
 Text.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   styles: PropTypes.object,
   color: PropTypes.string
 }

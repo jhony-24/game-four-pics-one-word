@@ -51,8 +51,8 @@ Modal.defaultProps = {
 }
 
 Modal.propTypes = {
-  title: PropTypes.oneOf([PropTypes.string, PropTypes.element]),
-  message: PropTypes.oneOf([PropTypes.string, PropTypes.element, PropTypes.node]),
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  message: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.node]),
   visible: PropTypes.bool,
   onClose: PropTypes.func
 }

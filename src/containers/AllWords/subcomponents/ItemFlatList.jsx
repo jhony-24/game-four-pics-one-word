@@ -27,7 +27,7 @@ const ItemFlatList = ({ current, images, letters, points }) => {
                         detail={current.detail || new Date().toLocaleString()} />
                     <IconNatural
                         icon={points !== 0 ? <IoMdStar color="darkorange" /> : <IoIosApps color="gray" />}
-                        text={points !== 0 && points} />
+                        text={points !== 0 && points.toString()} />
                 </Flex>
             }
             rightBody={

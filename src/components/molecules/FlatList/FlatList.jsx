@@ -31,7 +31,7 @@ FlatList.defaultProps = {
   data: []
 }
 
-FlatList.PropTypes = {
+FlatList.propTypes = {
   styles: PropTypes.object,
   headerStyle: PropTypes.object,
   footerStyle: PropTypes.object,
