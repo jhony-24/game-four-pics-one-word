@@ -11,9 +11,9 @@ const Button = ({ onClick, children, styles }) => {
   const span = css(style.dContent);
 
   return (
-    <div className={btn} onClick={onClick} >
+    <button className={btn} onClick={onClick}>
       <span className={span}>{children}</span>
-    </div>
+    </button>
   )
 
 }
