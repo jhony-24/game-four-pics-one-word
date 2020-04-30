@@ -9,6 +9,10 @@ const style = StyleSheet.create({
     },
     inputChangeName : {
         border : "1px solid silver",
+    },
+    input : {
+        border : "1px solid silver",
+        margin : "2em 0"
     }
 })
 

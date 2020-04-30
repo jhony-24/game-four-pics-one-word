@@ -5,7 +5,7 @@ import RowItem from "src/components/molecules/RowItem"
 import Container from 'src/components/dom/Container';
 import style from '../style';
 
-const RowSetting = ({ rightBody, title, detail, icon, bgIcon, src, children }) => {
+const RowSetting = ({ rightBody, title, detail, icon, bgIcon, src, onClick }) => {
     const avatar = { color: bgIcon, icon, src };
     const paragraph = { title, detail };
 
@@ -22,9 +22,7 @@ const RowSetting = ({ rightBody, title, detail, icon, bgIcon, src, children }) =
                     </Container>
                 }
                 rightBody={rightBody}
-            />
-            <RowItem
-                centerBody={children}
+                onClick={onClick}
             />
         </Container>
     )

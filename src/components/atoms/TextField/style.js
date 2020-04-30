@@ -5,7 +5,7 @@ import { PRIMARY_COLOR, TEXT_PRIMARY, TEXT_SECONDARY } from "../../../tools/cons
 const style = StyleSheet.create({
     flex : {
         padding : 15,
-        borderRadius : 10,
+        borderRadius : "20px",
     } ,
     input : {
         width : "100%",

@@ -9,10 +9,10 @@ const ToggleSwitch = ({ checked, onChange }) => {
   const containerActive = state && style.ctnSwitch_active;
   const checkActive = state && style.check_active;
 
-  const handlerChange = () => [
-    setToggle(),
-    onChange(state),
-  ]
+  const handlerChange = () => {
+    setToggle();
+    onChange(!state);
+  }
 
   return (
     <label className={css(style.ctnSwitch, containerActive)} >
