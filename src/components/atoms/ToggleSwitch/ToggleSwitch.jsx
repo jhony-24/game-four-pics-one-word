@@ -6,19 +6,22 @@ import PropTypes from "prop-types"
 
 const ToggleSwitch = ({ checked, onChange }) => {
   const [state, setToggle] = useToggle(checked);
+  const containerActive = state && style.ctnSwitch_active;
+  const checkActive = state && style.check_active;
+
   const handlerChange = () => [
     setToggle(),
     onChange(state)
   ]
 
   return (
-    <label className={css(style.ctnSwitch)} >
+    <label className={css(style.ctnSwitch, containerActive)} >
       <input
         type="checkbox"
         className={css(style.input)}
         checked={state}
         onChange={handlerChange} />
-      <div className={css(style.check)}></div>
+      <div className={css(style.check, checkActive)}></div>
     </label>
   )
 }

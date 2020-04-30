@@ -1,5 +1,5 @@
 import { StyleSheet } from "aphrodite/no-important"
-import { PRIMARY_COLOR } from "src/tools/constants";
+import { PRIMARY_COLOR, TEXT_PRIMARY, TEXT_SECONDARY } from "src/tools/constants";
 
 const style = StyleSheet.create({
     ctnSwitch: {
@@ -9,6 +9,7 @@ const style = StyleSheet.create({
         height: "20px",
         borderRadius: 20,
         background: "rgba(0,0,0,.1)",
+        transition: ".3s",
     },
     check: {
         height: "20px",
@@ -21,10 +22,16 @@ const style = StyleSheet.create({
     input: {
         display: "none",
         ":checked + div": {
-            transform : "translateX(100%)",
-            background : PRIMARY_COLOR
+            transform: "translateX(100%)",
+            boxShadow : "0 0 20px "+TEXT_SECONDARY,
         }
-    }
+    },
+    ctnSwitch_active: {
+        background: PRIMARY_COLOR,
+    },
+    check_active: {
+        background: TEXT_PRIMARY,
+    },
 })
 
 export default style;
