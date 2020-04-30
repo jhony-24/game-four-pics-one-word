@@ -3,6 +3,7 @@ import { IoIosMoon, IoIosMusicalNote, IoIosText } from 'react-icons/io';
 import ToggleSwitch from 'src/components/atoms/ToggleSwitch/ToggleSwitch';
 import RowSetting from './subcomponents/RowSetting';
 import Text from 'src/components/atoms/Text/Text';
+import BottomSheet from 'src/components/molecules/BottomSheet/BottomSheet';
 
 class SettingsApp extends Component {
   render() {
@@ -34,6 +35,7 @@ class SettingsApp extends Component {
           icon={<IoIosText color="white" />}
           rightBody={<ToggleSwitch />}
         />
+        <BottomSheet open={true} title="all books" onClose={state=>null} />
       </Fragment>
     )
   }
