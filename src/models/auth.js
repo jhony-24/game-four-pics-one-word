@@ -1,9 +1,7 @@
 import crypt from "src/tools/cryptography"
 import Cookies from "js-cookie"
 
-
 class Auth {
-
     static keyUser = "USER_IO";
 
     /***
@@ -32,7 +30,6 @@ class Auth {
         }
     }
 
-
     /**
      * Create a cookie user
      * @param {*} data set object to save in cookie
@@ -50,7 +47,6 @@ class Auth {
         }
     }
 
-
     /**
      * Delete all cookies saved 
      */
@@ -58,8 +54,6 @@ class Auth {
         Cookies.destroy();
     }
 
-
 }
-
 
 export default Auth;

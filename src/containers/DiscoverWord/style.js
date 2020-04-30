@@ -1,6 +1,5 @@
 import { StyleSheet } from "aphrodite/no-important"
 
-
 const style = StyleSheet.create({
    flexDiscover : {
        width : "90%",
@@ -13,7 +12,5 @@ const style = StyleSheet.create({
        color : "gray"
    } 
 })
-
-
 
 export default style;

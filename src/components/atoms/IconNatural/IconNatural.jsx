@@ -5,9 +5,7 @@ import Flex from "../../dom/Flex"
 import { styleDynamic } from "src/tools/functions"
 import PropTypes from "prop-types"
 
-
 const IconNatural = ({ styles, icon, text, coloricon, colortext }) => {
-
   const flex = { ...style.flex._definition, ...styles };
   const iconStyle = css(style.iconic, styleDynamic({ color: coloricon }));
   const textStyle = css(style.texticon, styleDynamic({ color: colortext }));
@@ -20,19 +18,17 @@ const IconNatural = ({ styles, icon, text, coloricon, colortext }) => {
       }
     </Flex>
   )
-
 }
 
-
 IconNatural.defaultProps = {
-  icon : '',
-  text : '', 
+  icon: '',
+  text: '',
 }
 
 IconNatural.propTypes = {
   styles: PropTypes.object,
   icon: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  text: PropTypes.oneOfType([PropTypes.string,PropTypes.bool]),
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   coloricon: PropTypes.string,
   colortext: PropTypes.string
 }

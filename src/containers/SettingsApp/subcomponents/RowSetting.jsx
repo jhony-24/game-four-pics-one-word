@@ -6,7 +6,6 @@ import Container from 'src/components/dom/Container';
 import style from '../style';
 
 const RowSetting = ({ rightBody, title, detail, icon, bgIcon, src }) => {
-
     const avatar = { color: bgIcon, icon, src };
     const paragraph = { title, detail };
 

@@ -9,13 +9,11 @@ import style from './style';
 import { navigate } from 'gatsby';
 import { discoverActions, discoverSelectors } from "src/ducks/discover";
 
-
 class DiscoverWord extends Component {
 
   componentDidMount() {
     this.props.dispatch(discoverActions.createLettersToDiscover(this.props.state));
   }
-
 
   continueGame = () => {
     navigate("/list");
@@ -28,6 +26,7 @@ class DiscoverWord extends Component {
 
   render() {
     const { lettersEmpty, messyLetters, stateDiscover } = this.props;
+
     if (stateDiscover) {
       this.incrementPoints();
       return <GameSuccess onClick={this.continueGame} word={lettersEmpty.join('')} />
@@ -42,9 +41,7 @@ class DiscoverWord extends Component {
       )
     }
   }
-
 }
-
 
 const mapStateToProps = ({ discover }) => ({
   lettersEmpty: discover.testLetters,
@@ -52,6 +49,5 @@ const mapStateToProps = ({ discover }) => ({
   stateDiscover: discover.stateDiscover,
   idWord: discoverSelectors.getIdWord(discover)
 })
-
 
 export default connect(mapStateToProps)(DiscoverWord);

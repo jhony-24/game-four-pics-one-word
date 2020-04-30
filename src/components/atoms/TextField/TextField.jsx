@@ -5,9 +5,7 @@ import { styleDynamic } from "src/tools/functions"
 import Flex from 'src/components/dom/Flex';
 import PropTypes from "prop-types"
 
-
 const TextField = forwardRef(({ styles, icon, type, value, placeholder, onChange, colortext, coloricon, name }, ref) => {
-
   const flex = { ...style.flex._definition, ...styles };
   const inputStyle = css(style.input, styleDynamic({ colortext }));
   const iconStyle = css(style.icon, styleDynamic({ coloricon }));
@@ -29,9 +27,7 @@ const TextField = forwardRef(({ styles, icon, type, value, placeholder, onChange
         spellCheck={false} />
     </Flex>
   )
-
 })
-
 
 TextField.defaultProps = {
   value: '',

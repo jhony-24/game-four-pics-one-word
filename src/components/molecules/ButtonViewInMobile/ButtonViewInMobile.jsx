@@ -5,9 +5,13 @@ import { Portal } from 'react-portal';
 import useResize from 'src/use/useResize';
 
 const ButtonViewInMobile = () => {
-
   const [width] = useResize();
   const isMobile = () => width <= 400;
+  const styles = {
+    top: 0,
+    background: "none",
+    boxShadow: 0
+  }
 
   const openWindow = () => {
     let location = window.location;
@@ -15,12 +19,6 @@ const ButtonViewInMobile = () => {
     let target = '_blank';
     let features = 'width=300,height=400,scrollbars=NO,top=0,status=no';
     window.open(location, title, target, features);
-  }
-
-  const styles = {
-    top: 0,
-    background: "none",
-    boxShadow: 0
   }
 
   if (!isMobile()) {
@@ -31,7 +29,6 @@ const ButtonViewInMobile = () => {
     )
   }
   return null;
-
 }
 
 export default ButtonViewInMobile;

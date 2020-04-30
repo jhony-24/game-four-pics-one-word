@@ -4,9 +4,7 @@ import style from './style';
 import { styleDynamic } from "src/tools/functions"
 import PropTypes from "prop-types"
 
-
 const CircleImageSquare = ({ styles, images, onClick }) => {
-
   const ctn = css(style.container);
   const ctnImage = css(style.containerImagesCircle, styleDynamic(styles));
 
@@ -24,9 +22,7 @@ const CircleImageSquare = ({ styles, images, onClick }) => {
       </div>
     </div>
   )
-
 }
-
 
 CircleImageSquare.defaultProps = {
   onClick: () => null

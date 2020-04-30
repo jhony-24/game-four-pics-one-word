@@ -5,7 +5,6 @@ import { AiOutlineSync } from "react-icons/ai";
 import { TEXT_SECONDARY } from "src/tools/constants";
 import Fade from "src/components/dom/Fade";
 
-
 const styles = StyleSheet.create({
     container: {
         margin: "auto",
@@ -26,7 +25,6 @@ const styles = StyleSheet.create({
         color: "rgb(60,60,60)",
     }
 })
-
 
 const ErrorGetData = () => {
     return (

@@ -4,9 +4,7 @@ import style from './style';
 import { styleDynamic } from "src/tools/functions"
 import PropTypes from "prop-types"
 
-
 const Card = ({ styles, children }) => {
-
   const card = css(style.card, styleDynamic(styles));
 
   return (
@@ -14,7 +12,6 @@ const Card = ({ styles, children }) => {
       {children}
     </div>
   )
-
 }
 
 Card.propTypes = {

@@ -8,7 +8,6 @@ import ButtonUploadImages from './subcomponents/ButtonUploadImages';
 import OptionsUploadWord from './subcomponents/OptionsUploadWord';
 import Loading from 'src/components/atoms/Loading/Loading';
 
-
 class UploadNewWord extends Component {
   constructor() {
     super();
@@ -19,11 +18,9 @@ class UploadNewWord extends Component {
     }
   }
 
-
   handlerSelectImages = event => {
     this.setState({ images: event.target.files, stateUploaded: true });
   }
-
 
   handlerCancelUploadWord = () => {
     this.setState({
@@ -31,7 +28,6 @@ class UploadNewWord extends Component {
       stateUploaded: false
     });
   }
-
 
   handlerUploadWord = () => {
     const { images } = this.state;
@@ -47,7 +43,6 @@ class UploadNewWord extends Component {
     });
     return allUrls;
   }
-
 
   render() {
     const { stateUploaded } = this.state;
@@ -73,11 +68,10 @@ class UploadNewWord extends Component {
       </Fragment>
     )
   }
-
 }
-
 
 const mapStateToProps = ({ word }) => ({
   loadingUpload: word.loadingUpload,
 })
+
 export default connect(mapStateToProps)(UploadNewWord);

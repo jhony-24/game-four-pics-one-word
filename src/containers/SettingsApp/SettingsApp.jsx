@@ -4,7 +4,6 @@ import ToggleSwitch from 'src/components/atoms/ToggleSwitch/ToggleSwitch';
 import RowSetting from './subcomponents/RowSetting';
 import Text from 'src/components/atoms/Text/Text';
 
-
 class SettingsApp extends Component {
   render() {
     return (

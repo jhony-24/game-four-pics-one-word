@@ -3,10 +3,8 @@ import Button from "src/components/atoms/Button"
 import style from '../style';
 import LoginInput from '../subcomponents/LoginInput';
 import Flex from "src/components/dom/Flex"
-import Text from "src/components/atoms/Text"
 
 class SignUp extends Component {
-
     constructor() {
         super();
         this.username = createRef();

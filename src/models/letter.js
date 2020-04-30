@@ -1,6 +1,5 @@
 class Letter {
   
-  
   /**
    * transform a text original to array with messy letters
    * @param requestLetter text input
@@ -14,8 +13,6 @@ class Letter {
     }
     return mess
   }
-
-
 
   /**
    * @param totalLetters total letters to generate
@@ -34,8 +31,6 @@ class Letter {
     return newLetters
   }
 
-
-
   /**
    * create new letter random
    * @returns array of random letters
@@ -48,8 +43,6 @@ class Letter {
     requestArray = this.messUpLettersInArray(newArray.join(""))
     return requestArray
   }
-
-
 
   /**
    * move values from a to b ( a , b ) = Array
@@ -73,10 +66,6 @@ class Letter {
       to : [...to]
     }
   }
-  
-
 }
-
-
 
 export default Letter;

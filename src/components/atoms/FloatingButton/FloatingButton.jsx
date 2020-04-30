@@ -4,9 +4,7 @@ import style from './style';
 import { styleDynamic } from "src/tools/functions"
 import PropTypes from "prop-types"
 
-
 const FloatingButton = ({ onClick, children, styles }) => {
-
   const floating = css(style.floatingBtn, styleDynamic(styles));
   const label = css(style.label);
 
@@ -15,7 +13,6 @@ const FloatingButton = ({ onClick, children, styles }) => {
       <label className={label} >{children}</label>
     </button>
   )
-
 }
 
 FloatingButton.defaultProps = {

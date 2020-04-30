@@ -1,4 +1,3 @@
-
 export const PRIMARY_COLOR = "linear-gradient(45deg,rgb(30,130,230),rgb(140,50,200))"
 export const TEXT_PRIMARY = "white"
 export const TEXT_SECONDARY = "rgb(30,130,230)"

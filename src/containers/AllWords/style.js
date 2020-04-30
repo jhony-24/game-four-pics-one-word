@@ -1,7 +1,6 @@
 import { StyleSheet } from "aphrodite/no-important"
 import { TEXT_PRIMARY } from "src/tools/constants"
 
-
 const style = StyleSheet.create({
     card: {
         clipPath: "ellipse(100% 100% at 50% 0%)",
@@ -43,7 +42,5 @@ const style = StyleSheet.create({
         margin:"20px 0",
     }
 })
-
-
 
 export default style;

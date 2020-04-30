@@ -8,9 +8,9 @@ import { IoMdStar, IoIosApps } from "react-icons/io"
 import { navigate } from 'gatsby';
 import ImageSquarePreview from "./ImageSquarePreview";
 
-
 const ItemFlatList = ({ current, images, letters, points }) => {
     const handlerNavigate = () => navigate("/word", { state: current });
+
     return (
         <RowItem
             onClick={handlerNavigate}

@@ -5,7 +5,6 @@ import { styleDynamic } from "src/tools/functions"
 import PropTypes from "prop-types"
 
 const Avatar = ({ color, src, size, icon }) => {
-
   const avatar = css(style.avatar, styleDynamic({
     width: size,
     height: size,
@@ -17,7 +16,7 @@ const Avatar = ({ color, src, size, icon }) => {
       {src && <img src={src} alt={src} className={avatar} />}
       {icon && icon}
     </div>
-  );
+  )
 }
 
 Avatar.defaultProps = {

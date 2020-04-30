@@ -11,15 +11,14 @@ import ButtonBack from 'src/components/molecules/ButtonBack';
 const ViewUploadWord = () => {
   return (
     <div className="v-upload">
-
       <RowItem
         styles={style.header._definition}
         leftBody={
-          <ButtonBack/>
+          <ButtonBack />
         } />
 
       <Flex styles={style.flex._definition}>
-        <img src={imageUpload}  alt={imageUpload} className={css(style.img)} />
+        <img src={imageUpload} alt={imageUpload} className={css(style.img)} />
         <Paragrah
           styles={style.paragraph._definition}
           title="Subir imagenes"
@@ -29,7 +28,6 @@ const ViewUploadWord = () => {
         <UploadNewWord />
 
       </Flex>
-
     </div>
   )
 }

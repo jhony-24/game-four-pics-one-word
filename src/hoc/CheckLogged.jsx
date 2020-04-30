@@ -3,7 +3,6 @@ import Auth from "src/models/auth"
 import { navigate } from "gatsby";
 
 const CheckLogged = (WrapperComponentRender) => class extends Component {
-
     constructor(props) {
         super(props)
         this.state = {
@@ -26,7 +25,6 @@ const CheckLogged = (WrapperComponentRender) => class extends Component {
             return null;
         }
     }
-
 }
 
 export default CheckLogged;

@@ -9,8 +9,7 @@ import ErrorGetData from './subcomponents/ErrorGetData';
 import Letter from 'src/models/letter';
 
 class AllWords extends Component {
-
-  constructor(){
+  constructor() {
     super();
     this.letter = new Letter();
   }
@@ -29,7 +28,7 @@ class AllWords extends Component {
       return <LoadingPlaceholder repeat={7} />
     }
     if (error) {
-      return <ErrorGetData/>
+      return <ErrorGetData />
     }
     return (
       <Fragment>
@@ -45,7 +44,6 @@ class AllWords extends Component {
       </Fragment>
     )
   }
-
 }
 
 const mapStateToProps = ({ word }) => ({
@@ -53,4 +51,5 @@ const mapStateToProps = ({ word }) => ({
   loading: word.loading,
   error: word.error
 });
+
 export default connect(mapStateToProps)(AllWords);

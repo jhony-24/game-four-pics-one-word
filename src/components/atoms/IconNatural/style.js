@@ -1,6 +1,5 @@
 import { StyleSheet } from "aphrodite/no-important"
 
-
 const style = StyleSheet.create({
     flex : {
         justifyContent:"none",
@@ -14,7 +13,5 @@ const style = StyleSheet.create({
         fontWeight : "bold",
     }
 })
-
-
 
 export default style;

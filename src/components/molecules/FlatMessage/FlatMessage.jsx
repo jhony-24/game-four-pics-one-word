@@ -7,16 +7,12 @@ import { IoIosCloseCircle } from "react-icons/io";
 import { motion as Hide, AnimatePresence } from 'framer-motion';
 import PropTypes from "prop-types"
 
-
 const FlatMessage = ({ text, textColor, iconColor, verticalMargin, horizontalMargin }) => {
-
-  let [visible, setVisible] = useState(true);
-  let animateExit = { opacity: 0 };
-
-  let textStyle = { color: textColor };
-  let styleFlex = { margin: `${verticalMargin || 0}px ${horizontalMargin || 0}px` };
-  let flexStyle = { ...style.message._definition, ...styleFlex };
-
+  const [visible, setVisible] = useState(true);
+  const animateExit = { opacity: 0 };
+  const textStyle = { color: textColor };
+  const styleFlex = { margin: `${verticalMargin || 0}px ${horizontalMargin || 0}px` };
+  const flexStyle = { ...style.message._definition, ...styleFlex };
   const tM = css(style.tM, styleDynamic(textStyle))
   const bM = css(style.bM);
 
@@ -40,9 +36,7 @@ const FlatMessage = ({ text, textColor, iconColor, verticalMargin, horizontalMar
       }
     </AnimatePresence>
   )
-
 }
-
 
 FlatMessage.propTypes = {
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),

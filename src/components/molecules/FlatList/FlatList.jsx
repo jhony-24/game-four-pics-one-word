@@ -4,9 +4,7 @@ import style from './style';
 import { styleDynamic } from "src/tools/functions"
 import PropTypes from "prop-types"
 
-
 const FlatList = ({ styles, headerStyle, footerStyle, data, renderItem, headerList, footerList }) => {
-
   const list = css(style.flatLs, styleDynamic(styles));
   const header = css(style.flatLsHeader, styleDynamic(headerStyle));
   const footer = css(style.flatLsFooter, styleDynamic(footerStyle));
@@ -23,9 +21,7 @@ const FlatList = ({ styles, headerStyle, footerStyle, data, renderItem, headerLi
       <div className={footer}>{footerList}</div>
     </div>
   )
-
 }
-
 
 FlatList.defaultProps = {
   data: []

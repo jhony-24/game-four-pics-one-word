@@ -4,9 +4,7 @@ import style from './style';
 import { styleDynamic } from "src/tools/functions"
 import PropTypes from "prop-types"
 
-
 const Button = ({ onClick, children, styles }) => {
-
   const btn = css(style.btn, styleDynamic(styles));
   const span = css(style.dContent);
 
@@ -15,9 +13,7 @@ const Button = ({ onClick, children, styles }) => {
       <span className={span}>{children}</span>
     </button>
   )
-
 }
-
 
 Button.defaultProps = {
   onClick: () => null

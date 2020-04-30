@@ -7,7 +7,6 @@ import { motion as MotionLetter } from "framer-motion"
 import { discoverActions } from "src/ducks/discover";
 import { connect } from "react-redux";
 
-
 class MessUpLetters extends Component {
     
     effectStart = () => ({
@@ -58,7 +57,6 @@ class MessUpLetters extends Component {
         )
     }
 }
-
 
 MessUpLetters.defaultProps = {
     letters: []

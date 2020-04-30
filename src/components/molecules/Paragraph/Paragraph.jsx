@@ -5,9 +5,7 @@ import { styleDynamic } from "src/tools/functions"
 import Flex from "src/components/dom/Flex"
 import PropTypes from "prop-types"
 
-
 const Paragraph = ({ styles, title, detail, colortitle, colordetail }) => {
-
     const flex = { ...style.flex._definition, ...styles };
     const strong = css(style.title, styleDynamic({ color: colortitle }));
     const think = css(style.detail, styleDynamic({ color: colordetail }));

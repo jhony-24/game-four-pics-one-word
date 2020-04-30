@@ -4,9 +4,7 @@ import Text from "src/components/atoms/Text"
 import style from '../style';
 import LoginInput from '../subcomponents/LoginInput';
 
-
 class SignIn extends Component {
-
     constructor() {
         super();
         this.username = createRef();
@@ -27,7 +25,7 @@ class SignIn extends Component {
                 <Text styles={{ ...style.smallText._definition, ...style.right._definition }}>e olvidado mi contraseña ?</Text>
                 <Button onClick={this.signIn}>INICIAR SESIÓN</Button>
                 <Text styles={{ ...style.smallText, ...style.center._definition, ...style.marginTop._definition }} color="gray">
-                    no tengo una cuenta 
+                    no tengo una cuenta
                     <strong
                         role="button"
                         tabIndex="0"

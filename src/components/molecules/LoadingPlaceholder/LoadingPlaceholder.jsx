@@ -5,11 +5,9 @@ import Flex from "src/components/dom/Flex"
 import Skeleton from "react-loading-skeleton"
 import PropTypes from "prop-types"
 
-
 const LoadingPlaceholder = ({ sizecircle, heightbar, repeat }) => {
-
-  let array = Array(repeat).fill(0);
-  let width = 250;
+  const array = Array(repeat).fill(0);
+  const width = 250;
 
   return (
     <Flex styles={{ ...style.f._definition }}>
@@ -28,7 +26,6 @@ const LoadingPlaceholder = ({ sizecircle, heightbar, repeat }) => {
     </Flex>
   )
 }
-
 
 LoadingPlaceholder.defaultProps = {
   repeat: 5,

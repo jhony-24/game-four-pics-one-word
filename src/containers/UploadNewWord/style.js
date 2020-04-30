@@ -1,6 +1,5 @@
 import { StyleSheet } from "aphrodite/no-important"
 
-
 const style = StyleSheet.create({
     uploadImages : {
         position : "static"
@@ -29,7 +28,5 @@ const style = StyleSheet.create({
         color : "gray"
     }
 })
-
-
 
 export default style;

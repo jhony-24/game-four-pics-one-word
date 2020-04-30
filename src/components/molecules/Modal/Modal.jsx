@@ -42,7 +42,6 @@ const Modal = ({ title, message, visible, onClose }) => {
   )
 }
 
-
 Modal.defaultProps = {
   title: "modal",
   message: "",

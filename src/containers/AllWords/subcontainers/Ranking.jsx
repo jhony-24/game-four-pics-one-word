@@ -12,7 +12,6 @@ import { connect } from "react-redux";
 import { navigate } from 'gatsby';
 
 class Ranking extends Component {
-
   render() {
     const { title, topRanked } = this.props;
 
@@ -50,12 +49,9 @@ class Ranking extends Component {
 
 }
 
-
-
 Ranking.defaultProps = {
   title: "Los mas descubiertos"
 }
-
 
 const mapStateToProps = state => ({
   topRanked: wordSelectors.getWordsTopRanked(state)

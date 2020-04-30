@@ -11,6 +11,7 @@ import Flex from "src/components/dom/Flex";
 
 const ImageSquarePreview = ({ images, onClick }) => {
     const [state, setToggle] = useToggle();
+
     return (
         <Fragment>
             <CircleImageSquare

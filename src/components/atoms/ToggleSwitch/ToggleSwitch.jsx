@@ -5,7 +5,6 @@ import useToggle from 'src/use/useToggle';
 import PropTypes from "prop-types"
 
 const ToggleSwitch = ({ checked, onChange }) => {
-
   const [state, setToggle] = useToggle(checked);
   const handlerChange = () => [
     setToggle(),

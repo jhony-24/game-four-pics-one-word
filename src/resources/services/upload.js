@@ -4,7 +4,6 @@ const uploadImage = axios.create({
     baseURL: "http://localhost:7000/api"
 });
 
-
 export const uploadImages = ({ images }) => {
     const formData = new FormData();
     const appendImages = (form, nameParameter, allImages) => {

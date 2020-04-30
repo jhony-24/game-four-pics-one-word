@@ -2,8 +2,7 @@ import React from "react";
 import StarsBurst from 'src/components/dom/StarsBurst';
 import { GiTrophyCup } from "react-icons/gi"
 
-
-const GameSuccess = ({word,onClick}) => (
+const GameSuccess = ({ word, onClick }) => (
     <StarsBurst>
         <GiTrophyCup color="darkorange" size={60} />
         <h2>Estupendo lo lograste</h2>
@@ -12,6 +11,5 @@ const GameSuccess = ({word,onClick}) => (
         <button onClick={onClick}>continuar y ganar más</button>
     </StarsBurst>
 )
-
 
 export default GameSuccess;

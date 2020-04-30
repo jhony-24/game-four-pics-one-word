@@ -10,8 +10,6 @@ import Loading from "src/components/atoms/Loading"
 import { userActions } from "src/ducks/user"
 
 class Login extends Component {
-
-
   constructor() {
     super();
     this.state = {
@@ -20,16 +18,13 @@ class Login extends Component {
     }
   }
 
-
   componentDidMount() {
     this.changeScale();
   }
 
-
   changeScale = () => setTimeout(() => {
     this.setState({ scale: true })
   }, 10)
-
 
   changeView = () => {
     this.setState(prevState => ({
@@ -44,7 +39,6 @@ class Login extends Component {
   signUp = (data) => {
     this.props.dispatch(userActions.createUser(data));
   }
-
 
   render() {
     const { loading } = this.props;
@@ -64,13 +58,10 @@ class Login extends Component {
       </Opacity.div>
     )
   }
-
 }
-
-
-
 
 const mapStateToProps = state => ({
   loading: state.user.loading
 })
+
 export default connect(mapStateToProps)(Login);

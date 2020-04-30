@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { discoverActions } from "src/ducks/discover";
 
 class TestLetters extends Component {
-    
+
     handlerPressLetter = (paramsLetter) => {
         this.props.dispatch(discoverActions.giveBackLetter(paramsLetter));
     }
@@ -31,7 +31,6 @@ class TestLetters extends Component {
             </Grid>
         )
     }
-
 }
 
 export default connect()(TestLetters);

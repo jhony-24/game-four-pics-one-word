@@ -13,9 +13,7 @@ const RowItem = ({ styles, leftBody, centerBody, rightBody, onClick }) => {
       <div className={css(style.row, style.ex)}>{rightBody}</div>
     </Flex>
   )
-
 }
-
 
 RowItem.defaultProps = {
   onClick: () => null

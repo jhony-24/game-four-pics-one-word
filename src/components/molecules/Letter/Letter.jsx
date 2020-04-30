@@ -6,9 +6,7 @@ import Flex from "src/components/dom/Flex"
 import { SILVER_COLOR } from 'src/tools/constants';
 import PropTypes from "prop-types"
 
-
 const Letter = ({ text, background, visibilityText, color, onPressLetter }) => {
-
   const allStyles = { background, color }
   const flex = { ...style.f._definition, ...allStyles };
   const letterStyle = css(style.letter, styleDynamic({
@@ -22,9 +20,7 @@ const Letter = ({ text, background, visibilityText, color, onPressLetter }) => {
       </Flex>
     </div>
   )
-
 }
-
 
 Letter.defaultProps = {
   background: SILVER_COLOR,
@@ -35,7 +31,7 @@ Letter.defaultProps = {
 
 Letter.propTypes = {
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  background: PropTypes.oneOfType([PropTypes.string,PropTypes.bool]),
+  background: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   visibilityText: PropTypes.bool,
   color: PropTypes.string,
   onPressLetter: PropTypes.func

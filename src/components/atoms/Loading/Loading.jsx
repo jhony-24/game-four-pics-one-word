@@ -6,9 +6,7 @@ import Flex from "src/components/dom/Flex"
 import { TEXT_SECONDARY } from 'src/tools/constants';
 import PropTypes from "prop-types"
 
-
 const Loading = ({ color, colortext, text, size }) => {
-
   const flex = { ...style.flex._definition };
   const loadingStyle = css(style.loading, styleDynamic({ borderLeftColor: color, width: size, height: size }));
   const textStyle = css(style.textLoading, styleDynamic({ color: colortext }));
@@ -22,7 +20,6 @@ const Loading = ({ color, colortext, text, size }) => {
     </Flex>
   )
 }
-
 
 Loading.defaultProps = {
   color: TEXT_SECONDARY,

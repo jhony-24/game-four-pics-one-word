@@ -20,7 +20,6 @@ const Username = ({ to }) => {
     )
 }
 
-
 const Pass = ({ to }) => {
     const password = useTextInput();
     return (
@@ -36,6 +35,5 @@ const Pass = ({ to }) => {
         </>
     )
 }
-
 
 export default { Username, Pass };

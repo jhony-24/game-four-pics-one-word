@@ -8,17 +8,12 @@ import { IoMdStar } from "react-icons/io"
 import LazyLoad from 'src/hoc/LazyLoad';
 import ButtonBack from 'src/components/molecules/ButtonBack';
 
-
 const DiscoverWord = lazy(() => import("src/containers/DiscoverWord"))
 
-
-
 const ViewGuessWord = (props) => {
-
   const { state } = props;
   const header = { ...style.header._definition };
   const textHeader = css(style.textHeader);
-
   const { points } = state;
 
   return (
@@ -43,10 +38,6 @@ const ViewGuessWord = (props) => {
       <LazyLoad component={DiscoverWord} state={state} />
     </div>
   )
-
 }
-
-
-
 
 export default ViewGuessWord;

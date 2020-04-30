@@ -9,11 +9,9 @@ import { TEXT_PRIMARY } from 'src/tools/constants';
 import LazyLoad from 'src/hoc/LazyLoad';
 import LoadingPlaceholder from 'src/components/molecules/LoadingPlaceholder';
 
-
 const SettingsApp = lazy(()=>import("src/containers/SettingsApp"));
 
 const ViewSettings = () => {
-
   const header = { ...style.header._definition };
   const textHeader = css(style.textHeader);
   const colorLight = TEXT_PRIMARY;
@@ -33,7 +31,6 @@ const ViewSettings = () => {
       <LazyLoad component={SettingsApp} loading={<LoadingPlaceholder/>} />
     </div>
   );
-
 }
 
 export default ViewSettings;
