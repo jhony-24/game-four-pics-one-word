@@ -23,7 +23,7 @@ const style = StyleSheet.create({
         display: "none",
         ":checked + div": {
             transform: "translateX(100%)",
-            boxShadow : "0 0 20px "+TEXT_SECONDARY,
+            border : "1px solid " + TEXT_SECONDARY
         }
     },
     ctnSwitch_active: {

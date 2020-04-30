@@ -5,23 +5,28 @@ import RowItem from "src/components/molecules/RowItem"
 import Container from 'src/components/dom/Container';
 import style from '../style';
 
-const RowSetting = ({ rightBody, title, detail, icon, bgIcon, src }) => {
+const RowSetting = ({ rightBody, title, detail, icon, bgIcon, src, children }) => {
     const avatar = { color: bgIcon, icon, src };
     const paragraph = { title, detail };
 
     return (
-        <RowItem
-            styles={style.item._definition}
-            leftBody={
-                <Avatar {...avatar} />
-            }
-            centerBody={
-                <Container styles={style.ctnParagraph}>
-                    <Paragraph colordetail="gray" {...paragraph} />
-                </Container>
-            }
-            rightBody={rightBody}
-        />
+        <Container>
+            <RowItem
+                styles={style.item._definition}
+                leftBody={
+                    <Avatar {...avatar} />
+                }
+                centerBody={
+                    <Container styles={style.ctnParagraph}>
+                        <Paragraph colordetail="gray" {...paragraph} />
+                    </Container>
+                }
+                rightBody={rightBody}
+            />
+            <RowItem
+                centerBody={children}
+            />
+        </Container>
     )
 }
 

@@ -11,7 +11,7 @@ const ToggleSwitch = ({ checked, onChange }) => {
 
   const handlerChange = () => [
     setToggle(),
-    onChange(state)
+    onChange(state),
   ]
 
   return (

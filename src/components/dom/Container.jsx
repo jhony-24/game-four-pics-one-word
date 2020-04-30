@@ -1,11 +1,17 @@
 import React from 'react';
-import { css } from "aphrodite/no-important"
+import { css, StyleSheet } from "aphrodite/no-important"
 
-const Container = ({styles,children}) => {
-  return(
-      <div className={css(styles)} >
-          {children}
-      </div>
+const style = StyleSheet.create({
+  box: {
+    width: "100%"
+  }
+})
+
+const Container = ({ styles, children }) => {
+  return (
+    <div className={css(style.box, styles)} >
+      {children}
+    </div>
   )
 };
 
