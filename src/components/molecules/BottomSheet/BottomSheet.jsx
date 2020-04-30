@@ -9,7 +9,6 @@ import Backdrop from 'src/components/dom/Backdrop';
 
 const BottomSheet = ({ open, title, children, onClose }) => {
   const [isOpen, setOpen] = useState(open);
-  const limitDrag = 60;
   const animations = {
     close: { y: "100%", transition: { type: "tween", duration: .1 }, },
     open: { y: 0, },
@@ -19,14 +18,8 @@ const BottomSheet = ({ open, title, children, onClose }) => {
     setOpen(open);
   }, [open]);
 
-  const onPan = (event, info) => {
-    let differenceDrag = window.innerHeight - info.point.y;
-    if (differenceDrag <= limitDrag)
-      setOpen(false);
-  }
-  const onDragExit = () => {
-    onClose(isOpen);
-  }
+  const onPanStart = (event, info) => setOpen(false);
+  const onDragExit = () => onClose(isOpen);
 
   return (
     <AnimatePresence onExitComplete={onDragExit}>
@@ -40,7 +33,7 @@ const BottomSheet = ({ open, title, children, onClose }) => {
               drag="y"
               dragElastic={0}
               dragConstraints={{ top: 0 }}
-              onPan={onPan}
+              onPanStart={onPanStart}
               exit="close">
               <Container styles={style.card}>
                 <Flex styles={style.flexContainer._definition}>
