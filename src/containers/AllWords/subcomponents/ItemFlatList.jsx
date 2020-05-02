@@ -7,6 +7,7 @@ import IconNatural from "src/components/atoms/IconNatural"
 import { IoMdStar, IoIosApps } from "react-icons/io"
 import { navigate } from 'gatsby';
 import ImageSquarePreview from "./ImageSquarePreview";
+import momment from "moment";
 
 const ItemFlatList = ({ current, images, letters, points }) => {
     const handlerNavigate = () => navigate("/word", { state: current });
@@ -24,7 +25,7 @@ const ItemFlatList = ({ current, images, letters, points }) => {
                 <Flex>
                     <Paragraph
                         title={letters + "..."}
-                        detail={current.detail || new Date().toLocaleString()} />
+                        detail={momment(current.detail || new Date().toLocaleString()).fromNow()} />
                     <IconNatural
                         icon={points !== 0 ? <IoMdStar color="darkorange" /> : <IoIosApps color="gray" />}
                         text={points !== 0 && points.toString()} />
