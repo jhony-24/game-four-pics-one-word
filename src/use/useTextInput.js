@@ -8,7 +8,7 @@ const useTextInput = () => {
         setValue(e.target.value);
     }
     events.isEmpty = () => {
-        return value.trim().length == 0;
+        return value.trim().length === 0;
     }
     return {
         value,

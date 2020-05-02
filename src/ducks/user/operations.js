@@ -39,3 +39,10 @@ export const operationSignIn = (state, { payload }) => {
 export const operationsCreateUser = (state, { payload }) => {
     return state;
 }
+
+export const operationsGetUser = (state,{payload}) => {
+    return {
+        ...state,
+        user : Auth.get()
+    }
+}

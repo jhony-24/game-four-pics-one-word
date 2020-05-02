@@ -9,6 +9,7 @@ export const actionSignUp = createAction(`${base}/SIGN_UP`);
 export const actionSignOut = createAction(`${base}/SIGN_OUT`);
 export const actionCreateUser = createAction(`${base}/CREATE_USER`);
 
+export const getUser = createAction(`${base}/GET_USER`);
 
 // actions creator
 export const signIn = ({ username, pass }) => async dispatch => {

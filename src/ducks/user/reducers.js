@@ -14,7 +14,10 @@ const handlers = {
         operations.operationSignIn(state, action),
 
     [actions.actionCreateUser]: (state, action) =>
-        operations.operationsCreateUser(state, action)
+        operations.operationsCreateUser(state, action),
+    
+    [actions.getUser]:(state,action) => 
+        operations.operationsGetUser(state,action)
 }
 
 

@@ -16,4 +16,4 @@ const Settings = () => {
     )
 }
 
-export default Settings;
+export default CheckLogged(Settings);

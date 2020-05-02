@@ -5,9 +5,8 @@ import BottomSheet from 'src/components/molecules/BottomSheet';
 import Button from 'src/components/atoms/Button';
 import TextField from 'src/components/atoms/TextField/TextField';
 import style from "../style"
-import { FaUserAlt } from 'react-icons/fa';
 
-const RowRename = () => {
+const RowRename = ({ defaultUsername }) => {
     const [open, setOpen] = useState(false);
 
     const openSheet = state => {
@@ -23,7 +22,7 @@ const RowRename = () => {
             onClick={openSheet}
         />
         <BottomSheet title="assign new username" open={open} onClose={isClose => setOpen(isClose)}>
-            <TextField  placeholder="ingresar nombre" styles={style.input._definition} />
+            <TextField value={defaultUsername} placeholder="ingresar nombre" styles={style.input._definition} />
             <Button> cambiar</Button>
         </BottomSheet>
     </>)
