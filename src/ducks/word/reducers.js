@@ -1,6 +1,6 @@
+import { navigate } from "gatsby";
 import { handleActions } from "redux-actions";
 import * as actions from "./actions";
-import * as operations from "./operations";
 
 const initialState = {
     listWords: [], //all words 
@@ -11,34 +11,54 @@ const initialState = {
 
 const handlers = {
 
-    [actions.actionGetListAllWords]: (state, action) =>
-        operations.operationsGetListAllWords(state, action),
-
-    [actions.actionLoadingListAllWords]: (state, { payload }) => {
+    [actions.actionGetListAllWords]: (state, { payload }) => {
+        const { listWords, loading } = payload;
+        let listWordsOrder = [];
+        for (var idWord in listWords) {
+            listWordsOrder.push({
+                idWord,
+                ...listWords[idWord],
+            });
+        }
+        listWordsOrder = listWordsOrder.map(current => {
+            current.images = Object.values(current.images);
+            return current;
+        })
         return {
             ...state,
-            error: payload.error,
-            loading: payload.loading
+            listWords: listWordsOrder,
+            loading
         }
     },
 
-    [actions.actionErrorToGetData]: (state, { payload }) => {
+    [actions.actionLoadingListAllWords]: (state, { payload }) => ({
+        ...state,
+        error: payload.error,
+        loading: payload.loading
+    }),
+
+    [actions.actionErrorToGetData]: (state, { payload }) => ({
+        ...state,
+        error: payload.error,
+        loading: payload.loading
+    }),
+
+    [actions.actionLoadingUploadNewWord]: (state, { payload }) => ({
+        ...state,
+        loadingUpload: payload.loadingUpload
+    }),
+
+    [actions.actionUploadNewWord]: (state, { payload }) => {
+        const { uploaded, loadingUpload } = payload;
+        if (uploaded) {
+            navigate("/list");
+        }
         return {
             ...state,
-            error: payload.error,
-            loading: payload.loading
+            uploaded,
+            loadingUpload
         }
     },
-
-    [actions.actionLoadingUploadNewWord]: (state, { payload }) => {
-        return {
-            ...state,
-            loadingUpload: payload.loadingUpload
-        }
-    },
-
-    [actions.actionUploadNewWord]: (state, action) =>
-        operations.operationUploadNewWord(state, action),
 }
 
 export default handleActions(handlers, initialState);

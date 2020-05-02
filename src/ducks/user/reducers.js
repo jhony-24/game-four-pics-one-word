@@ -1,6 +1,8 @@
+import Auth from "src/models/auth"
+import { navigate } from "gatsby";
+import { STATUS } from "./types";
 import { handleActions } from "redux-actions";
 import * as actions from "./actions"
-import * as operations from "./operations";
 
 const initialState = {
     user: null,
@@ -10,14 +12,47 @@ const initialState = {
 
 const handlers = {
 
-    [actions.actionSignIn]: (state, action) =>
-        operations.operationSignIn(state, action),
+    [actions.actionSignIn]: (state, { payload }) => {
+        switch (payload.status) {
+            case STATUS.LOADING:
+                return {
+                    ...state,
+                    loading: !state.loading
+                }
+            case STATUS.OK:
+                let user = payload.user;
+                if (user.status) {
+                    Auth.set(user);
+                    navigate("/list")
+                    return {
+                        ...state,
+                        user: user,
+                        logged: true,
+                        loading: false
+                    }
+                }
+                return {
+                    ...state,
+                    loading: false
+                }
+            case STATUS.ERROR:
+                return {
+                    ...state,
+                    loading: false
+                }
+            default:
+                return state;
+        }
+    },
 
-    [actions.actionCreateUser]: (state, action) =>
-        operations.operationsCreateUser(state, action),
-    
-    [actions.getUser]:(state,action) => 
-        operations.operationsGetUser(state,action)
+    [actions.actionCreateUser]: (state, action) => {
+        return state;
+    },
+
+    [actions.getUser]: (state, action) => ({
+        ...state,
+        user: Auth.get()
+    })
 }
 
 
