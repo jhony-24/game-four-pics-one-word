@@ -13,14 +13,14 @@ import { navigate } from 'gatsby';
 
 class Ranking extends Component {
   render() {
-    const { title, topRanked } = this.props;
+    const { topRanked } = this.props;
 
     return (
       <Card styles={{ ...style.card._definition }}>
         <Paragraph
           title={
             <Flex>
-              {title}
+              {"Los más descubiertos"}
               <FaCog onClick={() => navigate("/settings")} />
             </Flex>
           }
@@ -47,10 +47,6 @@ class Ranking extends Component {
     )
   }
 
-}
-
-Ranking.defaultProps = {
-  title: "Los mas descubiertos"
 }
 
 const mapStateToProps = state => ({

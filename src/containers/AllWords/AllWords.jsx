@@ -32,7 +32,7 @@ class AllWords extends Component {
     }
     return (
       <Fragment>
-        <Ranking />
+        <Ranking/>
         <FlatList data={listWords} renderItem={(current, key) => (
           <ItemFlatList
             key={key}
