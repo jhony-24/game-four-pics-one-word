@@ -3,48 +3,59 @@ import { useState } from "react"
 const useIndexed = () => {
     const [data, setData] = useState({});
     const [type, setType] = useState(null);
-
-    const CREATE = "CREATE", UPDATE = "UPDATE", REMOVE = "REMOVE", READ = "READ";
-
+    const types = {
+        CREATE: "CREATE",
+        UPDATE: "UPDATE",
+        REMOVE: "REMOVE",
+        READ: "READ",
+    }
+    const table = "user";
+    
     let db = window.indexedDB.open("game", 1);
 
-    db.onupgradeneeded = (e) => {
-        db.createObjectStore("user", { keyPath: "key" });
+    db.onupgradeneeded = () => {
+        db.createObjectStore(table, { keyPath: "key" });
+    }
+    db.onsuccess = () => {
+        switch (type) {
+            case READ: read(); break;
+            case UPDATE: update(); break;
+            case REMOVE: remove(); break;
+            case CREATE: create(); break;
+        }
     }
 
-    db.onsuccess = (e) => {
+    const read = () => {
+        let transaction = db.transaction([table], "readonly");
+        let store = transaction.objectStore(table);
+        store.get(data);
     }
-
-    const read = (key) => {
-        let transaction = db.transaction(["user"], "readonly");
-        let store = transaction.objectStore("user");
-        store.get(key);
-    }
-
-    const update = (data) => {
-        let transaction = db.transaction(["user"], "readwrite");
-        let store = transaction.objectStore("user");
+    const update = () => {
+        let transaction = db.transaction([table], "readwrite");
+        let store = transaction.objectStore(table);
         store.put(data);
     }
-
-    const remove = (key) => {
-        let transaction = db.transaction(["user"], "readwrite");
-        let store = transaction.objectStore("user");
-        store.remove(key);
+    const remove = () => {
+        let transaction = db.transaction([table], "readwrite");
+        let store = transaction.objectStore(table);
+        store.remove(data);
     }
     const create = (data) => {
-        let transaction = db.transaction(["user"], "readwrite");
-        let store = transaction.objectStore("user");
+        let transaction = db.transaction([table], "readwrite");
+        let store = transaction.objectStore(table);
         store.add(data);
     }
 
-    // return {
-    //     data,
-    //     read,
-    //     update,
-    //     remove,
-    //     create,
-    // }
+    const defineAction = (type) => {
+        if (types[type]) {
+            setType(type);
+            return (data) => setData(data);
+        }
+    }
+    return {
+        types,
+        defineAction
+    }
 }
 
 export default useIndexed;
