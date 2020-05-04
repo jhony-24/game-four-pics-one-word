@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 const useIndexed = () => {
     const [data, setData] = useState({});
@@ -10,47 +10,48 @@ const useIndexed = () => {
         READ: "READ",
     }
     const table = "user";
-    
+
     let db = window.indexedDB.open("game", 1);
 
-    db.onupgradeneeded = () => {
-        db.createObjectStore(table, { keyPath: "key" });
+    db.onupgradeneeded = (e) => {
+        e.target.result.createObjectStore(table, { keyPath: "key" });
     }
-    db.onsuccess = () => {
+    db.onsuccess = (e) => {
+        let request = e.target.result;
         switch (type) {
-            case READ: read(); break;
-            case UPDATE: update(); break;
-            case REMOVE: remove(); break;
-            case CREATE: create(); break;
+            case types.READ: read(request); break;
+            case types.UPDATE: update(request); break;
+            case types.REMOVE: remove(request); break;
+            case types.CREATE: create(request); break;
         }
     }
 
-    const read = () => {
-        let transaction = db.transaction([table], "readonly");
+    const transaction = (database, type) => {
+        let transaction = database.transaction([table], type);
         let store = transaction.objectStore(table);
+        return store;
+    }
+
+    const read = (request) => {
+        const store = transaction(request, "readonly");
         store.get(data);
     }
-    const update = () => {
-        let transaction = db.transaction([table], "readwrite");
-        let store = transaction.objectStore(table);
+    const update = (request) => {
+        let store = transaction(request, "readwrite");
         store.put(data);
     }
-    const remove = () => {
-        let transaction = db.transaction([table], "readwrite");
-        let store = transaction.objectStore(table);
-        store.remove(data);
+    const remove = (request) => {
+        let store = transaction(request, "readwrite");
+        store.delete(data);
     }
-    const create = (data) => {
-        let transaction = db.transaction([table], "readwrite");
-        let store = transaction.objectStore(table);
+    const create = (request) => {
+        let store = transaction(request, "readwrite");
         store.add(data);
     }
 
     const defineAction = (type) => {
-        if (types[type]) {
-            setType(type);
-            return (data) => setData(data);
-        }
+        setType(type);
+        return (data) => setData(data);
     }
     return {
         types,
