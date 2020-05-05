@@ -1,22 +1,21 @@
 import { handleActions } from "redux-actions";
 import * as actions from "./actions";
-import * as operations from "./operations";
 
 const initialState = {
-    useSound: true
+    enableSound: true
 }
 
 const handlers = {
     [actions.activeSound]: (state) => {
         return {
             ...state,
-            useSound: true
+            enableSound: true
         }
     },
     [actions.deactiveSound]: (state) => {
         return {
             ...state,
-            useSound: false
+            enableSound: false
         }
     }
 }
