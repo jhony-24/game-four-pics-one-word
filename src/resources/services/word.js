@@ -1,10 +1,10 @@
 import axios from "axios"
 
-const word = axios.create({ 
-    baseURL: "http://localhost:3000/api/v1" ,
-    headers : {
-        "Authorization" : process.env.GATSBY_TOKEN_API_WORD
-    } 
+const word = axios.create({
+    baseURL: "http://localhost:3000/api/v1",
+    headers: {
+        "Authorization": process.env.GATSBY_TOKEN_API_WORD
+    }
 });
 
 export const signIn = ({ username = "", pass = "" }) => {
@@ -15,6 +15,10 @@ export const signIn = ({ username = "", pass = "" }) => {
 export const createUser = ({ username, pass }) => {
     const parameters = { username, pass };
     return word.post("/user", parameters);
+}
+
+export const updateUser = (parameters) => {
+    return word.put("/", parameters);
 }
 
 export const getListAllWords = () => {
