@@ -6,16 +6,10 @@ const initialState = {
 }
 
 const handlers = {
-    [actions.activeSound]: (state) => {
+    [actions.enableSound]: (state) => {
         return {
             ...state,
-            enableSound: true
-        }
-    },
-    [actions.deactiveSound]: (state) => {
-        return {
-            ...state,
-            enableSound: false
+            enableSound: !state.enableSound
         }
     }
 }

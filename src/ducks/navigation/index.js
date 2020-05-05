@@ -1,8 +1,8 @@
 import reducers from "./reducers";
-import * as actions from "./actions";
+import * as navigationActions from "./actions";
 
 export {
-    actions
+    navigationActions
 }
 
 export default reducers;
