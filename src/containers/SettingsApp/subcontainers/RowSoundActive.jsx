@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { navigationActions } from "src/ducks/navigation";
 
 const RowSoundActive = ({ enableSound, changeSound }) => {
+
     return (<>
         <RowSetting
             title="active sounds"

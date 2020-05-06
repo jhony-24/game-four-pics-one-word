@@ -24,11 +24,10 @@ const handlers = {
                 let user = payload.user;
                 let userDb = new Indexed();
                 if (user.status) {
-                    userDb.defineAction(userDb.types.CREATE)({
+                    userDb.create({
                         key: "sound",
                         enableSound: true
                     });
-                    userDb.operate();
                     Auth.set(user);
                     navigate("/list")
                     return {
