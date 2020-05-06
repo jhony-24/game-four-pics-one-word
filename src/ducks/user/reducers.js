@@ -3,6 +3,7 @@ import { navigate } from "gatsby";
 import { STATUS } from "./types";
 import { handleActions } from "redux-actions";
 import * as actions from "./actions"
+import Indexed from "src/models/indexed";
 
 const initialState = {
     user: null,
@@ -21,7 +22,13 @@ const handlers = {
                 }
             case STATUS.OK:
                 let user = payload.user;
+                let userDb = new Indexed();
                 if (user.status) {
+                    userDb.defineAction(userDb.types.CREATE)({
+                        key: "sound",
+                        enableSound: true
+                    });
+                    userDb.operate();
                     Auth.set(user);
                     navigate("/list")
                     return {
