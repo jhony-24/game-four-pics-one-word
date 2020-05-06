@@ -6,12 +6,6 @@ const initialState = {
 }
 
 const handlers = {
-    [actions.enableSound]: (state) => {
-        return {
-            ...state,
-            enableSound: !state.enableSound
-        }
-    }
 }
 
 export default handleActions(handlers, initialState);

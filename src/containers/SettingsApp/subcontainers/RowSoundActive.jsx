@@ -3,7 +3,7 @@ import { IoIosMusicalNote } from 'react-icons/io';
 import ToggleSwitch from 'src/components/atoms/ToggleSwitch';
 import RowSetting from '../subcomponents/RowSetting';
 import { connect } from 'react-redux';
-import { navigationActions } from "src/ducks/navigation";
+import { discoverActions } from 'src/ducks/discover';
 
 const RowSoundActive = ({ enableSound, changeSound }) => {
 
@@ -19,10 +19,10 @@ const RowSoundActive = ({ enableSound, changeSound }) => {
 }
 
 const mapStateToProps = state => ({
-    enableSound: state.navigation.enableSound
+    enableSound: state.discover.enableSound
 })
 
 const mapDispatchToProps = {
-    changeSound: navigationActions.enableSound
+    changeSound: discoverActions.switchEnableSound,
 }
 export default connect(mapStateToProps, mapDispatchToProps)(RowSoundActive);

@@ -8,7 +8,8 @@ export const assignLetterToOrder = createAction(`${base}/ASSIGN_LETTER_TO_ORDER`
 export const giveBackLetter = createAction(`${base}/GIVEBACK_LETTER`); //payload
 export const removeMessyLetters = createAction(`${base}/REMOVE_MESSY_LETTERS`);
 export const actionIncrementPoints = createAction(`${base}/INCREMENT_POINTS`);
-
+export const switchEnableSound = createAction(`${base}/SWITCH_ENABLE_SOUND`);
+export const getEnableSound = createAction(`${base}/GET_ENABLE_SOUND`); // payload
 
 // actions creators
 export const incrementPoints = (idWord) => async dispatch => {

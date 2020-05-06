@@ -6,9 +6,9 @@ import PropTypes from "prop-types";
 import { motion as MotionLetter } from "framer-motion"
 import { discoverActions } from "src/ducks/discover";
 import { connect } from "react-redux";
+import Indexed from "src/models/indexed";
 
 class MessUpLetters extends Component {
-    
     effectStart = () => ({
         y: 0,
         opacity: 1
@@ -28,7 +28,12 @@ class MessUpLetters extends Component {
     })
 
     handlerPressLetter = (paramsLetter) => {
-        this.props.dispatch(discoverActions.assignLetterToOrder(paramsLetter));
+        let dispatch = this.props.dispatch;
+        let indexed = new Indexed();
+        indexed.read("sound", ({ enableSound }) => {
+            dispatch(discoverActions.getEnableSound({ enableSound }));
+        })
+        dispatch(discoverActions.assignLetterToOrder(paramsLetter));
     }
 
     letterEmpty = (letter = 0) => letter !== 0;
