@@ -37,5 +37,5 @@ export const createUser = ({ username, pass }) => async dispatch => {
 
 export const updateUser = (parametersUsername) => async dispatch => {
     const request = await services.updateUser(parametersUsername);
-    dispatch(setUpdateUser(request));
+    dispatch(setUpdateUser(parametersUsername));
 }

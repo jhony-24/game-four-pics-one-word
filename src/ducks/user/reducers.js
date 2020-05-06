@@ -4,6 +4,7 @@ import { STATUS } from "./types";
 import { handleActions } from "redux-actions";
 import * as actions from "./actions"
 import Indexed from "src/models/indexed";
+import _ from "lodash";
 
 const initialState = {
     user: null,
@@ -62,9 +63,13 @@ const handlers = {
     }),
 
     [actions.setUpdateUser]: (state, { payload }) => {
+
         return {
             ...state,
-            updatedUser: payload.status
+            user : {
+                ...state.user,
+                username : payload.username
+            }
         }
     }
 }
