@@ -8,7 +8,8 @@ const style = StyleSheet.create({
     },
     textHeader : {
         color : TEXT_PRIMARY,
-        textAlign : "center"
+        textAlign : "center",
+        userSelect: "none",
     },
 })
 
