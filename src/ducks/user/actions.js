@@ -8,8 +8,8 @@ export const actionSignIn = createAction(`${base}/SIGN_IN`);
 export const actionSignUp = createAction(`${base}/SIGN_UP`);
 export const actionSignOut = createAction(`${base}/SIGN_OUT`);
 export const actionCreateUser = createAction(`${base}/CREATE_USER`);
-
 export const getUser = createAction(`${base}/GET_USER`);
+export const setUpdateUser = createAction(`${base}/SET_UPDATE_USER`);
 
 // actions creator
 export const signIn = ({ username, pass }) => async dispatch => {
@@ -36,5 +36,6 @@ export const createUser = ({ username, pass }) => async dispatch => {
 }
 
 export const updateUser = (parametersUsername) => async dispatch => {
-    await services.updateUser(parametersUsername);
+    const request = await services.updateUser(parametersUsername);
+    dispatch(setUpdateUser(request));
 }

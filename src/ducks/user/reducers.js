@@ -8,7 +8,8 @@ import Indexed from "src/models/indexed";
 const initialState = {
     user: null,
     logged: false,
-    loading: false
+    loading: false,
+    updatedUser: false,
 }
 
 const handlers = {
@@ -58,7 +59,14 @@ const handlers = {
     [actions.getUser]: (state, action) => ({
         ...state,
         user: Auth.get()
-    })
+    }),
+
+    [actions.setUpdateUser]: (state, { payload }) => {
+        return {
+            ...state,
+            updatedUser: payload.status
+        }
+    }
 }
 
 
