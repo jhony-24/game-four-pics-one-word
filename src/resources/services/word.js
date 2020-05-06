@@ -18,7 +18,7 @@ export const createUser = ({ username, pass }) => {
 }
 
 export const updateUser = (parameters) => {
-    return word.put("/", parameters);
+    return word.put("/user", parameters);
 }
 
 export const getListAllWords = () => {

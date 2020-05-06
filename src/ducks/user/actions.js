@@ -1,6 +1,7 @@
 import { createAction } from "redux-actions";
 import { STATUS } from "./types";
 import services from "src/resources/services"
+import Auth from "src/models/auth";
 
 // actions
 const base = "ducks/user";
@@ -35,7 +36,19 @@ export const createUser = ({ username, pass }) => async dispatch => {
     dispatch(actionCreateUser());
 }
 
-export const updateUser = (parametersUsername) => async dispatch => {
-    const request = await services.updateUser(parametersUsername);
-    dispatch(setUpdateUser(parametersUsername));
+export const updateUser = ({ username }) => async dispatch => {
+    const auth = Auth.get();
+    const request = await services.updateUser({
+        iduser: auth.iduser,
+        username,
+    });
+    const newCookieData = null;
+    if (request.status) {
+        newCookieData = {
+            ...auth,
+            username
+        }
+        Auth.set(newCookieData);
+        dispatch(setUpdateUser({ username }));
+    }
 }

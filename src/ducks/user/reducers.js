@@ -63,12 +63,12 @@ const handlers = {
     }),
 
     [actions.setUpdateUser]: (state, { payload }) => {
-
+        let username = payload.username;
         return {
             ...state,
-            user : {
+            user: {
                 ...state.user,
-                username : payload.username
+                username
             }
         }
     }
