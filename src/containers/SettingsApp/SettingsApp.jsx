@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import RowSetting from './subcomponents/RowSetting';
-import Text from 'src/components/atoms/Text/Text';
 import RowSoundActive from './subcontainers/RowSoundActive';
 import RowRename from './subcontainers/RowRename';
 import { connect } from 'react-redux';
 import { userSelectors, userActions } from 'src/ducks/user';
+import HeaderSettings from './subcomponents/HeaderSettings';
 
 class SettingsApp extends Component {
   componentDidMount() {
@@ -16,11 +15,10 @@ class SettingsApp extends Component {
 
     return (
       <Fragment>
-        <RowSetting
-          title={username}
-          detail={<Text color="black">10 publicaciones</Text>}
-          src="https://cdn.pixabay.com/photo/2020/04/21/10/26/animal-5072537__340.jpg"
-        />
+        <HeaderSettings
+          title={username || ""}
+          details={"10 publicaciones"}
+          avatar="https://cdn.pixabay.com/photo/2020/04/21/10/26/animal-5072537__340.jpg" />
         <RowSoundActive />
         <RowRename defaultUsername={username} />
       </Fragment>
