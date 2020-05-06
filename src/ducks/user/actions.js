@@ -34,3 +34,7 @@ export const createUser = ({ username, pass }) => async dispatch => {
     await services.createUser({ username, pass });
     dispatch(actionCreateUser());
 }
+
+export const updateUser = (parametersUsername) => async dispatch => {
+    await services.updateUser(parametersUsername);
+}

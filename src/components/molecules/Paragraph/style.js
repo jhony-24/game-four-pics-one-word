@@ -1,21 +1,23 @@
 import { StyleSheet } from "aphrodite/no-important"
 
 const style = StyleSheet.create({
-    flex : {
-        flexDirection : "column",
-        alignItems : "none",
+    flex: {
+        flexDirection: "column",
+        alignItems: "none",
     },
-    title : {
-        fontWeight : "bold",
-        color : "rgb(30,30,30)",
-        fontSize : ".9em",
-        wordBreak : "break-word"
+    title: {
+        fontWeight: "bold",
+        color: "rgb(30,30,30)",
+        fontSize: ".9em",
+        wordBreak: "break-word",
+        userSelect: "none",
     },
-    detail  :{
-        fontSize : ".72em",
-        marginTop : "3px",
-        color : "gray",
-        lineHeight : "18px"
+    detail: {
+        fontSize: ".72em",
+        marginTop: "3px",
+        color: "gray",
+        lineHeight: "18px",
+        userSelect: "none",
     }
 })
 
