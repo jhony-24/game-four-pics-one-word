@@ -4,7 +4,6 @@ import RowRename from './subcontainers/RowRename';
 import { connect } from 'react-redux';
 import { userSelectors, userActions } from 'src/ducks/user';
 import HeaderSettings from './subcomponents/HeaderSettings';
-import RowSettingSheet from './subcomponents/RowSettingSheet';
 import RowPassword from './subcontainers/RowPassword';
 
 class SettingsApp extends Component {

@@ -4,7 +4,6 @@ import { STATUS } from "./types";
 import { handleActions } from "redux-actions";
 import * as actions from "./actions"
 import Indexed from "src/models/indexed";
-import _ from "lodash";
 
 const initialState = {
     user: null,

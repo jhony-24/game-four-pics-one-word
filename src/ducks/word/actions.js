@@ -31,7 +31,7 @@ export const getListAllWords = () => async (dispatch) => {
 export const uploadNewWord = (dataUpload) => async dispatch => {
     const { letters, images } = dataUpload;
     const { uploadImages, uploadNewWord } = services;
-    const user = JSON.parse(Auth.get());
+    const user = Auth.get();
     dispatch(actionLoadingUploadNewWord({ loadingUpload: true }));
     try {
         const request = await uploadImages({ images }).then(({ data: images }) => {
