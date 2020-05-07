@@ -22,7 +22,6 @@ class SettingsApp extends Component {
           avatar="https://cdn.pixabay.com/photo/2020/04/21/10/26/animal-5072537__340.jpg" />
         <RowSoundActive />
         <RowRename defaultUsername={username} />
-        <RowSettingSheet title="username" detail="hello world to others" />
       </Fragment>
     )
   }

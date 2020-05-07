@@ -42,7 +42,7 @@ export const updateUser = ({ username }) => async dispatch => {
         iduser: auth.iduser,
         username,
     });
-    const newCookieData = null;
+    let newCookieData = null;
     if (request.status) {
         newCookieData = {
             ...auth,
