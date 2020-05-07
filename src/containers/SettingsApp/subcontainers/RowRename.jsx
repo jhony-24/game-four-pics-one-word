@@ -1,6 +1,6 @@
 import React from 'react'
 import { IoIosText } from 'react-icons/io';
-import TextField from 'src/components/atoms/TextField/TextField';
+import TextField from 'src/components/atoms/TextField';
 import style from "../style"
 import { connect } from 'react-redux';
 import { userActions } from 'src/ducks/user';
