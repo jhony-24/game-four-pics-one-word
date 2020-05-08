@@ -62,14 +62,17 @@ const handlers = {
     }),
 
     [actions.setUpdateUser]: (state, { payload }) => {
-        let username = payload.username;
-        return {
-            ...state,
-            user: {
-                ...state.user,
-                username
+        if (payload.hasOwnProperty('username')) {
+            let username = payload.username;
+            return {
+                ...state,
+                user: {
+                    ...state.user,
+                    username
+                }
             }
         }
+        return state;
     }
 }
 

@@ -36,7 +36,7 @@ export const createUser = ({ username, pass }) => async dispatch => {
     dispatch(actionCreateUser());
 }
 
-export const updateUser = ({ username }) => async dispatch => {
+export const updateUserName = ({ username }) => async dispatch => {
     const auth = Auth.get();
     const request = await services.updateUser({
         iduser: auth.iduser,
@@ -51,4 +51,13 @@ export const updateUser = ({ username }) => async dispatch => {
         Auth.set(newCookieData);
         dispatch(setUpdateUser({ username }));
     }
+}
+
+export const updatePassword = ({ pass }) => async dispatch => {
+    const auth = Auth.get();
+    await services.updateUser({
+        iduser: auth.iduser,
+        pass,
+    });
+    dispatch(setUpdateUser({}));
 }

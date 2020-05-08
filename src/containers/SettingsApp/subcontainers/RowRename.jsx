@@ -7,11 +7,11 @@ import { userActions } from 'src/ducks/user';
 import useTextInput from 'src/use/useTextInput';
 import RowSettingSheet from '../subcomponents/RowSettingSheet';
 
-const RowRename = ({ defaultUsername, updateUser }) => {
+const RowRename = ({ defaultUsername, updateUsername }) => {
     const username = useTextInput();
 
-    const onUpdateUser = () => {
-        updateUser({ username: username.value });
+    const onUpdateUsername = () => {
+        updateUsername({ username: username.value });
     }
 
     return (
@@ -22,7 +22,7 @@ const RowRename = ({ defaultUsername, updateUser }) => {
             avatar={<IoIosText color="white" />}
             titleSheet="asignar nuevo nombre"
             textButtonSheet="cambiar"
-            onSubmitSheet={onUpdateUser} >
+            onSubmitSheet={onUpdateUsername} >
             <TextField
                 {...username}
                 value={defaultUsername}
@@ -33,6 +33,6 @@ const RowRename = ({ defaultUsername, updateUser }) => {
 }
 
 const mapDispatchToProps = {
-    updateUser: userActions.updateUser
+    updateUsername: userActions.updateUserName
 }
 export default connect(null, mapDispatchToProps)(RowRename);

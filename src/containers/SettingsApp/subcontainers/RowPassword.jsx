@@ -4,22 +4,35 @@ import TextField from 'src/components/atoms/TextField';
 import style from "../style"
 import { connect } from 'react-redux';
 import RowSettingSheet from '../subcomponents/RowSettingSheet';
+import { userActions } from 'src/ducks/user';
+import useTextInput from 'src/use/useTextInput';
 
-const RowPassword = ({ }) => {
+const RowPassword = ({ updatePassword }) => {
+    const password = useTextInput();
+
+    const onUpdatePassword = () => {
+        updatePassword({pass:password.value});
+    }
 
     return (
         <RowSettingSheet
             title="update my password"
-            detail="cambiar mi nombre por seguridad"
+            detail="cambiar mi contraseña por seguridad"
             iconColor="rgb(230,60,90)"
             avatar={<IoIosLock color="white" />}
-            titleSheet="asignar nuevo nombre"
-            textButtonSheet="cambiar" >
+            titleSheet="asignar nueva contraseña"
+            textButtonSheet="cambiar"
+            onSubmitSheet={onUpdatePassword} >
             <TextField
+                {...password}
+                type="password"
                 placeholder="ingresar nueva contraseña"
                 styles={style.input._definition} />
         </RowSettingSheet>
     )
 }
 
-export default connect(null)(RowPassword);
+const mapDispatchToProps = {
+    updatePassword: userActions.updatePassword
+}
+export default connect(null,mapDispatchToProps)(RowPassword);
