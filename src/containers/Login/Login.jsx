@@ -8,13 +8,14 @@ import SignIn from './subcontainers/SignIn';
 import SignUp from './subcontainers/SignUp';
 import Loading from "src/components/atoms/Loading"
 import { userActions } from "src/ducks/user"
+import Modal from 'src/components/molecules/Modal/Modal';
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
       scale: false,
-      isSignIn: true
+      isSignUp: false
     }
   }
 
@@ -28,7 +29,7 @@ class Login extends Component {
 
   changeView = () => {
     this.setState(prevState => ({
-      isSignIn: !prevState.isSignIn
+      isSignUp: !prevState.isSignUp
     }));
   }
 
@@ -42,18 +43,18 @@ class Login extends Component {
 
   render() {
     const { loading } = this.props;
-    const { scale, isSignIn } = this.state;
+    const { scale, isSignUp } = this.state;
     return (
-      <Opacity.div initial={{ opacity: 0 }} animate={{ opacity: scale ? 1 : 0 }} className={css(style.fContainer)}>
+      <Opacity.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: scale ? 1 : 0 }}
+        className={css(style.fContainer)}>
         <Flex styles={{ ...style.flex._definition }}>
-          {
-            loading && <Loading text="verificando" />
-          }
-          {
-            isSignIn ?
-              <SignIn onChangeView={this.changeView} onClick={this.signIn} /> :
-              <SignUp onChangeView={this.changeView} onClick={this.signUp} />
-          }
+          {loading && (
+            <Loading text="verificando" />
+          )}
+          <SignIn onOpenRegister={this.changeView} onClick={this.signIn} />
+          <SignUp onClose={this.changeView} onClick={this.signUp} visible={isSignUp} />
         </Flex>
       </Opacity.div>
     )

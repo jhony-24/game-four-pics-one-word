@@ -18,6 +18,7 @@ class SignIn extends Component {
     }
 
     render() {
+        const { onOpenRegister } = this.props;
         return (
             <Fragment>
                 <LoginInput.Username to={this.username} />
@@ -30,8 +31,8 @@ class SignIn extends Component {
                         role="button"
                         tabIndex="0"
                         style={{ color: "rgb(30,130,230)",cursor:"pointer" }}
-                        onClick={this.props.onChangeView}
-                        onKeyDown={this.props.onChangeView} > registrarme</strong>
+                        onClick={onOpenRegister}
+                        onKeyDown={onOpenRegister} > registrarme</strong>
                 </Text>
             </Fragment>
         )
