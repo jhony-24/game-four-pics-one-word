@@ -9,10 +9,6 @@ const style = StyleSheet.create({
     } ,
     input : {
         width : "100%",
-        "::selection" : {
-            background : PRIMARY_COLOR,
-            color : TEXT_PRIMARY
-        },
         ":hover" : {
             color : TEXT_SECONDARY
         }
