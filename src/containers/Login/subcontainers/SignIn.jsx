@@ -29,7 +29,7 @@ class SignIn extends Component {
                     <strong
                         role="button"
                         tabIndex="0"
-                        style={{ color: "rgb(30,130,230)" }}
+                        style={{ color: "rgb(30,130,230)",cursor:"pointer" }}
                         onClick={this.props.onChangeView}
                         onKeyDown={this.props.onChangeView} > registrarme</strong>
                 </Text>
