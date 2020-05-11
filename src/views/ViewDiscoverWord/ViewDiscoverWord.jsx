@@ -7,6 +7,7 @@ import style from './style';
 import { IoMdStar } from "react-icons/io"
 import LazyLoad from 'src/hoc/LazyLoad';
 import ButtonBack from 'src/components/molecules/ButtonBack';
+import NewWordToPlay from 'src/containers/NewWordToPlay/NewWordToPlay';
 
 const DiscoverWord = lazy(() => import("src/containers/DiscoverWord"))
 
@@ -36,6 +37,7 @@ const ViewGuessWord = (props) => {
 
       <CircleImageSquare images={state.images} styles={{ ...style.squareImage._definition }} />
       <LazyLoad component={DiscoverWord} state={state} />
+      <NewWordToPlay/>
     </div>
   )
 }
