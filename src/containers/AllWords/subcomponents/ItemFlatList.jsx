@@ -1,7 +1,6 @@
 import React from "react";
 import RowItem from "src/components/molecules/RowItem"
 import Paragraph from "src/components/molecules/Paragraph"
-import { FaEllipsisV } from "react-icons/fa"
 import Flex from "src/components/dom/Flex"
 import IconNatural from "src/components/atoms/IconNatural"
 import { IoMdStar, IoIosApps } from "react-icons/io"
@@ -31,9 +30,7 @@ const ItemFlatList = ({ current, images, letters, points }) => {
                         text={points !== 0 && points.toString()} />
                 </Flex>
             }
-            rightBody={
-                <FaEllipsisV size={14} color="gray" />
-            } />
+        />
     )
 }
 
