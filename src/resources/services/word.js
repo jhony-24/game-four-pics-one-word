@@ -9,26 +9,27 @@ const word = axios.create({
 
 export const signIn = ({ username = "", pass = "" }) => {
     const parameters = { username, pass };
-    return word.post("/user/exists", parameters);
+    return word.post(`/users/exists`, parameters);
 }
 
 export const createUser = ({ username, pass }) => {
     const parameters = { username, pass };
-    return word.post("/user", parameters);
+    return word.post(`/users`, parameters);
 }
 
 export const updateUser = (parameters) => {
-    return word.put("/user", parameters);
+    const { iduser, ...rest } = parameters;
+    return word.put(`/users/${iduser}`, rest);
 }
 
 export const getListAllWords = () => {
-    return word.get("/word");
+    return word.get(`/words`);
 }
 
 export const uploadNewWord = (parameters) => {
-    return word.post("/word", parameters);
+    return word.post(`/words`, parameters);
 }
 
 export const incrementWordPoints = ({ id }) => {
-    return word.post("/word/increment", { id });
+    return word.post(`/words/${id}/points/increment`);
 }
