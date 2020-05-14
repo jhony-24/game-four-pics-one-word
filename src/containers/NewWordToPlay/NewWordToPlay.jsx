@@ -4,20 +4,21 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import NewWordButtonGenerator from './subcomponents/NewWordButtonGenerator';
 import { connect } from 'react-redux';
 import { wordActions, wordSelectors } from 'src/ducks/word';
+import { discoverActions } from 'src/ducks/discover';
 
 class NewWordToPlay extends Component {
 
   render() {
-    const { onBackward, onForward, setIndexDefault, currentIndexListWord } = this.props;
-    setIndexDefault({currentIndexListWord});
+    const { onBackward, onForward, setIndexDefault, currentIndexListWord, listWords } = this.props;
+    setIndexDefault({ currentIndexListWord });
 
     return (
       <Flex>
-        <NewWordButtonGenerator onClick={onBackward}>
+        <NewWordButtonGenerator onClick={()=>onBackward(listWords[currentIndexListWord-1])}>
           <IoIosArrowBack />
           atrás
         </NewWordButtonGenerator>
-        <NewWordButtonGenerator onClick={onForward}>
+        <NewWordButtonGenerator onClick={()=>onForward(listWords[currentIndexListWord+1])}>
           siguiente
           <IoIosArrowForward />
         </NewWordButtonGenerator>
@@ -27,11 +28,19 @@ class NewWordToPlay extends Component {
 }
 
 const mapStateToProps = state => ({
-  currentIndexListWord: wordSelectors.getCurrentIndexWord(state)
+  currentIndexListWord: wordSelectors.getCurrentIndexWord(state),
+  listWords : state.word.listWords
 })
-const mapDispatchToProps = {
-  onBackward: wordActions.backwardNewWordPlay,
-  onForward: wordActions.forwardNewWordPlay,
-  setIndexDefault: wordActions.setDefaultIndexWordPlay
-}
+const mapDispatchToProps = (dispatch) => ({
+  onBackward: (currentWord) => {
+    dispatch(wordActions.backwardNewWordPlay())
+    dispatch(discoverActions.createLettersToDiscover(currentWord))
+  },
+  onForward: (currentWord) => {
+    dispatch(wordActions.forwardNewWordPlay())
+    dispatch(discoverActions.createLettersToDiscover(currentWord))
+
+  },
+  setIndexDefault: (data) => dispatch(wordActions.setDefaultIndexWordPlay(data))
+})
 export default connect(mapStateToProps, mapDispatchToProps)(NewWordToPlay);

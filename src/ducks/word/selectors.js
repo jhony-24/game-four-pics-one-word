@@ -14,8 +14,8 @@ export const getWordsTopRanked = (state, totalInRanking = 3) => {
     return topRanked;
 }
 
-export const getCurrentIndexWord = ({discover,word}) => {
-    if( discover.wordData === null ) {
+export const getCurrentIndexWord = ({ discover, word }) => {
+    if (discover.wordData === null) {
         return 0;
     }
     else {
