@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { userSelectors, userActions } from 'src/redux/user';
 import HeaderSettings from './subcomponents/HeaderSettings';
 import RowPassword from './subcontainers/RowPassword';
+import GraphicProgressPointStatistical from 'src/components/molecules/GraphicProgressPointStatistical';
 
 class SettingsApp extends Component {
   componentDidMount() {
@@ -20,6 +21,7 @@ class SettingsApp extends Component {
           title={username || ""}
           details={"10 publicaciones"}
           avatar="https://cdn.pixabay.com/photo/2020/04/21/10/26/animal-5072537__340.jpg" />
+        <GraphicProgressPointStatistical/>
         <RowSoundActive />
         <RowRename defaultUsername={username} />
         <RowPassword/>
