@@ -6,6 +6,8 @@ import MessUpLetters from './subcontainers/MessUpLetters.sub';
 import TestLetters from './subcontainers/TestLetters.sub';
 import GameSuccess from "./subcomponents/GameSuccess";
 import style from './style';
+import CircleImageSquare from "src/components/molecules/CircleImageSquare"
+
 import { navigate } from 'gatsby';
 import { discoverActions, discoverSelectors } from "src/ducks/discover";
 
@@ -25,7 +27,7 @@ class DiscoverWord extends Component {
   }
 
   render() {
-    const { lettersEmpty, messyLetters, stateDiscover } = this.props;
+    const { lettersEmpty, messyLetters, stateDiscover, images } = this.props;
 
     if (stateDiscover) {
       this.incrementPoints();
@@ -34,6 +36,7 @@ class DiscoverWord extends Component {
     else {
       return (
         <Flex styles={{ ...style.flexDiscover._definition }}>
+          <CircleImageSquare images={images} styles={{ ...style.squareImage._definition }} />
           <TestLetters letters={lettersEmpty} />
           <FlatMessage verticalMargin={25} text="Elige las letras correctas y descubre la palabra" />
           <MessUpLetters letters={messyLetters} />
@@ -47,7 +50,8 @@ const mapStateToProps = ({ discover }) => ({
   lettersEmpty: discover.testLetters,
   messyLetters: discover.messyLetters,
   stateDiscover: discover.stateDiscover,
-  idWord: discoverSelectors.getIdWord(discover)
+  idWord: discoverSelectors.getIdWord(discover),
+  images : discover.wordData !== null ? discover.wordData.images : []
 })
 
 export default connect(mapStateToProps)(DiscoverWord);

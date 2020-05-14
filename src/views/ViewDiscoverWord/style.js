@@ -10,12 +10,6 @@ const style = StyleSheet.create({
         color: TEXT_PRIMARY,
         textAlign: "center",
         userSelect: "none",
-    },
-    squareImage: {
-        borderRadius: 10,
-        width: "90%",
-        margin: "2em auto",
-        height: 250,
     }
 })
 

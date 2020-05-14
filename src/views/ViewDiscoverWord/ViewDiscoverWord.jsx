@@ -1,7 +1,6 @@
 import React, { lazy } from 'react';
 import RowItem from "src/components/molecules/RowItem"
 import { css } from 'aphrodite/no-important';
-import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import IconNatural from "src/components/atoms/IconNatural"
 import style from './style';
 import { IoMdStar } from "react-icons/io"
@@ -35,7 +34,6 @@ const ViewGuessWord = (props) => {
             coloricon="yellow" />
         } />
 
-      <CircleImageSquare images={state.images} styles={{ ...style.squareImage._definition }} />
       <LazyLoad component={DiscoverWord} state={state} />
       <NewWordToPlay/>
     </div>
