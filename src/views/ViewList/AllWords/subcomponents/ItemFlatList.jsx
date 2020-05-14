@@ -8,6 +8,7 @@ import { navigate } from 'gatsby';
 import ImageSquarePreview from "./ImageSquarePreview";
 import momment from "moment";
 
+
 const ItemFlatList = ({ current, images, letters, points }) => {
     const handlerNavigate = () => navigate("/word", { state: current });
 
@@ -24,7 +25,7 @@ const ItemFlatList = ({ current, images, letters, points }) => {
                 <Flex>
                     <Paragraph
                         title={letters + "..."}
-                        detail={momment(current.detail || new Date().toLocaleString()).fromNow()} />
+                        detail={`${current.dateCreated}`} />
                     <IconNatural
                         icon={points !== 0 ? <IoMdStar color="darkorange" /> : <IoIosApps color="gray" />}
                         text={points !== 0 && points.toString()} />
