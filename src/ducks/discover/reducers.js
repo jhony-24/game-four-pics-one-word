@@ -88,6 +88,15 @@ const handlers = {
         }
     },
 
+    [actions.forwardNewWordPlay]: (state, { payload }) => {
+        alert(1);
+        return state;
+    },
+    [actions.backwardNewWordPlay]: (state, { payload }) => {
+        alert(2);
+        return state;
+    }
+
 }
 
 export default handleActions(handlers, initialState);

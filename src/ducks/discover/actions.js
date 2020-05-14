@@ -11,6 +11,9 @@ export const actionIncrementPoints = createAction(`${base}/INCREMENT_POINTS`);
 export const switchEnableSound = createAction(`${base}/SWITCH_ENABLE_SOUND`);
 export const getEnableSound = createAction(`${base}/GET_ENABLE_SOUND`); // payload
 
+export const forwardNewWordPlay = createAction(`${base}/FORWARD_NEW_WORD_PLAY`);
+export const backwardNewWordPlay = createAction(`${base}/BACKWARD_NEW_WORD_PLAY`);
+
 // actions creators
 export const incrementPoints = (idWord) => async dispatch => {
     const { data } = await services.incrementWordPoints({ id: idWord });
