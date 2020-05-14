@@ -10,6 +10,9 @@ export const actionErrorToGetData = createAction(`${base}/ERROR_TO_GET_DATA`);
 export const actionUploadNewWord = createAction(`${base}/UPLOAD_NEW_WORD`);
 export const actionLoadingUploadNewWord = createAction(`${base}/LOADING_UPLOAD_NEW_WORD`);
 
+export const forwardNewWordPlay = createAction(`${base}/FORWARD_NEW_WORD_PLAY`);
+export const backwardNewWordPlay = createAction(`${base}/BACKWARD_NEW_WORD_PLAY`);
+export const setDefaultIndexWordPlay = createAction(`${base}/SET_DEFAULT_INDEX_WORD_PLAY`);
 
 // actions creators
 export const getListAllWords = () => async (dispatch) => {

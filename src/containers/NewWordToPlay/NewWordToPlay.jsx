@@ -3,12 +3,13 @@ import Flex from 'src/components/dom/Flex';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import NewWordButtonGenerator from './subcomponents/NewWordButtonGenerator';
 import { connect } from 'react-redux';
-import { discoverActions } from 'src/ducks/discover';
+import { wordActions, wordSelectors } from 'src/ducks/word';
 
 class NewWordToPlay extends Component {
 
   render() {
-    const { onBackward, onForward } = this.props;
+    const { onBackward, onForward, setIndexDefault, currentIndexListWord } = this.props;
+    setIndexDefault({currentIndexListWord});
 
     return (
       <Flex>
@@ -25,8 +26,12 @@ class NewWordToPlay extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  currentIndexListWord: wordSelectors.getCurrentIndexWord(state)
+})
 const mapDispatchToProps = {
-  onBackward: discoverActions.backwardNewWordPlay,
-  onForward: discoverActions.forwardNewWordPlay
+  onBackward: wordActions.backwardNewWordPlay,
+  onForward: wordActions.forwardNewWordPlay,
+  setIndexDefault: wordActions.setDefaultIndexWordPlay
 }
-export default connect(null, mapDispatchToProps)(NewWordToPlay);
+export default connect(mapStateToProps, mapDispatchToProps)(NewWordToPlay);

@@ -13,3 +13,14 @@ export const getWordsTopRanked = (state, totalInRanking = 3) => {
 
     return topRanked;
 }
+
+export const getCurrentIndexWord = ({discover,word}) => {
+    if( discover.wordData === null ) {
+        return 0;
+    }
+    else {
+        let currentIdWordDiscover = discover.wordData.idWord;
+        let indexInListWord = word.listWords.findIndex(current => current.idWord === currentIdWordDiscover);
+        return indexInListWord;
+    }
+}
