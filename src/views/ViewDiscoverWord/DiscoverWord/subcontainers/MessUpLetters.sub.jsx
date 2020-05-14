@@ -50,7 +50,7 @@ class MessUpLetters extends Component {
                             animate={this.effectStart()}
                             transition={this.transition()}>
                             <Letter
-                                background={this.letterEmpty(letter) && PRIMARY_COLOR}
+                                background={this.letterEmpty(letter) && "gray"}
                                 color={TEXT_PRIMARY}
                                 text={letter}
                                 visibilityText={this.letterEmpty(letter)}

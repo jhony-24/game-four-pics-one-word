@@ -7,7 +7,7 @@ const initialState = {
     error: false, // error to generate data,
     loading: true,
     loadingUpload: false,
-    currentIndexListWord : 0,
+    currentIndexListWord: 0,
 }
 
 const handlers = {
@@ -60,24 +60,25 @@ const handlers = {
             loadingUpload
         }
     },
-    [actions.setDefaultIndexWordPlay] : (state,{payload}) => {
+    [actions.setDefaultIndexWordPlay]: (state, { payload }) => {
         return {
             ...state,
-            currentIndexListWord : payload.currentIndexListWord
+            currentIndexListWord: payload.currentIndexListWord
         }
     },
 
-    [actions.forwardNewWordPlay]: (state, { payload }) => {
+    [actions.forwardNewWordPlay]: (state) => {
+
         return {
             ...state,
-            currentIndexListWord : state.currentIndexListWord + 1,
+            currentIndexListWord: state.currentIndexListWord + 1,
         }
     },
 
-    [actions.backwardNewWordPlay]: (state, { payload }) => {
+    [actions.backwardNewWordPlay]: (state) => {
         return {
             ...state,
-            currentIndexListWord : state.currentIndexListWord - 1,
+            currentIndexListWord: state.currentIndexListWord - 1,
         }
     }
 }
