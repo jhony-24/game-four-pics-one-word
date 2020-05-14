@@ -4,11 +4,11 @@ import { css } from 'aphrodite/no-important';
 import IconNatural from "src/components/atoms/IconNatural"
 import style from './style';
 import { IoMdStar } from "react-icons/io"
-import LazyLoad from 'src/hoc/LazyLoad';
+import LazyLoad from 'src/components/hoc/LazyLoad';
 import ButtonBack from 'src/components/molecules/ButtonBack';
-import NewWordToPlay from 'src/containers/NewWordToPlay/NewWordToPlay';
+import NewWordToPlay from './NewWordToPlay';
 
-const DiscoverWord = lazy(() => import("src/containers/DiscoverWord"))
+const DiscoverWord = lazy(() => import("./DiscoverWord"))
 
 const ViewGuessWord = (props) => {
   const { state } = props;

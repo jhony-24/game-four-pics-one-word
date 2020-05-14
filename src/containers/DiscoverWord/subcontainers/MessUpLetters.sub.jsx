@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Letter from "src/components/molecules/Letter"
 import Grid from "src/components/dom/Grid"
-import { PRIMARY_COLOR, TEXT_PRIMARY } from "src/tools/constants";
+import { PRIMARY_COLOR, TEXT_PRIMARY } from "src/resources/tools/constants";
 import PropTypes from "prop-types";
 import { motion as MotionLetter } from "framer-motion"
 import { discoverActions } from "src/ducks/discover";

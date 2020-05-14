@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'aphrodite/no-important';
 import style from './style';
-import useToggle from 'src/use/useToggle';
+import useToggle from 'src/hooks/useToggle';
 import PropTypes from "prop-types"
 
 const ToggleSwitch = ({ checked, onChange }) => {

@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import { css } from 'aphrodite/no-important';
 import style from './style';
-import { styleDynamic } from "src/tools/functions"
+import { styleDynamic } from "src/resources/tools/functions"
 import Flex from "src/components/dom/Flex"
-import { SILVER_COLOR } from 'src/tools/constants';
+import { SILVER_COLOR } from 'src/resources/tools/constants';
 import PropTypes from "prop-types"
 
 const Letter = ({ text, background, visibilityText, color, onPressLetter }) => {

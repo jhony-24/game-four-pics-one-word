@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { css } from 'aphrodite/no-important';
 import style from './style';
-import { styleDynamic } from "src/tools/functions"
+import { styleDynamic } from "src/resources/tools/functions"
 import Flex from "src/components/dom/Flex"
 import { IoIosCloseCircle } from "react-icons/io";
 import { motion as Hide, AnimatePresence } from 'framer-motion';

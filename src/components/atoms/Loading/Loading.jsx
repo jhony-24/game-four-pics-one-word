@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import { css } from 'aphrodite/no-important';
 import style from './style';
-import { styleDynamic } from "src/tools/functions"
+import { styleDynamic } from "src/resources/tools/functions"
 import Flex from "src/components/dom/Flex"
-import { TEXT_SECONDARY } from 'src/tools/constants';
+import { TEXT_SECONDARY } from 'src/resources/tools/constants';
 import PropTypes from "prop-types"
 
 const Loading = ({ color, colortext, text, size }) => {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion as Appearance } from 'framer-motion';
 import { MdStar } from "react-icons/md"
 import { css, StyleSheet } from "aphrodite/no-important"
-import { styleDynamic } from "src/tools/functions"
+import { styleDynamic } from "src/resources/tools/functions"
 
 const style = StyleSheet.create({
   cStars: {

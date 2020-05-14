@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from 'aphrodite/no-important';
 import style from './style';
 import Flex from "../../dom/Flex"
-import { styleDynamic } from "src/tools/functions"
+import { styleDynamic } from "src/resources/tools/functions"
 import PropTypes from "prop-types"
 
 const IconNatural = ({ styles, icon, text, coloricon, colortext }) => {

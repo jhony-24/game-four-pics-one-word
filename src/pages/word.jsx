@@ -1,5 +1,5 @@
 import React from "react"
-import CheckLogged from "src/hoc/CheckLogged"
+import CheckLogged from "src/components/hoc/CheckLogged"
 import ViewGuessWord from "src/views/ViewDiscoverWord"
 import { navigate } from "gatsby";
 import Fade from "src/components/dom/Fade";

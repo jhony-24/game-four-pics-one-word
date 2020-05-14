@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'aphrodite/no-important';
 import style from './style';
-import { styleDynamic } from "src/tools/functions"
+import { styleDynamic } from "src/resources/tools/functions"
 import PropTypes from "prop-types"
 
 const Button = ({ onClick, children, styles }) => {

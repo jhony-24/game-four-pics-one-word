@@ -1,6 +1,6 @@
 import React from "react"
 import Fade from "src/components/dom/Fade";
-import CheckLogged from "src/hoc/CheckLogged"
+import CheckLogged from "src/components/hoc/CheckLogged"
 import SEO from "src/components/atoms/SEO"
 import ViewSettings from "src/views/ViewSettings";
 

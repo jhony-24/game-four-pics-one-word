@@ -1,6 +1,6 @@
 import React, { lazy } from "react"
-import CheckLogged from "src/hoc/CheckLogged"
-import LazyLoad from "src/hoc/LazyLoad";
+import CheckLogged from "src/components/hoc/CheckLogged"
+import LazyLoad from "src/components/hoc/LazyLoad";
 import Position from "src/components/dom/Position"
 import Loading from "src/components/atoms/Loading"
 import Fade from "src/components/dom/Fade"

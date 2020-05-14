@@ -1,4 +1,4 @@
-import crypt from "src/tools/cryptography"
+import crypt from "src/resources/tools/cryptography"
 import Cookies from "js-cookie"
 
 class Auth {

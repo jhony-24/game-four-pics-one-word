@@ -2,7 +2,7 @@ import React from 'react';
 import FloatingButton from 'src/components/atoms/FloatingButton';
 import { IoIosOpen } from 'react-icons/io';
 import { Portal } from 'react-portal';
-import useResize from 'src/use/useResize';
+import useResize from 'src/hooks/useResize';
 
 const ButtonViewInMobile = () => {
   const [width] = useResize();

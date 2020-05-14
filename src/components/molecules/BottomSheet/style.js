@@ -1,5 +1,5 @@
 import { StyleSheet } from "aphrodite/no-important"
-import { TEXT_PRIMARY } from "src/tools/constants";
+import { TEXT_PRIMARY } from "src/resources/tools/constants";
 
 const style = StyleSheet.create({
     card: {

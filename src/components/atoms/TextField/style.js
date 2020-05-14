@@ -1,5 +1,5 @@
 import { StyleSheet } from "aphrodite/no-important"
-import {  TEXT_SECONDARY } from "src/tools/constants";
+import {  TEXT_SECONDARY } from "src/resources/tools/constants";
 
 
 const style = StyleSheet.create({

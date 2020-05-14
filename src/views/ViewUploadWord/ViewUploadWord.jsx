@@ -5,8 +5,8 @@ import imageUpload from "../../../images/image_upload.svg";
 import Flex from "src/components/dom/Flex";
 import RowItem from "src/components/molecules/RowItem"
 import Paragrah from "src/components/molecules/Paragraph"
-import UploadNewWord from "src/containers/UploadNewWord";
 import ButtonBack from 'src/components/molecules/ButtonBack';
+import UploadNewWord from "./UploadNewWord";
 
 const ViewUploadWord = () => {
   return (
