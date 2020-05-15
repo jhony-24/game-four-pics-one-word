@@ -7,6 +7,7 @@ import { IoIosCamera } from "react-icons/io";
 import Position from "src/components/dom/Position";
 import { motion as HoverAvatar } from "framer-motion";
 import { useState } from "react";
+import { css , StyleSheet } from "aphrodite/no-important";
 
 const style = {
     flex: {
@@ -25,6 +26,11 @@ const style = {
     }
 }
 
+const styleAvatar = StyleSheet.create({
+    borderAvatar: {
+        border: "2px solid red",
+    }
+})
 
 const HeaderSettings = ({ avatar, title, details }) => {
     const [hover, setHover] = useState(false);
@@ -34,7 +40,9 @@ const HeaderSettings = ({ avatar, title, details }) => {
     return (
         <Container>
             <Flex styles={style.marginAvatar}>
-                <Avatar src={avatar} size="120px" />
+                <div className={css(styleAvatar.borderAvatar)}>
+                    <Avatar src={avatar} size="120px" />
+                </div>
                 <Position position="absolute">
 
                     <HoverAvatar.span
