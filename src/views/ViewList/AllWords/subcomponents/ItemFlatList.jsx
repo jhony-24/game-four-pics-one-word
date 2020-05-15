@@ -6,7 +6,6 @@ import IconNatural from "src/components/atoms/IconNatural"
 import { IoMdStar, IoIosApps } from "react-icons/io"
 import { navigate } from 'gatsby';
 import ImageSquarePreview from "./ImageSquarePreview";
-import momment from "moment";
 
 
 const ItemFlatList = ({ current, images, letters, points }) => {

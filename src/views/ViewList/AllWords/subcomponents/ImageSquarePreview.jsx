@@ -1,13 +1,11 @@
 import React, { Fragment } from "react";
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
-import Text from "src/components/atoms/Text"
 import Modal from "src/components/molecules/Modal/Modal";
 import useToggle from "src/hooks/useToggle";
-import style from "../style";
-import Button from "src/components/atoms/Button/Button";
-import Fade from "src/components/dom/Fade";
-import { IoIosArrowForward } from "react-icons/io";
-import Flex from "src/components/dom/Flex";
+import LazyLoad from "src/components/hoc/LazyLoad";
+import { lazy } from "react";
+
+const ImageSquarePreviewModal = lazy(() => import("./dependencies/ImageSquarePreviewModal"));
 
 const ImageSquarePreview = ({ images, onClick }) => {
     const [state, setToggle] = useToggle();
@@ -23,17 +21,7 @@ const ImageSquarePreview = ({ images, onClick }) => {
                 onClose={setToggle}
                 title="vista previa"
                 message={
-                    <Fragment>
-                        <Fade>
-                            <CircleImageSquare images={images} styles={style.gridImagesModal._definition} />
-                        </Fade>
-                        <Button onClick={onClick} >
-                            <Flex styles={{ justifyContent: "center" }}>
-                                <Text>ir ahora </Text>
-                                <IoIosArrowForward size={20} />
-                            </Flex>
-                        </Button>
-                    </Fragment>
+                    <LazyLoad component={ImageSquarePreviewModal} onClick={onClick} images={images} />
                 } />
         </Fragment>
     )
