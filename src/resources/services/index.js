@@ -9,4 +9,5 @@ export default {
     incrementWordPoints: word.incrementWordPoints,
     createUser: word.createUser,
     updateUser: word.updateUser,
+    incrementPointsUserDiscover: word.incrementPointsUserDiscover,
 }

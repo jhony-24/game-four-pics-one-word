@@ -5,3 +5,11 @@ export const getUsername = (state) => {
     }
     return user;
 }
+
+export const getIdUser = (state) => {
+    const user = state.user;
+    if( user ) {
+        return user.iduser;
+    }
+    return "";
+}

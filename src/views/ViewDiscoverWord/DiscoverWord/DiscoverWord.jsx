@@ -9,6 +9,7 @@ import style from './style';
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import { navigate } from 'gatsby';
 import { discoverActions, discoverSelectors } from "src/redux/discover";
+import { userSelectors } from 'src/redux/user';
 
 class DiscoverWord extends Component {
 
@@ -22,7 +23,7 @@ class DiscoverWord extends Component {
   }
 
   incrementPoints = () => {
-    this.props.dispatch(discoverActions.incrementPoints(this.props.idWord));
+    this.props.dispatch(discoverActions.incrementPoints(this.props.idWord, this.props.idUser));
   }
 
   render() {
@@ -45,12 +46,13 @@ class DiscoverWord extends Component {
   }
 }
 
-const mapStateToProps = ({ discover }) => ({
+const mapStateToProps = ({ discover, user }) => ({
   lettersEmpty: discover.testLetters,
   messyLetters: discover.messyLetters,
   stateDiscover: discover.stateDiscover,
   idWord: discoverSelectors.getIdWord(discover),
-  images : discover.wordData !== null ? discover.wordData.images : []
+  idUser: userSelectors.getIdUser(user),
+  images: discover.wordData !== null ? discover.wordData.images : []
 })
 
 export default connect(mapStateToProps)(DiscoverWord);

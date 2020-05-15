@@ -12,7 +12,8 @@ export const switchEnableSound = createAction(`${base}/SWITCH_ENABLE_SOUND`);
 export const getEnableSound = createAction(`${base}/GET_ENABLE_SOUND`); // payload
 
 // actions creators
-export const incrementPoints = (idWord) => async dispatch => {
-    const { data } = await services.incrementWordPoints({ id: idWord });
-    dispatch(actionIncrementPoints(data));
+export const incrementPoints = (idWord, idUser) => async dispatch => {
+    const word = await services.incrementWordPoints({ id: idWord });
+    const user = await services.incrementPointsUserDiscover({ id: idUser });
+    dispatch(actionIncrementPoints());
 }
