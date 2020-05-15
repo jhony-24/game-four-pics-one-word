@@ -22,6 +22,10 @@ export const updateUser = (parameters) => {
     return word.put(`/users/${iduser}`, rest);
 }
 
+export const incrementPointsUserDiscover = ({ id }) => {
+    return word.post(`/users/${id}/poins/increment`);
+}
+
 export const getListAllWords = () => {
     return word.get(`/words`);
 }
@@ -33,3 +37,4 @@ export const uploadNewWord = (parameters) => {
 export const incrementWordPoints = ({ id }) => {
     return word.post(`/words/${id}/points/increment`);
 }
+
