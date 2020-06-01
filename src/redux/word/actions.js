@@ -19,8 +19,9 @@ export const getListAllWords = () => async (dispatch) => {
     dispatch(actionLoadingListAllWords({ loading: true, error: false }));
     try {
         const request = await services.getListAllWords();
+        const { status, ...listWords } = request.data;
         dispatch(actionGetListAllWords({
-            listWords: request.data,
+            listWords,
             loading: false,
             error: false
         }));
@@ -43,7 +44,7 @@ export const uploadNewWord = (dataUpload) => async dispatch => {
                 letters,
                 images,
                 points: 0,
-                dateCreated : (new Date()).toLocaleString(),
+                dateCreated: (new Date()).toLocaleString(),
             })
             return wordUploadd;
         });
