@@ -11,7 +11,7 @@ const styles = new StyleSheet.create({
     background: "none",
     boxShadow: 0
   }
-}}
+})
 
 const ButtonViewInMobile = () => {
   const [width] = useResize();

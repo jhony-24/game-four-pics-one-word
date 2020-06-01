@@ -11,10 +11,6 @@ const style = StyleSheet.create({
         width: "90%",
         margin: "auto",
     },
-    input: {
-        border: "1px solid rgba(100,100,100,.3)",
-        margin: "1em 0 2em"
-    },
     smallText: {
         fontSize: ".7em",
         marginBottom: "3em",

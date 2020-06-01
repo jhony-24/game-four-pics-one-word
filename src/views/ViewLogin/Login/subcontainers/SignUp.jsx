@@ -30,7 +30,7 @@ class SignUp extends Component {
                         <LoginInput.Username to={this.username} />
                         <LoginInput.Pass to={this.pass} />
                         <Flex>
-                            <Button onClick={onClose} styles={style.cancel._definition}>CANCELAR</Button>
+                            <Button onClick={onClose} styles={style.cancel}>CANCELAR</Button>
                             <Button onClick={this.signUp}>REGISTRARME</Button>
                         </Flex>
                     </Fragment>

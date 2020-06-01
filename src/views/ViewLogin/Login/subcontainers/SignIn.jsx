@@ -4,6 +4,7 @@ import Text from "src/components/atoms/Text"
 import style from '../style';
 import LoginInput from '../subcomponents/LoginInput';
 
+
 class SignIn extends Component {
     constructor() {
         super();
@@ -23,14 +24,14 @@ class SignIn extends Component {
             <Fragment>
                 <LoginInput.Username to={this.username} />
                 <LoginInput.Pass to={this.pass} />
-                <Text styles={{ ...style.smallText._definition, ...style.right._definition }}>e olvidado mi contraseña ?</Text>
+                <Text styles={[style.smallText, style.right]}>e olvidado mi contraseña ?</Text>
                 <Button onClick={this.signIn}>INICIAR SESIÓN</Button>
-                <Text styles={{ ...style.smallText, ...style.center._definition, ...style.marginTop._definition }} color="gray">
+                <Text styles={[style.smallText, style.center, style.marginTop]} color="gray">
                     no tengo una cuenta
                     <strong
                         role="button"
                         tabIndex="0"
-                        style={{ color: "rgb(30,130,230)",cursor:"pointer" }}
+                        style={{ color: "rgb(30,130,230)", cursor: "pointer" }}
                         onClick={onOpenRegister}
                         onKeyDown={onOpenRegister} > registrarme</strong>
                 </Text>

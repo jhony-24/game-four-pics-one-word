@@ -8,7 +8,6 @@ import SignIn from './subcontainers/SignIn';
 import SignUp from './subcontainers/SignUp';
 import Loading from "src/components/atoms/Loading"
 import { userActions } from "src/redux/user"
-import Modal from 'src/components/molecules/Modal/Modal';
 
 class Login extends Component {
   constructor() {
@@ -49,7 +48,7 @@ class Login extends Component {
         initial={{ opacity: 0 }}
         animate={{ opacity: scale ? 1 : 0 }}
         className={css(style.fContainer)}>
-        <Flex styles={{ ...style.flex._definition }}>
+        <Flex styles={style.flex}>
           {loading && (
             <Loading text="verificando" />
           )}

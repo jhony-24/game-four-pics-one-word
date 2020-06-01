@@ -18,7 +18,7 @@ const Login = lazy(() => import("./Login"))
 const ViewLogin = () => {
   return (
     <div className={css(style.viewLogin)}>
-      <Card styles={{ ...style.card._definition }}>
+      <Card styles={style.card}>
         <Flex>
           <span className={css(style.smallTitle)}>iniciar</span>
         </Flex>
@@ -27,7 +27,7 @@ const ViewLogin = () => {
             <span className={css(style.titleStrong)}>Bienvenido</span>
             <span className={css(style.titleThink)}>, es hora de comenzar a jugar</span>
           </h1>
-          <CircleImageSquare images={images} styles={{ ...style.img._definition }} />
+          <CircleImageSquare images={images} styles={style.img} />
         </Flex>
       </Card>
       <Flex>

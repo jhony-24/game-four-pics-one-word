@@ -65,7 +65,7 @@ const HeaderSettings = ({ avatar, title, details }) => {
                 </Position>
             </Flex>
             <Flex styles={style.flex}>
-                <Text styles={{ ...style.username, ...style.margin }}>{title}</Text>
+                <Text styles={[style.username,style.margin]}>{title}</Text>
                 <Text styles={style.margin} color="gray" >{details}</Text>
             </Flex>
         </Container>
