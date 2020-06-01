@@ -22,7 +22,7 @@ const Modal = ({ title, message, visible, onClose }) => {
             right="0px"
             top="0px"
             bottom="0px" >
-            <Flex styles={style.modalCtn._definition} >
+            <Flex styles={style.modalCtn} >
               <div className={css(style.modal)} >
                 <Flex>
                   <span className="i-h"><strong>{title}</strong></span>

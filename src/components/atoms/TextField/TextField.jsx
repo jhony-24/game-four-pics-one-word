@@ -1,19 +1,23 @@
 import React, { forwardRef } from 'react';
-import { css } from 'aphrodite/no-important';
+import { css, StyleSheet } from 'aphrodite/no-important';
 import style from './style';
-import { styleDynamic } from "src/resources/tools/functions"
 import Flex from 'src/components/dom/Flex';
 import PropTypes from "prop-types"
 
 const TextField = forwardRef(({ styles, icon, type, value, placeholder, onChange, colortext, coloricon, name }, ref) => {
-  const flex = { ...style.flex._definition, ...styles };
-  const inputStyle = css(style.input, styleDynamic({ colortext }));
-  const iconStyle = css(style.icon, styleDynamic({ coloricon }));
+  const selfStyle = new StyleSheet.create({
+    input: {
+      text: colortext
+    },
+    icon: {
+      color: coloricon
+    }
+  })
 
   return (
-    <Flex styles={flex}>
+    <Flex styles={css(style.flex, styles)}>
       {
-        icon && <span className={iconStyle}>{icon}</span>
+        icon && <span className={css(style.icon, selfStyle.icon)}>{icon}</span>
       }
       <input
         ref={ref}
@@ -21,7 +25,7 @@ const TextField = forwardRef(({ styles, icon, type, value, placeholder, onChange
         name={name}
         id={name}
         placeholder={placeholder}
-        className={inputStyle}
+        className={css(style.input, selfStyle.icon)}
         defaultValue={value}
         onKeyUp={onChange}
         spellCheck={false} />

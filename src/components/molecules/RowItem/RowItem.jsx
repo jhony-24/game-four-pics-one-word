@@ -7,11 +7,11 @@ import PropTypes from "prop-types"
 const RowItem = ({ styles, leftBody, centerBody, rightBody, onClick }) => {
 
   return (
-    <Flex styles={{ ...style.flex._definition, ...styles }}>
+    <Flex styles={[style.flex, styles]} >
       <div className={css(style.row, style.ex)}>{leftBody}</div>
       <div className={css(style.row, style.center)} onClick={onClick} onKeyDown={onClick} role="button" tabIndex="0" >{centerBody}</div>
       <div className={css(style.row, style.ex)}>{rightBody}</div>
-    </Flex>
+    </Flex >
   )
 }
 

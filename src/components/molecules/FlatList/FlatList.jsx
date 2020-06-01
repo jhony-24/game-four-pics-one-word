@@ -1,24 +1,19 @@
 import React from 'react';
 import { css } from 'aphrodite/no-important';
 import style from './style';
-import { styleDynamic } from "src/resources/tools/functions"
 import PropTypes from "prop-types"
 
 const FlatList = ({ styles, headerStyle, footerStyle, data, renderItem, headerList, footerList }) => {
-  const list = css(style.flatLs, styleDynamic(styles));
-  const header = css(style.flatLsHeader, styleDynamic(headerStyle));
-  const footer = css(style.flatLsFooter, styleDynamic(footerStyle));
-  const itemRender = css(style.flatLsRender);
 
   return (
-    <div className={list}>
-      <div className={header}>{headerList}</div>
-      <div className={itemRender}>
+    <div className={css(style.flatLs, styles)}>
+      <div className={css(style.flatLsHeader, headerStyle)}>{headerList}</div>
+      <div className={css(style.flatLsRender)}>
         {
           data.map((currentData, index) => renderItem(currentData, index))
         }
       </div>
-      <div className={footer}>{footerList}</div>
+      <div className={css(style.flatLsFooter, footerStyle)}>{footerList}</div>
     </div>
   )
 }

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion as Appearance } from 'framer-motion';
 import { MdStar } from "react-icons/md"
 import { css, StyleSheet } from "aphrodite/no-important"
-import { styleDynamic } from "src/resources/tools/functions"
 
 const style = StyleSheet.create({
   cStars: {
@@ -22,8 +21,11 @@ const style = StyleSheet.create({
 })
 
 const StarsBurst = ({ children, radius = 80, colortext, colorstar }) => {
-
-  const propsStyles = styleDynamic({ color: colortext });
+  const selfStyle = new StyleSheet.create({
+    burst: {
+      color: colortext
+    }
+  })
   const [visible, setVisible] = useState(true);
   const animate = (i) => ({
     x: Math.cos(i + 1) * radius,
@@ -33,7 +35,7 @@ const StarsBurst = ({ children, radius = 80, colortext, colorstar }) => {
   });
 
   return (
-    <div className={css(style.cStars, propsStyles)} >
+    <div className={css(style.cStars, selfStyle.burst)} >
       <Appearance.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         {children}
       </Appearance.span>

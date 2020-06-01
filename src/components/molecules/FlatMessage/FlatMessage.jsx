@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { css } from 'aphrodite/no-important';
+import { css, StyleSheet } from 'aphrodite/no-important';
 import style from './style';
-import { styleDynamic } from "src/resources/tools/functions"
 import Flex from "src/components/dom/Flex"
 import { IoIosCloseCircle } from "react-icons/io";
 import { motion as Hide, AnimatePresence } from 'framer-motion';
@@ -11,11 +10,11 @@ const FlatMessage = ({ text, textColor, iconColor, verticalMargin, horizontalMar
   const [visible, setVisible] = useState(true);
   const animateExit = { opacity: 0 };
   const textStyle = { color: textColor };
-  const styleFlex = { margin: `${verticalMargin || 0}px ${horizontalMargin || 0}px` };
-  const flexStyle = { ...style.message._definition, ...styleFlex };
-  const tM = css(style.tM, styleDynamic(textStyle))
-  const bM = css(style.bM);
-
+  const selfStyle = new StyleSheet.create({
+    flex: {
+      margin: `${verticalMargin || 0}px ${horizontalMargin || 0}px`
+    }
+  });
   const removeFlatMessage = () => {
     setVisible(false);
   }
@@ -25,9 +24,9 @@ const FlatMessage = ({ text, textColor, iconColor, verticalMargin, horizontalMar
       {
         visible && (
           <Hide.div exit={animateExit}>
-            <Flex styles={flexStyle}>
-              <span className={tM}>{text}</span>
-              <span className={bM} role="button" tabIndex="0" onClick={removeFlatMessage} onKeyDown={removeFlatMessage}>
+            <Flex styles={[style.message, selfStyle.flex]}>
+              <span className={css(style.tM, textStyle)}>{text}</span>
+              <span className={css(style.bM)} role="button" tabIndex="0" onClick={removeFlatMessage} onKeyDown={removeFlatMessage}>
                 <IoIosCloseCircle color={iconColor} size={20} />
               </span>
             </Flex>

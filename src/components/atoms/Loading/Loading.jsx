@@ -1,21 +1,25 @@
 import React, { memo } from 'react';
-import { css } from 'aphrodite/no-important';
+import { css, StyleSheet } from 'aphrodite/no-important';
 import style from './style';
-import { styleDynamic } from "src/resources/tools/functions"
 import Flex from "src/components/dom/Flex"
 import { TEXT_SECONDARY } from 'src/resources/tools/constants';
 import PropTypes from "prop-types"
 
 const Loading = ({ color, colortext, text, size }) => {
-  const flex = { ...style.flex._definition };
-  const loadingStyle = css(style.loading, styleDynamic({ borderLeftColor: color, width: size, height: size }));
-  const textStyle = css(style.textLoading, styleDynamic({ color: colortext }));
+  const selfStyle = new StyleSheet.create({
+    loading: {
+      borderLeftColor: color, width: size, height: size
+    },
+    text: {
+      color: colortext
+    }
+  })
 
   return (
-    <Flex styles={flex}>
-      <div className={loadingStyle}></div>
+    <Flex styles={css(style.flex)}>
+      <div className={css(style.loading, selfStyle.loading)}></div>
       {
-        text && <div className={textStyle}>{text}</div>
+        text && <div className={css(style.textLoading, selfStyle.text)}>{text}</div>
       }
     </Flex>
   )

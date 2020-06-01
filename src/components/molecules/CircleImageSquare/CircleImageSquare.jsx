@@ -1,21 +1,22 @@
 import React, { memo } from 'react';
-import { css } from 'aphrodite/no-important';
+import { css, StyleSheet } from 'aphrodite/no-important';
 import style from './style';
-import { styleDynamic } from "src/resources/tools/functions"
 import PropTypes from "prop-types"
 
 const CircleImageSquare = ({ styles, images, onClick }) => {
-  const ctn = css(style.container);
-  const ctnImage = css(style.containerImagesCircle, styleDynamic(styles));
 
   return (
-    <div className={ctn}>
-      <div className={ctnImage} onClick={onClick} role="button" tabIndex="0" onKeyDown={onClick}>
+    <div className={css(style.container)}>
+      <div className={css(style.containerImagesCircle, styles)} onClick={onClick} role="button" tabIndex="0" onKeyDown={onClick}>
         {
           images.map((currentImage, index) => {
-            let image = { backgroundImage: `url("${currentImage}")` };
+            const selfStyle = new StyleSheet.create({
+              image: {
+                backgroundImage: `url("${currentImage}")`
+              }
+            })
             return (
-              <div className={css(style.bgImg, styleDynamic(image))} key={index}></div>
+              <div className={css(style.bgImg, selfStyle.image)} key={index}></div>
             )
           })
         }

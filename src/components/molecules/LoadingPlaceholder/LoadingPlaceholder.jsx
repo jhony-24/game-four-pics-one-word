@@ -10,10 +10,10 @@ const LoadingPlaceholder = ({ sizecircle, heightbar, repeat }) => {
   const width = 250;
 
   return (
-    <Flex styles={{ ...style.f._definition }}>
+    <Flex styles={style.f}>
       {
         array.map((e, i) => (
-          <Flex styles={{ ...style.fr._definition }} key={i}>
+          <Flex styles={style.fr} key={i}>
             <span className={css(style.r)}>
               <Skeleton width={sizecircle} height={sizecircle} circle={true} />
             </span>

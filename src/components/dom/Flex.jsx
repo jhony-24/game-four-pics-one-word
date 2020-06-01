@@ -1,6 +1,5 @@
 import React from "react"
 import { css, StyleSheet } from "aphrodite/no-important"
-import { styleDynamic } from "src/resources/tools/functions"
 
 const style = StyleSheet.create({
     flex: {
@@ -12,5 +11,5 @@ const style = StyleSheet.create({
 })
 
 export default ({ styles, children }) => {
-    return <div className={css(style.flex, styleDynamic(styles))}>{children}</div>
+    return <div className={css(style.flex, styles)}>{children}</div>
 }

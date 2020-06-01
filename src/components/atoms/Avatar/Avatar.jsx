@@ -1,15 +1,17 @@
 import React from 'react';
-import { css } from 'aphrodite/no-important';
+import { css, StyleSheet } from 'aphrodite/no-important';
 import style from './style';
-import { styleDynamic } from "src/resources/tools/functions"
 import PropTypes from "prop-types"
 
 const Avatar = ({ color, src, size, icon }) => {
-  const avatar = css(style.avatar, styleDynamic({
-    width: size,
-    height: size,
-    background: color
-  }));
+  const selfStyle = new StyleSheet.create({
+    avatar: {
+      width: size,
+      height: size,
+      background: color
+    }
+  })
+  const avatar = css(style.avatar, selfStyle.avatar);
 
   return (
     <div className={avatar} >

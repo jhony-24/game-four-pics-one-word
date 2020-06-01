@@ -3,16 +3,19 @@ import FloatingButton from 'src/components/atoms/FloatingButton';
 import { IoIosOpen } from 'react-icons/io';
 import { Portal } from 'react-portal';
 import useResize from 'src/hooks/useResize';
+import { StyleSheet } from 'aphrodite/no-important';
 
-const ButtonViewInMobile = () => {
-  const [width] = useResize();
-  const isMobile = () => width <= 400;
-  const styles = {
+const styles = new StyleSheet.create({
+  button: {
     top: 0,
     background: "none",
     boxShadow: 0
   }
+}}
 
+const ButtonViewInMobile = () => {
+  const [width] = useResize();
+  const isMobile = () => width <= 400;
   const openWindow = () => {
     let location = window.location;
     let title = document.title;
@@ -24,7 +27,7 @@ const ButtonViewInMobile = () => {
   if (!isMobile()) {
     return (
       <Portal>
-        <FloatingButton styles={styles} onClick={() => openWindow()} ><IoIosOpen size={20} /></FloatingButton>
+        <FloatingButton styles={styles.button} onClick={() => openWindow()} ><IoIosOpen size={20} /></FloatingButton>
       </Portal>
     )
   }

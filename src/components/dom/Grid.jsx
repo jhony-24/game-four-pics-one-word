@@ -1,6 +1,5 @@
 import React from "react"
 import { css, StyleSheet } from "aphrodite/no-important"
-import { styleDynamic } from "src/resources/tools/functions"
 
 const style = StyleSheet.create({
     grid: {
@@ -12,14 +11,14 @@ const style = StyleSheet.create({
 })
 
 export default ({ width, spacing, children, verticalMargin }) => {
-    const styles = {
+    const selfStyle = new StyleSheet.create({
         gridGap: spacing || 10,
         width: width,
         margin: `${verticalMargin || 0}px auto`
-    }
+    });
 
     return (
-        <div className={css(style.grid, styleDynamic(styles))}>
+        <div className={css(style.grid, selfStyle.grid)}>
             {children}
         </div>
     )

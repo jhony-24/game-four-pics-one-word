@@ -1,16 +1,16 @@
 import React from 'react';
-import { css } from 'aphrodite/no-important';
+import { css, StyleSheet } from 'aphrodite/no-important';
 import style from './style';
-import { styleDynamic } from "src/resources/tools/functions"
 import PropTypes from "prop-types"
 
 const Text = ({ children, styles, color }) => {
-  const textStyle = css(style.text, styleDynamic({
-    color,
-    ...styles,
-  }));
+  const selfStyle = new StyleSheet.create({
+    text: {
+      color
+    }
+  })
 
-  return <p className={textStyle} >{children}</p>
+  return <p className={css(style.text, selfStyle.text, styles)} >{children}</p>
 }
 
 Text.propTypes = {

@@ -1,21 +1,25 @@
 import React from 'react';
-import { css } from 'aphrodite/no-important';
+import { css, StyleSheet } from 'aphrodite/no-important';
 import style from './style';
 import Flex from "../../dom/Flex"
-import { styleDynamic } from "src/resources/tools/functions"
 import PropTypes from "prop-types"
 
 const IconNatural = ({ styles, icon, text, coloricon, colortext }) => {
-  const flex = { ...style.flex._definition, ...styles };
-  const iconStyle = css(style.iconic, styleDynamic({ color: coloricon }));
-  const textStyle = css(style.texticon, styleDynamic({ color: colortext }));
+  const selfStyle = new StyleSheet.create({
+    icon: {
+      color: coloricon
+    },
+    text: {
+      color: colortext
+    }
+  })
 
   return (
-    <Flex styles={flex}>
-      <div className={iconStyle}>{icon}</div>
-      {
-        text && <div className={textStyle}>{text}</div>
-      }
+    <Flex styles={css(style.flex, styles)}>
+      <div className={css(style.iconic, selfStyle.icon)}>{icon}</div>
+      {text && (
+        <div className={css(style.texticon, selfStyle.text)}>{text}</div>
+      )}
     </Flex>
   )
 }

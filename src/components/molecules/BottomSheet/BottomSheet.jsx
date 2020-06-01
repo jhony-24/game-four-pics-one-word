@@ -36,7 +36,7 @@ const BottomSheet = ({ open, title, children, onClose }) => {
               onPanStart={onPanStart}
               exit="close">
               <Container styles={style.card}>
-                <Flex styles={style.flexContainer._definition}>
+                <Flex styles={style.flexContainer}>
                   <Container styles={[style.header, style.center]}>
                     <Container styles={style.bar} />
                     <Text>{title}</Text>

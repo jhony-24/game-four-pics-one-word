@@ -1,14 +1,12 @@
 import React from 'react';
 import { css } from 'aphrodite/no-important';
 import style from './style';
-import { styleDynamic } from "src/resources/tools/functions"
 import PropTypes from "prop-types"
 
 const Card = ({ styles, children }) => {
-  const card = css(style.card, styleDynamic(styles));
 
   return (
-    <div className={card}>
+    <div className={css(style.card, styles)}>
       {children}
     </div>
   )
