@@ -2,23 +2,13 @@ import React from "react";
 import Container from "src/components/dom/Container";
 import Avatar from "src/components/atoms/Avatar";
 import Flex from "src/components/dom/Flex";
-import Text from "src/components/atoms/Text";
 import { IoIosCamera } from "react-icons/io";
 import Position from "src/components/dom/Position";
 import { motion as HoverAvatar } from "framer-motion";
 import { useState } from "react";
+import HeaderSettingsUsername from "./HeaderSettingsUsername";
 
 const style = {
-    flex: {
-        flexDirection: "column"
-    },
-    username: {
-        fontSize: "1.5em",
-        fontWeight: "bold"
-    },
-    margin: {
-        margin: "5px 0"
-    },
     marginAvatar: {
         margin: "2em 0 10px",
         position: "relative",
@@ -56,10 +46,7 @@ const HeaderSettings = ({ avatar, title, details }) => {
 
                 </Position>
             </Flex>
-            <Flex styles={style.flex}>
-                <Text styles={{ ...style.username, ...style.margin }}>{title}</Text>
-                <Text styles={style.margin} color="gray" >{details}</Text>
-            </Flex>
+            <HeaderSettingsUsername title={title} details={details} />
         </Container>
     )
 }

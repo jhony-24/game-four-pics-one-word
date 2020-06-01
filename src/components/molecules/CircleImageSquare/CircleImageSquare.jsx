@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { css } from 'aphrodite/no-important';
 import style from './style';
 import { styleDynamic } from "src/resources/tools/functions"
@@ -34,4 +34,4 @@ CircleImageSquare.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string.isRequired)
 }
 
-export default CircleImageSquare;
+export default memo(CircleImageSquare);
