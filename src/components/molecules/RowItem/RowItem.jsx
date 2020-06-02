@@ -20,7 +20,6 @@ RowItem.defaultProps = {
 }
 
 RowItem.propTypes = {
-  styles: PropTypes.object,
   leftBody: PropTypes.oneOfType([PropTypes.element, PropTypes.node]),
   centerBody: PropTypes.oneOfType([PropTypes.element, PropTypes.node]),
   rightBody: PropTypes.oneOfType([PropTypes.element, PropTypes.node]),

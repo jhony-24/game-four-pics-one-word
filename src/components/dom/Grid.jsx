@@ -12,9 +12,11 @@ const style = StyleSheet.create({
 
 export default ({ width, spacing, children, verticalMargin }) => {
     const selfStyle = new StyleSheet.create({
-        gridGap: spacing || 10,
-        width: width,
-        margin: `${verticalMargin || 0}px auto`
+        grid: {
+            gridGap: spacing || 10,
+            width: width,
+            margin: `${verticalMargin || 0}px auto`
+        }
     });
 
     return (

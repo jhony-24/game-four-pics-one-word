@@ -23,7 +23,6 @@ const Paragraph = ({ styles, title, detail, colortitle, colordetail }) => {
 }
 
 Paragraph.propTypes = {
-    styles: PropTypes.object,
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     detail: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     colortitle: PropTypes.string,

@@ -15,7 +15,6 @@ const Text = ({ children, styles, color }) => {
 
 Text.propTypes = {
   children: PropTypes.node.isRequired,
-  styles: PropTypes.object,
   color: PropTypes.string
 }
 

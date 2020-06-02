@@ -13,7 +13,6 @@ const DiscoverWord = lazy(() => import("./DiscoverWord"))
 const ViewGuessWord = (props) => {
   const { state } = props;
   const { points } = state;
-
   return (
     <div className="guess-word">
       <RowItem

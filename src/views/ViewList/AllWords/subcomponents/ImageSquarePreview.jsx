@@ -4,8 +4,15 @@ import Modal from "src/components/molecules/Modal/Modal";
 import useToggle from "src/hooks/useToggle";
 import LazyLoad from "src/components/hoc/LazyLoad";
 import { lazy } from "react";
+import { StyleSheet } from "aphrodite/no-important";
 
 const ImageSquarePreviewModal = lazy(() => import("./dependencies/ImageSquarePreviewModal"));
+
+const selfStyle = new StyleSheet.create({
+    circle: {
+        marginRight: 5
+    }
+})
 
 const ImageSquarePreview = ({ images, onClick }) => {
     const [state, setToggle] = useToggle();
@@ -15,7 +22,7 @@ const ImageSquarePreview = ({ images, onClick }) => {
             <CircleImageSquare
                 onClick={setToggle}
                 images={images}
-                styles={{ marginRight: 5 }} />
+                styles={selfStyle.circle} />
             <Modal
                 visible={state}
                 onClose={setToggle}

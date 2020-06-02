@@ -13,7 +13,6 @@ const Card = ({ styles, children }) => {
 }
 
 Card.propTypes = {
-  styles: PropTypes.object,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.element])
 }
 

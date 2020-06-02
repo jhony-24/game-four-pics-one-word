@@ -40,7 +40,6 @@ TextField.defaultProps = {
 }
 
 TextField.propTypes = {
-  styles: PropTypes.object,
   icon: PropTypes.element,
   type: PropTypes.string,
   value: PropTypes.string,

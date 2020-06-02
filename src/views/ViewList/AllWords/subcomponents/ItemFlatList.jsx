@@ -6,7 +6,14 @@ import IconNatural from "src/components/atoms/IconNatural"
 import { IoMdStar, IoIosApps } from "react-icons/io"
 import { navigate } from 'gatsby';
 import ImageSquarePreview from "./ImageSquarePreview";
+import { StyleSheet } from "aphrodite";
 
+
+const selfStyle = new StyleSheet.create({
+    item : {
+        padding : "20px 10px"
+    }
+})
 
 const ItemFlatList = ({ current, images, letters, points }) => {
     const handlerNavigate = () => navigate("/word", { state: current });
@@ -14,7 +21,7 @@ const ItemFlatList = ({ current, images, letters, points }) => {
     return (
         <RowItem
             onClick={handlerNavigate}
-            styles={{ padding: "20px 10px" }}
+            styles={selfStyle.item}
             leftBody={
                 <ImageSquarePreview
                     images={images}

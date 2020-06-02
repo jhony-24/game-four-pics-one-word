@@ -31,7 +31,6 @@ CircleImageSquare.defaultProps = {
 
 CircleImageSquare.propTypes = {
   onClick: PropTypes.func,
-  styles: PropTypes.object,
   images: PropTypes.arrayOf(PropTypes.string.isRequired)
 }
 

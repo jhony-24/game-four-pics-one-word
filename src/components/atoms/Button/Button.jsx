@@ -20,7 +20,6 @@ Button.defaultProps = {
 
 Button.propTypes = {
   onClick: PropTypes.func,
-  styles: PropTypes.object,
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.node])
 }
 

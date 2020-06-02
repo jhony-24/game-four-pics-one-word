@@ -19,7 +19,6 @@ FloatingButton.defaultProps = {
 
 FloatingButton.propTypes = {
   onClick: PropTypes.func,
-  styles: PropTypes.object,
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.node])
 }
 

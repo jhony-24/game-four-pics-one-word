@@ -6,8 +6,8 @@ class Letter {
    * @returns an array with messy letters
    */
   messUpLettersInArray = requestletter => {
-    let arrayLetter = requestletter.split("")
-    let mess = arrayLetter
+    let arrayLetter = requestletter.split("");
+    let mess = arrayLetter;
     while (requestletter === mess.join("")) {
       mess = arrayLetter.sort(() => Math.random() - 0.5)
     }

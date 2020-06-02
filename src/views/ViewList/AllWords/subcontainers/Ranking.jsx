@@ -29,12 +29,11 @@ class Ranking extends Component {
         <Flex styles={style.container}>
           {
             topRanked.map((current, i) => {
-
-              let center = (i === 1) ? style.rankHigh : {};
+              let center = (i === 1) && style.rankHigh;
 
               return (
                 <Flex styles={style.flexCtnImg} key={i}>
-                  <CircleImageSquare images={current.images} styles={[style.circleImage, center]} />
+                  <CircleImageSquare images={current.images} styles={[style.circleImage,center]} />
                   <FaStar />
                   <span className={css(style.textRank)}>{current.points}</span>
                 </Flex>

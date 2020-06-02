@@ -30,7 +30,6 @@ IconNatural.defaultProps = {
 }
 
 IconNatural.propTypes = {
-  styles: PropTypes.object,
   icon: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   coloricon: PropTypes.string,

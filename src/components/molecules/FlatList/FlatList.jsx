@@ -23,9 +23,6 @@ FlatList.defaultProps = {
 }
 
 FlatList.propTypes = {
-  styles: PropTypes.object,
-  headerStyle: PropTypes.object,
-  footerStyle: PropTypes.object,
   data: PropTypes.array.isRequired,
   renderItem: PropTypes.func.isRequired,
   headerList: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.node]),

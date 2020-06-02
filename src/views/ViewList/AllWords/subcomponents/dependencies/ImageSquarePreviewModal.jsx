@@ -6,7 +6,7 @@ import Fade from "src/components/dom/Fade";
 import { IoIosArrowForward } from "react-icons/io";
 import Flex from "src/components/dom/Flex";
 import CircleImageSquare from 'src/components/molecules/CircleImageSquare';
-import { StyleSheet } from 'aphrodite';
+import { StyleSheet } from 'aphrodite/no-important';
 
 const selfStyle = new StyleSheet.create({
     justify: {
