@@ -6,7 +6,9 @@ import PropTypes from "prop-types"
 const SEO = ({ children, ...props }) => {
   return (
     <Fragment>
-      <Helmet {...props} />
+      <Helmet {...props}>
+        <link rel="canonical" href={`${window.location}`} />
+      </Helmet>
       <div className="root">
         {children}
       </div>
