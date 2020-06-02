@@ -21,7 +21,7 @@ const ViewGuessWord = (props) => {
           <ButtonBack color="white" />
         }
         centerBody={
-          <p className={(css.textHeader)}>Jugando</p>
+          <p className={css(style.textHeader)}>Jugando</p>
         }
         rightBody={
           <IconNatural

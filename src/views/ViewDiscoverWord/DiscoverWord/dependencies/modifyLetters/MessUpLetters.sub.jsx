@@ -71,4 +71,7 @@ MessUpLetters.propTypes = {
     letters: PropTypes.array
 }
 
-export default connect()(MessUpLetters);
+const mapStateToProps = ({ discover }) => ({
+    letters: discover.messyLetters
+})
+export default connect(mapStateToProps)(MessUpLetters);

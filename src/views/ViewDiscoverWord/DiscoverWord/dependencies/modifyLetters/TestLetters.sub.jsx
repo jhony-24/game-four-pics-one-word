@@ -33,4 +33,7 @@ class TestLetters extends Component {
     }
 }
 
-export default connect()(TestLetters);
+const mapStateToProps = ({ discover }) => ({
+    letters: discover.testLetters
+})
+export default connect(mapStateToProps)(TestLetters);

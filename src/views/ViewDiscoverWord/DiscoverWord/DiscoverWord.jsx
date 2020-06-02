@@ -27,7 +27,7 @@ class DiscoverWord extends Component {
   }
 
   render() {
-    const { lettersEmpty, messyLetters, stateDiscover, images } = this.props;
+    const { lettersEmpty , stateDiscover, images } = this.props;
 
     if (stateDiscover) {
       this.incrementPoints();
@@ -37,9 +37,9 @@ class DiscoverWord extends Component {
       return (
         <Flex styles={style.flexDiscover}>
           <CircleImageSquare images={images} styles={style.squareImage} />
-          <TestLetters letters={lettersEmpty} />
+          <TestLetters />
           <FlatMessage verticalMargin={25} text="Elige las letras correctas y descubre la palabra" />
-          <MessUpLetters letters={messyLetters} />
+          <MessUpLetters />
         </Flex>
       )
     }
@@ -48,7 +48,6 @@ class DiscoverWord extends Component {
 
 const mapStateToProps = ({ discover, user }) => ({
   lettersEmpty: discover.testLetters,
-  messyLetters: discover.messyLetters,
   stateDiscover: discover.stateDiscover,
   idWord: discoverSelectors.getIdWord(discover),
   idUser: userSelectors.getIdUser(user),
