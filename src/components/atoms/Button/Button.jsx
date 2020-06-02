@@ -4,7 +4,7 @@ import style from './style';
 import PropTypes from "prop-types"
 
 const Button = ({ onClick, children, styles }) => {
-
+  
   return (
     <button className={css(style.btn, styles)} onClick={onClick}>
       <span className={css(style.dContent)}>

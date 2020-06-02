@@ -7,14 +7,14 @@ import Position from "src/components/dom/Position";
 import { motion as HoverAvatar } from "framer-motion";
 import { useState } from "react";
 import HeaderSettingsUsername from "./HeaderSettingsUsername";
+import { StyleSheet } from "aphrodite/no-important";
 
-const style = {
+const style = new StyleSheet.create({
     marginAvatar: {
         margin: "2em 0 10px",
         position: "relative",
     }
-}
-
+})
 
 const HeaderSettings = ({ avatar, title, details }) => {
     const [hover, setHover] = useState(false);

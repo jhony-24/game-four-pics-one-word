@@ -4,7 +4,7 @@ import style from './style';
 import PropTypes from "prop-types"
 
 const CircleImageSquare = ({ styles, images, onClick }) => {
-
+  
   return (
     <div className={css(style.container)}>
       <div className={css(style.containerImagesCircle, styles)} onClick={onClick} role="button" tabIndex="0" onKeyDown={onClick}>

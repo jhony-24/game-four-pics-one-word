@@ -16,7 +16,7 @@ const Loading = ({ color, colortext, text, size }) => {
   })
 
   return (
-    <Flex styles={css(style.flex)}>
+    <Flex styles={style.flex}>
       <div className={css(style.loading, selfStyle.loading)}></div>
       {
         text && <div className={css(style.textLoading, selfStyle.text)}>{text}</div>

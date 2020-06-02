@@ -6,7 +6,10 @@ const style = StyleSheet.create({
     backdrop: {
         zIndex: 1000,
         position: "fixed",
-        background : "red"
+        background: "red"
+    },
+    bgPosition: {
+        background: "rgba(0,0,0,.7)"
     }
 })
 
@@ -18,7 +21,7 @@ const Backdrop = ({ children }) => {
                 right="0px"
                 top="0px"
                 bottom="0px"
-                styles={{background:"rgba(0,0,0,.7)"}}>
+                styles={style.bgPosition}>
                 {children}
             </Position>
         </div>

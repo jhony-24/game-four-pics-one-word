@@ -15,7 +15,7 @@ const IconNatural = ({ styles, icon, text, coloricon, colortext }) => {
   })
 
   return (
-    <Flex styles={css(style.flex, styles)}>
+    <Flex styles={[style.flex, styles]}>
       <div className={css(style.iconic, selfStyle.icon)}>{icon}</div>
       {text && (
         <div className={css(style.texticon, selfStyle.text)}>{text}</div>

@@ -4,7 +4,6 @@ import style from './style';
 import PropTypes from "prop-types"
 
 const FloatingButton = ({ onClick, children, styles }) => {
-
   return (
     <button className={css(style.floatingBtn, styles)} onClick={onClick}>
       <label className={css(style.label)} >

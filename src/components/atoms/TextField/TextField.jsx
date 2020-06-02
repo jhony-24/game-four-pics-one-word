@@ -15,7 +15,7 @@ const TextField = forwardRef(({ styles, icon, type, value, placeholder, onChange
   })
 
   return (
-    <Flex styles={css(style.flex, styles)}>
+    <Flex styles={[style.flex, styles]}>
       {
         icon && <span className={css(style.icon, selfStyle.icon)}>{icon}</span>
       }
