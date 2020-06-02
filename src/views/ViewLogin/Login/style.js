@@ -19,12 +19,6 @@ const style = StyleSheet.create({
     right: {
         textAlign: "right"
     },
-    center: {
-        textAlign: "center"
-    },
-    marginTop : {
-        marginTop : "4em"
-    },
     cancel : {
         background : "rgba(0,0,0,.02)",
         color : "gray",

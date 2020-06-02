@@ -5,6 +5,7 @@ import style from '../../style';
 import LoginInput from '../FormLoginControl/LoginInput';
 import { userActions } from 'src/redux/user';
 import { connect } from 'react-redux';
+import LoginSignUpText from '../FormLoginControl/LoginSignUpText';
 
 class SignIn extends Component {
     constructor() {
@@ -27,15 +28,7 @@ class SignIn extends Component {
                 <LoginInput.Pass to={this.pass} />
                 <Text styles={[style.smallText, style.right]}>e olvidado mi contraseña ?</Text>
                 <Button onClick={this.signIn}>INICIAR SESIÓN</Button>
-                <Text styles={[style.smallText, style.center, style.marginTop]} color="gray">
-                    no tengo una cuenta
-                    <strong
-                        role="button"
-                        tabIndex="0"
-                        style={{ color: "rgb(30,130,230)", cursor: "pointer" }}
-                        onClick={onOpenRegister}
-                        onKeyDown={onOpenRegister} > registrarme</strong>
-                </Text>
+                <LoginSignUpText onClick={onOpenRegister} />
             </Fragment>
         )
     }

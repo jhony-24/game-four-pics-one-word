@@ -9,21 +9,16 @@ import SignUp from './dependencies/LoginOptions/SignUp';
 import Loading from "src/components/atoms/Loading"
 
 class Login extends Component {
-  constructor() {
-    super();
-    this.state = {
-      scale: false,
-      isSignUp: false
-    }
+  state = {
+    scale: false,
+    isSignUp: false
   }
-
+  
   componentDidMount() {
-    this.changeScale();
+    setTimeout(() => {
+      this.setState({ scale: true });
+    }, 10);
   }
-
-  changeScale = () => setTimeout(() => {
-    this.setState({ scale: true })
-  }, 10)
 
   changeView = () => {
     this.setState(prevState => ({
