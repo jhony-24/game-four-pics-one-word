@@ -5,7 +5,7 @@ import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import { connect } from "react-redux";
 import { wordActions } from "src/redux/word";
 import ButtonUploadImages from './dependencies/buttonUpload/ButtonUploadImages';
-import OptionsUploadWord from './dependencies/buttonUpload/OptionsUploadWord';
+import ButtonOptionsUploadWord from './dependencies/buttonUpload/ButtonOptionsUploadWord';
 import Loading from 'src/components/atoms/Loading/Loading';
 
 class UploadNewWord extends Component {
@@ -60,7 +60,7 @@ class UploadNewWord extends Component {
                   :
                   <Fragment>
                     <CircleImageSquare images={this.getPreviewImages()} styles={style.gridPreviewImages} />
-                    <OptionsUploadWord onUpload={this.handlerUploadWord} onCancel={this.handlerCancelUploadWord} />
+                    <ButtonOptionsUploadWord onUpload={this.handlerUploadWord} onCancel={this.handlerCancelUploadWord} />
                   </Fragment>
               }
             </Fragment>

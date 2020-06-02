@@ -15,18 +15,6 @@ const style = StyleSheet.create({
         width : "80%",
         margin : 10
     },
-    btnUploadWord : {
-        width : "90%",
-        marginTop : 10
-    },
-    btnUploadCancel : {
-        width : "90%",
-        marginTop : 20,
-        marginBottom : 20,
-        boxShadow  : "none",
-        background : "inherit",
-        color : "gray"
-    }
 })
 
 export default style;
