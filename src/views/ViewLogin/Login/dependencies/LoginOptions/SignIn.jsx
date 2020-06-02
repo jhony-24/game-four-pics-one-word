@@ -3,7 +3,8 @@ import Button from "src/components/atoms/Button"
 import Text from "src/components/atoms/Text"
 import style from '../../style';
 import LoginInput from '../FormLoginControl/LoginInput';
-
+import { userActions } from 'src/redux/user';
+import { connect } from 'react-redux';
 
 class SignIn extends Component {
     constructor() {
@@ -15,7 +16,7 @@ class SignIn extends Component {
     signIn = () => {
         let username = this.username.current.value;
         let pass = this.pass.current.value;
-        this.props.onClick({ username, pass });
+        this.props.signIn({ username, pass });
     }
 
     render() {
@@ -40,4 +41,7 @@ class SignIn extends Component {
     }
 }
 
-export default SignIn;
+const mapDispatchToProps = {
+    signIn: userActions.signIn
+}
+export default connect(null, mapDispatchToProps)(SignIn);

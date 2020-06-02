@@ -4,6 +4,8 @@ import style from '../../style';
 import LoginInput from '../FormLoginControl/LoginInput';
 import Flex from "src/components/dom/Flex"
 import Modal from 'src/components/molecules/Modal';
+import { userActions } from "src/redux/user"
+import { connect } from 'react-redux';
 
 class SignUp extends Component {
     constructor() {
@@ -15,7 +17,7 @@ class SignUp extends Component {
     signUp = () => {
         let username = this.username.current.value;
         let pass = this.pass.current.value;
-        this.props.onClick({ username, pass });
+        this.props.signUp({ username, pass });
     }
 
     render() {
@@ -39,4 +41,7 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp;
+const mapDispatchToProps = {
+    signUp: userActions.createUser
+}
+export default connect(null, mapDispatchToProps)(SignUp);

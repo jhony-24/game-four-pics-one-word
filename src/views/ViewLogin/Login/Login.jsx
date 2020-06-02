@@ -7,7 +7,6 @@ import { motion as Opacity } from 'framer-motion';
 import SignIn from './dependencies/LoginOptions/SignIn';
 import SignUp from './dependencies/LoginOptions/SignUp';
 import Loading from "src/components/atoms/Loading"
-import { userActions } from "src/redux/user"
 
 class Login extends Component {
   constructor() {
@@ -30,14 +29,6 @@ class Login extends Component {
     this.setState(prevState => ({
       isSignUp: !prevState.isSignUp
     }));
-  }
-
-  signIn = (data) => {
-    this.props.dispatch(userActions.signIn(data))
-  }
-
-  signUp = (data) => {
-    this.props.dispatch(userActions.createUser(data));
   }
 
   render() {
