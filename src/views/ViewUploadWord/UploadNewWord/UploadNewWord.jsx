@@ -53,13 +53,13 @@ class UploadNewWord extends Component {
           loadingUpload ?
             <Loading size={60} text="subiendo..." /> :
             <Fragment>
-              <TextField placeholder="escribe una palabra..." styles={style.input._definition} ref={this.word} />
+              <TextField placeholder="escribe una palabra..." styles={style.input} ref={this.word} />
               {
                 !stateUploaded ?
                   <ButtonUploadImages onChange={this.handlerSelectImages} />
                   :
                   <Fragment>
-                    <CircleImageSquare images={this.getPreviewImages()} styles={style.gridPreviewImages._definition} />
+                    <CircleImageSquare images={this.getPreviewImages()} styles={style.gridPreviewImages} />
                     <OptionsUploadWord onUpload={this.handlerUploadWord} onCancel={this.handlerCancelUploadWord} />
                   </Fragment>
               }

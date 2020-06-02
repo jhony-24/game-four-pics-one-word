@@ -12,19 +12,17 @@ const DiscoverWord = lazy(() => import("./DiscoverWord"))
 
 const ViewGuessWord = (props) => {
   const { state } = props;
-  const header = { ...style.header._definition };
-  const textHeader = css(style.textHeader);
   const { points } = state;
 
   return (
     <div className="guess-word">
       <RowItem
-        styles={header}
+        styles={style.header}
         leftBody={
           <ButtonBack color="white" />
         }
         centerBody={
-          <p className={textHeader}>Jugando</p>
+          <p className={(css.textHeader)}>Jugando</p>
         }
         rightBody={
           <IconNatural
@@ -35,7 +33,7 @@ const ViewGuessWord = (props) => {
         } />
 
       <LazyLoad component={DiscoverWord} state={state} />
-      <NewWordToPlay/>
+      <NewWordToPlay />
     </div>
   )
 }

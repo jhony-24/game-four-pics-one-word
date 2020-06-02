@@ -12,7 +12,7 @@ const RowSetting = ({ rightBody, title, detail, icon, bgIcon, src, onClick }) =>
     return (
         <Container>
             <RowItem
-                styles={style.item._definition}
+                styles={style.item}
                 leftBody={
                     <Avatar {...avatar} />
                 }

@@ -12,15 +12,15 @@ const ViewUploadWord = () => {
   return (
     <div className="v-upload">
       <RowItem
-        styles={style.header._definition}
+        styles={style.header}
         leftBody={
           <ButtonBack />
         } />
 
-      <Flex styles={style.flex._definition}>
+      <Flex styles={style.flex}>
         <img src={imageUpload} alt={imageUpload} className={css(style.img)} />
         <Paragrah
-          styles={style.paragraph._definition}
+          styles={style.paragraph}
           title="Subir imagenes"
           detail="te recomendamos que las imagenes estén relacionados con la palabra"
           colordetail="gray" />

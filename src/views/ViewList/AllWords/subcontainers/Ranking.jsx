@@ -16,7 +16,7 @@ class Ranking extends Component {
     const { topRanked } = this.props;
 
     return (
-      <Card styles={{ ...style.card._definition }}>
+      <Card styles={style.card}>
         <Paragraph
           title={
             <Flex>
@@ -25,16 +25,16 @@ class Ranking extends Component {
             </Flex>
           }
           colortitle={TEXT_PRIMARY}
-          styles={{ ...style.title._definition }} />
-        <Flex styles={{ ...style.container._definition }}>
+          styles={style.title} />
+        <Flex styles={style.container}>
           {
             topRanked.map((current, i) => {
 
-              let center = (i === 1) ? style.rankHigh._definition : {};
+              let center = (i === 1) ? style.rankHigh : {};
 
               return (
-                <Flex styles={{ ...style.flexCtnImg._definition }} key={i}>
-                  <CircleImageSquare images={current.images} styles={{ ...style.circleImage._definition, ...center }} />
+                <Flex styles={style.flexCtnImg} key={i}>
+                  <CircleImageSquare images={current.images} styles={[style.circleImage, center]} />
                   <FaStar />
                   <span className={css(style.textRank)}>{current.points}</span>
                 </Flex>

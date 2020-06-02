@@ -5,10 +5,10 @@ import Button from "src/components/atoms/Button"
 const OptionsUploadWord = ({ onUpload, onCancel }) => (
     <>
         <Button
-            styles={style.btnUploadWord._definition}
+            styles={style.btnUploadWord}
             onClick={onUpload}>subir esta palabra</Button>
         <Button
-            styles={style.btnUploadCancel._definition}
+            styles={style.btnUploadCancel}
             onClick={onCancel} >cancelar</Button>
     </>
 )

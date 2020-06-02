@@ -5,8 +5,8 @@ import Flex from 'src/components/dom/Flex';
 
 const NewWordButtonGenerator = ({ children, ...props }) => {
     return (
-        <Button styles={style.button._definition} {...props}>
-            <Flex styles={style.buttonFlexCenter._definition}>
+        <Button styles={style.button} {...props}>
+            <Flex styles={style.buttonFlexCenter}>
                 {children}
             </Flex>
         </Button>

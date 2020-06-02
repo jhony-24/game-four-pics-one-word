@@ -27,7 +27,7 @@ const RowPassword = ({ updatePassword }) => {
                 {...password}
                 type="password"
                 placeholder="ingresar nueva contraseña"
-                styles={style.input._definition} />
+                styles={style.input} />
         </RowSettingSheet>
     )
 }

@@ -1,8 +1,9 @@
 import React, { memo } from 'react'
 import Text from 'src/components/atoms/Text';
 import Flex from "src/components/dom/Flex";
+import { StyleSheet } from 'aphrodite/no-important';
 
-const style = {
+const style = new StyleSheet.create({
     flex: {
         flexDirection: "column"
     },
@@ -13,12 +14,12 @@ const style = {
     margin: {
         margin: "5px 0"
     }
-}
+});
 
 const HeaderSettingsUsername = ({ title, details }) => {
     return (
         <Flex styles={style.flex}>
-            <Text styles={{ ...style.username, ...style.margin }}>{title}</Text>
+            <Text styles={[style.username, style.margin]}>{title}</Text>
             <Text styles={style.margin} color="gray" >{details}</Text>
         </Flex>
     )

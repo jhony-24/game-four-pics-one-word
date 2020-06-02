@@ -12,16 +12,14 @@ import LoadingPlaceholder from 'src/components/molecules/LoadingPlaceholder';
 const SettingsApp = lazy(()=>import("./SettingsApp"));
 
 const ViewSettings = () => {
-  const header = { ...style.header._definition };
-  const textHeader = css(style.textHeader);
   const colorLight = TEXT_PRIMARY;
 
   return (
     <div className="settings">
       <RowItem
-        styles={header}
+        styles={style.header}
         leftBody={<ButtonBack color={colorLight} />}
-        centerBody={<p className={textHeader}>Configuraciones</p>}
+        centerBody={<p className={css(style.textHeader)}>Configuraciones</p>}
         rightBody={
           <IconNatural
             icon={<FaCog />}

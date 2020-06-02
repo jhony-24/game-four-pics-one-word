@@ -4,7 +4,7 @@ import { IoIosAdd } from "react-icons/io"
 import FloatingButton from "src/components/atoms/FloatingButton"
 
 const ButtonUploadImages = ({ onChange }) => (
-    <FloatingButton styles={style.uploadImages._definition}>
+    <FloatingButton styles={style.uploadImages}>
         <IoIosAdd size={30} />
         <input
             type="file"

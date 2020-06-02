@@ -27,7 +27,7 @@ const RowRename = ({ defaultUsername, updateUsername }) => {
                 {...username}
                 value={defaultUsername}
                 placeholder="ingresar nombre"
-                styles={style.input._definition} />
+                styles={style.input} />
         </RowSettingSheet>
     )
 }

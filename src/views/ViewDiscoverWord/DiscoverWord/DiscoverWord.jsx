@@ -35,8 +35,8 @@ class DiscoverWord extends Component {
     }
     else {
       return (
-        <Flex styles={{ ...style.flexDiscover._definition }}>
-          <CircleImageSquare images={images} styles={{ ...style.squareImage._definition }} />
+        <Flex styles={style.flexDiscover}>
+          <CircleImageSquare images={images} styles={style.squareImage} />
           <TestLetters letters={lettersEmpty} />
           <FlatMessage verticalMargin={25} text="Elige las letras correctas y descubre la palabra" />
           <MessUpLetters letters={messyLetters} />
