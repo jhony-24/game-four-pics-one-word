@@ -1,7 +1,7 @@
 import React from 'react'
 import { IoIosMusicalNote } from 'react-icons/io';
 import ToggleSwitch from 'src/components/atoms/ToggleSwitch';
-import RowSetting from '../subcomponents/RowSetting';
+import RowSetting from '../RowSetting/RowSetting';
 import { connect } from 'react-redux';
 import { discoverActions } from 'src/redux/discover';
 

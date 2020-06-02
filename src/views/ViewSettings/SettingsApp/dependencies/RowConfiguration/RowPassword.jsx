@@ -1,9 +1,9 @@
 import React from 'react'
 import { IoIosLock } from 'react-icons/io';
 import TextField from 'src/components/atoms/TextField';
-import style from "../style"
+import style from "../../style"
 import { connect } from 'react-redux';
-import RowSettingSheet from '../subcomponents/RowSettingSheet';
+import RowSettingSheet from '../RowSetting/RowSettingSheet';
 import { userActions } from 'src/redux/user';
 import useTextInput from 'src/hooks/useTextInput';
 

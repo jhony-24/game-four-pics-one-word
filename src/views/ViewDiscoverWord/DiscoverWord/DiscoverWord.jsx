@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Flex from "src/components/dom/Flex"
 import { connect } from 'react-redux';
 import FlatMessage from "src/components/molecules/FlatMessage";
-import MessUpLetters from './subcontainers/MessUpLetters.sub';
-import TestLetters from './subcontainers/TestLetters.sub';
-import GameSuccess from "./subcomponents/GameSuccess";
+import MessUpLetters from './dependencies/modifyLetters/MessUpLetters.sub';
+import TestLetters from './dependencies/modifyLetters/TestLetters.sub';
+import GameSuccess from "./dependencies/success/GameSuccess";
 import style from './style';
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import { navigate } from 'gatsby';

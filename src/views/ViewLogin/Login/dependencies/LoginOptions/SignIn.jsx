@@ -1,8 +1,8 @@
 import React, { Component, createRef, Fragment } from 'react';
 import Button from "src/components/atoms/Button"
 import Text from "src/components/atoms/Text"
-import style from '../style';
-import LoginInput from '../subcomponents/LoginInput';
+import style from '../../style';
+import LoginInput from '../FormLoginControl/LoginInput';
 
 
 class SignIn extends Component {

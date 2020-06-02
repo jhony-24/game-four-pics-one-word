@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import RowSetting from '../subcomponents/RowSetting';
+import RowSetting from './RowSetting';
 import BottomSheet from 'src/components/molecules/BottomSheet';
 import Button from 'src/components/atoms/Button';
 

@@ -5,7 +5,7 @@ import Flex from "src/components/dom/Flex"
 import IconNatural from "src/components/atoms/IconNatural"
 import { IoMdStar, IoIosApps } from "react-icons/io"
 import { navigate } from 'gatsby';
-import ImageSquarePreview from "./ImageSquarePreview";
+import ImageSquarePreview from "../previewModal/ImageSquarePreview";
 import { StyleSheet } from "aphrodite";
 
 

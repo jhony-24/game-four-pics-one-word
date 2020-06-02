@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Flex from 'src/components/dom/Flex';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import NewWordButtonGenerator from './subcomponents/NewWordButtonGenerator';
+import NewWordButtonGenerator from './dependencies/ButtonPlay/NewWordButtonGenerator';
 import { connect } from 'react-redux';
 import { wordActions, wordSelectors } from 'src/redux/word';
 import { discoverActions } from 'src/redux/discover';

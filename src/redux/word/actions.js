@@ -1,5 +1,5 @@
 import { createAction } from "redux-actions";
-import services from "src/resources/services"
+import services from "src/services"
 import Auth from "src/models/auth";
 
 // actions

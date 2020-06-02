@@ -3,7 +3,7 @@ import Avatar from 'src/components/atoms/Avatar/Avatar';
 import Paragraph from 'src/components/molecules/Paragraph';
 import RowItem from "src/components/molecules/RowItem"
 import Container from 'src/components/dom/Container';
-import style from '../style';
+import style from '../../style';
 
 const RowSetting = ({ rightBody, title, detail, icon, bgIcon, src, onClick }) => {
     const avatar = { color: bgIcon, icon, src };

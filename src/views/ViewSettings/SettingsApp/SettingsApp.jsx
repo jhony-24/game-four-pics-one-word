@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
-import RowSoundActive from './subcontainers/RowSoundActive';
-import RowRename from './subcontainers/RowRename';
+import RowSoundActive from './dependencies/RowConfiguration/RowSoundActive';
+import RowRename from './dependencies/RowConfiguration/RowRename';
 import { connect } from 'react-redux';
 import { userSelectors, userActions } from 'src/redux/user';
-import HeaderSettings from './subcomponents/HeaderSettings';
-import RowPassword from './subcontainers/RowPassword';
+import HeaderSettings from './dependencies/Header/HeaderSettings';
+import RowPassword from './dependencies/RowConfiguration/RowPassword';
 import GraphicProgressPointStatistical from 'src/components/molecules/GraphicProgressPointStatistical';
 
 class SettingsApp extends Component {

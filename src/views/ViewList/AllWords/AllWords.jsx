@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import FlatList from "src/components/molecules/FlatList"
-import Ranking from "./subcontainers/Ranking"
-import ItemFlatList from './subcomponents/ItemFlatList';
+import Ranking from "./dependencies/listWord/Ranking"
+import ItemFlatList from './dependencies/listWord/ItemFlatList';
+import LoadingPlaceholder from 'src/components/molecules/LoadingPlaceholder';
+import ErrorGetData from './dependencies/listWord/ErrorGetData';
+import Letter from 'src/models/letter';
 import { connect } from "react-redux";
 import { wordActions } from "src/redux/word";
-import LoadingPlaceholder from 'src/components/molecules/LoadingPlaceholder';
-import ErrorGetData from './subcomponents/ErrorGetData';
-import Letter from 'src/models/letter';
 
 class AllWords extends Component {
   constructor() {

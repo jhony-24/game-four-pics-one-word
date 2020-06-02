@@ -4,8 +4,8 @@ import TextField from "src/components/atoms/TextField"
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import { connect } from "react-redux";
 import { wordActions } from "src/redux/word";
-import ButtonUploadImages from './subcomponents/ButtonUploadImages';
-import OptionsUploadWord from './subcomponents/OptionsUploadWord';
+import ButtonUploadImages from './dependencies/buttonUpload/ButtonUploadImages';
+import OptionsUploadWord from './dependencies/buttonUpload/OptionsUploadWord';
 import Loading from 'src/components/atoms/Loading/Loading';
 
 class UploadNewWord extends Component {

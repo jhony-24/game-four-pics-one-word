@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../style';
+import style from '../../style';
 import Button from 'src/components/atoms/Button';
 import Flex from 'src/components/dom/Flex';
 

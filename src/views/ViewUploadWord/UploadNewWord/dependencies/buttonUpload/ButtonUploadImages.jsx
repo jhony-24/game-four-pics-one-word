@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../style";
+import style from "../../style";
 import { IoIosAdd } from "react-icons/io"
 import FloatingButton from "src/components/atoms/FloatingButton"
 

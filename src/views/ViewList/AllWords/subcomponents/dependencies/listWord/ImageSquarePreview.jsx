@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
-import CircleImageSquare from "src/components/molecules/CircleImageSquare"
-import Modal from "src/components/molecules/Modal/Modal";
-import useToggle from "src/hooks/useToggle";
-import LazyLoad from "src/components/hoc/LazyLoad";
+import CircleImageSquare from "./node_modules/src/components/molecules/CircleImageSquare"
+import Modal from "./node_modules/src/components/molecules/Modal/Modal";
+import useToggle from "./node_modules/src/hooks/useToggle";
+import LazyLoad from "./node_modules/src/components/hoc/LazyLoad";
 import { lazy } from "react";
 import { StyleSheet } from "aphrodite/no-important";
 
-const ImageSquarePreviewModal = lazy(() => import("./dependencies/ImageSquarePreviewModal"));
+const ImageSquarePreviewModal = lazy(() => import("../../../dependencies/previewModal/ImageSquarePreviewModalwModal/ImageSquarePreviewModal"));
 
 const selfStyle = new StyleSheet.create({
     circle: {

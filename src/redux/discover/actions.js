@@ -1,5 +1,5 @@
 import { createAction } from "redux-actions";
-import services from "src/resources/services"
+import services from "src/services"
 
 // actions
 const base = "ducks/discover";

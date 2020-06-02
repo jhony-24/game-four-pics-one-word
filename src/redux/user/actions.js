@@ -1,6 +1,6 @@
 import { createAction } from "redux-actions";
 import { STATUS } from "./types";
-import services from "src/resources/services"
+import services from "src/services"
 import Auth from "src/models/auth";
 
 // actions

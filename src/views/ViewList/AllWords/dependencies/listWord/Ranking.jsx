@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { css } from 'aphrodite/no-important';
-import style from '../style';
+import style from '../../style';
 import Flex from "src/components/dom/Flex"
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import Card from "src/components/molecules/Card"
