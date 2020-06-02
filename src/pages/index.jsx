@@ -1,6 +1,7 @@
 import React from "react"
 import ViewLogin from "src/views/ViewLogin"
 import SEO from "src/components/atoms/SEO"
+import ShowViewNotLogged from "src/components/hoc/ShowViewNotLogged"
 
 const Index = () => {
     return (
@@ -12,4 +13,4 @@ const Index = () => {
     )
 }
 
-export default Index;
+export default ShowViewNotLogged(Index);
