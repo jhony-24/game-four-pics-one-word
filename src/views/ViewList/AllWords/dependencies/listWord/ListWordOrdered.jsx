@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ItemFlatList from './ItemFlatList';
+import ItemFlatListWord from './ItemFlatListWord';
 import FlatList from "src/components/molecules/FlatList"
 import { wordSelectors } from 'src/redux/word';
 
@@ -10,11 +10,11 @@ class ListWordOrdered extends Component {
 
         return (
             <FlatList data={listWords} renderItem={(current, key) => (
-                <ItemFlatList
+                <ItemFlatListWord
                     key={key}
                     current={current}
                     images={current.images}
-                    letters={current.letters}
+                    letters={current.messyLetters}
                     points={current.points} />
             )} />
         )

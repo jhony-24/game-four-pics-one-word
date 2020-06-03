@@ -7,7 +7,6 @@ import TestLetters from './dependencies/modifyLetters/TestLetters.sub';
 import GameSuccess from "./dependencies/success/GameSuccess";
 import style from './style';
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
-import { navigate } from 'gatsby';
 import { discoverActions, discoverSelectors } from "src/redux/discover";
 import { userSelectors } from 'src/redux/user';
 
@@ -17,21 +16,11 @@ class DiscoverWord extends Component {
     this.props.dispatch(discoverActions.createLettersToDiscover(this.props.state));
   }
 
-  continueGame = () => {
-    navigate("/list");
-    this.props.dispatch(discoverActions.removeMessyLetters());
-  }
-
-  incrementPoints = () => {
-    this.props.dispatch(discoverActions.incrementPoints(this.props.idWord, this.props.idUser));
-  }
-
   render() {
-    const { lettersEmpty , stateDiscover, images } = this.props;
-
+    const { stateDiscover, images, idWord, idUser } = this.props;
+    console.log("estado"+stateDiscover)
     if (stateDiscover) {
-      this.incrementPoints();
-      return <GameSuccess onClick={this.continueGame} word={lettersEmpty.join('')} />
+      return <GameSuccess idWord={idWord} idUser={idUser} />
     }
     else {
       return (
@@ -47,11 +36,9 @@ class DiscoverWord extends Component {
 }
 
 const mapStateToProps = ({ discover, user }) => ({
-  lettersEmpty: discover.testLetters,
   stateDiscover: discover.stateDiscover,
   idWord: discoverSelectors.getIdWord(discover),
   idUser: userSelectors.getIdUser(user),
   images: discover.wordData !== null ? discover.wordData.images : []
 })
-
 export default connect(mapStateToProps)(DiscoverWord);

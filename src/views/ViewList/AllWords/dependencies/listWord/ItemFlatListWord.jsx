@@ -15,7 +15,7 @@ const selfStyle = new StyleSheet.create({
     }
 })
 
-const ItemFlatList = ({ current, images, letters, points }) => {
+const ItemFlatListWord = ({ current, images, letters, points }) => {
     const handlerNavigate = () => navigate("/word", { state: current });
 
     return (
@@ -41,4 +41,4 @@ const ItemFlatList = ({ current, images, letters, points }) => {
     )
 }
 
-export default ItemFlatList;
+export default ItemFlatListWord;

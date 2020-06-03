@@ -32,8 +32,10 @@ export const getAllWords = ({ word }) => {
     let letter = new Letter();
     let list = word.listWords;
     let combineLetters = list.map((current => {
-        current.letters = letter.createNewTextArray(current.letters).join('')
-        return current;
+        return {
+            ...current,
+            messyLetters: letter.createNewTextArray(current.letters).join('')
+        }
     }));
     return combineLetters;
 }

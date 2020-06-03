@@ -63,15 +63,8 @@ class MessUpLetters extends Component {
     }
 }
 
-MessUpLetters.defaultProps = {
-    letters: []
-}
-
-MessUpLetters.propTypes = {
-    letters: PropTypes.array
-}
-
 const mapStateToProps = ({ discover }) => ({
-    letters: discover.messyLetters
+    letters: discover.messyLetters,
+    stateDiscover : discover.stateDiscover
 })
 export default connect(mapStateToProps)(MessUpLetters);

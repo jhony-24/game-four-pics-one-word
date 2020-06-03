@@ -14,13 +14,11 @@ class NewWordToPlay extends Component {
 
     return (
       <Flex>
-        <NewWordButtonGenerator onClick={()=>onBackward(listWords[currentIndexListWord-1])}>
-          <IoIosArrowBack />
-          atrás
+        <NewWordButtonGenerator onClick={() => onBackward(listWords[currentIndexListWord - 1])}>
+          <IoIosArrowBack /> atrás
         </NewWordButtonGenerator>
-        <NewWordButtonGenerator onClick={()=>onForward(listWords[currentIndexListWord+1])}>
-          siguiente
-          <IoIosArrowForward />
+        <NewWordButtonGenerator onClick={() => onForward(listWords[currentIndexListWord + 1])}>
+          siguiente <IoIosArrowForward />
         </NewWordButtonGenerator>
       </Flex>
     )
@@ -29,7 +27,7 @@ class NewWordToPlay extends Component {
 
 const mapStateToProps = state => ({
   currentIndexListWord: wordSelectors.getCurrentIndexWord(state),
-  listWords : state.word.listWords
+  listWords: state.word.listWords
 })
 const mapDispatchToProps = (dispatch) => ({
   onBackward: (currentWord) => {
