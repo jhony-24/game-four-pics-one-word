@@ -27,37 +27,26 @@ class MessUpLetters extends Component {
         duration: Math.random() * 2
     })
 
-    handlerPressLetter = (paramsLetter) => {
-        let dispatch = this.props.dispatch;
-        let indexed = new Indexed();
-        indexed.read("sound", ({ enableSound }) => {
-            dispatch(discoverActions.getEnableSound({ enableSound }));
-        })
-        dispatch(discoverActions.assignLetterToOrder(paramsLetter));
-    }
-
     letterEmpty = (letter = 0) => letter !== 0;
 
     render() {
-        const { letters } = this.props;
+        const { letters, pressLetterToAssignTest } = this.props;
         return (
             <Grid verticalMargin={20} >
-                {
-                    letters.map((letter, index) => (
-                        <MotionLetter.div
-                            key={index}
-                            initial={this.effectInitial()}
-                            animate={this.effectStart()}
-                            transition={this.transition()}>
-                            <Letter
-                                background={this.letterEmpty(letter) && "gray"}
-                                color={TEXT_PRIMARY}
-                                text={letter}
-                                visibilityText={this.letterEmpty(letter)}
-                                onPressLetter={() => this.letterEmpty(letter) && this.handlerPressLetter({ letter, index })} />
-                        </MotionLetter.div>
-                    ))
-                }
+                {letters.map((letter, index) => (
+                    <MotionLetter.div
+                        key={index}
+                        initial={this.effectInitial()}
+                        animate={this.effectStart()}
+                        transition={this.transition()}>
+                        <Letter
+                            background={this.letterEmpty(letter) && "gray"}
+                            color={TEXT_PRIMARY}
+                            text={letter}
+                            visibilityText={this.letterEmpty(letter)}
+                            onPressLetter={() => this.letterEmpty(letter) && pressLetterToAssignTest({ letter, index })} />
+                    </MotionLetter.div>
+                ))}
             </Grid>
         )
     }
@@ -65,6 +54,15 @@ class MessUpLetters extends Component {
 
 const mapStateToProps = ({ discover }) => ({
     letters: discover.messyLetters,
-    stateDiscover : discover.stateDiscover
+    stateDiscover: discover.stateDiscover
 })
-export default connect(mapStateToProps)(MessUpLetters);
+const mapDispatchToProps = (dispatch) => ({
+    pressLetterToAssignTest(parametersLetters){
+        let indexed = new Indexed();
+        indexed.read("sound", ({ enableSound }) => {
+            dispatch(discoverActions.getEnableSound({ enableSound }));
+        })
+        dispatch(discoverActions.assignLetterToOrder(parametersLetters));
+    }
+}) 
+export default connect(mapStateToProps,mapDispatchToProps)(MessUpLetters);

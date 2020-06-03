@@ -18,7 +18,6 @@ class DiscoverWord extends Component {
 
   render() {
     const { stateDiscover, images, idWord, idUser } = this.props;
-    console.log("estado"+stateDiscover)
     if (stateDiscover) {
       return <GameSuccess idWord={idWord} idUser={idUser} />
     }

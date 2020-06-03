@@ -17,17 +17,15 @@ class TestLetters extends Component {
         const { letters } = this.props;
         return (
             <Grid verticalMargin={20} >
-                {
-                    letters.map((letter, index) => (
-                        <Letter
-                            key={index}
-                            text={letter}
-                            visibilityText={this.letterEmpty(letter)}
-                            color={this.letterEmpty(letter) ? TEXT_PRIMARY : "black"}
-                            background={this.letterEmpty(letter) ? PRIMARY_COLOR : SILVER_COLOR}
-                            onPressLetter={() => this.letterEmpty(letter) && this.handlerPressLetter({ letter, index })} />
-                    ))
-                }
+                {letters.map((letter, index) => (
+                    <Letter
+                        key={index}
+                        text={letter}
+                        visibilityText={this.letterEmpty(letter)}
+                        color={this.letterEmpty(letter) ? TEXT_PRIMARY : "black"}
+                        background={this.letterEmpty(letter) ? PRIMARY_COLOR : SILVER_COLOR}
+                        onPressLetter={() => this.letterEmpty(letter) && this.handlerPressLetter({ letter, index })} />
+                ))}
             </Grid>
         )
     }
