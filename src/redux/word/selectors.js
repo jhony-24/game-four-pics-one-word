@@ -1,5 +1,7 @@
-export const getWordsTopRanked = (state, totalInRanking = 3) => {
-    let cloneArray = Array.from(state.word.listWords);
+import Letter from 'src/models/letter';
+
+export const getWordsTopRanked = ({ word }, totalInRanking = 3) => {
+    let cloneArray = Array.from(word.listWords);
     let orderByMorePoints = cloneArray.sort((a, b) => {
         return b.points - a.points;
     });
@@ -23,4 +25,15 @@ export const getCurrentIndexWord = ({ discover, word }) => {
         let indexInListWord = word.listWords.findIndex(current => current.idWord === currentIdWordDiscover);
         return indexInListWord;
     }
+}
+
+
+export const getAllWords = ({ word }) => {
+    let letter = new Letter();
+    let list = word.listWords;
+    let combineLetters = list.map((current => {
+        current.letters = letter.createNewTextArray(current.letters).join('')
+        return current;
+    }));
+    return combineLetters;
 }

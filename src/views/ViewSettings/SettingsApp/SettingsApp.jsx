@@ -18,7 +18,7 @@ class SettingsApp extends Component {
     return (
       <Fragment>
         <HeaderSettings
-          title={username || "Jhony vega"}
+          title={username}
           details={"33 puntos hasta hoy"}
           avatar="https://cdn.pixabay.com/photo/2020/04/21/10/26/animal-5072537__340.jpg" />
         <GraphicProgressPointStatistical/>

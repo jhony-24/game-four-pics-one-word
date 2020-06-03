@@ -15,7 +15,7 @@ const selfStyle = new StyleSheet.create({
 })
 
 const ImageSquarePreview = ({ images, onClick }) => {
-    const [state, setToggle] = useToggle();
+    const [isVisible, setToggle] = useToggle();
 
     return (
         <Fragment>
@@ -24,7 +24,7 @@ const ImageSquarePreview = ({ images, onClick }) => {
                 images={images}
                 styles={selfStyle.circle} />
             <Modal
-                visible={state}
+                visible={isVisible}
                 onClose={setToggle}
                 title="vista previa"
                 message={

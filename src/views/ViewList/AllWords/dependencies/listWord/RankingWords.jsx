@@ -11,7 +11,7 @@ import { wordSelectors } from "src/redux/word";
 import { connect } from "react-redux";
 import { navigate } from 'gatsby';
 
-class Ranking extends Component {
+class RankingWords extends Component {
   render() {
     const { topRanked } = this.props;
 
@@ -20,7 +20,7 @@ class Ranking extends Component {
         <Paragraph
           title={
             <Flex>
-              {"Los más descubiertos"}
+              Los más descubiertos
               <FaCog onClick={() => navigate("/settings")} />
             </Flex>
           }
@@ -28,12 +28,12 @@ class Ranking extends Component {
           styles={style.title} />
         <Flex styles={style.container}>
           {
-            topRanked.map((current, i) => {
-              let center = (i === 1) && style.rankHigh;
+            topRanked.map((current, key) => {
+              let center = (key === 1) && style.rankHigh;
 
               return (
-                <Flex styles={style.flexCtnImg} key={i}>
-                  <CircleImageSquare images={current.images} styles={[style.circleImage,center]} />
+                <Flex styles={style.flexCtnImg} key={key}>
+                  <CircleImageSquare images={current.images} styles={[style.circleImage, center]} />
                   <FaStar />
                   <span className={css(style.textRank)}>{current.points}</span>
                 </Flex>
@@ -50,5 +50,5 @@ class Ranking extends Component {
 
 const mapStateToProps = state => ({
   topRanked: wordSelectors.getWordsTopRanked(state)
-})
-export default connect(mapStateToProps)(Ranking);
+});
+export default connect(mapStateToProps)(RankingWords);

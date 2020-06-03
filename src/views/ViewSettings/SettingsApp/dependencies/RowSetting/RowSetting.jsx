@@ -6,19 +6,17 @@ import Container from 'src/components/dom/Container';
 import style from '../../style';
 
 const RowSetting = ({ rightBody, title, detail, icon, bgIcon, src, onClick }) => {
-    const avatar = { color: bgIcon, icon, src };
-    const paragraph = { title, detail };
 
     return (
         <Container>
             <RowItem
                 styles={style.item}
                 leftBody={
-                    <Avatar {...avatar} />
+                    <Avatar color={bgIcon} icon={icon} src={src} />
                 }
                 centerBody={
                     <Container styles={style.ctnParagraph}>
-                        <Paragraph colordetail="gray" {...paragraph} />
+                        <Paragraph colordetail="gray" title={title} detail={detail} />
                     </Container>
                 }
                 rightBody={rightBody}
@@ -26,12 +24,6 @@ const RowSetting = ({ rightBody, title, detail, icon, bgIcon, src, onClick }) =>
             />
         </Container>
     )
-}
-
-RowSetting.defaultProps = {
-    bgIcon: "transparent",
-    icon: null,
-    src: null
 }
 
 export default RowSetting;
