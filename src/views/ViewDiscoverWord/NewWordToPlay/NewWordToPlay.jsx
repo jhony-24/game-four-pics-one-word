@@ -9,6 +9,10 @@ import store from 'src/store/store';
 
 class NewWordToPlay extends Component {
 
+  componentDidMount() {
+    this.props.onDefineCurrentIndex();
+  }
+
   render() {
     const { onBackward, onForward } = this.props;
     return (
@@ -27,15 +31,19 @@ class NewWordToPlay extends Component {
 const mapDispatchToProps = dispatch => {
   const onMoveTo = (action) => {
     dispatch(action);
-    dispatch(
-      discoverActions.createLettersToDiscover(
-        store.getState().word.listWords[store.getState().word.currentIndexListWord]
-      )
-    );
+    dispatch(discoverActions.createLettersToDiscover(
+      store.getState().word.listWords[store.getState().word.currentIndexListWord]
+    ));
+  }
+  const onDefineCurrentIndex = () => {
+    dispatch(wordActions.setDefaultIndexWordPlay(
+      wordSelectors.getCurrentIndexWord(store.getState())
+    ));
   }
   return {
     onForward: () => onMoveTo(wordActions.forwardNewWordPlay()),
     onBackward: () => onMoveTo(wordActions.backwardNewWordPlay()),
+    onDefineCurrentIndex
   }
 }
 export default connect(null, mapDispatchToProps)(NewWordToPlay);

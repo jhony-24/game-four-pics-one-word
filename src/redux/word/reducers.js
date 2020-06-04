@@ -63,7 +63,7 @@ const handlers = {
     [actions.setDefaultIndexWordPlay]: (state, { payload }) => {
         return {
             ...state,
-            currentIndexListWord: payload.currentIndexListWord
+            currentIndexListWord: payload
         }
     },
 
