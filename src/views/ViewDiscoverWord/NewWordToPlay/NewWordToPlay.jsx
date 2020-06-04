@@ -16,14 +16,14 @@ class NewWordToPlay extends Component {
   render() {
     const { onBackward, onForward } = this.props;
     return (
-      <Flex>
-        <NewWordButtonGenerator onClick={onBackward}>
-          <IoIosArrowBack /> atrás
+        <Flex>
+          <NewWordButtonGenerator onClick={onBackward}>
+            <IoIosArrowBack /> atrás
         </NewWordButtonGenerator>
-        <NewWordButtonGenerator onClick={onForward}>
-          siguiente <IoIosArrowForward />
-        </NewWordButtonGenerator>
-      </Flex>
+          <NewWordButtonGenerator onClick={onForward}>
+            siguiente <IoIosArrowForward />
+          </NewWordButtonGenerator>
+        </Flex>
     )
   }
 }

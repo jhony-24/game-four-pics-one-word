@@ -11,7 +11,7 @@ export default ({ position, margin, left, right, top, bottom, children, styles }
             right,
             top,
             bottom,
-            justifyContent: "center"
+            justifyContent: "center",
         }
     });
 
