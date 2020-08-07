@@ -6,6 +6,7 @@ import { userSelectors, userActions } from 'src/redux/user';
 import HeaderSettings from './dependencies/Header/HeaderSettings';
 import RowPassword from './dependencies/RowConfiguration/RowPassword';
 import GraphicProgressPointStatistical from 'src/components/molecules/GraphicProgressPointStatistical';
+import RowLogout from './dependencies/RowConfiguration/RowLogout';
 
 class SettingsApp extends Component {
   componentDidMount() {
@@ -25,6 +26,7 @@ class SettingsApp extends Component {
         <RowSoundActive />
         <RowRename defaultUsername={username} />
         <RowPassword/>
+		  <RowLogout/>
       </Fragment>
     )
   }
