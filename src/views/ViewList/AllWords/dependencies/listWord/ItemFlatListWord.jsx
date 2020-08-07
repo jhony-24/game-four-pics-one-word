@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import RowItem from "src/components/molecules/RowItem"
 import Paragraph from "src/components/molecules/Paragraph"
 import Flex from "src/components/dom/Flex"
@@ -7,7 +7,6 @@ import { IoMdStar, IoIosApps } from "react-icons/io"
 import { navigate } from 'gatsby';
 import ImageSquarePreview from "../previewModal/ImageSquarePreview";
 import { StyleSheet } from "aphrodite";
-
 
 const selfStyle = new StyleSheet.create({
     item : {

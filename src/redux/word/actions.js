@@ -1,7 +1,7 @@
-import { createAction } from "redux-actions";
+import { createAction, createActions } from "redux-actions";
 import services from "src/services"
 import Auth from "src/models/auth";
-
+import store from "src/store/store"
 // actions
 const base = "ducks/word";
 export const actionGetListAllWords = createAction(`${base}/GET_LIST_ALL_WORDS`);
@@ -14,17 +14,22 @@ export const forwardNewWordPlay = createAction(`${base}/FORWARD_NEW_WORD_PLAY`);
 export const backwardNewWordPlay = createAction(`${base}/BACKWARD_NEW_WORD_PLAY`);
 export const setDefaultIndexWordPlay = createAction(`${base}/SET_DEFAULT_INDEX_WORD_PLAY`);
 
+
 // actions creators
 export const getListAllWords = () => async (dispatch) => {
+	 const start = store.getState().word.pagination.start;
     dispatch(actionLoadingListAllWords({ loading: true, error: false }));
     try {
-        const request = await services.getListAllWords();
-        const { status, ...listWords } = request.data;
-        dispatch(actionGetListAllWords({
-            listWords,
-            loading: false,
-            error: false
-        }));
+        const request = await services.getListAllWords({start,limit:3});
+		  const { meta , data } = request.data;
+			  dispatch(actionGetListAllWords({
+				  listWords : data,
+				  loading: false,
+				  error: false,
+				  pagination : {
+					  start : meta.nextLink
+				  }
+				}));
     }
     catch {
         dispatch(actionErrorToGetData({ error: true, loading: false }));
