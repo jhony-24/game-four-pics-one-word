@@ -6,6 +6,5 @@ export {
     discoverActions,
     discoverSelectors
 }
-
 export default reducers;
 

@@ -1,19 +1,30 @@
-import { createAction } from "redux-actions";
+import { createAction, createActions } from "redux-actions"
 import services from "src/services"
 
-// actions
-const base = "ducks/discover";
-export const createLettersToDiscover = createAction(`${base}/CREATE_LETTERS_TO_DISCOVER`); //payload
-export const assignLetterToOrder = createAction(`${base}/ASSIGN_LETTER_TO_ORDER`); //payload
-export const giveBackLetter = createAction(`${base}/GIVEBACK_LETTER`); //payload
-export const removeMessyLetters = createAction(`${base}/REMOVE_MESSY_LETTERS`);
-export const actionIncrementPoints = createAction(`${base}/INCREMENT_POINTS`);
-export const switchEnableSound = createAction(`${base}/SWITCH_ENABLE_SOUND`);
-export const getEnableSound = createAction(`${base}/GET_ENABLE_SOUND`); // payload
+export const {
+	createLettersToDiscover,
+	assignLetterToOrder,
+	giveBackLetter,
+	removeMessyLetters,
+	actionIncrementPoints,
+	switchEnableSound,
+	getEnableSound,
+} = createActions(
+	"CREATE_LETTERS_TO_DISCOVER", // payload
+	"ASSIGN_LETTER_TO_ORDER", // payload
+	"GIVEBACK_LETTER", //payload
+	"REMOVE_MESSY_LETTERS",
+	"ACTION_INCREMENT_POINTS",
+	"SWITCH_ENABLE_SOUND",
+	"GET_ENABLE_SOUND", // payload
+	{
+		prefix: "ducks/discover",
+	}
+)
 
 // actions creators
 export const incrementPoints = (idWord, idUser) => async dispatch => {
-    const word = await services.incrementWordPoints({ id: idWord });
-    const user = await services.incrementPointsUserDiscover({ id: idUser });
-    dispatch(actionIncrementPoints());
+	const word = await services.incrementWordPoints({ id: idWord })
+	const user = await services.incrementPointsUserDiscover({ id: idUser })
+	dispatch(actionIncrementPoints())
 }
