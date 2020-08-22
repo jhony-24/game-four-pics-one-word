@@ -4,6 +4,7 @@ import { STATUS } from "./types"
 import { handleActions } from "redux-actions"
 import * as actions from "./actions"
 import Indexed from "src/models/indexed"
+import _ from "lodash"
 
 const initialState = {
 	user: null,
@@ -16,62 +17,42 @@ const handlers = {
 	[actions.actionSignIn]: (state, { payload }) => {
 		switch (payload.status) {
 			case STATUS.LOADING:
-				return {
-					...state,
-					loading: !state.loading,
-				}
+				return _.update(state, "loading", value => !value)
 			case STATUS.OK:
-				let user = payload.user
+				const { user, status } = payload
 				let userDb = new Indexed()
-				if (user.status) {
+				if (status) {
 					userDb.create({
 						key: "sound",
 						enableSound: true,
 					})
 					Auth.set(user)
 					navigate("/list")
-					return {
-						...state,
-						user: user,
-						logged: true,
-						loading: false,
-					}
+					return _.merge(state, { user, logged: true, loading: false })
 				}
-				return {
-					...state,
-					loading: false,
-				}
+				return _.set(state,'loading',false);
 			case STATUS.ERROR:
-				return {
-					...state,
-					loading: false,
-				}
+				return _.set(state,'loading',false);
 			default:
 				return state
 		}
 	},
 
-	[actions.actionCreateUser]: (state, action) => {
+	[actions.actionCreateUser]: state => {
 		return state
 	},
 
-	[actions.getUser]: (state, action) => {
-		return {
-		...state,
-		user: Auth.get(),
-		}
+	[actions.getUser]: state => {
+		return _.set(state, "user", Auth.get())
 	},
 
 	[actions.setUpdateUser]: (state, { payload }) => {
 		if (payload.hasOwnProperty("username")) {
-			let username = payload.username
-			return {
-				...state,
+			return _.merge(state, {
 				user: {
-					...state.user,
-					username,
+					username: payload.username,
 				},
-			}
+			})
 		}
 		return state
 	},

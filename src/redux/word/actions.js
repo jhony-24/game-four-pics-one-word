@@ -31,14 +31,14 @@ export const getListAllWords = () => async dispatch => {
 	const start = store.getState().word.pagination.start
 	dispatch(actionLoadingListAllWords({ loading: true, error: false }))
 	try {
-		const request = await services.getListAllWords({ start, limit: 3 })
-		const { meta, data } = request.data
+		const { data } = await services.getListAllWords({ start, limit: 3 })
+		const { nextLink , content } = data;
 		dispatch(actionGetListAllWords({
-				listWords: data,
+				listWords: content,
 				loading: false,
 				error: false,
 				pagination: {
-					start: meta.nextLink,
+					start: nextLink,
 				},
 		}))
 	} catch {

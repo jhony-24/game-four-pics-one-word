@@ -26,9 +26,9 @@ export const {
 export const signIn = ({ username, pass }) => async dispatch => {
 	dispatch(actionSignIn({ status: STATUS.LOADING,}))
 	try {
-		const request = await services.signIn({ username, pass })
+		const { data } = await services.signIn({ username, pass });
 		dispatch(actionSignIn({
-				user: request.data,
+				user: data.content,
 				status: STATUS.OK,
 		}))
 	} catch {
@@ -45,12 +45,12 @@ export const createUser = ({ username, pass }) => async dispatch => {
 
 export const updateUserName = ({ username }) => async dispatch => {
 	const auth = Auth.get()
-	const request = await services.updateUser({
+	const { data } = await services.updateUser({
 		iduser: auth.iduser,
 		username,
 	})
 	let newCookieData = null
-	if (request.status) {
+	if (data.status) {
 		newCookieData = {
 			...auth,
 			username,

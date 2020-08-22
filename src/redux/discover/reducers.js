@@ -4,6 +4,7 @@ import Letter from "src/models/letter";
 import win from "src/resources/sounds/s20200404win.mp3";
 import click from "src/resources/sounds/s20200404click.wav";
 import Indexed from "src/models/indexed";
+import _ from "lodash";
 
 const letterModel = new Letter();
 
@@ -74,18 +75,12 @@ const handlers = {
         indexed.update({
             key: "sound",
             enableSound: !state.enableSound
-        });
-        return {
-            ...state,
-            enableSound: !state.enableSound
-        }
+		  });
+		  return _.update(state,'enableSound',value => !value);
     },
 
     [actions.getEnableSound]: (state, { payload }) => {
-        return {
-            ...state,
-            enableSound: payload.enableSound
-        }
+		 return _.set(state,'enableSound',payload.enableSound);
     },
 }
 
