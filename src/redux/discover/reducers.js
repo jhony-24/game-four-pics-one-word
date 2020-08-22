@@ -50,7 +50,7 @@ const handlers = {
 
     [actions.giveBackLetter]: (state, { payload }) => {
         let { testLetters, messyLetters } = state;
-        let { from, to } = letterModel.moveValueBetween(testLetters, messyLetters, payload);
+		  let { from, to } = letterModel.moveValueBetween(testLetters, messyLetters, payload);
         return {
             ...state,
             testLetters: from,
