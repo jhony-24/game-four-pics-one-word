@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, css } from "aphrodite/lib";
 import Text from "src/components/atoms/Text/Text";
 import { AiOutlineSync } from "react-icons/ai";
-import { TEXT_SECONDARY } from "src/resources/tools/constants";
+import { TEXT_SECONDARY } from "src/theme/constants";
 import Fade from "src/components/dom/Fade";
 
 const styles = StyleSheet.create({

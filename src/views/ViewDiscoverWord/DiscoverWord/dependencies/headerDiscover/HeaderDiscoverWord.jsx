@@ -3,7 +3,7 @@ import StarPointsDiscovered from './StarPointsDiscovered';
 import ButtonBack from 'src/components/molecules/ButtonBack';
 import RowItem from "src/components/molecules/RowItem"
 import { css, StyleSheet } from 'aphrodite/no-important';
-import { PRIMARY_COLOR, TEXT_PRIMARY } from "src/resources/tools/constants"
+import { PRIMARY_COLOR, TEXT_PRIMARY } from "src/theme/constants"
 
 const style = StyleSheet.create({
     header: {

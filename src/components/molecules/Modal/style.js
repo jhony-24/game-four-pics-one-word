@@ -1,5 +1,5 @@
 import { StyleSheet } from "aphrodite/no-important"
-import { TEXT_PRIMARY } from "src/resources/tools/constants"
+import { TEXT_PRIMARY } from "src/theme/constants"
 
 const style = StyleSheet.create({
     backdrop: {

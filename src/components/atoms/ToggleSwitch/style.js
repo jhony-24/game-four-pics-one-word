@@ -1,5 +1,5 @@
 import { StyleSheet } from "aphrodite/no-important"
-import { PRIMARY_COLOR, TEXT_PRIMARY, TEXT_SECONDARY } from "src/resources/tools/constants";
+import { PRIMARY_COLOR, TEXT_PRIMARY, TEXT_SECONDARY } from "src/theme/constants";
 
 const style = StyleSheet.create({
     ctnSwitch: {

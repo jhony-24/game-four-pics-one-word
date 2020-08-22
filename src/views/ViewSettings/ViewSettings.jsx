@@ -5,7 +5,7 @@ import ButtonBack from 'src/components/molecules/ButtonBack';
 import style from './style';
 import { FaCog } from 'react-icons/fa';
 import IconNatural from 'src/components/atoms/IconNatural';
-import { TEXT_PRIMARY } from 'src/resources/tools/constants';
+import { TEXT_PRIMARY } from 'src/theme/constants';
 import LazyLoad from 'src/components/hoc/LazyLoad';
 import LoadingPlaceholder from 'src/components/molecules/LoadingPlaceholder';
 

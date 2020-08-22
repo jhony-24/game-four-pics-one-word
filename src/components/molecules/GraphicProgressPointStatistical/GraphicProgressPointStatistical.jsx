@@ -4,7 +4,7 @@ import Container from 'src/components/dom/Container';
 import { css } from 'aphrodite/no-important';
 import style from "./style"
 import { useEffect } from 'react';
-import { TEXT_SECONDARY } from 'src/resources/tools/constants';
+import { TEXT_SECONDARY } from 'src/theme/constants';
 
 var data = []
 for (var i = 0; i < 100; i++) {
