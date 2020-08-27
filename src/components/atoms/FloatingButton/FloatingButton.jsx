@@ -6,9 +6,9 @@ import PropTypes from "prop-types"
 const FloatingButton = ({ onClick, children, styles }) => {
   return (
     <button className={css(style.floatingBtn, styles)} onClick={onClick}>
-      <label className={css(style.label)} >
+      <span className={css(style.label)}>
         {children}
-      </label>
+      </span>
     </button>
   )
 }

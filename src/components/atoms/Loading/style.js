@@ -1,12 +1,6 @@
 import { StyleSheet } from "aphrodite/no-important"
 import { styled } from "styletron-react"
 
-const rotateKeyFrames = {
-	"0%": {
-		transform: "rotate(-360deg)",
-	},
-}
-
 const style = StyleSheet.create({
 	flex: {
 		flexDirection: "column",
@@ -15,14 +9,18 @@ const style = StyleSheet.create({
 
 const Loading = styled("div", props => ({
 	borderRadius: "100%",
-	border: "2px solid transparent",
 	animationDuration: ".5s",
 	animationIterationCount: "infinite",
 	animationTimingFunction: "linear",
-	animationName: [rotateKeyFrames],
-	borderLeftColor: props.$color,
+	border : "2px solid transparent",
+	animationName: {
+		from: {
+			transform: "rotate(-360deg)",
+		},
+	},
+	borderLeft : `2px solid ${props.$color}`,
 	width: props.$size,
-	heigth: props.$size,
+	height: props.$size,
 }))
 
 const Label = styled("div", props => ({

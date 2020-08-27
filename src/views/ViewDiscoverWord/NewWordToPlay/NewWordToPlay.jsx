@@ -8,7 +8,6 @@ import { discoverActions } from 'src/redux/discover';
 import store from 'src/store/store';
 
 class NewWordToPlay extends Component {
-
   componentDidMount() {
     this.props.onDefineCurrentIndex();
   }

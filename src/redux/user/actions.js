@@ -1,4 +1,4 @@
-import { createAction, createActions } from "redux-actions"
+import { createActions } from "redux-actions"
 import { STATUS } from "./types"
 import services from "src/services"
 import Auth from "src/models/auth"

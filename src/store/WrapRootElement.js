@@ -5,11 +5,13 @@ import store, { persistor } from "./store"
 import { PersistGate } from "redux-persist/integration/react"
 
 export default ({ element }) => (
-	<CookiesProvider>
-		<ProviderRedux store={store}>
-			<PersistGate loading={null} persistor={persistor}>
-				{element}
-			</PersistGate>
-		</ProviderRedux>
-	</CookiesProvider>
+	<React.StrictMode>
+		<CookiesProvider>
+			<ProviderRedux store={store}>
+				<PersistGate loading={null} persistor={persistor}>
+					{element}
+				</PersistGate>
+			</ProviderRedux>
+		</CookiesProvider>
+	</React.StrictMode>
 )

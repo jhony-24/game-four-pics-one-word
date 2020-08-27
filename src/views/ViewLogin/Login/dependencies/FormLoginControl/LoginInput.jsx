@@ -13,10 +13,10 @@ const style = new StyleSheet.create({
 })
 
 const Username = ({ to }) => {
-    const username = useTextInput();
+    const { isEmpty, ...username} = useTextInput();
     return (
         <>
-            {!username.isEmpty() && <LoginLabel text="Nombre de usuario" />}
+            {!isEmpty() && <LoginLabel text="Nombre de usuario" />}
             <TextField
                 ref={to}
                 placeholder="nombre de usuario..."
@@ -28,10 +28,10 @@ const Username = ({ to }) => {
 }
 
 const Pass = ({ to }) => {
-    const password = useTextInput();
+    const {isEmpty, ...password} = useTextInput();
     return (
         <>
-            {!password.isEmpty() && <LoginLabel text="Contraseña" />}
+            {!isEmpty() && <LoginLabel text="Contraseña" />}
             <TextField
                 ref={to}
                 placeholder="contraseña..."

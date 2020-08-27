@@ -10,7 +10,7 @@ const AllWords = ({ dispatch, loading, error }) => {
 	
 	useEffect(() => {
 		dispatch(wordActions.getListAllWords())
-	}, []);
+	}, [dispatch]);
 
 	if (loading) return <LoadingPlaceholder repeat={7} />
 	if (error) return <ErrorGetData />

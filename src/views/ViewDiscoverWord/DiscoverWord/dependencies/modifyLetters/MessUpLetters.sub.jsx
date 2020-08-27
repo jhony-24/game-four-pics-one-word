@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import Letter from "src/components/molecules/Letter"
 import Grid from "src/components/dom/Grid"
 import { TEXT_PRIMARY } from "src/theme";
-import PropTypes from "prop-types";
 import { motion as MotionLetter } from "framer-motion"
 import { discoverActions } from "src/redux/discover";
 import { connect } from "react-redux";

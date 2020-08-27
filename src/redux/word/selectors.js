@@ -1,5 +1,4 @@
 import Letter from 'src/models/letter';
-import store from 'src/store/store';
 
 export const getWordsTopRanked = ({ word }, totalInRanking = 3) => {
     let cloneArray = Array.from(word.listWords);

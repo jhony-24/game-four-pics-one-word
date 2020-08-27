@@ -1,4 +1,4 @@
-import { createAction, createActions } from "redux-actions"
+import { createActions } from "redux-actions"
 import services from "src/services"
 
 export const {
@@ -24,7 +24,7 @@ export const {
 
 // actions creators
 export const incrementPoints = (idWord, idUser) => async dispatch => {
-	const word = await services.incrementWordPoints({ id: idWord })
-	const user = await services.incrementPointsUserDiscover({ id: idUser })
+	await services.incrementWordPoints({ id: idWord })
+	await services.incrementPointsUserDiscover({ id: idUser })
 	dispatch(actionIncrementPoints())
 }

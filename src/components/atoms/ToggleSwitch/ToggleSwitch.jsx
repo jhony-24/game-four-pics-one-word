@@ -15,11 +15,12 @@ const ToggleSwitch = ({ checked, onChange }) => {
   }
 
   return (
-    <label className={css(style.ctnSwitch, containerActive)} >
+    <label className={css(style.ctnSwitch, containerActive)} htmlFor="input-switch">
       <input
         type="checkbox"
         className={css(style.input)}
-        checked={state}
+		  checked={state}
+		  id="input-switch"
         onChange={handlerChange} />
       <div className={css(style.check, checkActive)}></div>
     </label>

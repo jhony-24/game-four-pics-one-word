@@ -7,7 +7,7 @@ import SLoading from "./style"
 const Loading = ({ color, colortext, text, size }) => {
 	return (
 		<Flex styles={SLoading.Flex}>
-			<SLoading.Loading $color={color} $size={size}/>
+			<SLoading.Loading $color={color} $size={size}></SLoading.Loading>
 			{text && <SLoading.Label $color={colortext}>{text}</SLoading.Label>}
 		</Flex>
 	)

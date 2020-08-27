@@ -3,10 +3,6 @@ import Auth from 'src/models/auth';
 import { navigate } from 'gatsby';
 
 const ShowViewNotLogged = (WrapperComponentRender) => class extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     isNotLogged() {
         return Auth.get() === null;
     }

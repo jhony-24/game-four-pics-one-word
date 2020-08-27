@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import RowItem from "src/components/molecules/RowItem"
 import Paragraph from "src/components/molecules/Paragraph"
 import Flex from "src/components/dom/Flex"
