@@ -13,7 +13,7 @@ const COLOR_BASE = {
 }
 
 const COLOR_GRADIENT = {
-	COLOR_PRIMARY_BUTTON: `linear-gradient(45deg,${COLOR_BASE.COLOR_PRIMARY},${COLOR_BASE.COLOR_SECONDARY})`,
+	color_primary_button : `linear-gradient(45deg,${COLOR_BASE.color_primary},${COLOR_BASE.color_secondary})`,
 }
 
 const FONT_SIZE = {
@@ -35,11 +35,11 @@ const RADIUS = {
 }
 
 const theme = {
-	COLOR_BASE,
-	COLOR_GRADIENT,
-	FONT_SIZE,
-	SHADOWS,
-	RADIUS,
+	colors: COLOR_BASE,
+	gradients : COLOR_GRADIENT,
+	fontSizes : FONT_SIZE,
+	shadows : SHADOWS,
+	radius : RADIUS,
 }
 
 export default theme;

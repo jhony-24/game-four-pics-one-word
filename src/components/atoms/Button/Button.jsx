@@ -1,13 +1,14 @@
 import React from "react"
 import { css } from "aphrodite/no-important"
 import PropTypes from "prop-types"
-import SButton from "./Button.style"
+import SButtonPrimary from "src/components/styled/buttons/SButtonPrimary"
+import SLabelBlock from "src/components/styled/labels/SLabelBlock"
 
 const Button = ({ onClick, children, styles }) => {
 	return (
-		<SButton.Button className={css(styles)} onClick={onClick}>
-			<SButton.ButtonLabel>{children}</SButton.ButtonLabel>
-		</SButton.Button>
+		<SButtonPrimary className={css(styles)} onClick={onClick}>
+			<SLabelBlock>{children}</SLabelBlock>
+		</SButtonPrimary>
 	)
 }
 

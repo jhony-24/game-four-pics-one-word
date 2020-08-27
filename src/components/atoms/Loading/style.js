@@ -18,7 +18,7 @@ const Loading = styled("div", props => ({
 			transform: "rotate(-360deg)",
 		},
 	},
-	borderLeft : `2px solid ${props.$theme.COLOR_BASE.color_primary}`,
+	borderLeft : `2px solid ${props.$theme.colors.color_primary}`,
 	width: props.$size,
 	height: props.$size,
 }))
