@@ -1,14 +1,14 @@
 import React from 'react';
 import { css } from 'aphrodite/no-important';
-import style from './style';
 import PropTypes from "prop-types"
+import SCardGradientPrimary from 'src/components/styled/cards/SCardGradientPrimary';
 
 const Card = ({ styles, children }) => {
 
   return (
-    <div className={css(style.card, styles)}>
+    <SCardGradientPrimary className={css(styles)}>
       {children}
-    </div>
+    </SCardGradientPrimary>
   )
 }
 

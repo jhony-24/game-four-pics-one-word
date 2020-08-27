@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Letter from "src/components/molecules/Letter"
 import Grid from "src/components/dom/Grid"
-import { TEXT_PRIMARY } from "src/theme";
+import { TEXT_PRIMARY, SILVER_COLOR } from "src/theme";
 import { motion as MotionLetter } from "framer-motion"
 import { discoverActions } from "src/redux/discover";
 import { connect } from "react-redux";
@@ -39,7 +39,7 @@ class MessUpLetters extends Component {
                         animate={this.effectStart()}
                         transition={this.transition()}>
                         <Letter
-                            background={this.letterEmpty(letter) && "gray"}
+                            background={this.letterEmpty(letter) ? "gray" : SILVER_COLOR}
                             color={TEXT_PRIMARY}
                             text={letter}
                             visibilityText={this.letterEmpty(letter)}

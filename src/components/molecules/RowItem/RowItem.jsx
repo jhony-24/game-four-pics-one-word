@@ -8,9 +8,9 @@ const RowItem = ({ styles, leftBody, centerBody, rightBody, onClick }) => {
 
   return (
     <Flex styles={[style.flex, styles]} >
-      <div className={css(style.row, style.ex)}>{leftBody}</div>
-      <div className={css(style.row, style.center)} onClick={onClick} onKeyDown={onClick} role="button" tabIndex="0" >{centerBody}</div>
-      <div className={css(style.row, style.ex)}>{rightBody}</div>
+      <div className={css(style.ex)}>{leftBody}</div>
+      <div className={css(style.center)} onClick={onClick} onKeyDown={onClick} role="button" tabIndex="0" >{centerBody}</div>
+      <div className={css(style.ex)}>{rightBody}</div>
     </Flex >
   )
 }
