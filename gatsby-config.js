@@ -15,7 +15,6 @@ module.exports = {
 	 {
 		 resolve : `gatsby-plugin-styletron`,
 		 options : {
-			 prefix : 'v-',
 			 debug : false
 		 }
 	 },
