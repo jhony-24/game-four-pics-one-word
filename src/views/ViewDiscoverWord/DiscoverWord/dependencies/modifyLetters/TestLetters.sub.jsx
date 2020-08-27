@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Letter from "src/components/molecules/Letter"
 import Grid from "src/components/dom/Grid"
-import { PRIMARY_COLOR, SILVER_COLOR, TEXT_PRIMARY } from "src/theme/constants";
+import { PRIMARY_COLOR, SILVER_COLOR, TEXT_PRIMARY } from "src/theme";
 import { connect } from "react-redux";
 import { discoverActions } from "src/redux/discover";
 

@@ -1,5 +1,5 @@
 import { StyleSheet } from "aphrodite/no-important"
-import { PRIMARY_COLOR , TEXT_PRIMARY } from "src/theme/constants"
+import { PRIMARY_COLOR , TEXT_PRIMARY } from "src/theme"
 
 const style = StyleSheet.create({
     header : {

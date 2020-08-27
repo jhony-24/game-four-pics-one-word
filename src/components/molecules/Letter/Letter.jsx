@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { css, StyleSheet } from 'aphrodite/no-important';
 import style from './style';
 import Flex from "src/components/dom/Flex"
-import { SILVER_COLOR } from 'src/theme/constants';
+import { SILVER_COLOR } from 'src/theme';
 import PropTypes from "prop-types"
 
 const Letter = ({ text, background, visibilityText, color, onPressLetter }) => {

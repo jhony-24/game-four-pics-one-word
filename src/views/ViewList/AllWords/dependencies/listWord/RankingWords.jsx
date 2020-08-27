@@ -6,7 +6,7 @@ import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import Card from "src/components/molecules/Card"
 import Paragraph from "src/components/molecules/Paragraph"
 import { FaStar, FaCog } from 'react-icons/fa';
-import { TEXT_PRIMARY } from "src/theme/constants"
+import { TEXT_PRIMARY } from "src/theme"
 import { wordSelectors } from "src/redux/word";
 import { connect } from "react-redux";
 import { navigate } from 'gatsby';

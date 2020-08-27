@@ -20,6 +20,7 @@
     "gatsby-plugin-react-helmet": "^3.1.24",
     "gatsby-plugin-sass": "^2.2.1",
     "gatsby-plugin-sharp": "^2.4.13",
+    "gatsby-plugin-styletron": "^5.0.9",
     "gatsby-source-filesystem": "^2.1.56",
     "gatsby-transformer-sharp": "^2.3.19",
     "js-cookie": "^2.2.1",
@@ -33,7 +34,6 @@
     "react-content-loader": "^5.0.2",
     "react-cookie": "^4.0.3",
     "react-dom": "^16.12.0",
-    "react-draggable": "^4.2.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.9.0",
     "react-loading-skeleton": "^2.0.1",
@@ -43,7 +43,9 @@
     "redux-actions": "^2.6.5",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styletron-engine-atomic": "^1.4.6",
+    "styletron-react": "^5.2.7"
   },
   "devDependencies": {
     "create-react-component-folder": "^0.2.0",

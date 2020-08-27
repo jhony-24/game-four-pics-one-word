@@ -11,14 +11,21 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-root-import',
     'gatsby-plugin-lodash',
-    'gatsby-plugin-polished',
+	 'gatsby-plugin-polished',
+	 {
+		 resolve : `gatsby-plugin-styletron`,
+		 options : {
+			 prefix : 'v-',
+			 debug : false
+		 }
+	 },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
-    },
+	 },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
