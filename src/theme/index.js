@@ -6,7 +6,7 @@ export const SILVER_COLOR = "rgba(100,100,100,.2)"
 
 const COLOR_BASE = {
 	color_primary: "rgb(30,130,230)",
-	color_seconadry: "rgb(140,50,200)",
+	color_secondary: "rgb(140,50,200)",
 	color_primary_dark: "rgb(30,30,30)",
 	color_primary_light: "#ffffff",
 	color_smooth: "rgba(100,100,100,.2)",

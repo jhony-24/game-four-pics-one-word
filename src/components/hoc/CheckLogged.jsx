@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Auth from "src/models/auth"
 import { navigate } from "gatsby";
 
-const CheckLogged = (WrapperComponentRender) => class extends Component {
+const CheckLogged = (WrapperComponentRender) => (class extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -10,7 +10,7 @@ const CheckLogged = (WrapperComponentRender) => class extends Component {
         }
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         if (Auth.get() !== null) {
             this.setState({ logged: true });
         }
@@ -25,6 +25,6 @@ const CheckLogged = (WrapperComponentRender) => class extends Component {
             return null;
         }
     }
-}
+})
 
 export default CheckLogged;

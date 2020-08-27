@@ -3,9 +3,10 @@ import { Provider as ProviderRedux } from "react-redux"
 import { CookiesProvider } from "react-cookie"
 import store, { persistor } from "./store"
 import { PersistGate } from "redux-persist/integration/react"
+import { ThemeProvider } from "src/theme/styled"
 
 export default ({ element }) => (
-	<React.StrictMode>
+	<ThemeProvider>
 		<CookiesProvider>
 			<ProviderRedux store={store}>
 				<PersistGate loading={null} persistor={persistor}>
@@ -13,5 +14,5 @@ export default ({ element }) => (
 				</PersistGate>
 			</ProviderRedux>
 		</CookiesProvider>
-	</React.StrictMode>
+	</ThemeProvider>
 )

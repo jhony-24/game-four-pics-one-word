@@ -12,7 +12,7 @@ import { userSelectors } from 'src/redux/user';
 
 class DiscoverWord extends Component {
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.dispatch(discoverActions.createLettersToDiscover(this.props.state));
   }
 
