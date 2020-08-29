@@ -28,16 +28,15 @@ class Login extends Component {
 
   render() {
     const { loading } = this.props;
-    const { scale, isSignUp } = this.state;
+		const { scale, isSignUp } = this.state;
+		const IsLoading = loading && <Loading text="verificando"/>;
     return (
       <Opacity.div
         initial={{ opacity: 0 }}
         animate={{ opacity: scale ? 1 : 0 }}
         className={css(style.fContainer)}>
         <Flex styles={style.flex}>
-          {loading && (
-            <Loading text="verificando" />
-          )}
+					{IsLoading}
           <SignIn onOpenRegister={this.changeView} onClick={this.signIn} />
           <SignUp onClose={this.changeView} onClick={this.signUp} visible={isSignUp} />
         </Flex>

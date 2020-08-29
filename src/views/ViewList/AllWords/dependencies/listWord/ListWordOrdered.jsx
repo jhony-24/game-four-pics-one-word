@@ -11,14 +11,14 @@ class ListWordOrdered extends Component {
         return (
 			  <Fragment>
             <FlatList data={listWords} renderItem={(current, key) => (
-					<ItemFlatListWord
-					key={key}
-					current={current}
-					images={current.images}
-					letters={current.messyLetters}
-					points={current.points} />
-					)} />
-					<ButtonLoadMoreWords/>
+						<ItemFlatListWord
+						key={key}
+						current={current}
+						images={current.images}
+						letters={current.messyLetters}
+						points={current.points} />
+						)} />
+						<ButtonLoadMoreWords/>
 			</Fragment>
         )
     }

@@ -10,6 +10,7 @@ const COLOR_BASE = {
 	color_primary_dark: "rgb(30,30,30)",
 	color_primary_light: "#ffffff",
 	color_smooth: "rgba(100,100,100,.2)",
+	color_smooth_darker : "rgba(30,30,30,.5)",
 }
 
 const COLOR_GRADIENT = {

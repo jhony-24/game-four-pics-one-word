@@ -37,4 +37,4 @@ TextField.propTypes = {
 	name: PropTypes.string,
 }
 
-export default TextField
+export default TextField;

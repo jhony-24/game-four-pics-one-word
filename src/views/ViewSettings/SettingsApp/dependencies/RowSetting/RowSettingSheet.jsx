@@ -3,7 +3,8 @@ import RowSetting from './RowSetting';
 import BottomSheet from 'src/components/molecules/BottomSheet';
 import Button from 'src/components/atoms/Button';
 
-const RowSettingSheet = ({ iconColor, avatar, textButtonSheet, titleSheet, title, detail, children, onSubmitSheet }) => {
+const RowSettingSheet = (props) => {
+		const { iconColor, avatar, textButtonSheet, titleSheet, title, detail, children, onSubmitSheet } = props;
     const [open, setOpen] = useState(false);
 
     const openSheet = state => {
