@@ -1,40 +1,38 @@
-import React from 'react';
-import { css } from 'aphrodite/no-important';
-import style from './style';
-import useToggle from 'src/hooks/useToggle';
+import React from "react"
+import { css } from "aphrodite/no-important"
+import style, { SContainerToggleSwitch, SCheckButtonCircular } from "./ToggleSwitch.style"
+import useToggle from "src/hooks/useToggle"
 import PropTypes from "prop-types"
 
 const ToggleSwitch = ({ checked, onChange }) => {
-  const [state, setToggle] = useToggle(checked);
-  const containerActive = state && style.ctnSwitch_active;
-  const checkActive = state && style.check_active;
+	const [state, setToggle] = useToggle(checked)
+	const handlerChange = () => {
+		setToggle()
+		onChange(!state)
+	}
 
-  const handlerChange = () => {
-    setToggle();
-    onChange(!state);
-  }
-
-  return (
-    <label className={css(style.ctnSwitch, containerActive)} htmlFor="input-switch">
-      <input
-        type="checkbox"
-        className={css(style.input)}
-		  checked={state}
-		  id="input-switch"
-        onChange={handlerChange} />
-      <div className={css(style.check, checkActive)}></div>
-    </label>
-  )
+	return (
+		<SContainerToggleSwitch $active={state}>
+			<input
+				type="checkbox"
+				id="input-switch"
+				className={css(style.input)}
+				checked={state}
+				onChange={handlerChange}
+			/>
+			<SCheckButtonCircular $active={state}></SCheckButtonCircular>
+		</SContainerToggleSwitch>
+	)
 }
 
 ToggleSwitch.defaultProps = {
-  checked: false,
-  onChange: () => null
+	checked: false,
+	onChange: () => null,
 }
 
 ToggleSwitch.propTypes = {
-  checked: PropTypes.bool,
-  onChange: PropTypes.func
+	checked: PropTypes.bool,
+	onChange: PropTypes.func,
 }
 
-export default ToggleSwitch;
+export default ToggleSwitch

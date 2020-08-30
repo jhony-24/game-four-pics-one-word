@@ -1,13 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
-import SAvatar from "./Avatar.style"
+import { SAvatar } from "./Avatar.style"
 
 const Avatar = ({ color, src, size, icon }) => {
 	return (
-		<SAvatar.Avatar $size={size} $color={color}>
-			{src && <SAvatar.Avatar $as="img" src={src} alt={src} $size={size} />}
+		<SAvatar $size={size} $color={color}>
+			{src && <SAvatar $as="img" src={src} alt={src} $size={size} />}
 			{icon && icon}
-		</SAvatar.Avatar>
+		</SAvatar>
 	)
 }
 
