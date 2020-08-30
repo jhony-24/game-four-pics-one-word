@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from 'aphrodite/no-important';
-import style, { SModalCardContainer, SModalContainer } from './style';
+import style, { SModalCardContainer, SModalContainer } from './Modal.style';
 import Flex from "src/components/dom/Flex"
 import { IoIosClose } from "react-icons/io"
 import Paragraph from "src/components/molecules/Paragraph"

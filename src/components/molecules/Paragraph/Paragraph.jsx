@@ -1,5 +1,5 @@
 import React, { memo } from "react"
-import style, { SParagraphTitle, SParagraphDetail } from "./style"
+import style, { SParagraphTitle, SParagraphDetail } from "./Paragraph.style"
 import Flex from "src/components/dom/Flex"
 import PropTypes from "prop-types"
 

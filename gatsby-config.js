@@ -11,7 +11,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-root-import',
     'gatsby-plugin-lodash',
-	 'gatsby-plugin-polished',
 	 {
 		 resolve : `gatsby-plugin-styletron`,
 		 options : {

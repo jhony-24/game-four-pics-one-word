@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { SLabelLetter, SButtonLetter } from './style';
+import { SLabelLetter, SButtonLetter } from './Letter.style';
 import { SILVER_COLOR } from 'src/theme';
 import PropTypes from "prop-types"
 

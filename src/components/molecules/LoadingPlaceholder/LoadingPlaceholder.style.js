@@ -1,6 +1,7 @@
 import { StyleSheet } from "aphrodite/no-important"
+import styled from "src/theme/styled";
 
-const style = StyleSheet.create({
+export default StyleSheet.create({
     f: {
         justifyContent: "none",
         alignItems: "stretch",
@@ -11,11 +12,10 @@ const style = StyleSheet.create({
     fr: {
         width: "auto",
     },
-    r: {
-        display: "flex",
-        padding: "20px 0",
-        alignItems: "center",
-    }
 })
 
-export default style;
+export const SSkeletonRow = styled("span",{
+	display: "flex",
+	padding: "20px 0",
+	alignItems: "center",
+})
