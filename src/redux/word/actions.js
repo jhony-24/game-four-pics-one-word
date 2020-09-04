@@ -3,6 +3,22 @@ import services from "src/services"
 import Auth from "src/models/auth"
 import store from "src/store/store"
 
+/**
+ * @typedef {object} WordActions
+ * @property actionGetListAllWords 
+ * @property actionGetListAllWord
+ * @property actionGetListAllWords
+ * @property actionGetListAllWords
+ * @property actionGetListAllWords
+ * @property actionGetListAllWords
+ * @property actionGetListAllWords
+ * @property actionGetListAllWords
+ */
+
+/**
+ * @type {WordActions}
+ */
+
 export const {
 	actionGetListAllWords,
 	actionLoadingListAllWords,
@@ -32,15 +48,17 @@ export const getListAllWords = () => async dispatch => {
 	dispatch(actionLoadingListAllWords({ loading: true, error: false }))
 	try {
 		const { data } = await services.getListAllWords({ start, limit: 3 })
-		const { nextLink , content } = data;
-		dispatch(actionGetListAllWords({
+		const { nextLink, content } = data
+		dispatch(
+			actionGetListAllWords({
 				listWords: content,
 				loading: false,
 				error: false,
 				pagination: {
 					start: nextLink,
 				},
-		}))
+			})
+		)
 	} catch {
 		dispatch(actionErrorToGetData({ error: true, loading: false }))
 	}
@@ -62,7 +80,9 @@ export const uploadNewWord = dataUpload => async dispatch => {
 			})
 			return wordUploadd
 		})
-		dispatch(actionUploadNewWord({ loadingUpload: false, uploaded: request.status }))
+		dispatch(
+			actionUploadNewWord({ loadingUpload: false, uploaded: request.status })
+		)
 	} catch {
 		dispatch(actionLoadingUploadNewWord({ loadingUpload: false }))
 	}

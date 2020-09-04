@@ -1,4 +1,5 @@
 // import { createAction } from "redux-actions";
 
-// const base = "ducks/navigation";
+import { createActions } from "redux-actions"
 
+export const actions = createActions("TOGGLE_SIDEBAR")

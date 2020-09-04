@@ -1,7 +1,21 @@
 import { createActions } from "redux-actions"
 import services from "src/services"
 
-export const {
+/**
+ * @typedef {object} DiscoverWordActions
+ * @property create
+ * @property create
+ * @property create
+ * @property create
+ * @property create
+ * @property create
+ * @property create
+ */
+
+ /**
+	* @type {DiscoverWordActions}
+	*/
+ export const {
 	createLettersToDiscover,
 	assignLetterToOrder,
 	giveBackLetter,

@@ -3,6 +3,20 @@ import { STATUS } from "./types"
 import services from "src/services"
 import Auth from "src/models/auth"
 
+/**
+ * @typedef {object} UserActions
+ * @property actionSignIn
+ * @property actionSignIn
+ * @property actionSignIn
+ * @property actionSignIn
+ * @property actionSignIn
+ * @property actionSignIn
+ */
+
+/**
+ * @type {UserActions}
+ */
+
 export const {
 	actionSignIn,
 	actionSignUp,
