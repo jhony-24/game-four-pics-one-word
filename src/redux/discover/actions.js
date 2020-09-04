@@ -3,19 +3,20 @@ import services from "src/services"
 
 /**
  * @typedef {object} DiscoverWordActions
- * @property create
- * @property create
- * @property create
- * @property create
- * @property create
- * @property create
- * @property create
+ * @property createLettersToDiscover
+ * @property assignLetterToOrder
+ * @property giveBackLetter
+ * @property removeMessyLetters
+ * @property actionIncrementPoints
+ * @property switchEnableSound
+ * @property getEnableSound
+ * @property incrementPoints
  */
 
- /**
-	* @type {DiscoverWordActions}
-	*/
- export const {
+/**
+ * @type {DiscoverWordActions}
+ */
+export const {
 	createLettersToDiscover,
 	assignLetterToOrder,
 	giveBackLetter,
@@ -29,6 +30,7 @@ import services from "src/services"
 	"GIVEBACK_LETTER", //payload
 	"REMOVE_MESSY_LETTERS",
 	"ACTION_INCREMENT_POINTS",
+	"INCREMENT_POINTS",
 	"SWITCH_ENABLE_SOUND",
 	"GET_ENABLE_SOUND", // payload
 	{

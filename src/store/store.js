@@ -18,10 +18,7 @@ const sagaMiddleware = createSagaMiddleware()
 const middlewares = applyMiddleware(sagaMiddleware, logger)
 
 // reducers and stores
-const persistedReducer = persistReducer(
-	configStorage,
-	combineReducers(reducers)
-)
+const persistedReducer = persistReducer(configStorage,combineReducers(reducers));
 const store = createStore(persistedReducer, middlewares)
 const persistor = persistStore(store)
 
