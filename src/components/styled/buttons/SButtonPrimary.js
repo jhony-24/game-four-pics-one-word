@@ -8,7 +8,7 @@ export default styled("button", ({ $theme }) => ({
 	fontSize: $theme.fontSizes.small,
 	boxShadow: $theme.radius.normal,
 	borderRadius: $theme.radius.normal,
-	background: $theme.gradients.color_primary_button,
+	background: $theme.gradients.color_primary_gradient,
 	color: $theme.colors.color_primary_light,
 	":hover": {
 		opacity: 0.9,

@@ -1,37 +1,25 @@
-import React, { memo } from 'react';
-import { css, StyleSheet } from 'aphrodite/no-important';
-import style from './style';
+import React, { memo } from "react"
+import { css } from "aphrodite/no-important"
 import PropTypes from "prop-types"
+import { SCircleContainer, SCircleAvatarImage } from ".//CircleImageSquare.style"
 
 const CircleImageSquare = ({ styles, images, onClick }) => {
-  
-  return (
-    <div className={css(style.container)}>
-      <div className={css(style.containerImagesCircle, styles)} onClick={onClick} role="button" tabIndex="0" onKeyDown={onClick}>
-        {
-          images.map((currentImage, index) => {
-            const selfStyle = new StyleSheet.create({
-              image: {
-                backgroundImage: `url("${currentImage}")`
-              }
-            })
-            return (
-              <div className={css(style.bgImg, selfStyle.image)} key={index}></div>
-            )
-          })
-        }
-      </div>
-    </div>
-  )
+	return (
+			<SCircleContainer className={css(styles)} onClick={onClick}>
+				{images.map((image, i) => (
+					<SCircleAvatarImage $image={image} key={i} />
+				))}
+			</SCircleContainer>
+	)
 }
 
 CircleImageSquare.defaultProps = {
-  onClick: () => null
+	onClick: () => null,
 }
 
 CircleImageSquare.propTypes = {
-  onClick: PropTypes.func,
-  images: PropTypes.arrayOf(PropTypes.string.isRequired)
+	onClick: PropTypes.func,
+	images: PropTypes.arrayOf(PropTypes.string.isRequired),
 }
 
-export default memo(CircleImageSquare);
+export default memo(CircleImageSquare)

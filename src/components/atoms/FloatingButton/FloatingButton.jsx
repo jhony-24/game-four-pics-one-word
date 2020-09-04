@@ -1,15 +1,13 @@
 import React from 'react';
 import { css } from 'aphrodite/no-important';
-import style from './style';
 import PropTypes from "prop-types"
+import SButtonPrimaryCircular from 'src/components/styled/buttons/SButtonPrimaryCircular';
 
 const FloatingButton = ({ onClick, children, styles }) => {
   return (
-    <button className={css(style.floatingBtn, styles)} onClick={onClick}>
-      <span className={css(style.label)}>
+		<SButtonPrimaryCircular $as="button" className={css(styles)} onClick={onClick}>
         {children}
-      </span>
-    </button>
+		</SButtonPrimaryCircular>
   )
 }
 

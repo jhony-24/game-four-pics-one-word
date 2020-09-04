@@ -1,23 +1,6 @@
 import React from 'react'
 import { StyleSheet, css } from "aphrodite/no-important"
 
-const style = new StyleSheet.create({
-    title: {
-        fontSize: "1.3em",
-        marginBottom: "3em",
-        padding: 20,
-        width: "80%",
-        userSelect: "none",
-    },
-    titleStrong: {
-        fontSize: "1.3em",
-    },
-    titleThink: {
-        fontWeight: "lighter",
-        fontSize: ".8em"
-    },
-});
-
 const HeaderTitleMessage = () => {
     return (
         <h1 className={css(style.title)}>
@@ -26,5 +9,22 @@ const HeaderTitleMessage = () => {
         </h1>
     )
 }
+
+const style = new StyleSheet.create({
+	title: {
+			fontSize: "1.3em",
+			marginBottom: "3em",
+			padding: 20,
+			width: "80%",
+			userSelect: "none",
+	},
+	titleStrong: {
+			fontSize: "1.3em",
+	},
+	titleThink: {
+			fontWeight: "lighter",
+			fontSize: ".8em"
+	},
+});
 
 export default HeaderTitleMessage;

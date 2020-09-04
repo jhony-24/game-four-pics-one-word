@@ -1,6 +1,6 @@
 import { StyleSheet } from "aphrodite/no-important"
 import { TEXT_SECONDARY } from "src/theme"
-import { styled } from "styletron-react"
+import styled from "src/theme/styled";
 
 export const style = StyleSheet.create({
 	flex: {

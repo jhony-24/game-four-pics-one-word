@@ -1,19 +1,19 @@
 import React from 'react';
 import { css } from 'aphrodite/no-important';
-import style from './style';
+import { SFlatRender } from './FlatList.style';
 import PropTypes from "prop-types"
 
 const FlatList = ({ styles, headerStyle, footerStyle, data, renderItem, headerList, footerList }) => {
 
   return (
-    <div className={css(style.flatLs, styles)}>
-      <div className={css(style.flatLsHeader, headerStyle)}>{headerList}</div>
-      <div className={css(style.flatLsRender)}>
+    <div className={css(styles)}>
+      <div className={css(headerStyle)}>{headerList}</div>
+			<SFlatRender>
         {
           data.map((currentData, index) => renderItem(currentData, index))
         }
-      </div>
-      <div className={css(style.flatLsFooter, footerStyle)}>{footerList}</div>
+			</SFlatRender>
+      <div className={css(footerStyle)}>{footerList}</div>
     </div>
   )
 }

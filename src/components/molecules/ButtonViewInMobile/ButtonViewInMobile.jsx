@@ -13,17 +13,17 @@ const styles = new StyleSheet.create({
   }
 })
 
+const openWindow = () => {
+	let location = window.location;
+	let title = document.title;
+	let target = '_blank';
+	let features = 'width=300,height=400,scrollbars=NO,top=0,status=no';
+	window.open(location, title, target, features);
+}
+
 const ButtonViewInMobile = () => {
   const [width] = useResize();
   const isMobile = () => width <= 400;
-  const openWindow = () => {
-    let location = window.location;
-    let title = document.title;
-    let target = '_blank';
-    let features = 'width=300,height=400,scrollbars=NO,top=0,status=no';
-    window.open(location, title, target, features);
-  }
-
   if (!isMobile()) {
     return (
       <Portal>

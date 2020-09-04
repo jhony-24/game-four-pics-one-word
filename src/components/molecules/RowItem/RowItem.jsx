@@ -1,16 +1,14 @@
 import React from 'react';
-import { css } from 'aphrodite/no-important';
-import style from './style';
+import style, { SFlexNone, SFlexCenterFluid } from './RowItem.style';
 import Flex from 'src/components/dom/Flex';
 import PropTypes from "prop-types"
 
 const RowItem = ({ styles, leftBody, centerBody, rightBody, onClick }) => {
-
   return (
     <Flex styles={[style.flex, styles]} >
-      <div className={css(style.row, style.ex)}>{leftBody}</div>
-      <div className={css(style.row, style.center)} onClick={onClick} onKeyDown={onClick} role="button" tabIndex="0" >{centerBody}</div>
-      <div className={css(style.row, style.ex)}>{rightBody}</div>
+			<SFlexNone>{leftBody}</SFlexNone>
+      <SFlexCenterFluid onClick={onClick} onKeyDown={onClick} role="button" tabIndex="0" >{centerBody}</SFlexCenterFluid>
+			<SFlexNone>{rightBody}</SFlexNone>
     </Flex >
   )
 }

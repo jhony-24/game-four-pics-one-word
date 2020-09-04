@@ -1,6 +1,6 @@
 import { styled } from "styletron-react"
 
-const Avatar = styled("div", props => ({
+export const SAvatar = styled("div", props => ({
 	borderRadius: "100%",
 	display: "flex",
 	alignItems: "center",
@@ -10,8 +10,3 @@ const Avatar = styled("div", props => ({
 	height: props.$size,
 	background: props.$color,
 }))
-
-const SAvatar = {
-	Avatar,
-}
-export default SAvatar

@@ -1,13 +1,13 @@
 import React from 'react';
 import { css } from 'aphrodite/no-important';
-import style from './style';
+import style, { SModalCardContainer, SModalContainer } from './Modal.style';
 import Flex from "src/components/dom/Flex"
-import Position from "src/components/dom/Position"
 import { IoIosClose } from "react-icons/io"
 import Paragraph from "src/components/molecules/Paragraph"
 import Fade from "src/components/dom/Fade"
 import { Portal } from 'react-portal';
 import PropTypes from "prop-types"
+import SWrapperFixedFullScreen from 'src/components/styled/wrappers/SWrapperFixedFullScreen';
 
 const Modal = ({ title, message, visible, onClose }) => {
 
@@ -16,14 +16,9 @@ const Modal = ({ title, message, visible, onClose }) => {
     <Portal>
       <div className={css(style.backdrop)}>
         <Fade type="in" >
-          <Position
-            position="fixed"
-            left="0px"
-            right="0px"
-            top="0px"
-            bottom="0px" >
-            <Flex styles={style.modalCtn} >
-              <div className={css(style.modal)} >
+					<SWrapperFixedFullScreen>
+							<SModalContainer>
+							<SModalCardContainer>
                 <Flex>
                   <span className="i-h"><strong>{title}</strong></span>
                   <span className="i-h" onClick={onClose} onKeyDown={onClose} role="button" tabIndex="0" >
@@ -33,9 +28,9 @@ const Modal = ({ title, message, visible, onClose }) => {
                 <Flex>
                   <Paragraph detail={message} colordetail="rgb(80,80,80)" />
                 </Flex>
-              </div>
-            </Flex>
-          </Position>
+							</SModalCardContainer>
+							</SModalContainer>
+					</SWrapperFixedFullScreen>
         </Fade>
       </div>
     </Portal>
