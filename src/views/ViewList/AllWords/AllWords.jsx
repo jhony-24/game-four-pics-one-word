@@ -7,10 +7,9 @@ import ListWordOrdered from "./dependencies/listWord/ListWordOrdered"
 import { wordActions } from "src/redux/word"
 
 const AllWords = ({ dispatch, loading, error }) => {
-	
 	useEffect(() => {
 		dispatch(wordActions.getListAllWords())
-	}, [dispatch]);
+	}, [dispatch])
 
 	if (loading) return <LoadingPlaceholder repeat={7} />
 	if (error) return <ErrorGetData />

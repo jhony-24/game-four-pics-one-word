@@ -1,6 +1,6 @@
 import { navigate } from "gatsby"
 import { handleActions } from "redux-actions"
-import * as actions from "./actions"
+import actions from "./actions"
 import _ from "lodash"
 const initialState = {
 	listWords: [], //all words
@@ -14,7 +14,7 @@ const initialState = {
 }
 
 const handlers = {
-	[actions.actionGetListAllWords]: (state, { payload }) => {
+	[actions.getListAllWordsComplete]: (state, { payload }) => {
 		const { listWords, loading, pagination } = payload
 		let listWordsOrder = []
 		for (var idWord in listWords) {
@@ -37,22 +37,22 @@ const handlers = {
 				},
 			}
 		}
-		return _.update(state,'loading',() => false);
+		return _.update(state, "loading", () => false)
 	},
 
-	[actions.actionLoadingListAllWords]: (state, { payload }) => {
+	[actions.loadingListAllWords]: (state, { payload }) => {
 		return _.merge(state, { error: payload.error, loading: payload.loading })
 	},
 
-	[actions.actionErrorToGetData]: (state, { payload }) => {
+	[actions.errorToGetData]: (state, { payload }) => {
 		return _.merge(state, { error: payload.error, loading: payload.loading })
 	},
 
-	[actions.actionLoadingUploadNewWord]: (state, { payload }) => {
+	[actions.loadingUploadNewWord]: (state, { payload }) => {
 		return _.set(state, "loadingUpload", payload.loadingUpload)
 	},
 
-	[actions.actionUploadNewWord]: (state, { payload }) => {
+	[actions.uploadNewWordComplete]: (state, { payload }) => {
 		const { uploaded, loadingUpload } = payload
 		if (uploaded) {
 			navigate("/list")
