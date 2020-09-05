@@ -1,15 +1,4 @@
-export const getUsername = (state) => {
-    const { user } = state.user;
-    if (user) {
-        return user.username;
-    }
-    return user;
-}
+import { createSelector } from "reselect"
 
-export const getIdUser = (state) => {
-    const user = state.user;
-    if( user ) {
-        return user.iduser;
-    }
-    return "";
-}
+export const getUsername = createSelector( state => state.user, user => (user ? user.user.username : ""))
+export const getUserId = createSelector( state => state.user, user => (user ? user.user.iduser : "") )

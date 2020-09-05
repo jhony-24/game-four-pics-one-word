@@ -25,7 +25,7 @@ const mapDispatchToProps = dispatch => ({
     continueGame({ idWord, idUser }) {
         navigate('/list');
         dispatch(discoverActions.removeMessyLetters());
-        dispatch(discoverActions.incrementPoints(idWord, idUser));
+        dispatch(discoverActions.incrementPoints({idWord, idUser}));
     }
 })
 export default connect(mapStateToProps, mapDispatchToProps)(GameSuccess);

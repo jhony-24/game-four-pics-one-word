@@ -33,6 +33,6 @@ const RowPassword = ({ updatePassword }) => {
 }
 
 const mapDispatchToProps = {
-    updatePassword: userActions.updatePassword
+    updatePassword: userActions.setUpdateInformation
 }
 export default connect(null,mapDispatchToProps)(RowPassword);

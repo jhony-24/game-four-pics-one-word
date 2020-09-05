@@ -1,4 +1,5 @@
-export const getIdWord = (modelReducer) => {
-    let idWord = modelReducer.wordData !== null ? modelReducer.wordData.idWord : '';
-    return idWord;
-}
+import { createSelector } from "reselect";
+
+export const getWordId = createSelector(state => state.discover, discover => {
+	return discover.wordData !== null ? discover.wordData.idWord : '';
+})

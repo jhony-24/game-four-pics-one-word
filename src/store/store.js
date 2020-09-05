@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from "redux"
+import { createStore, combineReducers, compose, applyMiddleware } from "redux"
 import logger from "redux-logger"
 import * as reducers from "src/redux/reducers"
 import sagas from "src/redux/sagas"
@@ -13,9 +13,13 @@ const configStorage = {
 	whitelist: ["user"],
 }
 
+const enhanceMiddleware =	window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+	trace : true
+}) || compose;
+
 // all middlewares
 const sagaMiddleware = createSagaMiddleware()
-const middlewares = applyMiddleware(sagaMiddleware, logger)
+const middlewares = enhanceMiddleware(applyMiddleware(sagaMiddleware,logger))
 
 // reducers and stores
 const persistedReducer = persistReducer(configStorage,combineReducers(reducers));

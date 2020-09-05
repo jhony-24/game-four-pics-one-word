@@ -1,13 +1,13 @@
-import { takeEvery, put, call, select } from "redux-saga/effects"
-import { actions } from "./actions"
+import { takeEvery, put, select } from "redux-saga/effects"
+import actions from "./actions"
 import services from "src/services"
 import Auth from "src/models/auth"
 
 function* requestListAllWords() {
 	const start = yield select(state => state.word.pagination.start)
+	yield put(actions.loadingListAllWords());
 
 	try {
-		yield put(actions.loadingListAllWords({ loading: true, error: false }))
 		const request = yield services.getListAllWords({ start, limit: 3 })
 		yield put(
 			actions.getListAllWordsComplete({
@@ -20,7 +20,7 @@ function* requestListAllWords() {
 			})
 		)
 	} catch (e) {
-		yield put(actions.errorToGetData({ loading: false, error: true }))
+		yield put(actions.errorToGetData());
 	}
 
 }
@@ -47,7 +47,7 @@ function* requestUploadNewWord({payload}) {
 }
 
 
-export function* watchWords() {
+export default function* watchWords() {
 	yield takeEvery(actions.getListAllWords.toString(), requestListAllWords)
 	yield takeEvery(actions.uploadNewWord.toString(), requestUploadNewWord)
 }

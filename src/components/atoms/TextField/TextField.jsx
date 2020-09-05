@@ -4,13 +4,13 @@ import PropTypes from "prop-types"
 import STextField from "./TextField.style"
 
 const TextField = forwardRef((props, ref) => {
-	const { styles, icon, value, onChange, coloricon, ...restProps } = props
+	const { styles, icon, value, onChange, coloricon, ...restProps } = props;
 	return (
 		<Flex styles={[STextField.Flex, styles]}>
 			{icon && <STextField.Label $color={coloricon}>{icon}</STextField.Label>}
 			<STextField.Input
 				{...restProps}
-				ref={ref}
+				$ref={ref}
 				defaultValue={value}
 				onKeyUp={onChange}
 				$color={coloricon}

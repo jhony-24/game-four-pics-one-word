@@ -1,4 +1,4 @@
-import { styled } from "styletron-react"
+import styled from "src/theme/styled";
 
 export const SAvatar = styled("div", props => ({
 	borderRadius: "100%",

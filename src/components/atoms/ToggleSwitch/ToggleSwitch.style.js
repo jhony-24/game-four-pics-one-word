@@ -1,6 +1,6 @@
 import { StyleSheet } from "aphrodite/no-important"
 import { PRIMARY_COLOR, TEXT_PRIMARY, TEXT_SECONDARY } from "src/theme"
-import { styled } from "src/theme/styled"
+import styled from "src/theme/styled"
 
 export default StyleSheet.create({
 	input: {

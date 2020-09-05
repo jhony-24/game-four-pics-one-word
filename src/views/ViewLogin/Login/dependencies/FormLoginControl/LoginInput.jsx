@@ -12,34 +12,34 @@ const style = new StyleSheet.create({
 	},
 })
 
-const Username = ({ to }) => {
+const Username =(props) => {
 	const { isEmpty, ...username } = useTextInput()
 	return (
 		<>
 			{!isEmpty() && <LoginLabel text="Nombre de usuario" />}
 			<TextField
-				ref={to}
+				{...username}
+				ref={props.forwardRef}
 				placeholder="nombre de usuario..."
 				styles={style.input}
 				icon={<FaUserAlt color="rgb(100,100,100)" />}
-				{...username}
 			/>
 		</>
 	)
 }
 
-const Pass = ({ to }) => {
+const Pass = (props) => {
 	const { isEmpty, ...password } = useTextInput()
 	return (
 		<>
 			{!isEmpty() && <LoginLabel text="Contraseña" />}
 			<TextField
-				ref={to}
+				{...password}
+				ref={props.forwardRef}
 				placeholder="contraseña..."
 				type="password"
 				icon={<FaKey color="rgb(100,100,100)" />}
 				styles={style.input}
-				{...password}
 			/>
 		</>
 	)

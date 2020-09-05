@@ -40,25 +40,20 @@ const handlers = {
 		return _.update(state, "loading", () => false)
 	},
 
-	[actions.loadingListAllWords]: (state, { payload }) => {
-		return _.merge(state, { error: payload.error, loading: payload.loading })
-	},
-
-	[actions.errorToGetData]: (state, { payload }) => {
-		return _.merge(state, { error: payload.error, loading: payload.loading })
-	},
+	[actions.loadingListAllWords]: state => _.set(state, "loading", true),
+	[actions.errorToGetData]: state => _.merge(state, { error: true, loading: false }),
 
 	[actions.loadingUploadNewWord]: (state, { payload }) => {
-		return _.set(state, "loadingUpload", payload.loadingUpload)
+		return _.set(state, "loadingUpload", payload)
 	},
 
 	[actions.uploadNewWordComplete]: (state, { payload }) => {
-		const { uploaded, loadingUpload } = payload
-		if (uploaded) {
+		if (payload.uploaded) {
 			navigate("/list")
 		}
-		return _.merge(state, { uploaded, loadingUpload })
+		return _.merge(state, payload);
 	},
+
 	[actions.setDefaultIndexWordPlay]: (state, { payload }) => {
 		return _.set(state, "currentIndexListWord", payload)
 	},

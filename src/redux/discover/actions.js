@@ -1,5 +1,4 @@
 import { createActions } from "redux-actions"
-import services from "src/services"
 
 /**
  * @typedef {object} DiscoverWordActions
@@ -7,7 +6,7 @@ import services from "src/services"
  * @property assignLetterToOrder
  * @property giveBackLetter
  * @property removeMessyLetters
- * @property actionIncrementPoints
+ * @property incrementPointsComplete
  * @property switchEnableSound
  * @property getEnableSound
  * @property incrementPoints
@@ -16,21 +15,13 @@ import services from "src/services"
 /**
  * @type {DiscoverWordActions}
  */
-export const {
-	createLettersToDiscover,
-	assignLetterToOrder,
-	giveBackLetter,
-	removeMessyLetters,
-	actionIncrementPoints,
-	switchEnableSound,
-	getEnableSound,
-} = createActions(
+const actions = createActions(
 	"CREATE_LETTERS_TO_DISCOVER", // payload
 	"ASSIGN_LETTER_TO_ORDER", // payload
 	"GIVEBACK_LETTER", //payload
 	"REMOVE_MESSY_LETTERS",
-	"ACTION_INCREMENT_POINTS",
 	"INCREMENT_POINTS",
+	"INCREMENT_POINTS_COMPLETE",
 	"SWITCH_ENABLE_SOUND",
 	"GET_ENABLE_SOUND", // payload
 	{
@@ -38,9 +29,4 @@ export const {
 	}
 )
 
-// actions creators
-export const incrementPoints = (idWord, idUser) => async dispatch => {
-	await services.incrementWordPoints({ id: idWord })
-	await services.incrementPointsUserDiscover({ id: idUser })
-	dispatch(actionIncrementPoints())
-}
+export default actions

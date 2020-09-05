@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet } from 'aphrodite/no-important';
-import { SCloseButton, STextMessage } from './FlatMessage.style';
+import style, { SCloseButton, STextMessage } from './FlatMessage.style';
 import Flex from "src/components/dom/Flex"
 import { IoIosCloseCircle } from "react-icons/io";
 import { motion as Hide, AnimatePresence } from 'framer-motion';

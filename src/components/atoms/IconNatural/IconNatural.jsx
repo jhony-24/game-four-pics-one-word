@@ -1,5 +1,5 @@
 import React from "react"
-import style from "./style"
+import style from "./IconNatural.style"
 import Flex from "../../dom/Flex"
 import PropTypes from "prop-types"
 import { STextIconNatural, SIconNatural } from "./IconNatural.style"

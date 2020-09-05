@@ -34,10 +34,10 @@ class DiscoverWord extends Component {
   }
 }
 
-const mapStateToProps = ({ discover, user }) => ({
-  stateDiscover: discover.stateDiscover,
-  idWord: discoverSelectors.getIdWord(discover),
-  idUser: userSelectors.getIdUser(user),
-  images: discover.wordData !== null ? discover.wordData.images : []
+const mapStateToProps = (state) => ({
+  stateDiscover: state.discover.stateDiscover,
+  idWord: discoverSelectors.getWordId(state),
+  idUser: userSelectors.getUserId(state),
+  images: state.discover.wordData !== null ? state.discover.wordData.images : []
 })
 export default connect(mapStateToProps)(DiscoverWord);

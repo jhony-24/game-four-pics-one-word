@@ -1,4 +1,5 @@
 import { StyleSheet } from "aphrodite/no-important"
+import styled from "src/theme/styled";
 
 export default StyleSheet.create({
 	flex: {
@@ -13,6 +14,6 @@ export default StyleSheet.create({
 export const SFlexNone = styled("div", {
 	flex: "none",
 })
-export const SFlexCenterFluid = styed("div", {
+export const SFlexCenterFluid = styled("div", {
 	width: "100%",
 })

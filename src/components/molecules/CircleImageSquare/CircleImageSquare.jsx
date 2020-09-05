@@ -1,7 +1,7 @@
 import React, { memo } from "react"
 import { css } from "aphrodite/no-important"
 import PropTypes from "prop-types"
-import { SCircleContainer, SCircleAvatarImage } from ".//CircleImageSquare.style"
+import { SCircleContainer, SCircleAvatarImage } from "./CircleImageSquare.style"
 
 const CircleImageSquare = ({ styles, images, onClick }) => {
 	return (

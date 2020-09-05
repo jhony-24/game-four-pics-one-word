@@ -1,4 +1,4 @@
-import React, { createRef, Fragment } from "react"
+import React, { useRef, Fragment } from "react"
 import Button from "src/components/atoms/Button"
 import style from "../../style"
 import LoginInput from "../FormLoginControl/LoginInput"
@@ -8,18 +8,16 @@ import { userActions } from "src/redux/user"
 import { connect } from "react-redux"
 
 const SignUp = ({ onClose, visible, signUp }) => {
-	const _username = createRef()
-	const _pass = createRef()
-	const username = _username.current?.value
-	const pass = _pass.current?.value
-	const onSignUp = () => signUp({ username, pass });
+	const _username = useRef()
+	const _pass = useRef()
+	const onSignUp = () => signUp({ username : _username.current.value, pass : _pass.current.value });
 
 	return (
 		<Modal visible={visible} title="Registrarme" onClose={onClose}
 			message={
 				<Fragment>
-					<LoginInput.Username to={_username} />
-					<LoginInput.Pass to={_pass} />
+					<LoginInput.Username forwardRef={_username} />
+					<LoginInput.Pass forwardRef={_pass} />
 					<Flex>
 						<Button onClick={onClose} styles={style.cancel}> CANCELAR </Button>
 						<Button onClick={onSignUp}>REGISTRARME</Button>
@@ -31,6 +29,6 @@ const SignUp = ({ onClose, visible, signUp }) => {
 }
 
 const mapDispatch = {
-	signUp: userActions.createUser,
+	signUp: userActions.signUp,
 }
 export default connect(null, mapDispatch)(SignUp)

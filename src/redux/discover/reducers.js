@@ -1,5 +1,5 @@
 import { handleActions } from "redux-actions";
-import * as actions from "./actions";
+import actions from "./actions";
 import Letter from "src/models/letter";
 import win from "src/resources/sounds/s20200404win.mp3";
 import click from "src/resources/sounds/s20200404click.wav";
@@ -66,7 +66,7 @@ const handlers = {
         }
     },
 
-    [actions.actionIncrementPoints]: (state) => {
+    [actions.incrementPointsComplete]: (state) => {
         return state;
     },
 

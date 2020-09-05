@@ -33,6 +33,6 @@ const RowRename = ({ defaultUsername, updateUsername }) => {
 }
 
 const mapDispatchToProps = {
-    updateUsername: userActions.updateUserName
+    updateUsername: userActions.setUpdateInformation
 }
 export default connect(null, mapDispatchToProps)(RowRename);
