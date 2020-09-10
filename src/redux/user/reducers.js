@@ -15,10 +15,8 @@ const handlers = {
 	[actions.signInComplete]: (state, { payload }) => {
 		const { user, logged } = payload
 		if (logged) {
-			navigate("/list")
 			return _.merge(state, { user, logged, loading: false })
 		}
-		return _.set(state, "loading", false)
 	},
 
 	[actions.getUserComplete]: state => _.set(state, "user", Auth.get()),

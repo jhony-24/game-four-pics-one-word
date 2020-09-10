@@ -6,7 +6,6 @@ const style = StyleSheet.create({
     backdrop: {
         zIndex: 1000,
         position: "fixed",
-        background: "red"
     },
     bgPosition: {
         background: "rgba(0,0,0,.7)"

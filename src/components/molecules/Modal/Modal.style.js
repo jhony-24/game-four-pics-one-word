@@ -12,6 +12,7 @@ export default StyleSheet.create({
 export const SModalContainer = styled("div", {
 	background: "rgba(0,0,0,.6)",
 	height: "100%",
+	width : "100%",
 	display : "flex",
 	alignItems : "center",
 	justifyContent: "center",

@@ -1,25 +1,26 @@
 import { takeEvery, put, select } from "redux-saga/effects"
 import actions from "./actions"
-import services from "src/services"
 import Auth from "src/models/auth"
+import ReaderWordsService from "src/services/ReaderWordsService"
+import UploadNewWordService from "src/services/UploadNewWordService"
 
 function* requestListAllWords() {
 	const start = yield select(state => state.word.pagination.start)
 	yield put(actions.loadingListAllWords());
 
 	try {
-		const request = yield services.getListAllWords({ start, limit: 3 })
-		yield put(
-			actions.getListAllWordsComplete({
-				listWords: request.content,
+		const { content, nextLink, status } = yield ReaderWordsService().getListAllWords({ start, limit: 3 });
+		if(status){
+			yield put(actions.getListAllWordsComplete({
+				listWords: content,
 				loading: false,
 				error: false,
 				pagination: {
-					start: request.nextLink,
+					start: nextLink,
 				},
-			})
-		)
-	} catch (e) {
+			}))
+		}
+	} catch {
 		yield put(actions.errorToGetData());
 	}
 
@@ -30,8 +31,8 @@ function* requestUploadNewWord({payload}) {
 	const user = Auth.get();
 	yield put(actions.loadingUploadNewWord({loadingUpload:true}));
 	try {
-		const {status} = yield services.uploadImages({images}).then(({data : images}) => {
-			let wordUpload = services.uploadNewWord({
+		const { status } = yield UploadNewWordService().uploadImages({images}).then(({data : images}) => {
+			let wordUpload = UploadNewWordService().uploadNewWord({
 				iduser: user.iduser,
 				letters,
 				images,
@@ -41,7 +42,7 @@ function* requestUploadNewWord({payload}) {
 			return wordUpload;
 		});
 		yield put(actions.uploadNewWordComplete({loadingUpload:false,uploaded:status}));
-	} catch (e) {
+	} catch {
 		yield put(actions.loadingUploadNewWord({loadingUpload:false}));
 	}
 }

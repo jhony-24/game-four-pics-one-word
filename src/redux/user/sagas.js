@@ -1,25 +1,28 @@
 import { takeEvery, put } from "redux-saga/effects"
 import actions from "./actions"
-import services from "src/services"
 import Auth from "src/models/auth"
+import UserCheckAuthService from "src/services/UserCheckAuthService"
+import UserSettingsService from "src/services/UserSettingsService"
+import { navigate } from "gatsby"
 
 function* requestSignIn({ payload: { username, pass } }) {
 	try {
 		yield put(actions.requestLoadingData())
-		const { content, status } = yield services.signIn({ username, pass })
+		const { content, status } = yield UserCheckAuthService().signIn({ username, pass });
 		if(status){
 			Auth.set(content);	
-			yield put(actions.signInComplete({ user: content,logged : true }))
+			yield put(actions.signInComplete({ user: content,logged : true }));
+			yield navigate("/list");
 		}
-	} catch (e) {
+	} catch {
 		yield put(actions.requestErrorData())
 	}
 }
 
 function* requestSignUp({ payload: { username, pass } }) {
 	try {
-		yield services.createUser({ username, pass })
-	} catch (e) {
+		yield UserCheckAuthService().signUp({ username, pass })
+	} catch {
 		yield put(actions.requestErrorData())
 	}
 }
@@ -27,7 +30,7 @@ function* requestSignUp({ payload: { username, pass } }) {
 function* requestUpdateUsername({ payload: { username } }) {
 	const auth = Auth.get()
 	try {
-		const { status } = yield services.updateUser({
+		const { status } = yield UserSettingsService().updateUser({
 			iduser: auth.iduser,
 			username,
 		})
@@ -40,7 +43,7 @@ function* requestUpdateUsername({ payload: { username } }) {
 			Auth.set(newCookieData)
 			yield put(actions.setUpdateUser({ username }))
 		}
-	} catch (e) {
+	} catch {
 		yield put(actions.requestErrorData())
 	}
 }
@@ -48,12 +51,12 @@ function* requestUpdateUsername({ payload: { username } }) {
 function* requestUpdatePassword({ payload: { pass } }) {
 	const auth = Auth.get()
 	try {
-		yield services.updateUser({
+		yield UserSettingsService().updateUser({
 			iduser: auth.iduser,
 			pass,
 		})
 		yield put(actions.setUpdateUser())
-	} catch (e) {
+	} catch {
 		yield put(actions.requestErrorData())
 	}
 }

@@ -1,10 +1,15 @@
 import { takeEvery } from "redux-saga/effects"
 import actions from "./actions"
-import services from "src/services"
+import IncrementValueService from "src/services/IncrementValueService"
 
 function* requestIncrementPoints({ payload: { idWord, idUser } }) {
-	yield services.incrementWordPoints({ id: idWord });
-	yield services.incrementPointsUserDiscover({ id: idUser });
+	const increment = IncrementValueService()
+	try {
+		yield increment.incrementWordPoints({ id: idWord })
+		yield increment.incrementPointsUserDiscover({ id: idUser })
+	} catch {
+		
+	}
 }
 
 export default function* watchDiscover() {
