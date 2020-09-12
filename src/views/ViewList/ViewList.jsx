@@ -1,12 +1,8 @@
-import React, { Fragment } from 'react'
-import AllWords from "./AllWords";
+import React from "react"
+import AllWords from "./AllWords"
 
 const ViewList = () => {
-    return (
-       <Fragment>
-            <AllWords/>
-       </Fragment>
-    )
+	return <AllWords />
 }
 
-export default ViewList;
+export default ViewList

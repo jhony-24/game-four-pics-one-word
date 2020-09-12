@@ -1,20 +1,19 @@
-import { StyleSheet } from "aphrodite/no-important"
+import SWrapperFlex from "src/components/styled/wrappers/SWrapperFlex"
 import styled from "src/theme/styled"
+import { withStyleDeep } from "styletron-react"
 
-export default StyleSheet.create({
-	flex: {
-		justifyContent: "none",
-		padding: "10px",
-		width: "auto",
-	},
-})
-
-export const SIconNatural = styled("div", ({ $theme, ...props }) => ({
-	color: props.$color,
+export const SIconNatural = styled("div", ({ $color }) => ({
+	color: $color,
 }))
 
-export const STextIconNatural = styled("div", ({ $theme, ...props }) => ({
+export const STextIconNatural = styled("div", ({ $color }) => ({
+	color: $color,
 	fontWeight: "bold",
 	userSelect: "none",
-	color: props.$color,
 }))
+
+export const SFlex = withStyleDeep(SWrapperFlex, {
+	justifyContent: "none",
+	padding: "10px",
+	width: "auto",
+})

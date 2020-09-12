@@ -1,15 +1,15 @@
 import React from 'react';
-import style, { SFlexNone, SFlexCenterFluid } from './RowItem.style';
-import Flex from 'src/components/dom/Flex';
+import { SFlexNone, SFlexCenterFluid, SFlexContainer } from './RowItem.style';
 import PropTypes from "prop-types"
+import { css } from 'aphrodite/no-important';
 
-const RowItem = ({ styles, leftBody, centerBody, rightBody, onClick }) => {
+const RowItem = ({ $hover, styles, leftBody, centerBody, rightBody, onClick }) => {
   return (
-    <Flex styles={[style.flex, styles]} >
+    <SFlexContainer $hover={$hover} className={css(styles)}>
 			<SFlexNone>{leftBody}</SFlexNone>
       <SFlexCenterFluid onClick={onClick} onKeyDown={onClick} role="button" tabIndex="0" >{centerBody}</SFlexCenterFluid>
 			<SFlexNone>{rightBody}</SFlexNone>
-    </Flex >
+    </SFlexContainer>
   )
 }
 
@@ -20,7 +20,8 @@ RowItem.defaultProps = {
 RowItem.propTypes = {
   leftBody: PropTypes.oneOfType([PropTypes.element, PropTypes.node]),
   centerBody: PropTypes.oneOfType([PropTypes.element, PropTypes.node]),
-  rightBody: PropTypes.oneOfType([PropTypes.element, PropTypes.node]),
+	rightBody: PropTypes.oneOfType([PropTypes.element, PropTypes.node]),
+	$hover : PropTypes.bool,
   onClick: PropTypes.func
 }
 

@@ -1,13 +1,12 @@
-import { StyleSheet } from "aphrodite/no-important"
+import SWrapperFlex from "src/components/styled/wrappers/SWrapperFlex"
 import styled from "src/theme/styled"
+import { withStyleDeep } from "styletron-react"
 
-export default StyleSheet.create({
-	flex: {
-		flexDirection: "column",
-	},
+export const SFlex = withStyleDeep(SWrapperFlex, {
+	flexDirection: "column",
 })
 
-export const SLoading = styled("div", props => ({
+export const SLoading = styled("div", ({$theme,$size}) => ({
 	borderRadius: "100%",
 	animationDuration: ".5s",
 	animationIterationCount: "infinite",
@@ -18,13 +17,13 @@ export const SLoading = styled("div", props => ({
 			transform: "rotate(-360deg)",
 		},
 	},
-	borderLeft: `2px solid ${props.$theme.colors.color_primary}`,
-	width: props.$size,
-	height: props.$size,
+	width: $size,
+	height: $size,
+	borderLeft: `2px solid ${$theme.colors.color_primary}`,
 }))
 
-export const SLabel = styled("div", props => ({
+export const SLabel = styled("div", ({ $theme, $color }) => ({
 	margin: "8px auto",
-	fontSize: ".72em",
-	color: props.$color,
+	fontSize: $theme.fontSizes.smallUltra,
+	color: $color,
 }))

@@ -1,17 +1,17 @@
 import React, { memo } from "react"
-import style, { SParagraphTitle, SParagraphDetail } from "./Paragraph.style"
-import Flex from "src/components/dom/Flex"
+import { css } from "aphrodite/no-important";
+import { SContainerDetail,SContainerTitle, SContainerParagraph } from "./Paragraph.style"
 import PropTypes from "prop-types"
 
 const Paragraph = ({ styles, title, detail, colortitle, colordetail }) => {
-	const _Title = <SParagraphTitle $color={colortitle}>{title}</SParagraphTitle>;
-	const _Detail = <SParagraphDetail $color={colordetail}>{detail}</SParagraphDetail>;
+	const _Title = <SContainerTitle $color={colortitle}>{title}</SContainerTitle>;
+	const _Detail = <SContainerDetail $color={colordetail}>{detail}</SContainerDetail>;
 
 	return (
-		<Flex styles={[style.flex, styles]}>
+		<SContainerParagraph  className={css(styles)}>
 			{title && _Title}
 			{detail && _Detail}
-		</Flex>
+		</SContainerParagraph>
 	)
 }
 

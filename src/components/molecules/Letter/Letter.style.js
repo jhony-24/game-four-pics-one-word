@@ -1,6 +1,8 @@
 import styled from "src/theme/styled"
 
-export const SButtonLetter = styled("button", props => ({
+export const SButtonLetter = styled("button", ({ $color, $background }) => ({
+	color: $color,
+	background: $background,
 	justifyContent: "center",
 	alignItems: "center",
 	display: "flex",
@@ -13,11 +15,9 @@ export const SButtonLetter = styled("button", props => ({
 	":active": {
 		opacity: 0.7,
 	},
-	color: props.$color,
-	background: props.$background,
 }))
 
-export const SLabelLetter = styled("span", props => ({
+export const SLabelLetter = styled("span", ({ $visibility }) => ({
+	visibility: $visibility ? "visible" : "hidden",
 	textTransform: "uppercase",
-	visibility: props.$visibility ? "visible" : "hidden",
 }))

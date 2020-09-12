@@ -1,15 +1,14 @@
 import React from "react"
-import style from "./IconNatural.style"
-import Flex from "../../dom/Flex"
+import { SFlex } from "./IconNatural.style"
 import PropTypes from "prop-types"
 import { STextIconNatural, SIconNatural } from "./IconNatural.style"
 
-const IconNatural = ({ styles, icon, text, coloricon, colortext }) => {
+const IconNatural = ({ icon, text, coloricon, colortext }) => {
 	return (
-		<Flex styles={[style.flex, styles]}>
+		<SFlex>
 			<SIconNatural $color={coloricon}>{icon}</SIconNatural>
 			{text && <STextIconNatural $color={colortext}>{text}</STextIconNatural>}
-		</Flex>
+		</SFlex>
 	)
 }
 

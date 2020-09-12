@@ -1,8 +1,6 @@
 import React from "react"
-import style from "./style"
-import { css } from "aphrodite/no-important"
+import style, { SFlexBody, SImageCallAction } from "./ViewUploadWord.style"
 import imageUpload from "../../../images/image_upload.svg"
-import Flex from "src/components/dom/Flex"
 import RowItem from "src/components/molecules/RowItem"
 import Paragrah from "src/components/molecules/Paragraph"
 import ButtonBack from "src/components/molecules/ButtonBack"
@@ -12,8 +10,8 @@ const ViewUploadWord = () => {
 	return (
 		<div className="v-upload">
 			<RowItem styles={style.header} leftBody={<ButtonBack />} />
-			<Flex styles={style.flex}>
-				<img src={imageUpload} alt={imageUpload} className={css(style.img)} />
+			<SFlexBody>
+				<SImageCallAction src={imageUpload} alt={imageUpload} />
 				<Paragrah
 					styles={style.paragraph}
 					title="Subir imagenes"
@@ -21,7 +19,7 @@ const ViewUploadWord = () => {
 					colordetail="gray"
 				/>
 				<UploadNewWord />
-			</Flex>
+			</SFlexBody>
 		</div>
 	)
 }

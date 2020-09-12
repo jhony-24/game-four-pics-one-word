@@ -1,10 +1,10 @@
 import React, { useRef, memo } from 'react';
 import { motion as Graphic } from "framer-motion";
-import Container from 'src/components/dom/Container';
 import { css } from 'aphrodite/no-important';
 import style from "./style"
 import { useEffect } from 'react';
 import { TEXT_SECONDARY } from 'src/theme';
+import SWrapperContainer from 'src/components/styled/wrappers/SWrapperContainer';
 
 var data = []
 for (var i = 0; i < 100; i++) {
@@ -40,9 +40,9 @@ const GraphicProgressPointStatistical = () => {
   });
 
   return (
-    <Container>
+    <SWrapperContainer>
       <Graphic.canvas className={css(style.canvas)} ref={canvas} />
-    </Container>
+    </SWrapperContainer>
   )
 };
 

@@ -3,5 +3,5 @@ import watchWords from "./word/sagas"
 import watchUser from "./user/sagas"
 
 export default function* sagas() {
-	yield all([fork(watchUser), fork(watchWords)])
+	yield all([fork(watchUser), fork(watchWords)]);
 }

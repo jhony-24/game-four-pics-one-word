@@ -6,15 +6,15 @@ import UserSettingsService from "src/services/UserSettingsService"
 import { navigate } from "gatsby"
 
 function* requestSignIn({ payload: { username, pass } }) {
+	yield put(actions.requestLoadingData())
 	try {
-		yield put(actions.requestLoadingData())
 		const { content, status } = yield UserCheckAuthService().signIn({ username, pass });
 		if(status){
 			Auth.set(content);	
 			yield put(actions.signInComplete({ user: content,logged : true }));
 			yield navigate("/list");
 		}
-	} catch {
+	} catch{
 		yield put(actions.requestErrorData())
 	}
 }

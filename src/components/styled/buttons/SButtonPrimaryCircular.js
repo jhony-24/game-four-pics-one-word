@@ -1,7 +1,8 @@
-import { withStyle } from "styletron-react"
+import { withStyleDeep } from "styletron-react"
 import SButtonPrimary from "./SButtonPrimary"
 
-export default withStyle(SButtonPrimary, ({ $theme }) => ({
+export default withStyleDeep(SButtonPrimary, ({ $theme }) => ({
+	borderRadius: $theme.radius.total,
 	display: "flex",
 	justifyContent: "center",
 	alignItems: "center",
@@ -12,5 +13,4 @@ export default withStyle(SButtonPrimary, ({ $theme }) => ({
 	bottom: 0,
 	right: 0,
 	margin: "20px",
-	borderRadius: $theme.radius.total,
 }))

@@ -1,11 +1,11 @@
 import React, { Component, Fragment, createRef } from 'react';
-import style from './style';
+import style from './UploadNewWord.style';
 import TextField from "src/components/atoms/TextField"
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import { connect } from "react-redux";
 import { wordActions } from "src/redux/word";
-import ButtonUploadImages from './dependencies/buttonUpload/ButtonUploadImages';
-import ButtonOptionsUploadWord from './dependencies/buttonUpload/ButtonOptionsUploadWord';
+import ButtonUploadImages from './TypeButtonOptions/ButtonUploadImages';
+import ButtonOptionsUploadWord from './TypeButtonOptions/ButtonOptionsUploadWord';
 import Loading from 'src/components/atoms/Loading/Loading';
 
 class UploadNewWord extends Component {
@@ -70,8 +70,8 @@ class UploadNewWord extends Component {
   }
 }
 
-const mapStateToProps = ({ word }) => ({
+const mapState = ({ word }) => ({
   loadingUpload: word.loadingUpload,
 })
 
-export default connect(mapStateToProps)(UploadNewWord);
+export default connect(mapState)(UploadNewWord);

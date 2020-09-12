@@ -1,7 +1,7 @@
 import React from 'react'
 import { IoIosText } from 'react-icons/io';
 import TextField from 'src/components/atoms/TextField';
-import style from "../../style"
+import style from "../../SettingsApp.style"
 import { connect } from 'react-redux';
 import { userActions } from 'src/redux/user';
 import useTextInput from 'src/hooks/useTextInput';

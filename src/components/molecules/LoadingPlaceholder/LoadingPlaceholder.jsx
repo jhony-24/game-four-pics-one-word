@@ -1,25 +1,23 @@
 import React, { memo } from "react"
-import style, { SSkeletonRow } from "./LoadingPlaceholder.style"
-import Flex from "src/components/dom/Flex"
+import { SSkeletonCol, SSkeletonContainer, SSkeletonRow } from "./LoadingPlaceholder.style"
 import Skeleton from "react-loading-skeleton"
 import PropTypes from "prop-types"
 
 const LoadingPlaceholder = ({ sizecircle, heightbar, repeat }) => {
 	const array = Array(repeat).fill(0)
-
 	return (
-		<Flex styles={style.f}>
-			{array.map((e, i) => (
-				<Flex styles={style.fr} key={i}>
-					<SSkeletonRow>
+		<SSkeletonContainer>
+			{array.map((_, i) => (
+				<SSkeletonRow key={i}>
+					<SSkeletonCol>
 						<Skeleton width={sizecircle} height={sizecircle} circle={true} />
-					</SSkeletonRow>
-					<SSkeletonRow>
+					</SSkeletonCol>
+					<SSkeletonCol>
 						<Skeleton width={250} height={heightbar} />
-					</SSkeletonRow>
-				</Flex>
+					</SSkeletonCol>
+				</SSkeletonRow>
 			))}
-		</Flex>
+		</SSkeletonContainer>
 	)
 }
 

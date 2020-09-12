@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet } from 'aphrodite/no-important';
-import style, { SCloseButton, STextMessage } from './FlatMessage.style';
-import Flex from "src/components/dom/Flex"
+import { SCloseButton, SFlex, STextMessage } from './FlatMessage.style';
 import { IoIosCloseCircle } from "react-icons/io";
 import { motion as Hide, AnimatePresence } from 'framer-motion';
 import PropTypes from "prop-types"
@@ -10,29 +8,22 @@ const animateExit = { opacity: 0 };
 
 const FlatMessage = ({ text, textColor, iconColor, verticalMargin, horizontalMargin }) => {
   const [visible, setVisible] = useState(true);
-  const selfStyle = new StyleSheet.create({
-		flex: {
-			margin: `${verticalMargin || 0}px ${horizontalMargin || 0}px`
-    },
-  });
   const removeFlatMessage = () => {
 		setVisible(false);
   }
 	
   return (
 		<AnimatePresence>
-      {
-				visible && (
+      {visible && (
 					<Hide.div exit={animateExit}>
-            <Flex styles={[style.message, selfStyle.flex]}>
+            <SFlex $verticalMargin={verticalMargin} $horizonatalMarign={horizontalMargin}>
 							<STextMessage $color={textColor} >{text}</STextMessage>
               <SCloseButton onClick={removeFlatMessage} onKeyDown={removeFlatMessage} role="button" tabIndex="0">
                 <IoIosCloseCircle color={iconColor} size={20} />
               </SCloseButton>
-            </Flex>
+            </SFlex>
           </Hide.div>
-        )
-      }
+      )}
     </AnimatePresence>
   )
 }

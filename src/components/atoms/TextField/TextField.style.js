@@ -1,30 +1,22 @@
 import { StyleSheet } from "aphrodite/no-important"
 import { TEXT_SECONDARY } from "src/theme"
-import styled from "src/theme/styled";
+import styled from "src/theme/styled"
 
-export const style = StyleSheet.create({
+export default StyleSheet.create({
 	flex: {
 		padding: 15,
 		borderRadius: "20px",
 	},
+	input: {
+		width: "100%",
+		":hover": {
+			color: TEXT_SECONDARY,
+		},
+	},
 })
 
-const Input = styled("input", props => ({
-	width: "100%",
-	":hover": {
-		color: props.$color || TEXT_SECONDARY,
-	},
-}))
-
-const Label = styled("span", props => ({
+export const STextFieldLabel = styled("span", ({ $color }) => ({
+	color: $color,
 	marginRight: "10px",
 	lineHeight: 0,
-	color: props.$color,
 }))
-
-const STextField = {
-	Input,
-	Label,
-	Flex: style.flex,
-}
-export default STextField

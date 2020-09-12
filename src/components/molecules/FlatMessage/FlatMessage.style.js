@@ -1,24 +1,19 @@
-import { StyleSheet } from "aphrodite/no-important"
+import SWrapperFlex from "src/components/styled/wrappers/SWrapperFlex"
 import styled from "src/theme/styled"
+import { withStyleDeep } from "styletron-react"
 
-export default StyleSheet.create({
-	message: {
-		justifyContent: "unset",
-	},
-	tM: {
-		fontSize: ".7em",
-		marginRight: 5,
-		userSelect: "none",
-	},
-})
-
-export const SCloseButton = styled("span", props => ({
+export const SCloseButton = styled("span", () => ({
 	lineHeight: 0,
 }))
 
-export const STextMessage = styled("span", props => ({
+export const STextMessage = styled("span", ({ $color }) => ({
+	color: $color,
 	fontSize: ".7em",
 	marginRight: "5px",
 	userSelect: "none",
-	color : props.$color
+}))
+
+export const SFlex = withStyleDeep(SWrapperFlex, props => ({
+	margin: `${props.$verticalMargin || 0}px ${props.$horizontalMargin || 0}px`,
+	justifyContent: "unset",
 }))

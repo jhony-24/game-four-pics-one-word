@@ -1,5 +1,4 @@
 import Auth from "src/models/auth"
-import { navigate } from "gatsby"
 import { handleActions } from "redux-actions"
 import actions from "./actions"
 import _ from "lodash"

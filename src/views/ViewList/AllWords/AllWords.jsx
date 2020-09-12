@@ -1,15 +1,15 @@
 import React, { Fragment, useEffect } from "react"
-import RankingWords from "./dependencies/listWord/RankingWords"
+import RankingWords from "./ListWord/RankingWords"
 import LoadingPlaceholder from "src/components/molecules/LoadingPlaceholder"
-import ErrorGetData from "./dependencies/listWord/ErrorGetData"
+import ErrorGetData from "./AllWordPieces/ErrorGetData"
 import { connect } from "react-redux"
-import ListWordOrdered from "./dependencies/listWord/ListWordOrdered"
+import ListWordOrdered from "./ListWord/ListWordOrdered"
 import { wordActions } from "src/redux/word"
 
-const AllWords = ({ dispatch, loading, error }) => {
+const AllWords = ({ getListAllWords, loading, error }) => {
 	useEffect(() => {
-		dispatch(wordActions.getListAllWords())
-	}, [dispatch])
+		getListAllWords()
+	}, [getListAllWords])
 
 	if (loading) return <LoadingPlaceholder repeat={7} />
 	if (error) return <ErrorGetData />
@@ -21,8 +21,9 @@ const AllWords = ({ dispatch, loading, error }) => {
 	)
 }
 
-const mapStateToProps = ({ word }) => ({
+const mapState = ({ word }) => ({
 	loading: word.loading,
 	error: word.error,
-})
-export default connect(mapStateToProps)(AllWords)
+});
+const mapDispatch = { getListAllWords : wordActions.getListAllWords };
+export default connect(mapState,mapDispatch)(AllWords)

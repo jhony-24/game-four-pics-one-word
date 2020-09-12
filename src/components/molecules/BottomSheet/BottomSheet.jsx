@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react"
-import style from "./BottomSheet.style"
-import Position from "src/components/dom/Position"
-import Container from "src/components/dom/Container"
-import Flex from "src/components/dom/Flex"
+import { SBody, SCardBottomSheet, SCardBottomSheetBarDraggable, SCardBottomSheetHeader, SFlexBody, SCardBottomPosition } from "./BottomSheet.style"
 import Text from "src/components/atoms/Text"
-import { motion as Sheet, AnimatePresence } from "framer-motion"
-import Backdrop from "src/components/dom/Backdrop"
+import { AnimatePresence } from "framer-motion"
+import SWrapperBackdrop from "src/components/styled/wrappers/SWrapperBackdrop"
 
 const animations = {
 	close: { y: "100%", transition: { type: "tween", duration: 0.1 } },
@@ -24,9 +21,9 @@ const BottomSheet = ({ open, title, children, onClose }) => {
 	return (
 		<AnimatePresence onExitComplete={onDragExit}>
 			{isOpen && (
-				<Backdrop>
-					<Position position="fixed" bottom="0" left="0">
-						<Sheet.div
+				<SWrapperBackdrop>
+					<SCardBottomPosition>
+							<SCardBottomSheet
 							variants={animations}
 							initial="close"
 							animate="open"
@@ -35,19 +32,17 @@ const BottomSheet = ({ open, title, children, onClose }) => {
 							dragConstraints={{ top: 0 }}
 							onPanStart={onPanStart}
 							exit="close"
-						>
-							<Container styles={style.card}>
-								<Flex styles={style.flexContainer}>
-									<Container styles={[style.header, style.center]}>
-										<Container styles={style.bar} />
+							>
+								<SFlexBody>
+									<SCardBottomSheetHeader>
+										<SCardBottomSheetBarDraggable/>
 										<Text>{title}</Text>
-									</Container>
-									<Container styles={style.body}>{children}</Container>
-								</Flex>
-							</Container>
-						</Sheet.div>
-					</Position>
-				</Backdrop>
+									</SCardBottomSheetHeader>
+									<SBody>{children}</SBody>
+								</SFlexBody>
+							</SCardBottomSheet>
+					</SCardBottomPosition>
+				</SWrapperBackdrop>
 			)}
 		</AnimatePresence>
 	)

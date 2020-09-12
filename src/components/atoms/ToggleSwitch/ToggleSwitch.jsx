@@ -1,6 +1,5 @@
 import React from "react"
-import { css } from "aphrodite/no-important"
-import style, { SContainerToggleSwitch, SCheckButtonCircular } from "./ToggleSwitch.style"
+import { SContainerToggleSwitch, SCheckButtonCircular, SInputChecker } from "./ToggleSwitch.style"
 import useToggle from "src/hooks/useToggle"
 import PropTypes from "prop-types"
 
@@ -13,10 +12,9 @@ const ToggleSwitch = ({ checked, onChange }) => {
 
 	return (
 		<SContainerToggleSwitch $active={state}>
-			<input
+			<SInputChecker
 				type="checkbox"
 				id="input-switch"
-				className={css(style.input)}
 				checked={state}
 				onChange={handlerChange}
 			/>

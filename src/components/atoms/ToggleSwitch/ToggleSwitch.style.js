@@ -1,33 +1,29 @@
-import { StyleSheet } from "aphrodite/no-important"
-import { PRIMARY_COLOR, TEXT_PRIMARY, TEXT_SECONDARY } from "src/theme"
 import styled from "src/theme/styled"
 
-export default StyleSheet.create({
-	input: {
-		display: "none",
-		":checked + div": {
-			transform: "translateX(100%)",
-			border: "1px solid " + TEXT_SECONDARY,
-		},
+export const SInputChecker = styled("input", ({ $theme }) => ({
+	display: "none",
+	":checked + div": {
+		transform: "translateX(100%)",
+		border: "1px solid " + $theme.colors.color_primary,
 	},
-})
+}))
 
-export const SContainerToggleSwitch = styled("label",({ $theme, ...props }) => ({
+export const SContainerToggleSwitch = styled("label", ({ $theme, $active }) => ({
 		display: "block",
 		position: "relative",
 		width: "40px",
 		height: "20px",
 		borderRadius: "20px",
-		background: props.$active ? PRIMARY_COLOR : "rgba(0,0,0,.1)",
 		transition: ".3s",
+		background: $active ? $theme.gradients.color_primary_gradient : $theme.colors.color_smooth,
 	})
 )
 
-export const SCheckButtonCircular = styled("div", ({ $theme, ...props }) => ({
+export const SCheckButtonCircular = styled("div", ({ $theme, $active }) => ({
 	height: "20px",
 	width: "20px",
 	borderRadius: "100%",
 	transition: ".3s",
 	position: "absolute",
-	background: props.$active ? TEXT_PRIMARY : "gray",
+	background: $active ? $theme.colors.color_primary_light : $theme.colors.color_smooth_medium,
 }))

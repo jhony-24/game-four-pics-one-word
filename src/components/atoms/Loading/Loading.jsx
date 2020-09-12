@@ -1,15 +1,14 @@
 import React, { memo } from "react"
-import Flex from "src/components/dom/Flex"
 import { TEXT_SECONDARY } from "src/theme"
 import PropTypes from "prop-types"
-import style, { SLoading, SLabel } from "./Loading.style"
+import { SLoading, SLabel, SFlex } from "./Loading.style"
 
 const Loading = ({ color, colortext, text, size }) => {
 	return (
-		<Flex styles={style.flex}>
+		<SFlex>
 			<SLoading $color={color} $size={size}></SLoading>
 			{text && <SLabel $color={colortext}>{text}</SLabel>}
-		</Flex>
+		</SFlex>
 	)
 }
 

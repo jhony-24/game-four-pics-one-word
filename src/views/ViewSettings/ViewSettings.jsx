@@ -2,7 +2,7 @@ import React, { lazy } from 'react';
 import { css } from 'aphrodite/no-important';
 import RowItem from "src/components/molecules/RowItem"
 import ButtonBack from 'src/components/molecules/ButtonBack';
-import style from './style';
+import style from './ViewSettings.style';
 import { FaCog } from 'react-icons/fa';
 import IconNatural from 'src/components/atoms/IconNatural';
 import { TEXT_PRIMARY } from 'src/theme';

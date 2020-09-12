@@ -1,25 +1,24 @@
 import React, { lazy } from 'react';
 import LazyLoad from 'src/components/hoc/LazyLoad';
 import NewWordToPlay from './NewWordToPlay';
-import HeaderDiscoverWord from './DiscoverWord/dependencies/headerDiscover/HeaderDiscoverWord';
+import HeaderDiscoverWord from './DiscoverWord/HeaderDiscover/HeaderDiscoverWord';
 import Loading from 'src/components/atoms/Loading/Loading';
-import Position from 'src/components/dom/Position';
+import SWrapperFlex from 'src/components/styled/wrappers/SWrapperFlex';
 
-const DiscoverWord = lazy(() => import("./DiscoverWord"));
+const DiscoverWordAsync = lazy(() => import("./DiscoverWord"));
 
-const ViewGuessWord = (props) => {
-  const { state } = props;
+const ViewDiscoverWord = ({state}) => {
   return (
     <div className="guess-word">
       <HeaderDiscoverWord />
-      <LazyLoad component={DiscoverWord} state={state} loading={
-        <Position margin="2in auto">
+      <LazyLoad component={DiscoverWordAsync} state={state} loading={
+        <SWrapperFlex $style={{margin:"1in auto"}} >
           <Loading />
-        </Position>
+        </SWrapperFlex>
       } />
       <NewWordToPlay />
     </div>
   )
 }
 
-export default ViewGuessWord;
+export default ViewDiscoverWord;

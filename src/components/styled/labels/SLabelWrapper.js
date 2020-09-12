@@ -1,7 +1,7 @@
 import styled from "src/theme/styled"
 
-export default styled("span", ({ $theme, ...props }) => ({
-	userSelect : "none",
-	color : $theme.colors[props.$color],
-	fontSize :  props.$fontSize ? $theme.fontSizes[props.$fontSize] : $theme.fontSizes.small
+export default styled("span", ({ $theme, $fontSize, $color }) => ({
+	userSelect: "none",
+	color: $theme.colors[$color],
+	fontSize: $fontSize ? $theme.fontSizes[$fontSize] : $theme.fontSizes.small,
 }))
