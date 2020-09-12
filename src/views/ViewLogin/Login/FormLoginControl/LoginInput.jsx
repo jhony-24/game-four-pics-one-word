@@ -1,7 +1,7 @@
 import React from "react"
 import { FaUserAlt, FaKey } from "react-icons/fa"
 import TextField from "src/components/atoms/TextField"
-import useTextInput from "src/hooks/useTextInput"
+import useTextInput from "src/hooks/useInterfaceControls/useTextInput"
 import LoginLabel from "./LoginLabel"
 import { StyleSheet } from "aphrodite/no-important"
 

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import Modal from "src/components/molecules/Modal/Modal";
-import useToggle from "src/hooks/useToggle";
+import useToggle from "src/hooks/useInterfaceControls/useToggle";
 import LazyLoad from "src/components/hoc/LazyLoad";
 import { lazy } from "react";
 import { StyleSheet } from "aphrodite/no-important";

@@ -46,7 +46,7 @@ class Auth {
      * Delete all cookies saved 
      */
     static destroy() {
-        Cookies.destroy();
+        Cookies.remove(Auth.KEY_USER);
     }
 
 }

@@ -4,7 +4,7 @@ import TextField from 'src/components/atoms/TextField';
 import style from "../../SettingsApp.style"
 import { connect } from 'react-redux';
 import { userActions } from 'src/redux/user';
-import useTextInput from 'src/hooks/useTextInput';
+import useTextInput from 'src/hooks/useInterfaceControls/useTextInput';
 import RowSettingSheet from '../RowSetting/RowSettingSheet';
 
 const RowRename = ({ defaultUsername, updateUsername }) => {

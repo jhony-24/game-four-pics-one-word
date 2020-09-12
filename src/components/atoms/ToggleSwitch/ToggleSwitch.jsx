@@ -1,6 +1,6 @@
 import React from "react"
 import { SContainerToggleSwitch, SCheckButtonCircular, SInputChecker } from "./ToggleSwitch.style"
-import useToggle from "src/hooks/useToggle"
+import useToggle from "src/hooks/useInterfaceControls/useToggle"
 import PropTypes from "prop-types"
 
 const ToggleSwitch = ({ checked, onChange }) => {

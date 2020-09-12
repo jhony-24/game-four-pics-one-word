@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoIosOpen } from 'react-icons/io';
 import { Portal } from 'react-portal';
-import useResize from 'src/hooks/useResize';
+import useResize from 'src/hooks/useInterfaceControls/useResize';
 import { SButtonViewInMobile } from './ButtonViewinMobile.style';
 
 const openWindow = () => {

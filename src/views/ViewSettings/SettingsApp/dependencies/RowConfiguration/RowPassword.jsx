@@ -5,7 +5,7 @@ import style from "../../SettingsApp.style"
 import { connect } from 'react-redux';
 import RowSettingSheet from '../RowSetting/RowSettingSheet';
 import { userActions } from 'src/redux/user';
-import useTextInput from 'src/hooks/useTextInput';
+import useTextInput from 'src/hooks/useInterfaceControls/useTextInput';
 
 const RowPassword = ({ updatePassword }) => {
     const password = useTextInput();
