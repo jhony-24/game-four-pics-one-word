@@ -1,12 +1,20 @@
-import React, { Suspense } from 'react';
+import React, { Suspense } from "react"
 import Loading from "src/components/atoms/Loading"
 
 const LazyLoad = ({ component: Component, loading, ...props }) => (
-  <>
-    <Suspense fallback={loading || <Loading />}>
-      <Component {...props} />
-    </Suspense>
-  </>
+	<>
+		<Suspense fallback={loading || <Loading />}>
+			<Component {...props} />
+		</Suspense>
+	</>
 )
 
-export default LazyLoad;
+LazyLoad.Multiple = ({ components: Components, loading }) => (
+	<>
+		<Suspense fallback={loading || <Loading />}>
+			{Components.map( (CurrentComponent, key) => React.cloneElement(CurrentComponent, { key }) )}
+		</Suspense>
+	</>
+)
+
+export default LazyLoad

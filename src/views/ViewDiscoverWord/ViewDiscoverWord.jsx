@@ -1,24 +1,21 @@
-import React, { lazy } from 'react';
-import LazyLoad from 'src/components/hoc/LazyLoad';
-import NewWordToPlay from './NewWordToPlay';
-import HeaderDiscoverWord from './DiscoverWord/HeaderDiscover/HeaderDiscoverWord';
-import Loading from 'src/components/atoms/Loading/Loading';
-import SWrapperFlex from 'src/components/styled/wrappers/SWrapperFlex';
+import React, { lazy } from "react"
+import LazyLoad from "src/components/hoc/LazyLoad"
+import HeaderDiscoverWord from "./DiscoverWord/HeaderDiscover/HeaderDiscoverWord"
+import LoadingWordGame from "./ViewDiscoverWordPieces/LoadingWordGame"
 
-const DiscoverWordAsync = lazy(() => import("./DiscoverWord"));
-
-const ViewDiscoverWord = ({state}) => {
-  return (
-    <div className="guess-word">
-      <HeaderDiscoverWord />
-      <LazyLoad component={DiscoverWordAsync} state={state} loading={
-        <SWrapperFlex $style={{margin:"1in auto"}} >
-          <Loading />
-        </SWrapperFlex>
-      } />
-      <NewWordToPlay />
-    </div>
-  )
+const Async = {
+	Word: lazy(() => import("./DiscoverWord")),
+	ChangeButtons: lazy(() => import("./NewWordToPlay")),
 }
 
-export default ViewDiscoverWord;
+const ViewDiscoverWord = ({ state }) => {
+	const components = [<Async.Word state={state} />, <Async.ChangeButtons />];
+	return (
+		<div className="guess-word">
+			<HeaderDiscoverWord />
+			<LazyLoad.Multiple loading={<LoadingWordGame />} components={components} />
+		</div>
+	)
+}
+
+export default ViewDiscoverWord
