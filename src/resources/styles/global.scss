@@ -1,59 +1,58 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: arial;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: arial;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
-
 
 [role="button"] {
-    outline:none;
+	outline: none;
 }
 
-button , input , textarea {
-    border:none;
-    background:  none;
-    border-width: 0;
-    resize: none;
-    outline: none;
+button,
+input,
+textarea {
+	border: none;
+	background: none;
+	border-width: 0;
+	resize: none;
+	outline: none;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
-
 
 img {
-    font-size: 0;
-    display: block;
-    object-fit: cover;
-    -webkit-user-drag: none;
+	font-size: 0;
+	display: block;
+	object-fit: cover;
+	-webkit-user-drag: none;
 }
 
-@media screen and (min-width:400px) {
-    body,html {
-        height: 100%;
-        width: 100%;
-        body {
-            background: rgba(0,0,0,.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-    .root {
-        width: 350px;
-        height: 90vh;
-        background: white;
-        margin: .5em auto;
-        border-radius: 10px;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        box-shadow: 0 10px 30px rgba(0,0,0,.7);
-    }
+@media screen and (min-width: 400px) {
+	body,
+	html {
+		height: 100%;
+		width: 100%;
+		body {
+			background: rgba(0, 0, 0, 0.9);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	.root {
+		width: 350px;
+		background: white;
+		margin: 0.5em auto;
+		border-radius: 10px;
+		overflow-y: scroll;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+	}
 }
