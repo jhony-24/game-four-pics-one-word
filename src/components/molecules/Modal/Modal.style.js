@@ -1,4 +1,6 @@
+import SWrapperFlex from "src/components/styled/wrappers/SWrapperFlex"
 import styled from "src/theme/styled"
+import { withStyleDeep } from "styletron-react"
 
 export const SModalBackdrop = styled("div", {
 	zIndex: 1000,
@@ -13,6 +15,11 @@ export const SModalContainer = styled("div", ({ $theme }) => ({
 	alignItems: "center",
 	justifyContent: "center",
 }))
+
+
+export const SModalHeaderContainer = withStyleDeep(SWrapperFlex,{
+	marginBottom : "10px"
+});
 
 export const SModalCardContainer = styled("div", ({ $theme }) => ({
 	boxShadow: $theme.shadows.medium,

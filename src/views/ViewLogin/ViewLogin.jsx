@@ -3,14 +3,15 @@ import LazyLoad from 'src/components/hoc/LazyLoad';
 import SWrapperFlex from 'src/components/styled/wrappers/SWrapperFlex';
 import HeaderDecorator from './LoginHeaderDecorator/HeaderDecorator';
 
-const Login = lazy(() => import("./Login"));
+const LoginAsync = lazy(() => import("./Login"));
+const LoginSocialAsync = lazy(() => import("./LoginWithSocialAccounts"))
 
 const ViewLogin = () => {
   return (
     <div className="login">
       <HeaderDecorator/>
-      <SWrapperFlex>
-        <LazyLoad component={Login} />
+      <SWrapperFlex $style={{flexDirection:"column"}}>
+				<LazyLoad.Multiple components={[<LoginSocialAsync/>,<LoginAsync/>]} />
       </SWrapperFlex>
     </div>
   )

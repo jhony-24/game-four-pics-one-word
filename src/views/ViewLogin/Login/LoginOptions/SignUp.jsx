@@ -6,6 +6,7 @@ import { userActions } from "src/redux/user"
 import { connect } from "react-redux"
 import SWrapperFlex from "src/components/styled/wrappers/SWrapperFlex"
 import style from "./LoginOptions.style";
+import SWrapperContainer from "src/components/styled/wrappers/SWrapperContainer"
 
 const SignUp = ({ onClose, visible, signUp }) => {
 	const _username = useRef()
@@ -16,8 +17,10 @@ const SignUp = ({ onClose, visible, signUp }) => {
 		<Modal visible={visible} title="Registrarme" onClose={onClose}
 			message={
 				<Fragment>
-					<LoginInput.Username forwardRef={_username} />
-					<LoginInput.Pass forwardRef={_pass} />
+					<SWrapperContainer>
+						<LoginInput.Username forwardRef={_username} />
+						<LoginInput.Pass forwardRef={_pass} />
+					</SWrapperContainer>
 					<SWrapperFlex>
 						<Button onClick={onClose} styles={style.cancel}> CANCELAR </Button>
 						<Button onClick={onSignUp}>REGISTRARME</Button>

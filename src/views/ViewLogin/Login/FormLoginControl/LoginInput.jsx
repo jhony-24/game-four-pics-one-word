@@ -7,7 +7,7 @@ import { StyleSheet } from "aphrodite/no-important"
 
 const style = new StyleSheet.create({
 	input: {
-		margin: "1em 0 2em",
+		margin: "0 0 2em",
 		background : "rgba(0,0,0,.07)"
 	},
 })

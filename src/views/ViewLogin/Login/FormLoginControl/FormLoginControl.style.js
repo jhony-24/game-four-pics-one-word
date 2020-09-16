@@ -4,10 +4,10 @@ import { withStyleDeep } from "styletron-react"
 
 export const FormTextLoginSignUp = withStyleDeep(SLabelWrapper, {
 	fontSize: ".7em",
-	marginBottom: "3em",
+	marginTop: "3em",
+	marginBottom: "1em",
 	color: "gray",
 	textAlign: "center",
-	marginTop: "4em",
 })
 
 export const FormTextLoginSignUpStrong = styled("strong", {

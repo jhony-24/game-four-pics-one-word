@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import ModalCompleteContainer from "./ModalPieces/ModalCompleteContainer"
 import ModalDetail from "./ModalPieces/ModalDetail"
 import ModalButtonCloser from "./ModalPieces/ModalButtonCloser"
-import SWrapperFlex from "src/components/styled/wrappers/SWrapperFlex"
 import ModalTitle from "./ModalPieces/ModalTitle"
 
 const Modal = ({ title, message, visible, onClose }) => {
@@ -12,10 +11,10 @@ const Modal = ({ title, message, visible, onClose }) => {
 		visible && (
 			<ModalCompleteContainer>
 				<SModalCardContainer>
-					<SWrapperFlex>
+					<SModalHeaderContainer>
 						<ModalTitle>{title}</ModalTitle>
 						<ModalButtonCloser onClose={onClose} />
-					</SWrapperFlex>
+					</SModalHeaderContainer>
 					<ModalDetail>{message}</ModalDetail>
 				</SModalCardContainer>
 			</ModalCompleteContainer>
