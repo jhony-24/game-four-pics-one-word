@@ -2,7 +2,7 @@ import Auth from "src/models/auth"
 
 const useAuthDispatchController = () => {
 	const onLogout = () => {
-		Auth.destroy()
+		Auth.destroy();
 		window.location.replace("/");
 	}
 

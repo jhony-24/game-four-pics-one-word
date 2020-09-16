@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from "react"
+import React, { useRef } from "react"
 import style from "./UploadNewWord.style"
 import TextField from "src/components/atoms/TextField"
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"

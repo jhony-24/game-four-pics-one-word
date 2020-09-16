@@ -1,9 +1,10 @@
 import axios from "axios"
+import { TOKEN_SERVICE_API } from "src/configuration/env";
 
 const mainService = axios.create({
 	baseURL: "http://localhost:3000/api/v1",
 	headers: {
-		Authorization: process.env.GATSBY_TOKEN_API_WORD,
+		Authorization: TOKEN_SERVICE_API,
 	},
 });
 

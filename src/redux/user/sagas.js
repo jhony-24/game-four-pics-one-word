@@ -4,6 +4,8 @@ import Auth from "src/models/auth"
 import UserCheckAuthService from "src/services/UserCheckAuthService"
 import UserSettingsService from "src/services/UserSettingsService"
 import { navigate } from "gatsby"
+import { firebaseAuth } from "src/configuration/firebaseConfig"
+import { providerAuthentication } from "src/configuration/authentication"
 
 function* requestSignIn({ payload: { username, pass } }) {
 	yield put(actions.requestLoadingData())
@@ -18,6 +20,36 @@ function* requestSignIn({ payload: { username, pass } }) {
 		yield put(actions.requestErrorData())
 	}
 }
+
+
+function* requestSignInGoogle() {
+	try{
+		const { user } = yield firebaseAuth().signInWithPopup(providerAuthentication.google);
+		if(user.emailVerified) {
+			let userProps = {
+				username : user.displayName.replaceAll(' ',''),
+				email : user.email,
+				iduser : user.uid,
+			};
+			Auth.set(userProps);
+			yield put(actions.signInComplete({user:userProps,logged:true}));
+			yield navigate("/list");
+		}
+	}
+	catch(e) {
+		throw new Error(e.message);
+	}
+}
+
+function* requestSignInFacebook() {
+	try{
+		yield firebaseAuth().signInWithPopup(providerAuthentication.facebook);
+	}
+	catch(e) {
+		throw new Error(e.message);
+	}
+}
+
 
 function* requestSignUp({ payload: { username, pass } }) {
 	try {
@@ -63,6 +95,8 @@ function* requestUpdatePassword({ payload: { pass } }) {
 
 export default function* watchUser() {
 	yield takeEvery(actions.signIn.toString(), requestSignIn)
+	yield takeEvery(actions.signInGoogle.toString(), requestSignInGoogle)
+	yield takeEvery(actions.signInFacebook.toString(), requestSignInFacebook)
 	yield takeEvery(actions.signUp.toString(), requestSignUp)
 	yield takeEvery(actions.setUpdateInformation.toString(), requestUpdateUsername)
 	yield takeEvery(actions.setUpdateInformation.toString(), requestUpdatePassword)

@@ -1,5 +1,5 @@
 import React from "react"
-import { SModalCardContainer } from "./Modal.style"
+import { SModalCardContainer, SModalHeaderContainer } from "./Modal.style"
 import PropTypes from "prop-types"
 import ModalCompleteContainer from "./ModalPieces/ModalCompleteContainer"
 import ModalDetail from "./ModalPieces/ModalDetail"

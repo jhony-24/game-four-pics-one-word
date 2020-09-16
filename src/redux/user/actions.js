@@ -3,6 +3,8 @@ import { createActions } from "redux-actions"
 /**
  * @typedef {object} UserActions
  * @property signIn
+ * @property signInGoogle
+ * @property signInFacebook
  * @property signInComplete
  * @property signUp
  * @property signUpComplete
@@ -19,6 +21,8 @@ import { createActions } from "redux-actions"
  */
 const actions = createActions(
 	"SIGN_IN",
+	"SIGN_IN_GOOGLE",
+	"SIGN_IN_FACEBOOK",
 	"SIGN_IN_COMPLETE",
 	"SIGN_UP",
 	"SIGN_UP_COMPLETE",
