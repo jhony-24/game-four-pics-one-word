@@ -1,4 +1,3 @@
-import React from "react"
 import Auth from "src/models/auth"
 
 const useAuthDispatchController = () => {

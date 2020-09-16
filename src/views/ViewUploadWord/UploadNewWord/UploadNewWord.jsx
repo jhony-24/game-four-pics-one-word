@@ -1,77 +1,33 @@
-import React, { Component, Fragment, createRef } from 'react';
-import style from './UploadNewWord.style';
+import React, { Fragment, useRef } from "react"
+import style from "./UploadNewWord.style"
 import TextField from "src/components/atoms/TextField"
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
-import { connect } from "react-redux";
-import { wordActions } from "src/redux/word";
-import ButtonUploadImages from './TypeButtonOptions/ButtonUploadImages';
-import ButtonOptionsUploadWord from './TypeButtonOptions/ButtonOptionsUploadWord';
-import Loading from 'src/components/atoms/Loading/Loading';
+import ButtonUploadImages from "./TypeButtonOptions/ButtonUploadImages"
+import ButtonOptionsUploadWord from "./TypeButtonOptions/ButtonOptionsUploadWord"
+import Loading from "src/components/atoms/Loading/Loading"
+import useUploadImageFiles from "src/hooks/useUploadWord/useUploadImageFiles"
+import useUploadNewWord from "src/hooks/useUploadWord/useUploadNewWord"
 
-class UploadNewWord extends Component {
-  constructor() {
-    super();
-    this.word = createRef();
-    this.state = {
-      images: null,
-      stateUploaded: false
-    }
-  }
+const UploadNewWord = () => {
+	const word = useRef();
+	const { selectImages, cancelUploadImages,previewImages,uploaded,images } = useUploadImageFiles();
+	const {  loadingUpload , uploadWord } = useUploadNewWord();
+	const handlerUploadWord = () => uploadWord({ letters : word.current.value, images });
 
-  handlerSelectImages = event => {
-    this.setState({ images: event.target.files, stateUploaded: true });
-  }
 
-  handlerCancelUploadWord = () => {
-    this.setState({
-      images: null,
-      stateUploaded: false
-    });
-  }
+	if(loadingUpload) return <Loading size={60} text="subiendo..." />
 
-  handlerUploadWord = () => {
-    const { images } = this.state;
-    const letters = this.word.current.value;
-    const { dispatch } = this.props;
-    dispatch(wordActions.uploadNewWord({ letters, images }));
-  }
-
-  getPreviewImages = () => {
-    let allImages = [...this.state.images];
-    let allUrls = allImages.map(currentFileImage => {
-      return URL.createObjectURL(currentFileImage);
-    });
-    return allUrls;
-  }
-
-  render() {
-    const { stateUploaded } = this.state;
-    const { loadingUpload } = this.props;
-    return (
-      <Fragment>
-        {
-          loadingUpload ?
-            <Loading size={60} text="subiendo..." /> :
-            <Fragment>
-              <TextField placeholder="escribe una palabra..." styles={style.input} ref={this.word} />
-              {
-                !stateUploaded ?
-                  <ButtonUploadImages onChange={this.handlerSelectImages} />
-                  :
-                  <Fragment>
-                    <CircleImageSquare images={this.getPreviewImages()} styles={style.gridPreviewImages} />
-                    <ButtonOptionsUploadWord onUpload={this.handlerUploadWord} onCancel={this.handlerCancelUploadWord} />
-                  </Fragment>
-              }
-            </Fragment>
-        }
-      </Fragment>
-    )
-  }
+	return <>
+		<TextField placeholder="escribe una palabra..." styles={style.input}	ref={word} />
+		{!uploaded ? (
+			<ButtonUploadImages onChange={selectImages} />
+		) : (
+			<>
+				<CircleImageSquare images={previewImages} styles={style.gridPreviewImages} />
+				<ButtonOptionsUploadWord onUpload={handlerUploadWord} onCancel={cancelUploadImages}/>
+			</>
+		)}
+	</>
 }
 
-const mapState = ({ word }) => ({
-  loadingUpload: word.loadingUpload,
-})
-
-export default connect(mapState)(UploadNewWord);
+export default UploadNewWord;

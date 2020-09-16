@@ -1,26 +1,18 @@
-import React, { Component } from "react"
+import React, { useState } from "react"
 import Auth from "src/models/auth"
 import { navigate } from "gatsby"
+import { useEffect } from "react"
 
-const CheckLogged = WrapperComponentRender => class extends Component {
-		state = {
-			logged: false,
-		}
-
-		componentWillMount() {
-			if (Auth.get() !== null) {
-				this.setState({ logged: true })
-			}
-		}
-
-		render() {
-			if (this.state.logged) {
-				return <WrapperComponentRender {...this.props} />
-			} else {
-				navigate("/")
-				return null
-			}
-		}
+const CheckLogged = WrapperComponentRender => {
+	const InnerWrapperComponent = props => {
+		const [logged, setLogged] = useState(false)
+		useEffect(() => {
+			if (Auth.logged()) setLogged(true)
+			else return navigate("/")
+		}, [setLogged])
+		return logged ? <WrapperComponentRender {...props} /> : null
 	}
+	return InnerWrapperComponent
+}
 
 export default CheckLogged

@@ -47,7 +47,11 @@ class Auth {
      */
     static destroy() {
         Cookies.remove(Auth.KEY_USER);
-    }
+		}
+		
+		static logged() {
+			return Auth.get() !== null;
+		}
 
 }
 
