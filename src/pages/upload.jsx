@@ -12,9 +12,7 @@ const Upload = () => (
 	<SEO title="Hey! upload new word to discover">
 		<div className="upload">
 			<Fade>
-				<LazyLoad
-					component={ViewUploadWord}
-					loading={
+				<LazyLoad component={ViewUploadWord} loading={
 						<Position.Full>
 							<Loading/>
 						</Position.Full>

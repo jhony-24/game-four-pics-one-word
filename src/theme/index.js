@@ -27,6 +27,7 @@ const FONT_SIZES = {
 	medium: "16px",
 	large: "20px",
 	largeUltra : "1.5rem",
+	largeUltra2 : "3rem"
 }
 
 const SHADOWS = {
