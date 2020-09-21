@@ -2,6 +2,7 @@ import React, { lazy } from 'react';
 import LazyLoad from 'src/components/hoc/LazyLoad';
 import SWrapperFlex from 'src/components/styled/wrappers/SWrapperFlex';
 import HeaderDecorator from './LoginHeaderDecorator/HeaderDecorator';
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const LoginAsync = lazy(() => import("./Login"));
 const LoginSocialAsync = lazy(() => import("./LoginWithSocialAccounts"))
