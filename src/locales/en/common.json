@@ -1,0 +1,89 @@
+{
+	"common": {
+		"cancel": "Cancel",
+		"reload": "Reload",
+		"change": "Change",
+		"and": "nd",
+		"or": "or",
+		"continue": "Continue",
+		"user": {
+			"username": "username",
+			"password": "password",
+			"email": "email"
+		}
+	},
+	"game": {
+		"login": {
+			"banner-message": {
+				"title": "Welcome",
+				"message": "it's time to start playing"
+			},
+			"google": "Continue with Google",
+			"facebook": "Continue with Facebook",
+			"sign-in": "Sign in",
+			"sign-up": "Sign up",
+			"text-field": {
+				"username": "Type a username or email",
+				"password": "Type a password"
+			},
+			"forgot-password": "I forgot my password",
+			"message-sign-up": "I don't have an account"
+		},
+		"list-words": {
+			"ranking": {
+				"title": "The most discovered"
+			},
+			"modal": {
+				"title": "Preview",
+				"text-button": "Go now"
+			},
+			"list": {
+				"text-load-more": "Load more"
+			},
+			"error": {
+				"title": "Ups! An error has occurred",
+				"message": "The data was not obtained correctly"
+			}
+		},
+		"upload-words": {
+			"landing": {
+				"title": "Upload images",
+				"message": "We recommend that the images are related to the word"
+			},
+			"change": {
+				"field": "Type a word",
+				"button": "Upload this word"
+			}
+		},
+		"settings": {
+			"points-until-today": "{{count}} point until today",
+			"points-until-today_plural": "{{count}} points until today",
+			"sounds": {
+				"row": ["Active sounds", "Manage general sounds"]
+			},
+			"username": {
+				"row": ["Change my $t(common.user.username)", "Have a new username"],
+				"modal": {
+					"title": "Assign $t(common.user.username)",
+					"text-field": "Type a new username"
+				}
+			},
+			"password": {
+				"row": ["Change my $t(common.user.password)", "Change my password for security"],
+				"modal": {
+					"title": "Assign $t(common.user.password)",
+					"text-field": "Type a new password"
+				}
+			},
+			"exit": {
+				"row": ["Exit game", "End the session in the game"]
+			}
+		},
+		"preview": {
+			"header": {
+				"title": "Gaming"
+			},
+			"msg-tooltip": "Choose the correct letters and discover the word"
+		}
+	}
+}

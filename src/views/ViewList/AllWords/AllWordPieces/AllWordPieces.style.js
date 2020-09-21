@@ -1,4 +1,6 @@
+import SLabelWrapper from "src/components/styled/labels/SLabelWrapper"
 import styled from "src/theme/styled"
+import { withStyleDeep } from "styletron-react"
 
 export const SErrorGetDataContainer = styled("div", {
 	margin: "auto",
@@ -18,4 +20,19 @@ export const SErrorGetDataContainer = styled("div", {
 export const SErrorTitle = styled("h2", {
 	marginBottom: "20px",
 	color: "rgb(60,60,60)",
+})
+
+export const SLinkReloadButton = styled("a", ({ $theme }) => ({
+	backgroundColor: $theme.colors.color_primary,
+	color: $theme.colors.color_primary_light,
+	display: "inline-flex",
+	alignItems: "center",
+	justifyContent: "center",
+	padding: "10px 20px",
+	margin: "1em auto",
+	borderRadius: "10px",
+}))
+
+export const SLinkReloadTextButton = withStyleDeep(SLabelWrapper, {
+	marginRight: "10px",
 })
