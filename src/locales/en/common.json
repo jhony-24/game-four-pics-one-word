@@ -3,13 +3,17 @@
 		"cancel": "Cancel",
 		"reload": "Reload",
 		"change": "Change",
-		"and": "nd",
+		"and": "and",
 		"or": "or",
 		"continue": "Continue",
 		"user": {
 			"username": "username",
 			"password": "password",
 			"email": "email"
+		},
+		"navigation": {
+			"prev": "Previous",
+			"next": "Next"
 		}
 	},
 	"game": {
@@ -62,17 +66,20 @@
 				"row": ["Active sounds", "Manage general sounds"]
 			},
 			"username": {
-				"row": ["Change my $t(common.user.username)", "Have a new username"],
+				"row": ["Change my $t(common.user.username)", "Have a new $t(common.user.username)"],
 				"modal": {
 					"title": "Assign $t(common.user.username)",
-					"text-field": "Type a new username"
+					"text-field": "Type a new $t(common.user.username)"
 				}
 			},
 			"password": {
-				"row": ["Change my $t(common.user.password)", "Change my password for security"],
+				"row": [
+					"Change my $t(common.user.password)",
+					"Change my $t(common.user.password) for security"
+				],
 				"modal": {
 					"title": "Assign $t(common.user.password)",
-					"text-field": "Type a new password"
+					"text-field": "Type a new $t(common.user.password)"
 				}
 			},
 			"exit": {
@@ -83,7 +90,12 @@
 			"header": {
 				"title": "Gaming"
 			},
-			"msg-tooltip": "Choose the correct letters and discover the word"
+			"message-tooltip": "Choose the correct letters and discover the word",
+			"success-game": {
+				"title": "Great you did it",
+				"message-word": "The word is \"{{word}}\"",
+				"button": "$t(common.continue) and earn more"
+			}
 		}
 	}
 }

@@ -1,1 +1,101 @@
-{}
+{
+	"common": {
+		"cancel": "Cancelar",
+		"reload": "Recargar",
+		"change": "Cambiar",
+		"and": "y",
+		"or": "o",
+		"continue": "Continuar",
+		"user": {
+			"username": "nombre de usuario",
+			"password": "contraseña",
+			"email": "correo"
+		},
+		"navigation": {
+			"prev": "Atrás",
+			"next": "Siguiente"
+		}
+	},
+	"game": {
+		"login": {
+			"banner-message": {
+				"title": "Bienvenido",
+				"message": "it's time to start playing"
+			},
+			"google": "Continuar con Google",
+			"facebook": "Continuar con Facebook",
+			"sign-in": "Iniciar sesión",
+			"sign-up": "Registrarme",
+			"text-field": {
+				"username": "Escribir $t(common.user.username) o $t(common.user.email)",
+				"password": "Escribir $t(common.user.password)"
+			},
+			"forgot-password": "Eh olvidado mi $t(common.user.password)",
+			"message-sign-up": "No tengo una cuenta"
+		},
+		"list-words": {
+			"ranking": {
+				"title": "Los mas descubiertos"
+			},
+			"modal": {
+				"title": "Vista previa",
+				"text-button": "Ir ahora"
+			},
+			"list": {
+				"text-load-more": "Cargar más"
+			},
+			"error": {
+				"title": "Ups! Ha ocurrido un error",
+				"message": "Los datos no se obtuvieron correctamente"
+			}
+		},
+		"upload-words": {
+			"landing": {
+				"title": "Subir imagenes",
+				"message": "Te recomendamos que las imagenes estén relacionadas con la palabra"
+			},
+			"change": {
+				"field": "Escribe una palabra",
+				"button": "Subir esta palabra"
+			}
+		},
+		"settings": {
+			"points-until-today": "{{count}} punto hasta hoy",
+			"points-until-today_plural": "{{count}} puntos hasta hoy",
+			"sounds": {
+				"row": ["Activar sonido", "Administrar los sonidos generales"]
+			},
+			"username": {
+				"row": ["Cambiar mi $t(common.user.username)", "Tener un nuevo $t(common.user.username)"],
+				"modal": {
+					"title": "Assign $t(common.user.username)",
+					"text-field": "Escribir un nuevo $t(common.user.username)"
+				}
+			},
+			"password": {
+				"row": [
+					"Cambiar mi $t(common.user.password)",
+					"Cambiar mi $t(common.user.password) por seguridad"
+				],
+				"modal": {
+					"title": "Asigar $t(common.user.password)",
+					"text-field": "Escribir una nueva $t(common.user.password)"
+				}
+			},
+			"exit": {
+				"row": ["Salir del juego", "Finalizar sesión en el juego"]
+			}
+		},
+		"preview": {
+			"header": {
+				"title": "Jugando"
+			},
+			"message-tooltip": "Selecciona las letras correctas y descubre la palabra",
+			"success-game": {
+				"title": "Estupendo lo lograste",
+				"message-word": "La palabra es \"{{word}}\"",
+				"button": "$t(common.continue) y ganar más"
+			}
+		}
+	}
+}
