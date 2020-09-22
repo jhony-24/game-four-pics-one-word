@@ -3,12 +3,14 @@ import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import HeaderTitleMessage from "./HeaderTitleMessage"
 import SWrapperFlex from "src/components/styled/wrappers/SWrapperFlex"
 import style, {	SHeaderCard,	SHeaderSmallTitle } from "./LoginHeaderDecorator.style"
+import useLanguage from "src/hooks/useInternationalize/useLanguage"
 
 const HeaderDecorator = () => {
+	const { translate } = useLanguage();
 	return (
 		<SHeaderCard>
 			<SWrapperFlex>
-				<SHeaderSmallTitle>iniciar</SHeaderSmallTitle>
+				<SHeaderSmallTitle>{translate("game.login.banner-message.start")}</SHeaderSmallTitle>
 			</SWrapperFlex>
 			<SWrapperFlex>
 				<HeaderTitleMessage />

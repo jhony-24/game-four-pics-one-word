@@ -5,8 +5,10 @@ import { userActions  } from "src/redux/user"
 import { connect } from "react-redux"
 import LoginSignUpText from "../FormLoginControl/LoginSignUpText"
 import { STextForgetPassword } from "./LoginOptions.style"
+import useLanguage from "src/hooks/useInternationalize/useLanguage"
 
 const SignIn = ({ onOpenRegister, signIn }) => {
+	const { translate } = useLanguage("game.login.");
 	const _username = useRef();
 	const _pass = useRef();
 	const onSignIn = () => signIn({ username : _username.current.value, pass : _pass.current.value })	
@@ -15,8 +17,8 @@ const SignIn = ({ onOpenRegister, signIn }) => {
 		<Fragment>
 			<LoginInput.Username forwardRef={_username} />
 			<LoginInput.Pass forwardRef={_pass} />
-			<STextForgetPassword> e olvidado mi contraseña ?</STextForgetPassword>
-			<Button onClick={onSignIn}>INICIAR SESIÓN</Button>
+			<STextForgetPassword>{translate("forgot-password")}</STextForgetPassword>
+			<Button onClick={onSignIn}>{translate("sign-in")}</Button>
 			<LoginSignUpText onClick={onOpenRegister} />
 		</Fragment>
 	)

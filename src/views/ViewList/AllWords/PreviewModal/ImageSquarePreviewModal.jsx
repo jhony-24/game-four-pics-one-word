@@ -7,8 +7,10 @@ import { css } from "aphrodite/no-important"
 import SLabelWrapper from "src/components/styled/labels/SLabelWrapper"
 import style from "./PreviewModal.style"
 import SWrapperFlex from "src/components/styled/wrappers/SWrapperFlex"
+import useLanguage from "src/hooks/useInternationalize/useLanguage"
 
 const ImageSquarePreviewModal = ({ images, onClick }) => {
+	const { translate } = useLanguage("game.list-words.modal.text-button");
 	return (
 		<Fragment>
 			<Fade>
@@ -16,7 +18,7 @@ const ImageSquarePreviewModal = ({ images, onClick }) => {
 			</Fade>
 			<Button onClick={onClick}>
 				<SWrapperFlex className={css(style.justify)}>
-					<SLabelWrapper>ir ahora</SLabelWrapper>
+					<SLabelWrapper>{translate()}</SLabelWrapper>
 					<IoIosArrowForward size={20} />
 				</SWrapperFlex>
 			</Button>

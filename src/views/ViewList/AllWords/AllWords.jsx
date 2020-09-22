@@ -10,7 +10,7 @@ const AllWords = ({ getListAllWords, loading, error }) => {
 	useEffect(() => {
 		getListAllWords()
 	}, [getListAllWords])
-	console.log(error);
+
 	if (loading) return <LoadingPlaceholder repeat={7} />
 	if (error) return <ErrorGetData />
 	return (

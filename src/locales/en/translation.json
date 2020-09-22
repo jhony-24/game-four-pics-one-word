@@ -20,12 +20,14 @@
 		"login": {
 			"banner-message": {
 				"title": "Welcome",
-				"message": "it's time to start playing"
+				"message": "it's time to start playing",
+				"start" : "Start"
 			},
 			"google": "Continue with Google",
 			"facebook": "Continue with Facebook",
 			"sign-in": "Sign in",
 			"sign-up": "Sign up",
+			"modal-sign-up" : "Register me",
 			"text-field": {
 				"username": "Type a username or email",
 				"password": "Type a password"

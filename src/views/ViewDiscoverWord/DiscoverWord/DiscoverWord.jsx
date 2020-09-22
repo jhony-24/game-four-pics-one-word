@@ -8,9 +8,11 @@ import style, { SFlexContainerPreview } from "./DiscoverWord.style"
 import CircleImageSquare from "src/components/molecules/CircleImageSquare"
 import { discoverActions, discoverSelectors } from "src/redux/discover"
 import { userSelectors } from "src/redux/user"
+import useLanguage from "src/hooks/useInternationalize/useLanguage"
 
 const DiscoverWord = ({ createLetters, state, ...restProps }) => {
-	const { stateDiscover, images, idWord, idUser } = restProps
+	const { translate } = useLanguage("game.preview.message-tooltip");
+	const { stateDiscover, images, idWord, idUser } = restProps;
 	useEffect(() => {
 		createLetters(state)
 	}, [createLetters,state])
@@ -22,7 +24,7 @@ const DiscoverWord = ({ createLetters, state, ...restProps }) => {
 			<SFlexContainerPreview>
 				<CircleImageSquare images={images} styles={style.squareImage} />
 				<TestLetters />
-				<FlatMessage verticalMargin={25} text="Elige las letras correctas y descubre la palabra" />
+				<FlatMessage verticalMargin={25} text={translate()} />
 				<MessUpLetters />
 			</SFlexContainerPreview>
 		)

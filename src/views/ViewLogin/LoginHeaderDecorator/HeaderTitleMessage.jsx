@@ -1,11 +1,13 @@
 import React from "react"
+import useLanguage from "src/hooks/useInternationalize/useLanguage"
 import { SHeaderTitleContainer, SHeaderTitlePrimary, SHeaderTitleThink } from "./LoginHeaderDecorator.style"
 
 const HeaderTitleMessage = () => {
+	const { translate } = useLanguage("game.login.banner-message.");
 	return (
 		<SHeaderTitleContainer>
-			<SHeaderTitlePrimary>Bienvenido</SHeaderTitlePrimary>
-			<SHeaderTitleThink>, es hora de comenzar a jugar</SHeaderTitleThink>
+			<SHeaderTitlePrimary>{translate("title")}</SHeaderTitlePrimary>
+			<SHeaderTitleThink>, {translate("message")}</SHeaderTitleThink>
 		</SHeaderTitleContainer>
 	)
 }

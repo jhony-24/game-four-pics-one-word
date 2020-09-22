@@ -2,7 +2,7 @@ import React from "react"
 import Avatar from "src/components/atoms/Avatar/Avatar"
 import Paragraph from "src/components/molecules/Paragraph"
 import RowItem from "src/components/molecules/RowItem"
-import style from "../../SettingsApp.style"
+import style from "../SettingsApp.style"
 import SWrapperContainer from "src/components/styled/wrappers/SWrapperContainer"
 import { css } from "aphrodite/no-important";
 

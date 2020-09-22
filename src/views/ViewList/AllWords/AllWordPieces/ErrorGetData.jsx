@@ -4,17 +4,20 @@ import Fade from "src/components/animations/Fade"
 import { SErrorGetDataContainer, SErrorTitle, SLinkReloadButton, SLinkReloadTextButton } from "./AllWordPieces.style"
 import SLabelWrapper from "src/components/styled/labels/SLabelWrapper"
 import SLabelBlock from "src/components/styled/labels/SLabelBlock"
+import useLanguage from "src/hooks/useInternationalize/useLanguage"
 
 const ErrorGetData = () => {
+	const { translate: error } = useLanguage("game.list-words.error.");
+	const { translate : reload } = useLanguage("game.common.reload");
 	return (
 		<SErrorGetDataContainer>
 			<Fade type="in">
-				<SErrorTitle>Ups! An error has occurred</SErrorTitle>
+				<SErrorTitle>{error("title")}</SErrorTitle>
 				<SLabelBlock>
-					<SLabelWrapper $color="color_smooth_darker">the data was not obtained correctly</SLabelWrapper>
+					<SLabelWrapper $color="color_smooth_darker">{error("message")}</SLabelWrapper>
 				</SLabelBlock>
 				<SLinkReloadButton href={window.location}>
-					<SLinkReloadTextButton>Reload</SLinkReloadTextButton>
+					<SLinkReloadTextButton>{reload()}</SLinkReloadTextButton>
 					<AiOutlineSync size={20} />
 				</SLinkReloadButton>
 			</Fade>

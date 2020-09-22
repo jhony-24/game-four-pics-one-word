@@ -7,18 +7,20 @@ import ButtonOptionsUploadWord from "./TypeButtonOptions/ButtonOptionsUploadWord
 import Loading from "src/components/atoms/Loading/Loading"
 import useUploadImageFiles from "src/hooks/useUploadWord/useUploadImageFiles"
 import useUploadNewWord from "src/hooks/useUploadWord/useUploadNewWord"
+import useLanguage from "src/hooks/useInternationalize/useLanguage"
 
 const UploadNewWord = () => {
 	const word = useRef();
-	const { selectImages, cancelUploadImages,previewImages,uploaded,images } = useUploadImageFiles();
+	const { translate } = useLanguage("game.upload-words.change.field");
 	const {  loadingUpload , uploadWord } = useUploadNewWord();
+	const { selectImages, cancelUploadImages,previewImages,uploaded,images } = useUploadImageFiles();
 	const handlerUploadWord = () => uploadWord({ letters : word.current.value, images });
 
 
 	if(loadingUpload) return <Loading size={60} text="subiendo..." />
 
 	return <>
-		<TextField placeholder="escribe una palabra..." styles={style.input}	ref={word} />
+		<TextField placeholder={translate()} styles={style.input}	ref={word} />
 		{!uploaded ? (
 			<ButtonUploadImages onChange={selectImages} />
 		) : (

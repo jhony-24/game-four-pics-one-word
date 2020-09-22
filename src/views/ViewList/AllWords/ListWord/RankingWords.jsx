@@ -9,12 +9,14 @@ import { connect } from "react-redux"
 import { navigate } from "gatsby"
 import SWrapperFlex from "src/components/styled/wrappers/SWrapperFlex"
 import style, { CardRankingWords, SFlexContainerItemsWord, SFlexItemWord } from "./ListWord.style"
+import useLanguage from "src/hooks/useInternationalize/useLanguage"
 
 const RankingWords = ({ topRanked }) => {
+	const { translate } = useLanguage("game.list-words.ranking.title");
 	const RankingParagraph = <Paragraph colortitle={TEXT_PRIMARY} styles={style.title}
 		title={
 			<SWrapperFlex>
-			Los más descubiertos <FaCog onClick={() => navigate("/settings")} />
+			{translate()} <FaCog onClick={() => navigate("/settings")} />
 			</SWrapperFlex>
 		}
 	/>

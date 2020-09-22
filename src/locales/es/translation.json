@@ -20,12 +20,14 @@
 		"login": {
 			"banner-message": {
 				"title": "Bienvenido",
-				"message": "Es hora de comenzar a jugar"
+				"message": "Es hora de comenzar a jugar",
+				"start" : "Iniciar"
 			},
 			"google": "Continuar con Google",
 			"facebook": "Continuar con Facebook",
 			"sign-in": "Iniciar sesión",
 			"sign-up": "Registrarme",
+			"modal-sign-up" : "Registrarme",
 			"text-field": {
 				"username": "Escribir $t(common.user.username) o $t(common.user.email)",
 				"password": "Escribir $t(common.user.password)"
@@ -68,7 +70,7 @@
 			"username": {
 				"row": ["Cambiar mi $t(common.user.username)", "Tener un nuevo $t(common.user.username)"],
 				"modal": {
-					"title": "Assign $t(common.user.username)",
+					"title": "Asignar $t(common.user.username)",
 					"text-field": "Escribir un nuevo $t(common.user.username)"
 				}
 			},
@@ -78,7 +80,7 @@
 					"Cambiar mi $t(common.user.password) por seguridad"
 				],
 				"modal": {
-					"title": "Asigar $t(common.user.password)",
+					"title": "Asignar $t(common.user.password)",
 					"text-field": "Escribir una nueva $t(common.user.password)"
 				}
 			},

@@ -6,8 +6,10 @@ import NewWordButtonGenerator from "./ButtonPlay/NewWordButtonGenerator"
 import { discoverActions } from "src/redux/discover"
 import store from "src/store/store"
 import SWrapperFlex from "src/components/styled/wrappers/SWrapperFlex"
+import useLanguage from "src/hooks/useInternationalize/useLanguage"
 
 const NewWordToPlay = ({ onDefineCurrentIndex, onBackward, onForward }) => {
+	const { translate } = useLanguage("common.navigation.");
 	useEffect(() => {
 		onDefineCurrentIndex();
 	},[onDefineCurrentIndex]);
@@ -15,10 +17,10 @@ const NewWordToPlay = ({ onDefineCurrentIndex, onBackward, onForward }) => {
 	return (
 		<SWrapperFlex>
 			<NewWordButtonGenerator onClick={onBackward}>
-				<IoIosArrowBack /> atrás
+				<IoIosArrowBack /> {translate("prev")}
 			</NewWordButtonGenerator>
 			<NewWordButtonGenerator onClick={onForward}>
-				siguiente <IoIosArrowForward />
+				{translate("next")} <IoIosArrowForward />
 			</NewWordButtonGenerator>
 		</SWrapperFlex>
 	)
