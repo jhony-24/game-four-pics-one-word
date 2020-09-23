@@ -14,6 +14,8 @@ import { createActions } from "redux-actions"
  * @property setUpdateInformation
  * @property requestLoadingData
  * @property requestErrorData
+ * @property validateCodeVerification
+ * @property createCodeVerification
  */
 
 /**
@@ -32,6 +34,8 @@ const actions = createActions(
 	"SET_UPDATE_INFORMATION",
 	"REQUEST_LOADING_DATA",
 	"REQUEST_ERRROR_DATA",
+	"VALIDATE_CODE_VERIFICATION",
+	"CREATE_CODE_VERIFICATION",
 	{
 		prefix: "ducks/user",
 	}

@@ -1,8 +1,13 @@
 import React from "react"
+import ForgotPasswordOptions from "./ForgotPasswordOptions/ForgotPasswordOptions"
+import ForgotPasswordOptionsProvider from "./ForgotPasswordOptions/ForgotPasswordOptionsProvider"
 
 const ViewForgotPassword = () => {
 	return (
-		<div>
+		<div className="forgot-password">
+			<ForgotPasswordOptionsProvider>
+				<ForgotPasswordOptions/>
+			</ForgotPasswordOptionsProvider>
 		</div>
 	)
 }
