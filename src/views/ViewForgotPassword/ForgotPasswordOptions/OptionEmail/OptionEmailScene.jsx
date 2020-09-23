@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react"
+import Fade from "src/components/animations/Fade"
 
 const OptionEmailScene = () => {
-	return (
-		<div>
-			
-		</div>
-	)
+	return <Fade type="in"></Fade>
 }
 
 export default OptionEmailScene

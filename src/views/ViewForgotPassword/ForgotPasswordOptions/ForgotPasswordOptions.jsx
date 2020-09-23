@@ -1,5 +1,5 @@
 import React, { lazy } from "react"
-import { useForgotPasswordOptionsContext } from "./ForgotPasswordOptionsProvider"
+import { forgotPasswordScenes, useForgotPasswordOptionsContext} from "./ForgotPasswordOptionsProvider"
 
 const ForgotPasswordOptions = () => {
 	const { scene } = useForgotPasswordOptionsContext()
@@ -7,10 +7,12 @@ const ForgotPasswordOptions = () => {
 	return <CurrentScene />
 }
 
+
+const options = forgotPasswordScenes;
 const AsyncScenes = {
-	defaul: lazy("./OptionDefault/OptionDefaultScene"),
-	email: lazy("./OptionEmail/OptionEmailScene"),
-	sms: lazy("./OptionMessage/OptionMessageScene"),
+	[options.defaul]: lazy("./OptionDefault/OptionDefaultScene"),
+	[options.email]: lazy("./OptionEmail/OptionEmailScene"),
+	[options.sms]: lazy("./OptionMessage/OptionMessageScene"),
 }
 
 export default ForgotPasswordOptions
