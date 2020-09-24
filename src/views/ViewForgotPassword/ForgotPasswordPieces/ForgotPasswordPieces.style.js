@@ -1,10 +1,37 @@
+import { StyleSheet } from "aphrodite/no-important"
 import { motion } from "framer-motion"
+import SButtonPrimary from "src/components/styled/buttons/SButtonPrimary"
 import SLabelBlock from "src/components/styled/labels/SLabelBlock"
 import SLabelWrapper from "src/components/styled/labels/SLabelWrapper"
 import SWrapperContainer from "src/components/styled/wrappers/SWrapperContainer"
 import SWrapperFlex from "src/components/styled/wrappers/SWrapperFlex"
 import styled from "src/theme/styled"
 import { withStyleDeep } from "styletron-react"
+
+export const SInputValidation = {
+	input: StyleSheet.create({
+		default: {
+			width: "100%",
+			display: "block",
+			margin: "1em auto",
+			border: " 2px solid rgba(0,0,0,.1)",
+			borderRadius: "20px",
+			padding: "15px",
+		},
+	}),
+	Container: withStyleDeep(SLabelWrapper, {
+		display: "block",
+		width: "90%",
+		margin: "auto",
+	}),
+	ButtonContainer: withStyleDeep(SWrapperFlex, {
+		justifyContent: "flex-end",
+		margin: "30px auto",
+	}),
+	Button: withStyleDeep(SButtonPrimary, {
+		width: "50%",
+	}),
+}
 
 /**
  * Components of title message primary
