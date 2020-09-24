@@ -5,7 +5,7 @@ const ForgotPasswordOptionsContext = createContext()
 const ForgotPasswordOptionsProvider = ({ children }) => {
 	const [scene, setScene] = useState("default")
 	return (
-		<ForgotPasswordOptionsContext.Provider value={(scene, setScene)}>
+		<ForgotPasswordOptionsContext.Provider value={{scene, setScene}}>
 			{children}
 		</ForgotPasswordOptionsContext.Provider>
 	)

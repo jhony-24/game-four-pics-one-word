@@ -1,28 +1,21 @@
 import React, { memo } from "react"
-import { TEXT_SECONDARY } from "src/theme"
 import PropTypes from "prop-types"
 import { SLoading, SLabel, SFlex } from "./Loading.style"
+import Position from "src/components/styled/wrappers/Position"
 
-const Loading = ({ color, colortext, text, size }) => {
-	return (
+const Loading = ({ text, fullScreen }) => {
+	const contentLoading = (
 		<SFlex>
-			<SLoading $color={color} $size={size}></SLoading>
-			{text && <SLabel $color={colortext}>{text}</SLabel>}
+			<SLoading />
+			<SLabel $color="red">{text}</SLabel>
 		</SFlex>
 	)
-}
-
-Loading.defaultProps = {
-	color: TEXT_SECONDARY,
-	colortext: "gray",
-	size: "30px",
+	return fullScreen ? <Position.Full>{contentLoading}</Position.Full> : contentLoading;
 }
 
 Loading.propTypes = {
-	color: PropTypes.string,
-	colortext: PropTypes.string,
 	text: PropTypes.string,
-	size: PropTypes.string,
+	fullScreen: PropTypes.bool,
 }
 
 export default memo(Loading)

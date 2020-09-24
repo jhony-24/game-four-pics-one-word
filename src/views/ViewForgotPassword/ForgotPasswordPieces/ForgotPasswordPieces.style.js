@@ -1,9 +1,14 @@
+import { motion } from "framer-motion"
 import SLabelBlock from "src/components/styled/labels/SLabelBlock"
 import SLabelWrapper from "src/components/styled/labels/SLabelWrapper"
 import SWrapperContainer from "src/components/styled/wrappers/SWrapperContainer"
 import SWrapperFlex from "src/components/styled/wrappers/SWrapperFlex"
+import styled from "src/theme/styled"
 import { withStyleDeep } from "styletron-react"
 
+/**
+ * Components of title message primary
+ */
 export const STitleMessage = {
 	Container: withStyleDeep(SWrapperContainer, ({ $dir }) => ({
 		textAlign: $dir,
@@ -25,24 +30,31 @@ export const STitleMessage = {
 	})),
 }
 
+/**
+ * Components of card to choose type forgot password
+ */
 export const SForgotPasswordCard = {
-	Container: withStyleDeep(SWrapperFlex, ({$theme,$active}) => ({
+	Container: styled(motion.div, () => ({
 		background: "rgba(0,0,0,.03)",
-		justifyContent: "center",
-		border: $active && `2px solid ${$theme.colors.color_primary}`,
+		display: "grid",
+		gridTemplateColumns: "25% 1fr",
 		borderRadius: "10px",
 		padding: "10px",
-		margin : "auto"
+		margin: "0 auto 20px",
+		cursor: "pointer",
 	})),
-	Item: withStyleDeep(SWrapperFlex, ({ $dir, $justify, $align }) => ({
+	Item: withStyleDeep(SWrapperFlex, ({ $dir, $justify, $align, $mr }) => ({
 		flexDirection: $dir,
 		justifyContent: $justify,
-		alignItems: $align,
-		display: "inline-flex",
-		width: "auto",
+		alignItems: $align || "center",
+		marginRight: $mr,
+		width: "100%",
 	})),
 }
 
+/**
+ * Components of content card
+ */
 export const SForgotPasswordCardText = {
 	Title: withStyleDeep(SLabelBlock, ({ $theme }) => ({
 		fontSize: $theme.fontSizes.normal,
@@ -54,5 +66,21 @@ export const SForgotPasswordCardText = {
 		fontSize: $theme.fontSizes.normal,
 		color: $theme.colors.color_smooth_darker,
 		fontWeight: "900",
+		display: "flex",
+		alignItems: "center",
 	})),
+	Point: styled("div", {
+		display: "inline-block",
+		backgroundColor: "black",
+		width: "4px",
+		height: "4px",
+		borderRadius: "100%",
+		marginRight: "4px",
+	}),
 }
+
+export const SForgotPasswordWrapperGoBack = styled("div", ({ $theme }) => ({
+	marginBottom: "20px",
+	padding: "20px",
+	color: $theme.colors.color_smooth_darker,
+}))

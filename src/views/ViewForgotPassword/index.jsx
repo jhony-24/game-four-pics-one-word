@@ -6,7 +6,7 @@ const ViewForgotPassword = () => {
 	return (
 		<div className="forgot-password">
 			<ForgotPasswordOptionsProvider>
-				<ForgotPasswordOptions/>
+				<ForgotPasswordOptions />
 			</ForgotPasswordOptionsProvider>
 		</div>
 	)

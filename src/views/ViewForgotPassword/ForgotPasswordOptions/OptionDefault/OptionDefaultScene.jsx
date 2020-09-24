@@ -1,10 +1,10 @@
 import React from "react"
 import SWrapperContainer from "src/components/styled/wrappers/SWrapperContainer"
-import ForgotPasswordCardOption from "../ForgotPasswordPieces/ForgotPasswordCardOption"
-import ForgotPasswordTitleMessage from "../ForgotPasswordPieces/ForgotPasswordTitleMessage"
+import ForgotPasswordCardOption from "../../ForgotPasswordPieces/ForgotPasswordCardOption"
+import ForgotPasswordTitleMessage from "../../ForgotPasswordPieces/ForgotPasswordTitleMessage"
 import { BsPhone, BsEnvelope } from "react-icons/bs"
+import { useForgotPasswordOptionsContext, forgotPasswordScenes as options } from "../ForgotPasswordOptionsProvider"
 import Fade from "src/components/animations/Fade"
-import { useForgotPasswordOptionsContext,forgotPasswordScenes } from "../ForgotPasswordOptionsProvider"
 
 const OptionDefaultScene = () => {
 	const { setScene } = useForgotPasswordOptionsContext();
@@ -14,6 +14,7 @@ const OptionDefaultScene = () => {
 				<ForgotPasswordTitleMessage
 					title="Forgot password"
 					message="Select wich contact detail should we use to reset your password"
+					$dir="left"
 				/>
 				<ForgotPasswordCardOption
 					icon={BsPhone}

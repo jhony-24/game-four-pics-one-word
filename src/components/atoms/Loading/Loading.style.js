@@ -6,7 +6,8 @@ export const SFlex = withStyleDeep(SWrapperFlex, {
 	flexDirection: "column",
 })
 
-export const SLoading = styled("div", ({$theme,$size}) => ({
+const sizeLoading = "30px";
+export const SLoading = styled("div", ({$theme}) => ({
 	borderRadius: "100%",
 	animationDuration: ".5s",
 	animationIterationCount: "infinite",
@@ -17,8 +18,8 @@ export const SLoading = styled("div", ({$theme,$size}) => ({
 			transform: "rotate(-360deg)",
 		},
 	},
-	width: $size,
-	height: $size,
+	width: sizeLoading,
+	height: sizeLoading,
 	borderLeft: `2px solid ${$theme.colors.color_primary}`,
 }))
 

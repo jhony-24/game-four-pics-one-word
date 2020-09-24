@@ -1,18 +1,18 @@
 import React, { lazy } from "react"
-import { forgotPasswordScenes, useForgotPasswordOptionsContext} from "./ForgotPasswordOptionsProvider"
+import Loading from "src/components/atoms/Loading"
+import LazyLoad from "src/components/hoc/LazyLoad"
+import { forgotPasswordScenes as options, useForgotPasswordOptionsContext} from "./ForgotPasswordOptionsProvider"
 
 const ForgotPasswordOptions = () => {
 	const { scene } = useForgotPasswordOptionsContext()
-	const CurrentScene = AsyncScenes[scene]
-	return <CurrentScene />
+	const CurrentScene = AsyncScenes[scene];
+	return 	<LazyLoad component={CurrentScene} loading={<Loading fullScreen/>} />
 }
 
-
-const options = forgotPasswordScenes;
 const AsyncScenes = {
-	[options.defaul]: lazy("./OptionDefault/OptionDefaultScene"),
-	[options.email]: lazy("./OptionEmail/OptionEmailScene"),
-	[options.sms]: lazy("./OptionMessage/OptionMessageScene"),
+	[options.default]: lazy(() => import("./OptionDefault/OptionDefaultScene")),
+	[options.email]: lazy(() => import("./OptionEmail/OptionEmailScene")),
+	[options.sms]: lazy(() => import("./OptionMessagePhone/OptionMessagePhoneScene")),
 }
 
 export default ForgotPasswordOptions
