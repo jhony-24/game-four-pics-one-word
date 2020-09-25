@@ -1,6 +1,7 @@
 const path = require("path")
 
 module.exports = {
+	pathPrefix : "/game-4-pics-1-word",
 	siteMetadata: {
 		title: `4 pics, 1 word`,
 		description: `Discover the word based on the images that will be shown`,
