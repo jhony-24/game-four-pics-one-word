@@ -10,7 +10,7 @@ import createSagaMiddleware from "redux-saga"
 const configStorage = {
 	key: "root",
 	storage,
-	whitelist: ["user"],
+	whitelist: [""],
 }
 
 const enhanceMiddleware =	window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({

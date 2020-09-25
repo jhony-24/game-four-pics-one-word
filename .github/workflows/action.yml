@@ -1,0 +1,20 @@
+name: CD deploy
+on: 
+ push:
+  branches: [ master ]
+
+jobs:
+ deploy-github-pages:
+  runs-on: ubuntu-latest
+  name: deploy
+  steps:
+   - uses: actions/checkout@v2
+   - uses: actions/setup-node@v1
+     with: 
+      node-version: '12'
+   - run: npm deploy
+	   env:
+      GATSBY_TOKEN_API_WORD: ${{ secrets.GATSBY_TOKEN_API_WORD }}
+      GATSBY_FIREBASE_API_KEY: ${{ secrets.GATSBY_FIREBASE_API_KEY }}
+      GATSBY_FIREBASE_APP_ID: ${{ secrets.GATSBY_FIREBASE_APP_ID }}
+      GATSBY_FIREBASE_STORAGE_BUCKET: ${{ secrets.GATSBY_FIREBASE_STORAGE_BUCKET }}

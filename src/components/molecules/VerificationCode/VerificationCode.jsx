@@ -22,9 +22,7 @@ const VerificationCode = ({ checkValue, onCompleteSuccess }) => {
 	},[checkValue]);
 
 	useEffect(() => {
-		if(state.isComplete) {
-			onCompleteSuccess({isComplete:state.isComplete,checkValue:state.checkValue})
-		}
+		onCompleteSuccess({isComplete:state.isComplete,checkValue:state.checkValue})
 	},[state,onCompleteSuccess]);
 
 	return (

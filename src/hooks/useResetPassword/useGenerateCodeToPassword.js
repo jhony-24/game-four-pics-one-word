@@ -3,9 +3,9 @@ import { userActions } from 'src/redux/user';
 
 const useGenerateCodeToPassword = () => {
 	const dispatch = useDispatch();
-	const generateCodeVerification = () => dispatch(userActions.createCodeVerification());
+	const createCodeVerification = () => dispatch(userActions.createCodeVerification());
 	return {
-		generateCodeVerification
+		createCodeVerification
 	}
 }
 

@@ -16,6 +16,7 @@ import { createActions } from "redux-actions"
  * @property requestErrorData
  * @property validateCodeVerification
  * @property createCodeVerification
+ * @property resetPassword
  */
 
 /**
@@ -36,6 +37,7 @@ const actions = createActions(
 	"REQUEST_ERRROR_DATA",
 	"VALIDATE_CODE_VERIFICATION",
 	"CREATE_CODE_VERIFICATION",
+	"RESET_PASSWORD",
 	{
 		prefix: "ducks/user",
 	}

@@ -1,4 +1,4 @@
-import { takeEvery, put } from "redux-saga/effects"
+import { takeEvery, put, take } from "redux-saga/effects"
 import actions from "./actions"
 import Auth from "src/models/auth"
 import UserCheckAuthService from "src/services/UserCheckAuthService"
@@ -93,11 +93,20 @@ function* requestUpdatePassword({ payload: { pass } }) {
 	}
 }
 
+function* requestResetPassword() {
+	console.log("ok")
+	try {
+	}catch {
+		yield put(actions.requestErrorData());
+	}
+}
+
 export default function* watchUser() {
 	yield takeEvery(actions.signIn.toString(), requestSignIn)
 	yield takeEvery(actions.signInGoogle.toString(), requestSignInGoogle)
 	yield takeEvery(actions.signInFacebook.toString(), requestSignInFacebook)
-	yield takeEvery(actions.signUp.toString(), requestSignUp)
+	yield take(actions.signUp.toString(), requestSignUp)
+	yield take(actions.resetPassword.toString(),requestResetPassword)
 	yield takeEvery(actions.setUpdateInformation.toString(), requestUpdateUsername)
 	yield takeEvery(actions.setUpdateInformation.toString(), requestUpdatePassword)
 }

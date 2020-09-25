@@ -1,7 +1,7 @@
 import { navigate } from "gatsby"
 import { handleActions } from "redux-actions"
 import actions from "./actions"
-import _ from "lodash"
+import { merge, set, update } from "lodash"
 const initialState = {
 	listWords: [], //all words
 	error: false, // error to generate data,
@@ -37,33 +37,33 @@ const handlers = {
 				},
 			}
 		}
-		return _.update(state, "loading", () => false)
+		return update(state, "loading", () => false)
 	},
 
-	[actions.loadingListAllWords]: state => _.set(state, "loading", true),
-	[actions.errorToGetData]: state => _.merge(state, { error: true, loading: false }),
+	[actions.loadingListAllWords]: state => set(state, "loading", true),
+	[actions.errorToGetData]: state => merge(state, { error: true, loading: false }),
 
 	[actions.loadingUploadNewWord]: (state, { payload }) => {
-		return _.set(state, "loadingUpload", payload)
+		return set(state, "loadingUpload", payload)
 	},
 
 	[actions.uploadNewWordComplete]: (state, { payload }) => {
 		if (payload.uploaded) {
 			navigate("/list")
 		}
-		return _.merge(state, payload);
+		return merge(state, payload);
 	},
 
 	[actions.setDefaultIndexWordPlay]: (state, { payload }) => {
-		return _.set(state, "currentIndexListWord", payload)
+		return set(state, "currentIndexListWord", payload)
 	},
 
 	[actions.forwardNewWordPlay]: state => {
-		return _.update(state, "currentIndexListWord", value => value + 1)
+		return update(state, "currentIndexListWord", value => value + 1)
 	},
 
 	[actions.backwardNewWordPlay]: state => {
-		return _.update(state, "currentIndexListWord", value => value - 1)
+		return update(state, "currentIndexListWord", value => value - 1)
 	},
 }
 
