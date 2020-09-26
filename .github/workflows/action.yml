@@ -13,8 +13,8 @@ jobs:
      with: 
       node-version: '12'
    - run: npm deploy
-	   env:
-      GATSBY_TOKEN_API_WORD: ${{ secrets.GATSBY_TOKEN_API_WORD }}
-      GATSBY_FIREBASE_API_KEY: ${{ secrets.GATSBY_FIREBASE_API_KEY }}
-      GATSBY_FIREBASE_APP_ID: ${{ secrets.GATSBY_FIREBASE_APP_ID }}
-      GATSBY_FIREBASE_STORAGE_BUCKET: ${{ secrets.GATSBY_FIREBASE_STORAGE_BUCKET }}
+      env:
+       GATSBY_TOKEN_API_WORD: ${{ secrets.GATSBY_TOKEN_API_WORD }}
+       GATSBY_FIREBASE_API_KEY: ${{ secrets.GATSBY_FIREBASE_API_KEY }}
+       GATSBY_FIREBASE_APP_ID: ${{ secrets.GATSBY_FIREBASE_APP_ID }}
+       GATSBY_FIREBASE_STORAGE_BUCKET: ${{ secrets.GATSBY_FIREBASE_STORAGE_BUCKET }}
