@@ -1,19 +1,32 @@
-name: CD deploy
-on: 
+# project deployment app
+name: CD Deploy to github pages
+
+on:
  push:
   branches: [ master ]
 
 jobs:
- deploy-github-pages:
+ deploy-app-gh-pages: 
   runs-on: ubuntu-latest
-  name: deploy
+  strategy:
+   matrix:
+    node-version: [ 10.x , 12.x ]
+  name: deploy app
   steps:
    - uses: actions/checkout@v2
    - uses: actions/setup-node@v1
-     with: 
-      node-version: '12'
-   - run: npm deploy
-	   env:
+     with:
+      node-version: ${{ matrix.node.node-version }}
+   - name: install packages
+     run: npm install
+   - name: registry user
+     run: |
+        git config --global user.email jhonyvegacuya24@gmail.com
+        git config --global user.name jhony-24
+   - name: build project
+     run: npm run deploy
+     env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
       GATSBY_TOKEN_API_WORD: ${{ secrets.GATSBY_TOKEN_API_WORD }}
       GATSBY_FIREBASE_API_KEY: ${{ secrets.GATSBY_FIREBASE_API_KEY }}
       GATSBY_FIREBASE_APP_ID: ${{ secrets.GATSBY_FIREBASE_APP_ID }}
