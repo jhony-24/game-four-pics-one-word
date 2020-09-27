@@ -18,7 +18,7 @@ jobs:
      with:
       node-version: ${{ matrix.node.node-version }}
    - name: install gatsby
-     run: npm install -g gatsby-cli
+     run: sudo npm install -g gatsby-cli
    - name: install packages
      run: npm install
    - name: registry user
