@@ -10,13 +10,15 @@ jobs:
   runs-on: ubuntu-latest
   strategy:
    matrix:
-    node-version: [ 10.x , 12.x ]
+    node-version: [ "12" ]
   name: deploy app
   steps:
    - uses: actions/checkout@v2
    - uses: actions/setup-node@v1
      with:
       node-version: ${{ matrix.node.node-version }}
+   - name: install gatsby
+     run: npm install -g gatsby-cli
    - name: install packages
      run: npm install
    - name: registry user

@@ -9,9 +9,10 @@ module.exports = {
 	},
 	plugins: [
 		"gatsby-plugin-aphrodite",
-		`gatsby-plugin-react-helmet`,
+		"gatsby-plugin-react-helmet",
 		"gatsby-plugin-root-import",
 		"gatsby-plugin-lodash",
+		"gatsby-plugin-no-sourcemaps",
 		{
 			resolve: "gatsby-plugin-styletron",
 			options: {

@@ -6,7 +6,7 @@ import Fade from "src/components/animations/Fade"
 import SEO from "src/components/atoms/SEO"
 
 const Word = () => {
-	const state = window.history.state
+	const state = clientWindow().history.state
 	if (state !== null) {
 		return (
 			<SEO title="guess word now">

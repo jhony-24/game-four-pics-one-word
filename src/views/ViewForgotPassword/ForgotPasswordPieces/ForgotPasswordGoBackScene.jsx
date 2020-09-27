@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { BsArrowLeft } from "react-icons/bs"
+import { clientWindow } from "src/resources/tools/functions"
 import {
 	useForgotPasswordOptionsContext,
 	forgotPasswordScenes as options,
@@ -8,13 +9,13 @@ import { SForgotPasswordWrapperGoBack } from "./ForgotPasswordPieces.style"
 
 const ForgotPasswordGoBackScene = () => {
 	const { setScene } = useForgotPasswordOptionsContext()
-
+	const selfWindow = clientWindow();
 	useEffect(() => {
 		const onKeyUpListener = event => {
 			if (event.keyCode === 8 && event.code === "Backspace") setScene(options.default)
 		}
-		window.addEventListener("keyup", onKeyUpListener)
-		return () => window.removeEventListener("keyup", onKeyUpListener)
+		selfWindow.addEventListener("keyup", onKeyUpListener)
+		return () => selfWindow.removeEventListener("keyup", onKeyUpListener)
 	}, [setScene])
 
 	return (

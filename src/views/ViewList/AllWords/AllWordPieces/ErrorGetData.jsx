@@ -5,6 +5,7 @@ import { SErrorGetDataContainer, SErrorTitle, SLinkReloadButton, SLinkReloadText
 import SLabelWrapper from "src/components/styled/labels/SLabelWrapper"
 import SLabelBlock from "src/components/styled/labels/SLabelBlock"
 import useLanguage from "src/hooks/useInternationalize/useLanguage"
+import { clientWindow } from "src/resources/tools/functions"
 
 const ErrorGetData = () => {
 	const { translate: error } = useLanguage("game.list-words.error.");
@@ -16,7 +17,7 @@ const ErrorGetData = () => {
 				<SLabelBlock>
 					<SLabelWrapper $color="color_smooth_darker">{error("message")}</SLabelWrapper>
 				</SLabelBlock>
-				<SLinkReloadButton href={window.location}>
+				<SLinkReloadButton href={clientWindow().location}>
 					<SLinkReloadTextButton>{reload()}</SLinkReloadTextButton>
 					<AiOutlineSync size={20} />
 				</SLinkReloadButton>

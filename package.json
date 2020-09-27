@@ -1,17 +1,18 @@
 {
   "name": "gatsby-starter-default",
-  "private": false,
+  "private": true,
   "description": "web app",
   "version": "0.1.0",
-  "author": "jhonyvega",
+	"author": "jhonyvega",
+	"main": "index.js",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-		"clean": "gatsby clean",
-		"deploy" : "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/jhony-24/game-4-pics-1-word.git",
+    "clean": "gatsby clean",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/jhony-24/game-4-pics-1-word.git",
     "test": "jest"
   },
   "dependencies": {
@@ -26,6 +27,7 @@
     "gatsby-plugin-aphrodite": "^2.0.5",
     "gatsby-plugin-lodash": "^3.2.1",
     "gatsby-plugin-manifest": "^2.2.48",
+    "gatsby-plugin-no-sourcemaps": "^2.2.0",
     "gatsby-plugin-offline": "^3.0.41",
     "gatsby-plugin-react-helmet": "^3.1.24",
     "gatsby-plugin-react-i18next": "0.0.27",

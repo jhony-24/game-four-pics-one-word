@@ -1,10 +1,11 @@
 import { useReducer } from "react"
+import { clientWindow } from "src/resources/tools/functions";
 
 const useUploadImageFiles = () => {
 	const [state, dispatch] = useReducer(reducer, initialState)
 	const previewImages = [...state.images].map(currentImage => {
-		let image = window.URL.createObjectURL(currentImage);
-		window.URL.revokeObjectURL(currentImage);
+		let image = clientWindow().URL.createObjectURL(currentImage);
+		clientWindow().URL.revokeObjectURL(currentImage);
 		return image;
 	});
 

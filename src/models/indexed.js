@@ -1,3 +1,5 @@
+import { clientWindow } from "src/resources/tools/functions";
+
 /**
  * database in the user browser with a unique table called user
  */
@@ -5,7 +7,7 @@ export default class Indexed {
     constructor() {
         this.userTable = "user";
         this.type = null;
-        this.db = window.indexedDB.open("game", 1);
+        this.db = clientWindow().indexedDB.open("game", 1);
         this.db.onupgradeneeded = (e) => {
             e.target.result.createObjectStore(this.userTable, { keyPath: "key" });
         }
